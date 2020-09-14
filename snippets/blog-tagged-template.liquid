@@ -1,0 +1,61 @@
+<!-- /secion/blog-tagged-template.liquid -->
+{% comment %}
+  Blog template for category (tag) based article list.
+{% endcomment %}
+
+{%- paginate blogs['blog'].articles by 250 -%}
+
+<div class="blog-list">
+    <ul>
+        {% for tag in blog.all_tags %}
+            {% if current_tags contains tag %}
+            <li class="active blog-tag" data-value="{{tag | handle}}">{{ tag | replace: 'Beard', '' | upcase }}</li>
+            {% else %}
+            <li class="blog-tag" data-value="{{tag | handle}}">{{ tag | replace: 'Beard', '' | upcase | link_to_tag: tag }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+  
+  	<div class="tags-blog-block">
+        {% for tag in blog.all_tags %}
+            {% assign count = 0 %}
+            <div class="tag-blog-item" data-value="{{tag | handle}}">
+                <div class="tag-blog-background">
+                    <div class="tag-blog-option">
+
+                        {% for article in blogs['blog'].articles limit:250 %}
+                            {% if article.tags contains tag %}
+                            {% assign count = count | plus: 1 %}
+                                {% if count < 4 %}
+                                    
+                                    {% if article.image %}
+                                        <a href="{{ article.url }}">
+                                            {{ article | img_url: '640x335' | img_tag: article.title }}
+                                            <h2>{{ article.title }}</h2>
+                                        </a>
+                                    {% endif %}
+
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="tag-blog-all">
+                        <a href="/blogs/blog/tagged/{{tag | handle}}">Read All</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="current-category">
+        <h1 class="desktop">{{ current_tags.first | replace: 'Beard', '' | upcase }}</h1>
+         <h1 class="mobile">{{ current_tags.first | replace: 'Beard', '' | normal }}</h1>
+
+    </div>
+</div>
+
+{%- endpaginate -%}
+
+{% section 'blog-featured-article' %}
+{% section 'blog-articles-grid' %}
+{% section 'blog-next-category' %}

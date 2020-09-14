@@ -1,0 +1,27 @@
+{% if product.metafields.accentuate.show_banner_module %}
+    <div \ class="lazy py-24 md:py-32 lg:py-40 bg-gray-200 bg-cover bg-center bg-no-repeat" data-bg="url({{ product.metafields.accentuate.banner_bg_image }})">
+        <div class="container max-w-3xl px-8">
+            <h1 class="nmr-title text-left md:text-center text-4xl mb-5 md:mb-10 text-white">
+                {{ product.metafields.accentuate.banner_title }}
+            </h1>
+            <div class="text-xl text-left md:text-center text-white">
+                {{ product.metafields.accentuate.banner_subtitle }}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% schema %}
+
+{
+    "name": "NMR Module Ingredients",
+    "tag": "section"
+}
+
+{% endschema %}
+
+<!-- 
+    - Title
+    - Subtitle
+    - Bg Image
+ -->

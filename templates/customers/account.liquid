@@ -1,0 +1,134 @@
+<section class="account">
+  <div class="container">
+    <h1>{{ 'customer.account.title' | t }}</h1>
+    <div class="account_content">
+        <div class="orders">
+          <h2>{{ 'customer.orders.title' | t }}</h2>
+          {% paginate customer.orders by 20 %}
+            {% if customer.orders.size != 0 %}
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>{{ 'customer.orders.order_number' | t }}</th>
+                      <th>{{ 'customer.orders.date' | t }}</th>
+                      <th>{{ 'customer.orders.payment_status' | t }}</th>
+                      <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
+                      <th>{{ 'customer.orders.total' | t }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for order in customer.orders %}
+                      <tr>
+                        <td data-title="{{ 'customer.orders.order_number' | t }}">{{ order.name | link_to: order.customer_url }}</td>
+                        <td data-title="{{ 'customer.orders.date' | t }}">{{ order.created_at | date: format: 'month_day_year' }}</td>
+                        <td data-title="{{ 'customer.orders.payment_status' | t }}">{{ order.financial_status_label }}</td>
+                        <td data-title="{{ 'customer.orders.fulfillment_status' | t }}">{{ order.fulfillment_status_label }}</td>
+                        <td data-title="{{ 'customer.orders.total' | t }}">{{ order.total_price | money }}</td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            {% else %}
+              <p class="null">{{ 'customer.orders.none' | t }}</p>
+            {% endif %}
+            {% if paginate.pages > 1 %}
+              {% include 'pagination' %}
+            {% endif %}
+          {% endpaginate %}
+        </div>
+
+        <div class="account_details">
+          <h2>{{ 'customer.account.details' | t }}</h2>
+          <h3 style="margin: 0 0 10px">{{ customer.name }}</h3>
+          {% if customer.default_address != nil %}
+          <ul>
+          	<li>{{ customer.default_address.address1 }}</li>
+            {% if customer.default_address.address2 != "" %}
+          		<li>{{ customer.default_address.address2 }}</li>
+            {% endif %}
+            {% if customer.default_address.city != "" %}
+          		<li>{{ customer.default_address.city }}</li>
+            {% endif %}
+
+            {% if customer.default_address.province_code != "" %}
+          		<li>{{ customer.default_address.province_code | upcase }}</li>
+            {% endif %}
+
+            {% if customer.default_address.zip != "" %}
+          		<li>{{ customer.default_address.zip | upcase }}</li>
+            {% endif %}
+
+            {% if customer.default_address.country != "" %}
+          		<li>{{ customer.default_address.country }}</li>
+            {% endif %}
+
+            {% if customer.default_address.phone != "" %}
+          		<li>{{ customer.default_address.phone }}</li>
+            {% endif %}
+          </ul>
+          {% endif %}
+          
+  
+          <!-- ReCharge -->
+          <a href="/tools/recurring/login/" class="btn" style="margin: 10px 0;" target="_blank">Manage New Subscriptions</a>
+          <!-- ReCharge -->
+          
+          <!-- Bold -->
+        	  <a onclick="openInNewTab('https://bossmanproducts.myshopify.com/tools/checkout/front_end/login');" href="#" class="btn" style="margin: 10px 0">Manage Old Subscriptions</a>
+          <!-- Bold -->
+
+          <a href="/account/addresses" class="btn" style="margin: 10px 0">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a>
+         
+          
+          
+          <a href="/account/logout" class="btn" style="margin: 10px 0">Logout</a></p>
+
+    
+        </div>
+	</div>
+  </div>
+</section>
+
+<style>
+  .account_content {display: flex; align-items: flex-start; justify-content: space-between;}
+  .orders, .account_details {padding: 40px 0 }
+  .orders h2 {margin: 0 0 10px;}
+  .orders .null { font-family: 'PT Sans', sans-serif; font-style: italic; }
+  .account_details {display: flex; flex-direction: column;margin-left: 20px;}
+  .account_details h2 {text-align: center; margin: 0 0 10px;}
+  .btn {text-align: center}
+  .account_details ul {list-style: none;}
+  .account_details ul li { padding: 10px 0; border-bottom: 1px solid #efefef; font-size: 15px; font-family: 'PT Sans', sans-serif;}
+  .account_details ul li:last-child { border-bottom: none;}
+  .orders .table-wrap {width: 100%}
+  .orders .table-wrap table {width: 100%; border-collapse: collapse}
+  .orders .table-wrap table thead, .orders .table-wrap table tbody tr  {border-bottom: 1px solid #efefef}
+  .orders .table-wrap table th, .orders .table-wrap table td {padding: 10px 20px;}
+  .orders .table-wrap table td { font-family: 'PT Sans', sans-serif; font-size: 14px }
+  
+  
+  
+  @media only screen and (max-width : 768px) {
+    .account h1 { display: none}
+    .orders {width: 100%}
+    .account_content {flex-direction: column; align-items: center;}
+    .account_details {width: 100%;margin-left: 0px;}
+  }
+  @media only screen and (max-width : 320px) {
+    .orders .table-wrap table thead {display: none}
+    .orders .table-wrap table tbody tr {display: flex; flex-direction: column; border-bottom: 3px solid #ee2445 }
+    .orders .table-wrap table tbody tr td {padding: 10px 0; display: flex; justify-content: space-between; border-bottom: 1px solid #efefef}
+    .orders .table-wrap table tbody tr td:before {content: attr(data-title); font-weight: bold; font-family: 'Roboto', sans-serif}
+    .btn {font-size: 10px; letter-spacing: 1px}
+    .account_details h3 {margin: 10px 0 10px !important}
+  }
+</style>
+
+<script>
+function openInNewTab(url) {
+  var win = window.open(url, '_blank');
+  win.focus();
+}
+</script>

@@ -1,0 +1,34 @@
+
+	<h1>{{section.settings.collection_title}}</h1>
+	<p>{{section.settings.collection_description}}</p>
+
+<style>
+    .hero-block {
+        background-image: url('{{section.settings.hero_image | img_url: 'master'}}');
+    }
+</style>
+
+{% schema %}
+{
+    "name": "Collection hero",
+    "class": "hero-block",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "hero_image",
+            "label": "Hero Image"
+        },
+        {
+            "type": "text",
+            "id": "collection_title",
+            "label": "Collection Title"
+        },
+        {
+            "type": "textarea",
+            "id": "collection_description",
+            "label": "Collection Description"
+        }
+    ]
+}
+
+{% endschema %}

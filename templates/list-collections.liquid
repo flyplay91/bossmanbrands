@@ -1,0 +1,43 @@
+<section class="collectionsall">
+  <div class="container">
+    <div class="collectionsall_content">
+      {% for collection in collections %}
+        {% unless collection.handle == 'frontpage' %}
+       	 {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
+      		<div class="collectionsall_item">
+              <div class="img">
+                <a href="{{collection.url}}">
+                  {% if collection.image %}
+                  <img src="{{collection.image.src | collection_img_url: 'large'}}" alt="{{collection.title}}" />
+                  {% else %}
+                  <img src="{{collection.products.first.featured_image | product_img_url: 'large'}}" alt="{{collection.title}}" />
+                  {% endif %}
+                </a>
+              </div>
+              <a href="{{collection.url}}"><h2>{{collection_title}}</h2></a>
+      		</div>
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<style>
+  .collectionsall {padding: 0 0 40px}
+  .collectionsall .collectionsall_content {display: grid; grid-template-columns: 1fr 1fr 1fr; grid-column-gap: 40px; grid-row-gap: 40px}
+  .collectionsall .collectionsall_content .collectionsall_item {padding: 0 0 20px; display: flex; flex-direction: column; align-items: center}
+  .collectionsall .collectionsall_content .collectionsall_item .img {margin-bottom: 20px; width: 300px; height: 300px}
+  .collectionsall .collectionsall_content .collectionsall_item .img img {max-width: 100%; height: auto}
+  .collectionsall .collectionsall_content .collectionsall_item h2 {text-transform: uppercase; text-align: center; font-size: 14px}
+  @media only screen and (max-width: 768px) {
+    .collectionsall .collectionsall_content  {grid-template-columns: 1fr 1fr; }
+  }
+  @media only screen and (max-width: 480px) {
+    .collectionsall .collectionsall_content  {grid-template-columns: 1fr; }
+  }
+  @media only screen and (max-width: 320px) {
+    .collectionsall .collectionsall_content  {grid-template-columns: 100%; }
+    .collectionsall .collectionsall_content .collectionsall_item .img {width: 250px; height: 250px}
+  }
+</style>

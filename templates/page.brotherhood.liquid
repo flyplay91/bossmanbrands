@@ -1,0 +1,10 @@
+{% if page.url == "/pages/about" %}
+	{% include 'breadcrumb' %}
+{% endif %}
+
+{% include 'hypervisual' %}
+
+
+<section class="page">
+  <div class="container">{{ page.content }}</div>
+</section>

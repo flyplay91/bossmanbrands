@@ -1,0 +1,43 @@
+{% assign on_sale = false %}
+{% if product.compare_at_price > product.price %}
+  {% assign on_sale = true %}
+{% endif %}
+
+<div class="like_item">
+  <div class="img">
+    <a href="{{ product.url }}"><img src="{{ product.featured_image.src | img_url: '200x' }}" alt="{{ product.title }}"></a>
+  </div>
+  <div class="head">
+    <div class="reviews">
+      <a href="{{ product.url }}">
+       {% include 'okendo-reviews-product-rating-summary' %}
+      </a>
+    </div>
+    <a href="{{ product.url }}"><h4>{{ product.title }}</h4></a>
+  </div>
+  <div class="footer">
+    <span class="price">
+      {% if on_sale %}
+      	<span class="sale">{{ product.compare_at_price | money }}</span>
+      	<span>{{ product.price | money }}</span>
+      {% else %}
+    	<span>{{ product.price | money }}</span>
+      {% endif %}
+    </span>
+    <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
+      <select name="id" id="productSelect" class="product-single__variants" style="display: none">
+        {% for variant in product.variants %}
+        {% if variant.available %}
+        <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+        {% else %}
+        <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+        {% endif %}
+        {% endfor %}
+      </select>
+      <input type="hidden" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
+      <button type="submit" name="add" id="AddToCart" style="margin-top: 10px; margin-right: 0px; margin-left: 30px">
+        <span class="cart"></span>
+      </button>
+    </form>
+  </div>
+</div>

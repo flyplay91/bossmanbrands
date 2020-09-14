@@ -1,0 +1,64 @@
+<!-- /secion/blog-articles-grid.liquid -->
+{% comment %}
+  Blog Article grid without tag filter and search menu.
+{% endcomment %}
+<section class="blog">
+    <div class="blog_content">
+        <div class="blog_articles">
+            {%- paginate blog.articles by 12 -%}
+
+            {% for article in blog.articles %}
+                {% unless forloop.first %}
+                    <div class="blog_articles__box">
+                        {% if article.image %}
+                            <div class="blog-thumbnail">
+                                <a href="{{ article.url }}">
+                                    {{ article.image | img_url: '' | img_tag: 'lazyload' }}
+                                </a>
+                            </div>
+                        {% endif %}
+
+                        <div class="blog-meta">
+                            {% for tag in article.tags %}
+                                {% if current_tags contains tag %}
+                                    <span class="category">{{ tag | replace: 'Beard', '' | upcase }}</span>
+                                {% endif %}
+                            {% endfor %}
+
+                            <a href="{{ article.url }}" class="title">{{ article.title | escape }}</a>
+
+                             <span class="date">{{ article.published_at | time_tag: format: 'month_day_year' }}</span>
+                             
+                        </div>
+                    </div>
+                {% endunless %}
+            {% endfor %}
+
+            {% if paginate.pages > 1 %}
+            {% include 'pagination' %}
+            {% endif %}
+
+            {% endpaginate %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Category: Article grid",
+  "settings": [
+    {
+        "type": "header",
+        "content": "Article grid"
+    },
+    {
+        "type": "paragraph",
+        "content": "1. This section displays articles in grid."
+    },
+    {
+        "type": "paragraph",
+        "content": "2. Article featured in hero section will be excluded from this section."
+    }
+  ]
+}
+{% endschema %}

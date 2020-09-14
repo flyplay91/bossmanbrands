@@ -1,0 +1,48 @@
+
+	<h2>{{section.settings.earn_title}}</h2>
+	<div class="boss-bucks-earn-block">
+		{% for block in section.blocks %}
+			<div class="earn-item earn-item--{{forloop.index}}">
+				<img src="{{block.settings.item_img | img_url: '100x'}}">
+				<label>{{block.settings.item_title}}</label>
+				<p>{{block.settings.item_des}}</p>
+			</div>
+		{% endfor %}
+	</div>
+
+{% schema %}
+{
+	"name": "Earn",
+	"class": "boss-bucks-earn",
+	"settings": [
+		{
+			"type": "text",
+			"id": "earn_title",
+			"label": "Title"
+		}
+	],
+	"blocks": [
+		{
+			"type": "item",
+			"name": "Item",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "item_img",
+					"label": "Item Image"
+				},
+				{
+					"type": "text",
+					"id": "item_title",
+					"label": "Item Title"
+				},
+				{
+					"type": "html",
+					"id": "item_des",
+					"label": "Item Des"
+				}
+			]
+		}
+	]
+}
+{% endschema %}

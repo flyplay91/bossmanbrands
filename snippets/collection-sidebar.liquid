@@ -1,0 +1,29 @@
+<div class="products_content_sidebar">
+  {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+  <!--{% if collection.all_tags.size > 0 %}-->
+    <ul>
+      {% comment %}
+      <li {% if url == "/collections/all" %} class="active"{% endif %}><a href="/collections/all">Featured Products</a></li>
+      {% for collection in collections %}
+      <li {% if collection.url == url %} class="active"{% endif %}><a href="{{ collection.url }}">{{ collection.title }}</a></li>
+      {% endfor %}
+      {% endcomment %}
+      
+      
+      <li {% if url == "/collections/all" %} class="active"{% endif %}><a href="/collections/all">Featured Products</a></li>
+      <li {% if url == "/collections/accessories" %} class="active"{% endif %}><a href="/collections/accessories">Accessories</a></li>
+      <li {% if url == "/collections/apparel" %} class="active"{% endif %}><a href="/collections/apparel">Apparel</a></li>
+      <li {% if url == "/collections/beard-care-packages" %} class="active"{% endif %}><a href="/collections/beard-care-packages">Beard Care Packages</a></li>
+      <li {% if url == "/collections/beard-oil" %} class="active"{% endif %}><a href="/collections/beard-oil">Beard Oil</a></li>
+      <li {% if url == "/collections/beard-pomade" %} class="active"{% endif %}><a href="/collections/beard-pomade">Beard Pomade</a></li>
+      <li {% if url == "/collections/fortify-intense-beard-conditioner" %} class="active"{% endif %}><a href="/collections/fortify-intense-beard-conditioner">Fortify Intense Beard Conditioner</a></li>
+      <li {% if url == "/collections/jelly-beard-oil" %} class="active"{% endif %}><a href="/collections/jelly-beard-oil">Jelly Beard Oil</a></li>
+      <li {% if url == "/collections/colotion" %} class="active"{% endif %}><a href="/collections/colotion">Colotion</a></li>
+      <li {% if url == "/collections/mustache-wax" %} class="active"{% endif %}><a href="/collections/mustache-wax">Mustache Wax</a></li>
+      <li {% if url == "/collections/relaxing-beard-balm" %} class="active"{% endif %}><a href="/collections/relaxing-beard-balm">Relaxing Beard Balm</a></li>
+      <li {% if url == "/collections/boss-booster" %} class="active"{% endif %}><a href="/collections/boss-booster">Boss Booster</a></li>
+      <li {% if url == "/collections/exfoliating-soap" %} class="active"{% endif %}><a href="/collections/exfoliating-soap">Shampoo Beard Hair & Body Bar Soap</a></li>
+      
+    </ul>
+  <!--{% endif %}-->
+</div>

@@ -1,0 +1,21 @@
+{% if product.metafields.accentuate.show_brotherhood_module %}
+
+<div class="product-reviews-area">
+	<h2>{{ product.metafields.accentuate.testimonials_title }}</h2>
+	<a href="/pages/reviews" class="view">Read All Reviews</a>
+	<div class="treecolumns">
+        {% for quote in product.metafields.accentuate.brotherhood_quote %}
+		<div class="column">
+			<blockquote>
+				<p>{{ quote }}</p>
+				
+				<footer>
+					<span class="name">{{ product.metafields.accentuate.brotherhood_name[forloop.index0] }}</span>
+					<span>{{ product.metafields.accentuate.brotherhood_year[forloop.index0] }}</span>
+				</footer>
+			</blockquote>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endif %}

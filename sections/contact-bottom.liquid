@@ -1,0 +1,51 @@
+<div class="custom-container contact-bottom-wrapper">
+		<div class="custom-wrapper contact-us">
+			<p class="contact-us__help">{{ section.settings.title }}</p>
+			<a href="{{ section.settings.link_url }}" class="contact-us__support link">{{ section.settings.link_title }}</a><i class="fas fa-arrow-right"></i>
+		</div>
+	</div>
+
+
+
+{% schema %}
+  {
+    "name": "Bottom Section",                     
+    "settings": [
+
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Bottom Text",
+		"default": "Need more help?"
+      },
+	  {
+		"id": "link_title",
+		"type": "text",
+		"label": "Link Text"
+	  },
+	  {
+		"id": "link_url",
+		"type": "url",
+		"label": "Link Url"
+      }
+
+	]
+  }
+{% endschema %}
+
+<style type="text/css">
+.contact-us__help {
+    color: #000000;
+    font-family: Bely, sans-serif;
+    font-size: 28px;
+    font-weight: 600
+}
+
+.contact-bottom-wrapper {
+    padding-bottom: 74px;
+  	padding-top: 60px;
+}
+</style>
+
+{% javascript %}
+{% endjavascript %}

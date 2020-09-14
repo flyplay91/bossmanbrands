@@ -1,0 +1,124 @@
+<!-- /secion/blog-hero.liquid -->
+{% comment %}
+  Blog hero section for blog template.
+{% endcomment %}
+
+{%- assign s = section.settings -%}
+{% assign current_article = articles[s.featured_article] %}
+
+{%- paginate blog.articles by 250 -%}
+
+{%- if current_article -%}
+    {% comment %} Select background image {% endcomment %}
+    {% assign background_styles = '' %}
+    {% if s.background_image %}
+        {% assign background_image = s.background_image | img_url: 'master' %}
+    {% elsif current_article %}
+        {% assign background_image = current_article.image | img_url: 'master' %}
+    {% endif %}
+    {% assign background_styles = ' style="background-image: url(' | append: background_image | append: ');"' %}
+
+    <section class="hero hero--blog"{{ background_styles }}>
+        {%- if s.show_category_menu and blog.all_tags.size > 0 -%}
+            <div class="blog-list has-absolute">
+                <ul>
+                    {% for tag in blog.all_tags %}
+                        <li class="blog-tag" data-value="{{tag | handle}}">{{ tag | replace: 'Beard', '' | upcase | link_to_tag: tag }}</li>
+                    {% endfor %}
+                </ul>
+              
+              	<div class="tags-blog-block">
+                    {% for tag in blog.all_tags %}
+                        {% assign count = 0 %}
+                        <div class="tag-blog-item" data-value="{{tag | handle}}">
+                            <div class="tag-blog-background">
+                                <div class="tag-blog-option">
+                                    {% for article in blog.articles limit:250 %}
+                                        {% if article.tags contains tag %}
+                                        {% assign count = count | plus: 1 %}
+                                            {% if count < 4 %}
+                                                
+                                                {% if article.image %}
+                                                    <a href="{{ article.url }}">
+                                                        {{ article | img_url: '640x335' | img_tag: article.title }}
+                                                        <h2>{{ article.title }}</h2>
+                                                    </a>
+                                                {% endif %}
+
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                                <div class="tag-blog-all">
+                                    <a href="/blogs/blog/tagged/{{tag | handle}}">Read All</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {%- endif -%}
+
+        <div class="hero--container">
+            {%- if s.show_category -%}
+                <span class="blog-category">
+                    {% for tag in current_article.tags %}
+                        {{ tag | replace: 'Beard', '' | upcase }}
+                    {% endfor %}
+                </span>
+            {%- endif -%}
+
+            <h1 class="blog-heading">{{ current_article.title | escape }}</h1>
+
+            <a href="{{ current_article.url }}" class="btn">READ ARTICLE</a>
+        </div>
+    </section>
+{%- endif -%}
+
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "Hero: Featured Article",
+  "settings": [
+    {
+        "type": "header",
+        "content": "Featured article"
+    },
+    {
+        "type": "paragraph",
+        "content": "Select an article to feature in the hero section. Optionally, pick an image to replaced article's featured image."
+    },
+    {
+        "type": "article",
+        "id": "featured_article",
+        "label": "Article to feature on hero section"
+    },
+    {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_category",
+      "label": "Show category label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Category menu"
+    },
+    {
+      "type": "paragraph",
+      "content": "Category menu lists all categories of blog posts."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_category_menu",
+      "label": "Show category menu",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

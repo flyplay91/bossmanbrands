@@ -1,0 +1,101 @@
+<!-- /secion/blog-categories-slider.liquid -->
+{% comment %}
+  Slider with blog articles
+{% endcomment %}
+
+{% assign s = section.settings %}
+{%- if section.blocks.size > 0 -%}
+    <section class="blog-categories pull-up">
+        <div class="container">
+            <div class="slider-arrows">
+                <ul>
+                    <li>
+                        <button class="slick-prev"></button>
+                    </li>
+                    <li>
+                        <button class="slick-next"></button>
+                    </li>
+                </ul>
+                {% if s.slider_title != blank %}
+                    <span>{{ s.slider_title | upcase }}</span>
+                {% endif %}
+            </div>
+
+            <div class="blog-categories-slider">
+                {% for block in section.blocks %}
+                    {% assign b = block.settings %}
+                    {% assign current_article = articles[b.featured_article] %}
+                    <div class="category-single">
+                        <div class="media">
+                            <a href="{{ current_article.url }}">
+                                {% if b.thumbnail != blank %}
+                                    {{ b.thumbnail | img_url: '382x', crop: 'center' | img_tag }}
+                                {% else %}
+                                    {{ current_article.image | img_url: '382x', crop: 'center' | img_tag }}
+                                {% endif %}
+                            </a>
+                        </div>
+
+                        <div class="content">
+                            <span class="category-title">
+                                {% for tag in current_article.tags %}
+                                    {{ tag | replace: 'Beard', '' | upcase }}
+                                {% endfor %}
+                            </span>
+
+                            <a href="{{ current_article.url }}" class="category-heading">{{ current_article.title | escape }}</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{%- endif -%}
+
+{% schema %}
+{
+    "name": "Article slider",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Blog articles"
+        },
+        {
+            "type": "paragraph",
+            "content": "1. Add categories to the slider with thumbnail images."
+        },
+        {
+            "type": "paragraph",
+            "content": "2. Select article to feature in this slider."
+        },
+        {
+            "type": "paragraph",
+            "content": "3. It is recommended to feature one article for each blog category here."
+        },
+        {
+            "type": "text",
+            "id": "slider_title",
+            "label": "Slider title",
+            "default": "Highlights"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "article",
+            "name": "Article",
+            "settings": [
+                {
+                    "type": "article",
+                    "id": "featured_article",
+                    "label": "Feature article"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "thumbnail",
+                    "label": "Background Image"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,50 @@
+	<!-- Page-heading -->
+
+<div class="top-banner page-heading our-story-heading" style="background-image: url('{{ section.settings.image | img_url: '3000x'}}');">
+	<h1 class="top-banner__title">{{ section.settings.title }}</h1>
+  	
+    <div class="watch-now">
+    <a data-fancybox="" href="https://www.youtube.com/watch?v=5cGtUpkujL4&t=1s" class="btn" title="Watch Now">Watch Now</a>
+    </div>
+  
+  
+</div>
+
+
+{% schema %}
+  {
+    "name": "Hero",                     
+    "settings": [
+
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Page Title",
+		"default": "Our Story"
+      }
+
+	]
+  }
+{% endschema %}
+
+
+<style type="text/css">
+  .our-story-heading {
+    height: 569px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+</style>
+
+
+{% javascript %}
+{% endjavascript %}

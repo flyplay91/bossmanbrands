@@ -1,0 +1,47 @@
+	<div class="hero-white-overlay"></div>
+	<div class="boss-bucks-hero-content">
+		<h2>{{section.settings.hero_title}}</h2>
+		<p>{{section.settings.hero_sub_title}}</p>
+		<a href="{{section.settings.hero_btn_link}}">{{section.settings.hero_btn_title}}</a>
+	</div>
+
+
+<style>
+	.boss-bucks-hero {
+		background-image: url({{section.settings.hero_bg | img_url: 'master'}});
+	}
+</style>
+
+{% schema %}
+{
+	"name": "Hero",
+	"class": "boss-bucks-hero",
+	"settings": [
+		{
+			"type": "image_picker",
+			"id": "hero_bg",
+			"label": "Hero Bg"
+		},
+		{
+			"type": "html",
+			"id": "hero_title",
+			"label": "Hero Title"
+		},
+		{
+			"type": "html",
+			"id": "hero_sub_title",
+			"label": "Hero Sub Title"
+		},
+		{
+			"type": "text",
+			"id": "hero_btn_link",
+			"label": "Hero Btn Link"
+		},
+		{
+			"type": "text",
+			"id": "hero_btn_title",
+			"label": "Hero Btn Title"
+		}
+	]
+}
+{% endschema %}

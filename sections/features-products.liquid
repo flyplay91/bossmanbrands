@@ -1,0 +1,88 @@
+{% assign number_of_related_products_per_row = 5 %}
+{% assign number_of_rows = 1 %}
+{% assign heading = 'FEATURED PRODUCTS' %}
+{% assign same_vendor = false %}
+{% assign same_type = false %}
+{% assign exclusions = 'frontpage,all' | split: ',' %}
+{% comment %}В кавычках ниже нужно указать "хендл" нужной коллекции. Его можно узнать в карточке коллекции: http://prntscr.com/kxundc {% endcomment %}
+{% assign main_collection = 'beard-care-packages' %}
+{% if product.metafields.c_f['Related Products'] %}
+  {% assign collection = collections[product.metafields.c_f['Related Products']] %}
+{% endif %}
+
+{% assign found_a_collection = true %}
+{% if found_a_collection %}
+
+  {% assign counter = 0 %}
+  {% assign break_at = number_of_rows | times: number_of_related_products_per_row %}
+  {% assign current_product = product %}
+
+  {% case number_of_related_products_per_row %}
+    {% when 1 %}
+      {% assign grid_item_width = '' %}
+    {% when 2 %}
+      {% assign grid_item_width = 'large--one-half medium--one-half' %}
+    {% when 3 %}
+      {% assign grid_item_width = 'large--one-third medium--one-half' %}
+    {% when 4 %}
+      {% assign grid_item_width = 'large--one-quarter medium--one-third small--one-half' %}
+    {% when 5 %}
+      {% assign grid_item_width = 'large--one-fifth medium--one-third small--one-half' %}
+    {% when 6 %}
+      {% assign grid_item_width = 'large--one-sixth medium--one-third small--one-half' %}
+    {% else %}
+      {% assign grid_item_width = 'large--one-quarter medium--one-third small--one-half' %}
+  {% endcase %}
+
+  {% capture related_items %}
+      {% paginate collections.all.products by 1000 %}
+          {% for product in collections.all.products  %}
+              {% if product.id == 10316605257 or  product.id == 1426033705038 or  product.id == 10316798537 or  product.id == 1420761464910 or  product.id == 10316648841 %}
+                  {% assign related_tags = true %}
+                  {% include 'related-grid-item' %}
+             {% assign counter = counter | plus: 1 %}
+             {% if counter == break_at %}
+               {% break %}
+             {% endif %}
+              {% endif %}
+          {% endfor %}
+      {% endpaginate %}
+  {% endcapture %}
+	
+  {% if related_items %}
+
+  <div class="like {% comment %}hide-mobile{% endcomment %}">
+    <div class="like_head">
+      <h1>{{heading}}</h1>
+    </div>
+      <div class="owl-nav">
+        <button type="button" role="presentation" class="owl-prev disabled">
+          <span class="prev-arrow"></span>
+        </button>
+        <button type="button" role="presentation" class="owl-next">
+          <span class="next-arrow"></span>
+        </button>
+      </div>
+    <div class="owl-carousel">
+      {{ related_items }}
+    </div>
+  </div>
+{% comment %}
+  <div class="like show-mobile">
+    <div class="like_head">
+      <h1>{{heading}}</h1>
+    </div>
+      {{ related_items }}
+  </div>
+{% endcomment %}
+
+  {% endif %}
+     
+{% endif %}
+<style>
+  .show-mobile{display:none;}
+  @media all and (max-width:475px){
+  .show-mobile{display:block!important;}
+  .hide-mobile{display:none!important;}
+  }
+</style>

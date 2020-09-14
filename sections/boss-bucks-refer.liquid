@@ -1,0 +1,46 @@
+	<div class="bucks-refer-overlay"></div>
+	<div class="boss-bucks-refer-content">
+		<h3>{{section.settings.refer_title}}</h3>
+		<p>{{section.settings.refer_sub_title}}</p>
+		<a href="{{section.settings.btn_link}}">{{section.settings.btn_text}}</a>
+	</div>
+
+<style>
+	.boss-bucks-refer {
+		background-image: url({{section.settings.refer_bg | img_url: 'master'}});
+	}
+</style>
+
+{% schema %}
+{
+	"name": "Refer",
+	"class": "boss-bucks-refer",
+	"settings": [
+		{
+			"type": "image_picker",
+			"id": "refer_bg",
+			"label": "Background Img"
+		},
+		{
+			"type": "text",
+			"id": "refer_title",
+			"label": "Refer title"
+		},
+		{
+			"type": "html",
+			"id": "refer_sub_title",
+			"label": "Refer Sub Title"
+		},
+		{
+			"type": "text",
+			"id": "btn_link",
+			"label": "Btn Link"
+		},
+		{
+			"type": "text",
+			"id": "btn_text",
+			"label": "Btn Text"
+		}
+	]
+}
+{% endschema %}

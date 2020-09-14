@@ -1,0 +1,37 @@
+<!-- /secion/blog-next-category.liquid -->
+{% comment %}
+  Blog section to show next category featuring an article from that category.
+{% endcomment %}
+
+{% assign next_category = '' %}
+
+{% assign min = 0 %}
+{% assign max = blog.all_tags.size %}
+{% assign diff = max | minus: min %}
+{% assign random_number = "now" | date: "%N" | modulo: diff | plus: min %}
+{% assign next_tag = blog.all_tags[random_number] %}
+{% assign counter = 0 %}
+
+{% for article in blog.articles %}
+    {% for tag in article.tags %}
+        {% if article.tags contains next_tag %}
+            <section class="full-width-cta">
+                <div class="cta-inner" style="background-image: url({{ article.image | img_url: 'master' }});">
+                    <div class="container">
+                        <span class="category">{{ next_tag }}</span>
+                        <h1 class="heading">{{ article.title | escape }}</h1>
+                    </div>
+                </div>
+            </section>
+            {% assign counter = counter | plus: 1 %}
+        {% endif %}
+
+        {% if counter > 0 %}
+            {% break %}
+        {% endif %}
+    {% endfor %}
+
+    {% if counter > 0 %}
+        {% break %}
+    {% endif %}
+{% endfor %}

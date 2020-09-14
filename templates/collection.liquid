@@ -1,0 +1,383 @@
+{% if current_tags contains 'hat' or current_tags contains 'hoodie' or current_tags contains 'shirt' %}
+<script>
+         window.location = "/collections/apparel";
+</script>
+{% endif %}
+
+{% if current_tags contains 'comb' or current_tags contains 'soap-container' or current_tags contains 'stickers'  or current_tags contains 'travel-bottles'%}
+<script>
+         window.location = "/collections/accessories";
+</script>
+{% endif %}
+
+{% if current_tags %}
+    {% assign last_selected_tag = '' %}
+
+    {% for tag in current_tags %}
+        {% if forloop.last %}
+            {% assign last_selected_tag = tag %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+<script type="text/javascript">
+	window.last_selected_tag = "{{ last_selected_tag }}";
+</script>
+
+<div id="shopify-section-collection-hero" class="hero-block">
+	
+	{% if collection.handle == 'beard-care' %}
+      <h1>Beard Care Products for Men</h1>
+      <h2>Innovation Meets Beard Care: Feel the Difference With Bossman</h2>
+
+  
+  
+  {% elsif collection.handle == 'beard-grooming-kits' %}
+ 	<h1>Beard Grooming Kits for Men</h1>
+	<h2>The Best Beard Grooming Kits for Complete Beard Care</h2>
+  
+  
+
+  {% elsif collection.handle == 'shaving'%}
+    <h1>Shaving Products for Men</h1>
+    <h2>The Best Shaving Products for the Perfect Beard</h2>
+  
+  
+   {% elsif collection.handle == 'accessories'%}
+  <h1>Beard Accessories for Men</h1>
+	<h2>Maintain Your Beard With Bossman’s Beard Grooming Accessories </h2> 
+ 
+  
+  {% elsif collection.handle == 'apparel' %}
+  <h1> Bossman Apparel</h1>
+
+  
+  {% elsif collection.handle == 'beard-combs-brushes' %}
+  <h1>Beard Combs and Brushes</h1>
+  <h2>Beard Brushes That Satisfy Every Beardsman’s Grooming Needs</h2>
+
+  
+  {% else %}
+   	<h1>{{ collection.title }}</h1>
+
+  {% endif %}
+  
+  
+	
+    {% if collection.metafields.accentuate.hero_description %}
+        <p>{{collection.metafields.accentuate.hero_description}}</p>
+    {% endif %}
+
+	<style>
+		{% if collection.metafields.accentuate.hero_image %}
+		    .hero-block {
+		        background-image: url('{{collection.metafields.accentuate.hero_image}}');
+		    }
+		{% else %}
+			.hero-block {
+			        background-color:#474747 ;
+			    }
+		{% endif %}
+	</style>
+</div>
+
+<div class="filter-open">
+	<div class="product-manager">
+	   {%- include 'breadcrumb' -%}
+
+   	   <div class="products-filter">
+			<div class="current-colors">
+				<div class="current-color-block stage-1 {% if current_tags contains 'stage 1' or current_tags contains 'Stage 1' %}active{% endif %}" data-value="stage-1">
+					<p>Stage 1</p>
+					<a href="#" class="close"></a>
+				</div>
+				<div class="current-color-block stage-2 {% if current_tags contains 'stage 2' or current_tags contains 'Stage 2' %}active{% endif %}" data-value="stage-2">
+					<p>Stage 2</p>
+					<a href="#" class="close"></a>
+				</div>
+				<div class="current-color-block stage-3 {% if current_tags contains 'stage 3' or current_tags contains 'Stage 3' %}active{% endif %}" data-value="stage-3">
+					<p>Stage 3</p>
+					<a href="#" class="close"></a>
+				</div>
+				<div class="current-color-block stage-4 {% if current_tags contains 'stage 4' or current_tags contains 'Stage 4' %}active{% endif %}" data-value="stage-4">
+					<p>Stage 4</p>
+					<a href="#" class="close"></a>
+				</div>
+				<div class="current-color-block royal-oud {% if current_tags contains 'royal oud' or current_tags contains 'Royal Oud' %}active{% endif %}" data-value="royal-oud">
+					<p>Royal Oud</p>
+					<div class="square brown"></div>
+					<a href="#" class="close"></a>
+				</div>
+				<div class="current-color-block the-gatsby {% if current_tags contains 'the gatsby' or current_tags contains 'The Gatsby' %}active{% endif %}" data-value="the-gatsby">
+					<p>The Gatsby</p>
+					<div class="square purple"></div>
+					<a href="#" class="close"></a>
+				</div>
+				<div class="current-color-block vetiver-x {% if current_tags contains 'vetiver x' or current_tags contains 'Vetiver X' %}active{% endif %}" data-value="vetiver-x">
+					<p>Vetiver X</p>
+					<div class="square pink"></div>
+					<a href="#" class="close"></a>
+				</div>
+				<div class="current-color-block hammer {% if current_tags contains 'hammer' or current_tags contains 'Hammer' %}active{% endif %}" data-value="hammer">
+					<p>Hammer</p>
+					<div class="square red"></div>
+					<a href="#" class="close"></a>
+				</div>
+				<div class="current-color-block naked {% if current_tags contains 'naked' or current_tags contains 'Naked' %}active{% endif %}" data-value="naked">
+					<p>Naked</p>
+					<div class="square white"></div>
+					<a href="#" class="close"></a>
+				</div>
+				<div class="current-color-block gold {% if current_tags contains 'gold' or current_tags contains 'Gold' %}active{% endif %}" data-value="gold">
+					<p>Gold</p>
+					<div class="square gold"></div>
+					<a href="#" class="close"></a>
+				</div>
+				<div class="current-color-block magic {% if current_tags contains 'magic' or current_tags contains 'Magic' %}active{% endif %}" data-value="magic">
+					<p>Magic</p>
+					<div class="square blue"></div>
+					<a href="#" class="close"></a>
+				</div>
+				<div class="current-color-block stagecoach {% if current_tags contains 'stagecoach' or current_tags contains 'Stagecoach' %}active{% endif %}" data-value="stagecoach">
+					<p>Stagecoach</p>
+					<div class="square orange"></div>
+					<a href="#" class="close"></a>
+				</div>
+			</div>
+	   	   	<div>
+	   	   		<a href="#" class="scents--opener opener">Scents <span></span> <span class="bottom-arrow"></span><span class="top-arrow"></span></a>
+				<a href="#" class="stage--opener opener">Stage <span></span> <span class="bottom-arrow"></span><span class="top-arrow"></span></a>
+	   	   	</div>
+   	   </div>
+   	</div>
+
+   	<div class="drop-colors-filter">
+       
+      	<div class="select-scent">Select a Scent</div>
+      	<h3 class="reached-warnning">Limit Reached</h3>
+
+		<div class="current-block-with-color stagecoach">
+			<div class="big-square stagecoach"><a href="#" class="filter-option {% if current_tags contains 'stagecoach' or current_tags contains 'Stagecoach' %}selected{% endif %}" data-value="stagecoach"></a></div>
+			<h4>Stagecoach</h4>
+			<p>Fine Leather</p>
+			<p>Sweet tobacco</p>
+			<p>Aged Bourbon</p>
+		</div>
+		<div class="current-block-with-color magic">
+			<div class="big-square magic"><a href="#" class="filter-option {% if current_tags contains 'magic' or current_tags contains 'Magic' %}selected{% endif %}" data-value="magic"></a></div>
+			<h4>Magic</h4>
+			<p>Vanilla</p>
+			<p>Sandalwood</p>
+			<p>Bergamot</p>
+			<p>Frankincense</p>
+			<p>Patchouli</p>
+		</div>
+		<div class="current-block-with-color gold">
+			<div class="big-square gold"><a href="#" class="filter-option {% if current_tags contains 'gold' or current_tags contains 'Gold' %}selected{% endif %}" data-value="gold"></a></div>
+			<h4>Gold</h4>
+			<p>Lemon</p>
+			<p> Lavender</p>
+			<p>Bergamot</p>
+			<p>Cedarwood</p>
+			<p>Spruce Vetiver</p>
+          	<p>Rosemary</p>
+          	<p>Saffron</p>
+            <p>sandalwood</p>
+		</div>
+		<div class="current-block-with-color naked">
+			<div class="big-square white"><a href="#" class="filter-option {% if current_tags contains 'naked' or current_tags contains 'Naked' %}selected{% endif %}" data-value="naked"></a></div>
+			<h4>Naked</h4>
+			<p>Unscented</p>
+		</div>
+		<div class="current-block-with-color hammer">
+			<div class="big-square hammer"><a href="#" class="filter-option {% if current_tags contains 'hammer' or current_tags contains 'Hammer' %}selected{% endif %}" data-value="hammer"></a></div>
+			<h4>Hammer</h4>
+			<p>Lavender</p>
+			<p>Vanilla</p>
+			<p>Geranium</p>
+			<p>Patchouli</p>
+		</div>
+		<div class="current-block-with-color vetiver-x">
+			<div class="big-square vetiverx"><a href="#" class="filter-option {% if current_tags contains 'Vetiver X' or current_tags contains 'vetiver X' %}selected{% endif %}" data-value="vetiver-x"></a></div>
+			<h4>Vetiver X</h4>
+            <p>Bergamot</p>
+			<p>Vanilla</p>
+			<p>Cedarwood</p>
+			
+		</div>
+		<div class="current-block-with-color the-gatsby">
+			<div class="big-square gatsby"><a href="#" class="filter-option {% if current_tags contains 'The Gatsby' or current_tags contains 'the gatsby' %}selected{% endif %}" data-value="the-gatsby"></a></div>
+			<h4>The Gatsby</h4>
+            <p>Orange</p>
+			<p>Lemon</p>
+			<p>Patchouli</p>
+			
+		</div>
+		<div class="current-block-with-color royal-oud">
+			<div class="big-square royaloud"><a href="#" class="filter-option {% if current_tags contains 'Royal Oud' or current_tags contains 'royal oud' %}selected{% endif %}" data-value="royal-oud"></a></div>
+			<h4>Royal Oud</h4>
+            <p>Cedarwood</p>
+			<p>Bergamot</p>
+			<p>Lemon</p>
+            <p>Clove</p>
+            <p>Pepper</p>
+			
+		</div>
+   	</div>
+
+
+	<ul class="stage-dropdown">
+		<li><a class="filter-option {% if current_tags contains 'stage 1' or current_tags contains 'Stage 1' %}selected{% endif %}" data-value="stage-1" href="javascript: void(0)">Stage 1</a></li>
+		<li><a class="filter-option {% if current_tags contains 'stage 2' or current_tags contains 'Stage 2' %}selected{% endif %}" data-value="stage-2" href="javascript: void(0)">Stage 2</a></li>
+		<li><a class="filter-option {% if current_tags contains 'stage 3' or current_tags contains 'Stage 3' %}selected{% endif %}" data-value="stage-3" href="javascript: void(0)">Stage 3</a></li>
+		<li><a class="filter-option {% if current_tags contains 'stage 4' or current_tags contains 'Stage 4' %}selected{% endif %}" data-value="stage-4" href="javascript: void(0)">Stage 4</a></li>
+	</ul>
+</div>
+
+<div class="mobile-filter">
+	<div class="filter-panel">
+		<a href="#" class="open-filter"></a>
+	</div>
+	<div class="filter-drop">
+		<div class="block">
+			<span class="h3">Sort by</span>
+			<ul>
+				<li class="checked">featured</li>
+				<li>newest</li>
+				<li>price: high-low</li>
+				<li>price: low-high</li>
+			</ul>
+		</div>
+		<div class="block">
+			<span class="h3">Shop by price</span>
+			<ul>
+				<li>$5 - $10</li>
+				<li>$10 - $15</li>
+				<li>$15 - $20</li>
+				<li>$20 - $25</li>
+				<li>over $25</li>
+			</ul>
+		</div>
+		<div class="block">
+			<span class="h3">Shop by price</span>
+			<ul>
+				<li>$5 - $10</li>
+				<li>$10 - $15</li>
+				<li>$15 - $20</li>
+				<li>$20 - $25</li>
+				<li>over $25</li>
+			</ul>
+		</div>
+		<div class="block">
+			<span class="h3">scient</span>
+			<ul class="color-list">
+				<li>
+					<div class="color-block" style="background-color: #e39818;"></div>
+					<span>stagecoach</span>
+				</li>
+				<li>
+					<div class="color-block" style="background-color: #087bbe;"></div>
+					<span>magic</span>
+				</li>
+				<li>
+					<div class="color-block" style="background-color: #e4d77b;"></div>
+					<span>gold</span>
+				</li>
+				<li>
+					<div class="color-block" style="background-color: #fff;"></div>
+					<span>stagecoach</span>
+				</li>
+				<li>
+					<div class="color-block" style="background-color: #f0513c;"></div>
+					<span>magic</span>
+				</li>
+				<li>
+					<div class="color-block" style="background-color: #88b74f;"></div>
+					<span>scent</span>
+				</li>
+				<li>
+					<div class="color-block" style="background-color: #7f7f7f;"></div>
+					<span>scent</span>
+				</li>
+				<li>
+					<div class="color-block" style="background-color: #010101; border: 1px solid #fff"></div>
+					<span>scent</span>
+				</li>
+				<li>
+					<div class="color-block" style="background-color: #7c5c43;"></div>
+					<span>scent</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+{% if collection.handle == 'beard-care' %}
+      
+  <div class="collectioncontent-intro">
+    <p>Let your beard do the talking and show that you are a real boss with our premium beard care products for men. We have developed the best line of grooming products in the industry, with items designed for every step of your daily beard care routine. Whether you are a professional trying to look sharp in your meetings or a college student looking to make the best impression in school,  Bossman beard and mustache care products will help you get there.</p>  
+  </div>
+{% endif %}
+
+{% if collection.handle == 'beard-grooming-kits' %}
+<div class="collectioncontent-intro">
+<p>A complete beard care routine consists of much more than just a casual trim and rinse. 
+  If you are looking to have the best beard in the room, you need a proper system made specifically for facial hair so that you can support all aspects of proper beard care and health. 
+  That’s why we created our line of Bossman beard grooming kits to give you a complete solution to all your beard needs! Made with premium-quality natural ingredients, our Bossman kits are the perfect way to get that boss beard you have always wanted.</p>
+</div>
+{% endif %}
+
+{% if collection.handle == 'shaving' %}
+<div class="collectioncontent-intro">
+<p>Keeping a great-looking beard requires constant maintenance in the form of trimming, shaving, clipping, and snipping. If you are a real boss who is serious about their beard, this constant maintenance may even become a daily thing, which is why you need the best razors and scissors you can find. Bossman’s professional-grade shaving care products have been carefully designed for all the beard needs of bosses worldwide. Whether you are trying to have a more defined ‘stache or more uniform beard, we got you covered with the grooming products you need.</p>
+</div>
+ 
+{% endif %}
+
+{% if collection.handle == 'accessories' %}
+<div class="collectioncontent-intro">
+<p>Take your beard game to the next level with the best accessories made for all the real bosses out there. Bossman beard care accessories have been designed to enhance your beard experience so that you can have that perfect beard you have always dreamt of. Together with our premium beard grooming jellies, waxes, and lotions, our Bossman accessories will make having a great-looking beard year-round easy and convenient, whether you are at home or on-the-go.</p> 
+</div>
+{% endif %}
+
+
+{% if collection.handle == 'apparel' %}
+<div class="collectioncontent-intro">
+<p>Bossman’s apparel is for the bosses who take their beards seriously.  
+  If the idea of shaving makes you wince, and the thought of being clean-shaven only crosses your mind in your nightmares, Bossman clothing is for you. It’s the perfect way to show the world that you are passionate about your beard and that you only use the best products to take care of it.
+</p>
+</div>
+
+{% endif %}
+
+{% if collection.handle == 'beard-combs-brushes' %}
+<div class="collectioncontent-intro">
+	<p>So, you already have the best products to nourish your facial hair and promote healthy beard growth. Now all you need is the best tools, like combs and brushes, to keep your beard looking tangle-free and styled just the way you envisioned it. Our collection of premium beard combs and beard brushes has been designed to complement your beard care routine, making it even easier to get that boss beard you have always wanted. The items in this Bossman collection are made with the best materials, such as sandalwood and boar hair, for the best quality combs and brushes today—these aren’t your average dollar-store beard accessories.</p>
+</div>
+{% endif %}
+
+
+<div class="products-block">
+  	{% include 'collection-grid-new' %}
+</div>
+<div class="load-more__icon"></div>
+
+{%comment%} Collection Page Content {%endcomment%}
+{% if collection.handle == "beard-care" %}
+  {% include "beard-care-collection-content" %}
+{% endif %}
+{% if collection.handle == "beard-grooming-kits" %}
+  {% include "beard-grooming-kits-collection-content" %}
+{% endif %}
+{% if collection.handle == "shaving" %}
+  {% include "shaving-products-content" %}
+{% endif %}
+{% if collection.handle == "accessories" %}
+  {% include "accessories-collection-content" %}
+{% endif %}
+{% if collection.handle == "apparel" %}
+  {% include "apparel-collection-content" %}
+{% endif %}
+{% if collection.handle == "beard-combs-brushes" %}
+  {% include "combs-and-brushes-collection-content" %}
+{% endif %}

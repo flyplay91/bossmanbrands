@@ -1,0 +1,299 @@
+			<div class="stage-hero-section">
+				<h1 class="hero-text">The Bossman<br>Four Stage Process</h1>
+				<div class="start-video-image"><a href="https://www.youtube.com/watch?time_continue=1&v=96hWGwAs0eU&feature=emb_logo" data-fancybox="" target="_blank"><img src="//cdn.shopify.com/s/files/1/2283/7011/t/89/assets/play-white.png?v=1591267858" alt="play" width="80" height="80"></a></div>
+			</div>
+
+			<div class="stage-section white-section">
+				<h4 class="number-step">STEP ONE</h4>
+				<h3 class="name-step">Clean & Prep</h3>
+				<p class="description-step">They say 80% of any job is the prep work and your beard is no exception, Boss. Our beard brush and 4-in-1 soap will leave your beard, face, and pores clean. A clean face means clean pores but also minimizes the chance at acne, excessive oil build-up, and ingrown hairs.</p>
+				<div class="images-step">
+					
+					<div class="image-step">
+						{% for product in collections['pack'].products limit:250  %}
+            		 	 {% if product.id == 4651292229710 %}
+						      {% for variant in product.variants %}
+							  	{%if variant.id == 32040592277582 %}
+						<a href="{{variant.url}}">
+							<img src="{{'Stage1-3PK-Soap.jpg' | asset_url}}" alt="product">
+							<div class="product-info">
+								<p class="product-name">{{ product.title }}<br />{{variant.title}}</p>
+								<p class="product-price">{{ variant.price | money }}</p>
+							</div>
+                          </a>
+								{% endif %}
+								{% endfor %}
+							{% endif %}
+					{% endfor %}
+						
+					</div>
+					
+
+					<div class="image-step image-step-main">
+					{% for product in collections['pack'].products limit:250   %}
+            		  {% if product.id == 4651292229710 %}
+                      	{% for variant in product.variants %}
+							  	{%if variant.id == 32040592244814 %}
+						<a href="{{variant.url}}">
+							<img src="{{'Stage1-SoapBar.jpg' | asset_url}}" alt="product">
+							<div class="product-info">
+								<p class="product-name">{{product.title}}<br/>{{variant.title}}</p>
+								<p class="product-price">{{ variant.price | money }}</p>
+							</div>
+						</a>
+                      		{% endif %}
+							{% endfor %}
+						{% endif %}
+					{% endfor %}
+					</div>
+
+
+					<div class="image-step">
+						{% for product in collections['pack'].products limit:250  %}
+            		 	 {% if product.id == 2358638477390 %}
+						     
+						<a href="{{product.url}}">
+							<img src="{{'Stage1-ShampooBrush.jpg' | asset_url}}" alt="product">
+							<div class="product-info">
+								<p class="product-name">{{ product.title }}</p>
+								<p class="product-price">{{ product.price | money }}</p>
+							</div>
+							</a>	
+							{% endif %}
+					{% endfor %}
+						
+					</div>
+
+				</div>
+				<a href="/collections/stage-1" class="button-step">SHOP STAGE ONE</a>
+			</div>
+
+
+
+
+			<div class="stage-section black-section">
+				<h4 class="number-step">STEP TWO</h4>
+				<h3 class="name-step">Repair & Condition</h3>
+				<p class="description-step">The prep work is done and it’s time to get your beard replenished and ready for the day. Our Fortify Intense Conditioner softens but also protects your beard from the toughest of day-to-day activities. When you work hard so does your beard, so let our conditioner go to work for you.</p>
+				<div class="images-step">
+					
+					
+					<div class="image-step">
+					{% for product in collections['pack'].products limit:250  %}
+            		 	 {% if product.id == 4651274731598 %}
+						      {% for variant in product.variants %}
+							  	{%if variant.id ==  32040525627470%}
+						<a href="{{variant.url}}">
+							<img src="{{'Stage2-conditioner-hammerblack.jpg' | asset_url}}" alt="product">
+							<div class="product-info">
+								<p class="product-name">{{ product.title }}<br />{{variant.title}}</p>
+								<p class="product-price">{{ variant.price | money }}</p>
+							</div>
+                          </a>
+								{% endif %}
+								{% endfor %}
+							{% endif %}
+					{% endfor %}
+						
+					</div>
+
+
+
+					<div class="image-step image-step-main">
+					{% for product in collections['pack'].products limit:250  %}
+            		 	 {% if product.id == 4651274731598 %}
+						      {% for variant in product.variants %}
+							  	{%if variant.id ==  32040525430862%}
+                              <a href="{{variant.url}}">
+                                  <img src="{{'Stage2-conditioner-magicblack.jpg' | asset_url}}" alt="product">
+                                  <div class="product-info">
+                                      <p class="product-name">{{ product.title }}<br />{{variant.title}}</p>
+                                      <p class="product-price">{{ variant.price | money }}</p>
+                                  </div>
+                                </a>
+								{% endif %}
+								{% endfor %}
+							{% endif %}
+					{% endfor %}
+						
+					</div>
+
+					
+
+					<div class="image-step">
+					{% for product in collections['pack'].products limit:250  %}
+            		 	 {% if product.id == 4651274731598 %}
+						      {% for variant in product.variants %}
+							  	{%if variant.id == 32040525758542 %}
+                      			<a href="{{variant.url}}">
+                                    <img src="{{'Stage2-conditioner-goldblack.jpg' | asset_url}}" alt="product">
+                                    <div class="product-info">
+                                        <p class="product-name">{{ product.title }}<br />{{variant.title}}</p>
+                                        <p class="product-price">{{ variant.price | money }}</p>
+                                    </div>
+                                  </a>
+								{% endif %}
+								{% endfor %}
+							{% endif %}
+					{% endfor %}
+						
+					</div>
+				</div>
+				<a href="/collections/stage-2" class="button-step">SHOP STAGE TWO</a>
+			</div>
+
+
+
+			<div class="stage-section white-section">
+				<h4 class="number-step">STEP THREE</h4>
+				<h3 class="name-step">Nourish & Enhance</h3>
+				<p class="description-step">Your beard is repaired and set up for success but there’s more work to be done, Boss. A clean and repaired beard is the perfect match for our Jelly Beard Oil which nourishes and enhances growth. Its all-natural ingredients fight beard itch and will help you grow a beard that feels as good as it looks.</p>
+				<div class="images-step">
+					
+					
+					<div class="image-step">
+					{% for product in collections['pack'].products limit:250 %}
+            			  {% if product.id == 4651326636110 %}
+                      		{% for variant in product.variants %}
+							  	{%if variant.id ==  32040680882254 %}
+                                  <a href="{{variant.url}}">
+                                      <img src="{{'Stage3-BossBoster-Supplement.jpg' | asset_url}}" alt="product">
+                                      <div class="product-info">
+                                          <p class="product-name">{{product.title}}<br/>{{variant.title}}</p>
+                                          <p class="product-price">{{ variant.price | money }}</p>
+                                      </div>
+                                  </a>
+                                {% endif %}
+                        {% endfor %}
+						{% endif %}
+					{% endfor %}
+					</div>
+
+
+					<div class="image-step image-step-main">
+					{% for product in collections['pack'].products limit:250 %}
+            			  {% if product.id == 4787993509966 %}
+                      		{% for variant in product.variants %}
+							  	{%if variant.id ==  32469459107918 %}
+                                  <a href="{{variant.url}}">
+                                      <img src="{{'Stage3-BeardOil-RoyalOud-Scent.jpg' | asset_url}}" alt="product">
+                                      <div class="product-info">
+                                          <p class="product-name">{{ product.title }}<br />{{variant.title}}</p>
+                                          <p class="product-price">{{ variant.price | money }}</p>
+                                      </div>
+                                  </a>
+                      			{% endif %}
+                      		{% endfor %}
+						{% endif %}
+					{% endfor %}
+					</div>
+
+
+
+					<div class="image-step">
+                  	{% for product in collections['pack'].products limit:250 %}
+            		 	 {% if product.id == 4650868670542 %}
+						      {% for variant in product.variants %}
+							  	{%if variant.id ==  32039624769614 %}
+                      			<a href="{{variant.url}}">
+                                  <img src="{{'Stage3-JellyBeardOil-Naked-Scent.jpg' | asset_url}}" alt="product">
+                                  <div class="product-info">
+                                      <p class="product-name">{{ product.title }}<br />{{variant.title}}</p>
+                                      <p class="product-price">{{ variant.price | money }}</p>
+                                  </div>
+                                  </a>
+								{% endif %}
+								{% endfor %}
+							{% endif %}
+					{% endfor %}
+						
+					</div>
+				</div>
+				<a href="/collections/stage-3" class="button-step">SHOP STAGE THREE</a>
+			</div>
+
+			<div class="stage-section black-section">
+				<h4 class="number-step">STEP FOUR</h4>
+				<h3 class="name-step">Tame & Protect</h3>
+				<p class="description-step">You’ve put in the work and now its time to reap the rewards. Our Relaxing Beard Balm replenishes dry beards with strengthening natural oils and butters all while taming those pesky flyways. Keep your beard soft and styled all day long with Bossman.</p>
+				<div class="images-step">
+
+
+					<div class="image-step">
+					{% for product in collections['pack'].products limit:250 %}
+            		 	 {% if product.id == 4651237277774 %}
+						      {% for variant in product.variants %}
+							  	{%if variant.id ==  32040435810382 %}
+						<a href="{{variant.url}}">
+							<img src="{{'Stage4-Beard-Balm-Hammer.jpg' | asset_url}}" alt="product">
+							<div class="product-info">
+								<p class="product-name">{{ product.title }}<br />{{variant.title}}</p>
+								<p class="product-price">{{ variant.price | money }}</p>
+							</div>
+                          </a>
+								{% endif %}
+								{% endfor %}
+							{% endif %}
+					{% endfor %}
+						
+					</div>
+
+
+
+
+					<div class="image-step image-step-main">
+					{% for product in collections['pack'].products limit:250  %}
+              			{% if product.id == 4651189403726 %}
+                      		 {% for variant in product.variants %}
+							  	{%if variant.id ==  32040283045966 %}
+                                <a href="{{variant.url}}">
+                                    <img src="{{'Stage4-Beard-Pomade-Stagecoach.jpg' | asset_url}}" alt="product">
+                                    <div class="product-info">
+                                        <p class="product-name">{{ product.title }}<br />{{variant.title}}</p>
+                                        <p class="product-price">{{ variant.price | money }}</p>
+                                    </div>
+                                </a>
+                      			{% endif %}
+                      		{% endfor %}
+						{% endif %}
+					{% endfor %}
+					</div>
+
+
+
+
+					<div class="image-step">
+					{% for product in collections['pack'].products limit:250  %}
+            		 	 {% if product.id == 4651189403726 %}
+						      {% for variant in product.variants %}
+							  	{%if variant.id ==  32040300675150 %}
+						<a href="{{variant.url}}">
+							<img src="{{'Stage4-Beard-Pomade-Magicblack.jpg' | asset_url}}" alt="product">
+							<div class="product-info">
+								<p class="product-name">{{ product.title }}<br />{{variant.title}}</p>
+								<p class="product-price">{{ variant.price | money }}</p>
+							</div>
+                          </a>
+								{% endif %}
+								{% endfor %}
+							{% endif %}
+					{% endfor %}
+						
+					</div>
+				</div>
+
+
+				<a href="/collections/stage-4" class="button-step">SHOP STAGE FOUR</a>
+			</div>
+
+			<div class="stage-bottom-block">
+				<div class="banner">
+					<div class="text-holder">
+						<h3>KNOCK OUT ALL<br>FOUR STAGES</h3>
+						<a href="/collections/beard-grooming-kits" target="_blank">SHOP PACKAGES</a>
+					</div>
+					<div class="image-holder">
+						<img src="{{'BigBossKit-KnockOutBanner.png' | asset_url}}" alt="bottom image">
+					</div>
+				</div>
+			</div>

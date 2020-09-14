@@ -1,0 +1,52 @@
+{% assign variant = product.selected_or_first_available_variant %}
+
+{% assign swatch = product-swatch %}
+{% assign option_index = 0 %}
+
+{% assign value = variant.options[option_index] %}
+
+<div class="scent-descriptions" {% if product.id == 4550072467534 or product.id == 4549993103438 or product.id == 3887260663886 %}
+style="display:none;"{% endif %}  {% for tag in product.tags %}{% if tag contains 'noscentdescription' %}style="display:none;"{% endif %}{% endfor %}>
+  
+  <div class="scenthover-description hammer-description hammer-color {% if value == 'Hammer' %}active default-active{% endif %}" data-value="Hammer">
+    <span>Hammer</span><br />
+    Lavender / Vanilla / Geranium / Patchouli
+   </div> 
+   
+  <div class="scenthover-description magic-description magic-color {% if value == 'Magic' %}active default-active{% endif %}" data-value="Magic">
+           <span>Magic</span><br />
+		 Vanilla / Sandalwood / Bergamot / Frankincense/ Patchouli
+   </div>   
+  
+  <div class="scenthover-description stagecoach-description stagecoach-color {% if value == 'Stagecoach' %}active default-active{% endif %}" data-value="Stagecoach">
+           <span>Stagecoach</span><br />
+		 Fine leather / Sweet tobacco / Aged bourbon
+   </div>
+  
+  <div class="scenthover-description gold-description gold-color {% if value == 'Gold' %}active default-active{% endif %}" data-value="Gold">
+           <span>Gold</span><br />
+		 Lemon / Lavender / Bergamot / Cedarwood / Spruce Vetiver / Rosemary / Saffron / Sandalwood
+   </div>
+  
+  <div class="scenthover-description naked-description naked-color {% if value == 'Naked' %}active default-active{% endif %}" data-value="Naked">
+           <span>Naked</span><br />
+		 Unscented
+   </div>
+  
+  <div class="scenthover-description royaloud-description royaloud-color {% if value == 'Royal Oud' %}active default-active{% endif %}" data-value="Royal Oud">
+           <span>Royal Oud</span><br />
+		 Cedarwood / Bergamot / Lemon / Clove / Pepper
+   </div>
+  
+  <div class="scenthover-description gatsby-description thegatsby-color {% if value == 'The Gatsby' %}active default-active{% endif %}" data-value="The Gatsby">
+           <span>The Gatsby</span><br />
+		 Orange / Lemon / Patchouli
+   </div>
+  
+  <div class="scenthover-description vetiver-description vetiverx-color {% if value == 'Vetiver X' %}active default-active{% endif %}" data-value="Vetiver X">
+           <span>Vetiver X</span><br />
+		 Bergamot / Vanilla / Cedarwood
+   </div>
+  
+ </div>
+

@@ -1,0 +1,49 @@
+
+	<div class="kit-stage-slider">
+		{% for block in section.blocks %}
+		<div class="kit-slide-item">
+			<a href="{{block.settings.stage_link}}">{{block.settings.stage_option}}</a>
+			<div class="kit-slide-content">
+				<h3>{{block.settings.stage_title}}</h3>
+				<p>{{block.settings.stage_content}}</p>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+
+{% schema %}
+{
+	"name": "Stage Slide",
+	"class": "kit-stage-slide",
+	"settings": [],
+	"blocks": [
+		{
+			"name": "Item",
+			"type": "item",
+			"settings": [
+				{
+					"type": "url",
+					"id": "stage_link",
+					"label": "Stage Link"
+				},
+				{
+					"type": "text",
+					"id": "stage_option",
+					"label": "Stage Option"
+				},
+				{
+					"type": "text",
+					"id": "stage_title",
+					"label": "Stage Title"
+				},
+				{
+					"type": "textarea",
+					"id": "stage_content",
+					"label": "Stage Content"
+				}
+			]
+		}
+	]
+}
+{% endschema %}

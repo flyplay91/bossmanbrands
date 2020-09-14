@@ -1,0 +1,50 @@
+<div class="custom-container">
+    <div class="custom-wrapper get-help-wrap">
+        <a href="{{ section.settings.button_url }}" class="c-btn">{{ section.settings.button_text }}</a>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Bottom",                     
+    "settings": [
+
+	  {
+		"id": "button_text",
+		"type": "text",
+		"label": "Button Text",
+		"default": "Get Help"
+	  },
+	  {
+		"id": "button_url",
+		"type": "url",
+		"label": "Button Url"
+      }
+
+	]
+  }
+{% endschema %}
+
+<style type="text/css">
+  .get-help-wrap {
+    margin: 100px auto;
+    text-align: center;
+  }
+  .get-help-wrap .c-btn {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    width: 238px;
+	height: 52px;
+    line-height: 2.5;
+  }
+  @media (max-width: 576px) {
+    .get-help-wrap {
+    	margin: 50px auto;
+  	}
+  }
+  
+</style>
+
+{% javascript %}
+{% endjavascript %}

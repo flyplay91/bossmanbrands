@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+    {{ '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' | script_tag }}
+	{{ 'custom-checkout.scss.css' | asset_url | stylesheet_tag }}
+    {% comment %}{{ 'custom-checkout.js' | asset_url | script_tag }}{% endcomment %}
+  
+  {% include 'shogun-head' %}
+</head>
+  <body>
+
+    {{ skip_to_content_link }}
+
+    <div class="banner" data-header>
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </div>
+
+    {{ order_summary_toggle }}
+
+    <div class="content" data-content>
+      <div class="wrap">
+          <div class="custom-breadcrumb">
+          {{ breadcrumb }}
+          </div>
+      </div>
+      <div class="wrap">
+        <div class="main" role="main">
+          <div class="main__header">
+            {{ content_for_logo }}       
+            {% comment %}{{ alternative_payment_methods }}{% endcomment %}
+          </div>
+
+          {% comment %}
+          <div class="timerarea">
+              <div class="imagetimer">
+              <img src="https://cdn.shopify.com/s/files/1/2283/7011/files/flame-in-cart_2018.png" class="imageinnertimer">
+              </div>
+              <div class="timertext">An item you ordered is in high demand. We have reserved you order for <span id="timertime"></span> minutes!</div>
+          </div>
+		  {% endcomment %}
+          
+          <div class="main__content">
+            {{ content_for_layout }}
+          </div>
+          <div class="main__footer">
+            {{ content_for_footer }}
+          </div>
+        </div>
+        <div class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+            <!-- WHY US - START -->
+            <div class="why-us">
+                <div class="why-us-title">
+                    <span>Why Buy From Us?</span>
+                </div>
+                <div class="why-us-row">
+                    <div class="why-us-img">
+                        <img src="https://cdn.shopify.com/s/files/1/2283/7011/files/90-day_2018.png">
+                    </div>
+                    <div class="why-us-desc">
+                        <div class="why-us-subtitle">100% Satisfaction Guarantee </div>
+                        <div class="why-us-desc1">If You are not 100% satisfied with our products.  We will issue a full refund. No questions asked.</div>
+                    </div>
+                </div>
+                <div class="why-us-row">
+                    <div class="why-us-img"><img src="https://cdn.shopify.com/s/files/1/2283/7011/files/cob-badge-fast-delivery_2x_81b6041a-138e-4dc9-a325-78d1625059ce.png"></div>
+                    <div class="why-us-desc">
+                        <div class="why-us-subtitle">Only Quality Beard Care Products</div>
+                        <div class="why-us-desc1">Making customers happy since 2014.</div>
+                    </div>
+                </div>
+            </div>
+            <!--  WHY US - END -->
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{ tracking_code }}
+  </body>
+</html>

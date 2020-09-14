@@ -1,0 +1,85 @@
+<div class="home row beardcarepackages">
+  <div class="section_titles">
+    <h3>Beard Care Packages</h3>
+    <a href="/collections/beard-care" class="section_link"><span>Shop All</span></a>
+  </div>
+
+  <div id="beard-packages">
+    <div class="package-wrapper">
+      {%- for block in section.blocks -%}
+        {% assign product_handle = block.settings.product %}
+        {% assign product = all_products[product_handle] %}
+      {% assign variant_index = block.settings.index | plus: 0 %}
+    	{% assign varant_product = product.variants[variant_index] %}
+        {% assign product_image =  varant_product | img_url: '1000x' %}
+
+        <div class="package">
+          <div class="package-img">
+            <a href="{{ varant_product.url }}">
+              <picture>
+              {%- comment -%}
+                DESKTOP -- we're targeting range of widths here
+                  1280-1600px screen = 1600px image
+                  1601-1920px screen = 1920px image
+                  >1920px screen     = 2560px image
+              {%- endcomment -%}
+              <source media="(min-width: 1601px)" srcset="{{ varant_product | img_url: '700x' }} 1x, {{ varant_product | img_url: '700x', scale: 2 }} 2x">
+              <source media="(min-width: 1280px)" srcset="{{ varant_product | img_url: '500x' }} 1x, {{ varant_product | img_url: '500x', scale: 2 }} 2x">
+
+              {%- comment -%}
+                TABLET -- 768px & 1024px (we're being very specific here)
+              {%- endcomment -%}
+              <source media="(min-width: 1024px)" srcset="{{ varant_product | img_url: '400x' }} 1x, {{ varant_product | img_url: '400x', scale: 2 }} 2x">
+              <source media="(min-width: 768px)"  srcset="{{ varant_product | img_url: '300x' }} 1x, {{ varant_product | img_url: '300x', scale: 2 }} 2x">
+
+              {%- comment -%}
+                MOBILE -- 414px max because it's the widest among the most popular screen widths
+              {%- endcomment -%}
+              <img
+                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                srcset="{{ varant_product | img_url: '414x' }} 1x, {{ varant_product | img_url: '414x', scale: 2 }} 2x"
+                alt="{{ varant_product.image.alt }}"
+                class="img-responsive lazyload"
+              >
+            </picture>
+            </a>
+          </div>
+          <h4><a href="{{ varant_product.url }}">{{ product.title }}</a></h4>
+          <div class="beardcarepackages-rating-block">
+            {% include 'okendo-reviews-product-rating-summary' %}
+          </div>
+          <a href="{{ varant_product.url }}"><span>Shop Now</span></a>
+          </div>
+        {%- endfor -%}
+
+	</div>
+  </div>
+
+</div>
+
+{% schema %}
+{
+    "name": "Beard Care Packages",
+    "settings": [
+        
+    ],
+    "blocks": [
+        {
+            "type": "product",
+            "name": "Product",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Product"
+                },
+                {
+                  "type": "text",
+                  "id": "index",
+                  "label": "Index"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

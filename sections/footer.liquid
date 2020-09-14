@@ -1,0 +1,123 @@
+<footer class="footer">
+  <div class="brands">
+    <div class="container">
+      <div class="brands_content">
+        {% for i in (1..7) %}
+        	{% assign number = i | downcase  %}
+        	{% assign brand = "brand" | append: number  %}
+        	<img src="{{ brand | append: '.png' | asset_url }}" alt="Brand {{i}}">
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="footer_menu">
+    <div class="container">
+      <div class="footer_menu_content">
+        <div class="social">
+			{% include 'social-menu' %}
+        </div>
+        <div class="footer_menu_links">
+          <div class="list_link">
+            <ul>
+				{% include 'footer-menu' %}
+            </ul>
+          </div>
+          {% comment %}{% include 'search-bar' %}{% endcomment %}
+        </div>
+        <div class="bossman">
+          <a href="https://bossmanbrand.com" class="logo">Bossman</a>
+          {% comment %}<!--p class="bossman_callus">Questions& Give us a call:</p-->
+          <!--p class="phone">877-579-3620</p-->{% endcomment %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <a href="https://bossmanbrand.com">bossmanbrand.com</a>
+    COPYRIGHT © 2020, BOSSMAN. ALL RIGHTS RESERVED.
+  </div>
+</footer>
+
+
+<script>
+  $(document).ready(function() {
+  $('.video_content').flexslider({
+    useCSS: false,
+    animation: "slide",
+    controlNav: true,
+    animationLoop: true,
+    maxItems: 2,
+    minItems: 2,
+    itemWidth: 456
+  });
+     if(typeof sessionStorage.show_popup == 'undefined') {
+        $('.mobile-add-confirm').show(function() {
+            sessionStorage.show_popup = 1; 
+        });
+    }
+    
+    
+
+
+  });
+    $(window).load(function() {
+// 		var zoomBoxes = document.querySelectorAll('.zoom_image');
+// zoomBoxes.forEach(function(image) {
+//   var imageCss = window.getComputedStyle(image, false),
+//     imageUrl = imageCss.backgroundImage
+//                        .slice(4, -1).replace(/['"]/g, '');
+
+//   var imageSrc = new Image();
+//   imageSrc.onload = function() {
+//     var imageWidth = imageSrc.naturalWidth,
+//         imageHeight = imageSrc.naturalHeight,
+//         ratio = imageHeight / imageWidth;
+
+//     var percentage = ratio * 100 + '%';
+//     image.style.paddingBottom = percentage;
+
+//     image.onmousemove = function(e) {
+//       var boxWidth = image.clientWidth,
+//           x = e.pageX - this.offsetLeft,
+//           y = e.pageY - this.offsetTop,
+//           xPercent = x / (boxWidth / 100) + '%',
+//           yPercent = y / (boxWidth * ratio / 100) + '%';
+
+//       Object.assign(image.style, {
+//         backgroundPosition: xPercent + ' ' + yPercent,
+//         backgroundSize: imageWidth + 'px'
+//       });
+//     };
+
+//     image.onmouseleave = function(e) {
+//       Object.assign(image.style, {
+//         backgroundPosition: 'center',
+//         backgroundSize: 'cover'
+//       });
+//     };
+//   }
+//   imageSrc.src = imageUrl;
+// });
+    });
+
+  
+</script>
+
+  {% comment %}
+<a href="/cart" class="cart_block">
+  <span class="cart_block_wrap">
+    <span class="cart_img"></span>
+    <span class="count">Cart (<span class="number">{{ cart.item_count }}</span>)</span>
+  </span>
+</a>
+
+  {% endcomment %}
+{% comment %}
+<div tabindex="-1" class="mobile-add-confirm ajaxified-cart-feedback success" style="display: none"><i class="fa fa-window-close" aria-hidden="true"></i>
+  <img src="https://cdn.shopify.com/s/files/1/2283/7011/files/logo-checkout.png?10857821783734699878" style="margin:0 auto;text-align:center;"></img>
+<hr>
+<div class="ny-shipping">
+    <p>Delivers made after the following dates will not be delivered by Christmas.</p><p>Dec.14th is the cut off for Standard Shipping, Dec 19th is for expedited shipping, and the 20th is for FedEx 2 Day shipping. Thanks!</p>
+</div>
+</div>
+{% endcomment %}

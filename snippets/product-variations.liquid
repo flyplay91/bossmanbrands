@@ -1,0 +1,538 @@
+          <style>
+            .scent-variations {display: flex;width: 37%;float: right;text-align: left;padding-bottom: 20px;flex-wrap: wrap;}
+            .scent-option {display: flex;flex-direction:column;text-align: center;padding-right: 8px;}
+            .scent-option:last-child{padding-right: 0px;}
+            .scent-option img{border:1.5px solid #999999;border-radius:30px;}
+            .scent-option img.active{border-color:#05901f;}
+            .scent-option span{color:#000;font-size: 12px;margin-top: -10px;display: flex;flex-direction: column;}
+            .scent-variations-text{color:#000;width:100%;padding-bottom:5px;font-weight:bold;}
+            @media all and (max-width:640px){.scent-variations{width:100%;justify-content: center;}.scent-variations-text{text-align: center;}}
+          </style>
+
+
+{% comment %}Jelly beard oil - 1 pack{% endcomment %}
+{% if product.id == 10316648841 or product.id == 1420758253646 or product.id == 1420758220878 or product.id == 1420758188110 or product.id == 1420758155342 or product.id == 1420758319182 %}
+<div class="scent-variations">
+<span class="scent-variations-text">Choose Your Scent:</span>
+  {% assign current_product = product.id %}
+  {% if product.url contains '/products' %}
+    {% for product in collections['jelly-beard-oil'].products %}
+    {% if product.tags contains 'Jelly beard oil' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+  {% else %}
+  {% for product in collection.products %}
+    {% if product.tags contains 'Jelly beard oil' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+  {% endif %}
+</div>
+{% endif %}
+
+{% comment %}Jelly beard oil - 3 pack{% endcomment %}
+{% if product.id == 58926956553 or product.id == 58930331657 or product.id == 58930495497 or product.id == 1409892909134 or product.id == 58930561033 %}
+<div class="scent-variations">
+<span class="scent-variations-text">Choose Your Scent:</span>
+  {% assign current_product = product.id %}
+  {% for product in collection.products %}
+    {% if product.tags contains 'jelly beard oil 3 pack' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
+
+{% comment %}Beard oil - 1 pack{% endcomment %}
+{% if product.id == 1420740689998 or product.id == 10316802825 %}
+<div class="scent-variations">
+<span class="scent-variations-text">Choose Your Scent:</span>
+  {% assign current_product = product.id %}
+  {% for product in collection.products %}
+    {% if product.tags contains 'beard oil' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
+
+{% comment %}Beard oil - 3 pack{% endcomment %}
+{% if product.id == 1420740821070 or product.id == 1420740919374 %}
+<div class="scent-variations">
+<span class="scent-variations-text">Choose Your Scent:</span>
+  {% assign current_product = product.id %}
+  {% for product in collection.products %}
+    {% if product.tags contains 'beard oil 3 pack' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
+
+{% comment %}BIG BOSS{% endcomment %}
+{% if product.id == 10316605257 or product.id == 1420738461774 or product.id == 1420737544270 or product.id == 1420737282126 or product.id == 1420736069710 %}
+<div class="scent-variations">
+<span class="scent-variations-text">Choose Your Scent:</span>
+  {% assign current_product = product.id %}
+  {% paginate collections.all.products by 1000 %}
+  {% for product in collections.all.products %}
+    {% if product.tags contains 'BIG BOSS' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+  {% endpaginate %}
+</div>
+{% endif %}
+
+{% comment %}Beard Balm - 1 pack{% endcomment %}
+{% if product.id == 58853654537 or product.id == 1420746293326 or product.id == 1420746391630 or product.id == 1420746358862 or product.id == 1420746326094 or product.id == 10316773449 %}
+<div class="scent-variations">
+<span class="scent-variations-text">Choose Your Scent:</span>
+  {% assign current_product = product.id %}
+  {% paginate collections.all.products by 1000 %}
+  {% for product in collections.all.products %}
+    {% if product.tags contains 'bossman relaxing beard balm' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+  {% endpaginate %}
+</div>
+{% endif %}
+
+{% comment %}Beard Balm - 3 pack{% endcomment %}
+{% if product.id == 58482393097 or product.id == 58843004937 or product.id == 58847821833 or product.id == 1409892614222 or product.id == 58849394697 %}
+<div class="scent-variations">
+<span class="scent-variations-text">Choose Your Scent:</span>
+  {% assign current_product = product.id %}
+  {% paginate collections.all.products by 1000 %}
+  {% for product in collections.all.products %}
+    {% if product.tags contains 'relaxing beard balm 3 pack' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+  {% endpaginate %}
+</div>
+{% endif %}
+
+
+{% comment %}Cleansing Care Package{% endcomment %}
+{% if product.id == 1420748783694 or product.id == 1420748750926 or product.id == 1420748718158 or product.id == 1420748685390 or product.id == 10316617481 %}
+<div class="scent-variations">
+<span class="scent-variations-text">Choose Your Scent:</span>
+  {% assign current_product = product.id %}
+  {% paginate collections.all.products by 1000 %}
+  {% for product in collections.all.products %}
+    {% if product.tags contains 'Cleansing Care Package' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+  {% endpaginate %}
+</div>
+{% endif %}
+
+
+{% comment %}Colotion - 3 Pack{% endcomment %}
+{% if product.id == 2387640221774 or product.id == 2387640451150 or product.id == 2387641598030 %}
+<div class="scent-variations">
+<span class="scent-variations-text">Choose Your Scent:</span>
+  {% assign current_product = product.id %}
+  {% paginate collections.all.products by 1000 %}
+  {% for product in collections.all.products %}
+    {% if product.tags contains 'colotion 3 pack' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+  {% endpaginate %}
+</div>
+{% endif %}
+
+
+{% comment %}Colotion - 1 Pack{% endcomment %}
+{% if product.id == 2387886997582 or product.id == 2387638779982 or product.id == 2387638353998 or product.id == 2387639304270 %}
+<div class="scent-variations">
+<span class="scent-variations-text">Choose Your Scent:</span>
+  {% assign current_product = product.id %}
+  {% paginate collections.all.products by 1000 %}
+  {% for product in collections.all.products %}
+    {% if product.tags contains 'colotion' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+  {% endpaginate %}
+</div>
+{% endif %}
+
+
+{% comment %}Complete Facial Hair Care Package{% endcomment %}
+{% if product.id == 1420750651470 or product.id == 1420750618702 or product.id == 1420750585934 or product.id == 1420750553166 or product.id == 10316787785 %}
+<div class="scent-variations">
+<span class="scent-variations-text">Choose Your Scent:</span>
+  {% assign current_product = product.id %}
+  {% paginate collections.all.products by 1000 %}
+  {% for product in collections.all.products %}
+    {% if product.tags contains 'Complete Package' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+  {% endpaginate %}
+</div>
+{% endif %}
+
+
+{% comment %}Essentials Care Package{% endcomment %}
+{% if product.id == 1420751994958 or product.id == 1420751962190 or product.id == 1420751896654 or product.id == 1420751863886 or product.id == 10316798537 %}
+<div class="scent-variations">
+<span class="scent-variations-text">Choose Your Scent:</span>
+  {% assign current_product = product.id %}
+  {% paginate collections.all.products by 1000 %}
+  {% for product in collections.all.products %}
+    {% if product.tags contains 'Essentials Care package' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+  {% endpaginate %}
+</div>
+{% endif %}
+
+
+{% comment %}Fortify Intense Conditioner - 1 Pack{% endcomment %}
+{% if product.id == 58933116937 or product.id == 1420753567822 or product.id == 1420753600590 or product.id == 1420753633358 or product.id == 1420753666126 or product.id == 10316759689 %}
+<div class="scent-variations">
+<span class="scent-variations-text">Choose Your Scent:</span>
+  {% assign current_product = product.id %}
+  {% paginate collections.all.products by 1000 %}
+  {% for product in collections.all.products %}
+    {% if product.tags contains 'Fortify Intense Beard Conditioner' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+  {% endpaginate %}
+</div>
+{% endif %}
+
+
+{% comment %}Fortify Intense Conditioner - 3 Pack{% endcomment %}
+{% if product.id == 58932461577 or product.id == 58932658185 or product.id == 58932822025 or product.id == 1409893367886 or product.id == 58932887561 %}
+<div class="scent-variations">
+<span class="scent-variations-text">Choose Your Scent:</span>
+  {% assign current_product = product.id %}
+  {% paginate collections.all.products by 1000 %}
+  {% for product in collections.all.products %}
+    {% if product.tags contains 'beard conditioner 3 pack' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+  {% endpaginate %}
+</div>
+{% endif %}
+
+
+{% comment %}Reload Package{% endcomment %}
+{% if product.id == 1420761169998 or product.id == 1420761137230 or product.id == 1420761104462 or product.id == 1420761202766 or product.id == 120352538633 %}
+<div class="scent-variations">
+<span class="scent-variations-text">Choose Your Scent:</span>
+  {% assign current_product = product.id %}
+  {% paginate collections.all.products by 1000 %}
+  {% for product in collections.all.products %}
+    {% if product.tags contains 'reload package' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+  {% endpaginate %}
+</div>
+{% endif %}
+
+{% comment %}Beard pomade - 1 pack{% endcomment %}
+{% if product.id == 4011830214734 or product.id == 4008515240014 or product.id == 4008529985614 or product.id == 4011847090254 or product.id == 4008405925966 or product.id == 4029701259342 %}
+<div class="scent-variations">
+<span class="scent-variations-text">Choose Your Scent:</span>
+  {% assign current_product = product.id %}
+  {% for product in collection.products %}
+    {% if product.tags contains 'beard pomade' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
+
+{% comment %}Beard pomade - 3 Pack{% endcomment %}
+{% if product.id == 4029618028622 or product.id == 4029611933774 or product.id == 4029612785742 or product.id == 4029613408334 or product.id == 4029618880590 %}
+<div class="scent-variations">
+<span class="scent-variations-text">Choose Your Scent:</span>
+  {% assign current_product = product.id %}
+  {% for product in collection.products %}
+    {% if product.tags contains 'beard pomade 3 pack' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
+
+
+{% comment %}The Professional Package - Stagecoach Scent{% endcomment %}
+{% if product.id == 4382834589774 or product.id == 4382850318414 or product.id == 4382847696974 or product.id == 4382853988430 or product.id == 4382852251726 %}
+<div class="scent-variations">
+<span class="scent-variations-text">Choose Your Scent:</span>
+  {% assign current_product = product.id %}
+  {% paginate collections.all.products by 1000 %}
+  {% for product in collections.all.products %}
+    {% if product.tags contains 'the professional package' %}
+            <div class="scent-option">
+              <a href="{{ product.url | within: collection }}">
+                
+              <img src="{{ product.featured_image.src | img_url: '45x' }}" alt="{{ product.title }}" class="{% if current_product == product.id %}active {% endif %}">
+         
+                {% for product_option in product.options_with_values %}
+                  {% for value in product_option.values %}
+                    <span>{{ value }}</span>
+                  {% endfor %}
+                {% endfor %}
+                
+           	  </a>
+  			</div>
+  
+    {% endif %}
+  {% endfor %}
+  {% endpaginate %}
+</div>
+{% endif %}

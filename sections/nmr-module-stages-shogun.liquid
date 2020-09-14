@@ -1,0 +1,88 @@
+<div class="my-32">
+    <div class="mb-10 md:mb-24 px-5">
+        <h2 class="nmr-title text-4xl text-center leading-tight">
+            {{ sectionTitle }}
+        </h2>
+    </div>
+
+    <!-- desktop "tabs" -->
+    <div class="container" id="stages">
+        <div class="flex flex-wrap m-0 md:-mx-5">
+            <div class="w-full mb-5 md:mb-0 md:w-1/3 lg:w-2/5 px-5">
+                <div id="nmr-tabs">
+                    {% for tab in tabs %}
+                        <div key="{{ forloop.index }}" class="nmr-tab {% if forloop.first == true %}nmr-active{% endif %} flex flex-wrap items-center mb-10">
+                            <div class="nmr-tab-number flex flex-wrap items-center justify-center">
+                                <div class="text-4xl">{{ forloop.index }}</div>
+                            </div>
+                            <div class="nmr-tab-title">
+                                <h1 class="text-2xl bg-white px-5">{{ tab.title }}</h1>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="w-full md:w-2/3 lg:w-3/5 px-5">
+                <div id="nmr-info-boxes">
+                    {% for tab in tabs %}
+                        <div key="{{ forloop.index }}" class="nmr-info-box {% unless forloop.first == true %}hidden{% endunless %}">
+                            <div class="content p-8 md:p-0">
+                                <div class="w-full mb-20 bg-white">
+                                    <h1 class="block md:hidden text-4xl nmr-title mb-5">{{ tab.title }}</h1>
+                                    <p class="text-lg font-light mb-10">{{ tab.content }}</p>
+                                    <a class="nmr-classy-butt inline-block pl-12 pr-5 py-3 text-white font-bold text-xs md:text-base tracking-widest leading-none rounded shadow hover:shadow-lg uppercase" href="{{ item.url }}">
+                                        <div class="stripe bg-red-700"></div>
+                                        <div class="stripe2 bg-gray-700"></div>
+                                        Shop All Stage
+                                        {{ forloop.index }}
+                                        Products
+                                        <i class="fas fa-arrow-right ml-2" style="font-size: inherit"></i>
+                                    </a>
+                                </div>
+                                <div class="w-full">
+                                    <div class="flex flex-wrap justify-center -mx-4">
+                                        <div class="w-full sm:w-1/2 md:w-1/3 px-4">
+                                            <div class="combo mb-10 md:mb-0">
+                                                <div class="nmr-image-square bg-center bg-contain bg-no-repeat" data-bg="url({{ 'nmr-essentials-care-package.png' | asset_img_url: 'large' }})"></div>
+                                                <div class="mt-5 mb-2 tracking-widest uppercase font-bold text-sm text-center leading-snug">ESSENTIALS CARE PACKAGE - NAKED SCENT</div>
+                                                <div class="text-sm font-bold flex justify-center items-center">
+                                                    <div class="text-red-500 mr-2">$35.00
+                                                        <i class="fas fa-arrow-circle-right" style="color: #C0964A !important"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-full sm:w-1/2 md:w-1/3 px-4">
+                                            <div class="combo mb-10 md:mb-0">
+                                                <div class="nmr-image-square bg-center bg-contain bg-no-repeat" data-bg="url({{ 'nmr-facial-hair-care.png' | asset_img_url: 'large' }})"></div>
+                                                <div class="mt-5 mb-2 tracking-widest uppercase font-bold text-sm text-center leading-snug">COMPLETE FACIAL HAIR CARE PACKAGE - stagecoach SCENT</div>
+                                                <div class="text-sm font-bold flex justify-center items-center">
+                                                    <div class="text-red-500 mr-2">$44.95
+                                                        <i class="fas fa-arrow-circle-right" style="color: #C0964A !important"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-full sm:w-1/2 md:w-1/3 px-4">
+                                            <div class="combo mb-10 md:mb-0">
+                                                <div class="nmr-image-square bg-center bg-contain bg-no-repeat" data-bg="url({{ 'nmr-reload-package.png' | asset_img_url: 'large' }})"></div>
+                                                <div class="mt-5 mb-2 tracking-widest uppercase font-bold text-sm text-center leading-snug">RELOAD PACKAGE - STAGECOACH SCENT</div>
+                                                <div class="text-sm font-bold flex justify-center items-center">
+                                                    <div class="text-red-500 mr-2">$39.95
+                                                        <i class="fas fa-arrow-circle-right" style="color: #C0964A !important"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end desktop "tabs" -->
+</div>

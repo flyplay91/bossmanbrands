@@ -1,0 +1,29 @@
+<!-- {% if product.metafields.accentuate.show_combos_module %} -->
+<div class="py-24 bg-cover bg-center bg-no-repeat">
+    <div class="mb-10 px-5">
+        <h2 class="nmr-title text-4xl text-center leading-tight mb-5">Everything you need, in one package.</h2>
+    </div>
+    <div class="container">
+        <div class="flex flex-wrap justify-center m-0 sm:-mx-8">
+            {% for combo in collections[product.metafields.accentuate.combos_collection].products limit:4 %}
+                <div class="w-full sm:w-1/2 md:w-1/4 px-8">
+                    {% include 'nmr-product-card' with product: combo %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- {% endif %} -->
+
+{% schema %}
+
+{
+    "name": "NMR Module Combos",
+    "tag": "section"
+}
+
+{% endschema %}
+
+<!-- 
+    - collection
+ -->

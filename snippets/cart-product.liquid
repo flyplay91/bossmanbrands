@@ -1,0 +1,52 @@
+{% capture bb_checkout_link %}{% render 'bb', type: 'bb_checkout_link' %}{% endcapture %}
+
+
+{% assign on_sale = false %}
+{% if product.compare_at_price > product.price %}
+  {% assign on_sale = true %}
+{% endif %}
+
+<div class="cart_main_grid__box">
+  <div class="img">
+    <a href="{{ product.url | within: collection }}"><img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.title }}"></a>
+  </div>
+  <div class="reviews">
+  {% comment %} Judge.me content removed from here {% endcomment %}
+  </div>
+  <a href="{{ product.url | within: collection }}"><h3>{{ product.title }}</h3></a>
+  <span class="price_box">
+    {% if on_sale %}
+      <span class="sale">{{ product.compare_at_price | money }}</span>
+      <span class="price">{{ product.price | money }}</span>
+    {% else %}
+      <span class="price">{{ product.price | money }}</span>
+    {% endif %}
+  </span>
+ 
+  
+  <form action="{% if bb_checkout_link != blank %}{{ bb_checkout_link }}{% else %}/cart/add{% endif %}" data-productid="{{ product.id }}" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
+
+	{% render 'bb', type: 'cart' %}
+    <select name="id" data-productid="{{ product.id }}" id="productSelect" class="product-single__variants" style="display: none">
+      {% for variant in product.variants %}
+      {% if variant.available %}
+      <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+      {% else %}
+      <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+      {% endif %}
+      {% endfor %}
+    </select>
+    <input type="hidden" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
+    <button type="submit" name="add" id="AddToCart" class="btn">Shop now</button>
+  </form>
+  
+  <a href="{{ product.url | within: collection }}" id="AddToCart" class="btn cartbutton"> Shop Now </a>
+</div>
+
+<style>
+  .main .cart.empty .cart_main_grid__box h3 {display: inline-block; height: auto;}
+  .main .cart.empty .cart_main_grid__box form {display: block; width: 100%}
+  .main .cart.empty .cart_main_grid__box form .btn {width: 100%}
+  .main .cart.empty .cart_main_grid__box .price_box {height: auto;}
+  .jdgm-star{font-family: 'JudgemeStar'!important;}
+</style>

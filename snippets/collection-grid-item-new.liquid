@@ -1,0 +1,143 @@
+{% assign on_sale = false %}
+{% if product.compare_at_price > product.price %}
+  {% assign on_sale = true %}
+{% endif %}
+{% assign variant = product.selected_or_first_available_variant %}
+
+<div class="product-block product-block--{{ product.id }} {% if product.compare_at_price > product.price %}sale-badge{% endif %}" data-url="{{ product.url }}" data-id="product-block--{{ product.id }}">
+
+    <div class="image-block">
+        <a href="{{ product.url | within: collection }}" title="{{ product.title }}">
+            {% if current_tags %}
+                
+                    {% for variant in product.variants %}
+                        {% assign custom_selector = "" %}
+                        {% if variant.option1 == last_selected_tag %}
+                            {% assign custom_selector = "data-initial-slide-item" %}
+                        {% endif %}
+                        
+                        {% assign selectedVariant = variant %}
+
+                        <div class="variant-image" data-variant-id="{{ selectedVariant.id }}" data-title="{{ selectedVariant.title }}" {{ custom_selector }} data-tag={{ last_selected_tag }}>
+                            {% if variant.image == blank %}
+                                <picture>
+                                    {%- comment -%}
+                                        DESKTOP -- we're targeting range of widths here
+                                          1280-1600px screen = 1600px image
+                                          1601-1920px screen = 1920px image
+                                          >1920px screen     = 2560px image
+                                    {%- endcomment -%}
+                                    <source media="(min-width: 1601px)" srcset="{{ product.images[0] | img_url: '700x' }} 1x, {{ product.images[0] | img_url: '700x', scale: 2 }} 2x">
+                                    <source media="(min-width: 1280px)" srcset="{{ product.images[0] | img_url: '500x' }} 1x, {{ product.images[0] | img_url: '500x', scale: 2 }} 2x">
+
+                                    {%- comment -%}
+                                        TABLET -- 768px & 1024px (we're being very specific here)
+                                    {%- endcomment -%}
+                                    <source media="(min-width: 1024px)" srcset="{{ product.images[0] | img_url: '350x' }} 1x, {{ product.images[0] | img_url: '350x', scale: 2 }} 2x">
+                                    <source media="(min-width: 768px)"  srcset="{{ product.images[0] | img_url: '500x' }} 1x, {{ product.images[0] | img_url: '500x', scale: 2 }} 2x">
+
+                                    {%- comment -%}
+                                        MOBILE -- 414px max because it's the widest among the most popular screen widths
+                                    {%- endcomment -%}
+                                    <img
+                                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                        srcset="{{ product.images[0] | img_url: '414x' }} 1x, {{ product.images[0] | img_url: '414x', scale: 2 }} 2x"
+                                        class="img-responsive lazyload"
+                                        alt="{{ image.alt | escape }}"
+                                      >
+                                </picture>
+                            {% else %}
+                                <picture>
+                                    {%- comment -%}
+                                        DESKTOP -- we're targeting range of widths here
+                                          1280-1600px screen = 1600px image
+                                          1601-1920px screen = 1920px image
+                                          >1920px screen     = 2560px image
+                                    {%- endcomment -%}
+                                    <source media="(min-width: 1601px)" srcset="{{ selectedVariant.image.src | img_url: '700x' }} 1x, {{ selectedVariant.image.src | img_url: '700x', scale: 2 }} 2x">
+                                    <source media="(min-width: 1280px)" srcset="{{ selectedVariant.image.src | img_url: '500x' }} 1x, {{ selectedVariant.image.src | img_url: '500x', scale: 2 }} 2x">
+
+                                    {%- comment -%}
+                                        TABLET -- 768px & 1024px (we're being very specific here)
+                                    {%- endcomment -%}
+                                    <source media="(min-width: 1024px)" srcset="{{ selectedVariant.image.src | img_url: '350x' }} 1x, {{ selectedVariant.image.src | img_url: '350x', scale: 2 }} 2x">
+                                    <source media="(min-width: 768px)"  srcset="{{ selectedVariant.image.src | img_url: '500x' }} 1x, {{ selectedVariant.image.src | img_url: '500x', scale: 2 }} 2x">
+
+                                    {%- comment -%}
+                                        MOBILE -- 414px max because it's the widest among the most popular screen widths
+                                    {%- endcomment -%}
+                                    <img
+                                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                        srcset="{{ selectedVariant.image.src | img_url: '414x' }} 1x, {{ selectedVariant.image.src | img_url: '414x', scale: 2 }} 2x"
+                                        class="img-responsive lazyload"
+                                        alt="{{ image.alt | escape }}"
+                                      >
+                                </picture>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+            {% else %}
+            
+                {% for image in product.images %}
+                    <div>
+                        <picture>
+                            {%- comment -%}
+                                DESKTOP -- we're targeting range of widths here
+                                  1280-1600px screen = 1600px image
+                                  1601-1920px screen = 1920px image
+                                  >1920px screen     = 2560px image
+                            {%- endcomment -%}
+                            <source media="(min-width: 1601px)" srcset="{{ image.src | img_url: '700x' }} 1x, {{ image.src | img_url: '700x', scale: 2 }} 2x">
+                            <source media="(min-width: 1280px)" srcset="{{ image.src | img_url: '500x' }} 1x, {{ image.src | img_url: '500x', scale: 2 }} 2x">
+
+                            {%- comment -%}
+                                TABLET -- 768px & 1024px (we're being very specific here)
+                            {%- endcomment -%}
+                            <source media="(min-width: 1024px)" srcset="{{ image.src | img_url: '350x' }} 1x, {{ image.src | img_url: '350x', scale: 2 }} 2x">
+                            <source media="(min-width: 768px)"  srcset="{{ image.src | img_url: '500x' }} 1x, {{ image.src | img_url: '500x', scale: 2 }} 2x">
+
+                            {%- comment -%}
+                                MOBILE -- 414px max because it's the widest among the most popular screen widths
+                            {%- endcomment -%}
+                            <img
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                srcset="{{ image.src | img_url: '414x' }} 1x, {{ image.src | img_url: '414x', scale: 2 }} 2x"
+                                class="img-responsive lazyload"
+                                alt="{{ product.title }}"
+                              >
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            {% comment %}
+            {% if current_tags[0] %}
+                <img src="{{ selectedVariant.image.src | img_url: '1000x' }}" alt="{{ product.title }}">
+            {% else %}
+                <img src="{{ product.featured_image.src | img_url: '1000x' }}" alt="{{ product.title }}">
+            {% endif %}
+            {% endcomment %}
+
+        </a>
+        
+    </div>
+    <a class="product-review" href="{{product.url}}">
+        {% include 'okendo-reviews-product-rating-summary' %}
+    </a>
+    <h4><a href="{{ product.url }}">{{ product.title }}</a></h4>
+    <p class="price">
+        {% if on_sale %}
+            <span class="current_price">{{ product.price | money }}</span>
+            <span class="sale was_price">{{ product.compare_at_price | money }}</span>
+        {% else %}
+        	<span>{{ product.price | money }}</span>
+        {% endif %}
+    </p>
+
+    {% include 'collection-grid-form-new' %}
+  
+  <div class="collection-add-cart">
+        <input type="hidden" name="select-varaint-id" value="{{variant.id}}">
+        <a class="btn-hover-add" href="javascript: void(0)">Add To Cart</a>
+        
+    </div>
+</div>

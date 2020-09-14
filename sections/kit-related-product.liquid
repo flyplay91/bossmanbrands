@@ -1,0 +1,48 @@
+
+    <div class="kit-featured-blocks">
+        {% for block in section.blocks %}
+        {% assign product_handle = block.settings.product_item %}
+        {% assign product = all_products[product_handle] %}
+        {% assign product_image =  block.settings.product_image | img_url: '500x' %}
+        <div class="kit-featured-block">
+            {% comment %}
+            <a href="{{product.url}}">
+                {% if product.featured_image != blank %}
+                    <img src="{{product.featured_image | img_url : '500x'}}">
+                {% else %}
+                    <img src="{{product_image}}">
+                {% endif %}
+                <label>{{product.title}}</label>
+                <span>{{ product.price | money }}</span>
+            </a>
+            {% endcomment %}
+            {% include 'collection-grid-item-new' %}
+        </div>
+        {% endfor %}
+    </div>
+
+{% schema %}
+{
+    "name": "Kit Featured Products",
+    "class": "kit-featured",
+    "settings": [],
+    "blocks": [
+        {
+            "type": "product",
+            "name": "Product",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "product_item",
+                    "label": "Product"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "product_image",
+                    "label": "Product Image"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

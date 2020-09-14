@@ -1,0 +1,58 @@
+{% assign on_sale = false %}
+{% if product.compare_at_price > product.price %}
+  {% assign on_sale = true %}
+{% endif %}
+
+<div class="products_content_main__grid_box">
+  <a href="{{ product.url }}"><h3>{{ product.title }}</h3></a>
+  <div class="reviews">
+    <a href="{{ product.url }}">
+      {% include 'okendo-reviews-product-rating-summary' %}
+    </a>
+  </div>
+  <div class="price">
+    {% if on_sale %}
+      <span>{{ product.price | money }}</span>
+      <span class="sale">{{ product.compare_at_price | money }}</span>
+    {% else %}
+    	<span>{{ product.price | money }}</span>
+    {% endif %}
+  </div>
+
+  <div class="main">
+    <div class="img">
+      <a href="{{ product.url }}"><img src="{{ product.featured_image.src | img_url: '250x' }}" alt="{{ product.title }}"></a>
+    </div>
+        <form action="/cart/add" data-productid="{{ product.id }}" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
+          
+          
+          <select name="id" data-productid="{{ product.id }}" id="productSelect" class="product-single__variants" {% if product.variants.size > 1 %}{% else %}style="display:none;"{% endif %} >
+            {% for variant in product.variants %}
+                {% if variant.available %}
+                  <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+                {% else %}
+                  <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+                {% endif %}
+            {% endfor %}
+          </select>
+
+          
+          <input type="hidden" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
+          <button type="submit" name="add" id="AddToCart" class="btn show_popup_added">
+            <span>Buy Now</span>
+          </button>
+        </form>
+  </div>
+
+  
+</div>
+
+<style>
+  .products_content_main__grid_box {margin-right: 0}
+  .products_content_main__grid_box h3 {display: inline-block; font-size: 15px; height: auto;}
+  .products_content_main__grid_box .main .img img {height: 137px}
+  .yotpo-clr {display: none; !important}
+  .ro_widget {display: none;}
+  .jdgm-star{font-family: 'JudgemeStar'!important;}
+
+</style>

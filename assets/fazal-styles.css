@@ -1,0 +1,7692 @@
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  max-height: 1000000px;
+}
+
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="text"],
+input[type="password"],
+input[type="file"],
+input[type="submit"],
+textarea {
+  -webkit-appearance: none;
+}
+
+body {
+  margin: 0;
+  font-family: "Proxima Nova Regular", Arial, Helvetica, sans-serif;
+}
+
+#wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  float:left;
+}
+
+#header {
+  padding-top: 35px;
+}
+#header .panel {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  background-color: #c0964a;
+  color: #fff;
+  height: 35px;
+  z-index: 111;
+}
+
+.main-content {
+  background: #efefef;
+  min-height: 600px;
+}
+
+.template-page .main-content,
+.template-product .main-content {
+  background-color: white;
+}
+
+#header .panel .login-block {
+  background-color: #73572b;
+  padding: 0px 40px;
+  font-family: "Proxima Nova Regular";
+  text-align: center;
+  line-height: 35px;
+  width: auto;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#header .panel p {
+  margin:0;
+  padding: 0px 30px;
+  font-family:"Proxima Nova Regular";
+  font-size:13px;
+  text-align:left;
+  width:88%;
+  line-height: 35px;
+  letter-spacing:1px;
+}
+
+#header .panel a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Proxima Nova Regular";
+  font-size: 12px;
+  white-space: nowrap;
+}
+#header .container {
+  max-width: 100%;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: #000;
+  color: #fff;
+  align-items: center;
+  position: relative;
+}
+
+/* = Product FAQ Content = */
+.tabset > input[type="radio"] {
+  position: absolute;
+  left: -200vw;
+}
+
+.tabset .tab-panel {
+  display: none;
+}
+
+.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+.tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+  display: block;
+}
+
+.tabset > label {
+  position: relative;
+  display: inline-block;
+  padding: 15px 15px 10px;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+/*
+.tabset > label::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  width: 66px;
+  height: 3px;
+  background: #8d8d8d;
+}*/
+
+/*.tabset > label:hover,
+.tabset > input:focus + label {
+  color: #06c;
+}*/
+
+.tabset > label:hover::after,
+.tabset > input:focus + label::after,
+.tabset > input:checked + label::after {
+  background: #c0964a;
+}
+
+.tabset > input:checked + label {
+  border-bottom: 3px solid #c0964a;
+}
+
+.tab-panel {
+  padding: 30px 0;
+}
+
+.product-faq-content {
+  padding: 50px 0;
+  background-color: #f8f8f8;
+
+}
+.product-faq-content .tabset {
+  max-width: 1366px;
+  margin: 0 auto 10px;
+  padding: 0 10px;
+}
+.product-faq-block,
+.product-content-block {
+  border: 1px solid #bf993f;
+  padding: 20px 10px;
+  margin: 15px 0;
+}
+.product-faq-block > h3 {
+  cursor: pointer;
+}
+.product-faq-block p,
+.product-faq-block ul {
+  display: none;
+}
+.product-faq-block.active p,
+.product-faq-block.active ul {
+  display: block;
+}
+/* ================================= */
+
+/* .nav-active #header .container {
+position: unset;
+} */
+
+#header .container .logo {
+  padding: 5px 30px;
+}
+
+
+#header .container .logo img {
+  width: 223px;
+  height: 34px;
+}
+#header .container .logo img:hover,
+#header .shop-drop img:hover  {
+  transform:scale(1.02);
+  transition: .1s;
+}
+#header .menu-functions img:hover{
+  transform:scale(1.12);
+  transition: .5s;
+}
+#header .menu-functions {
+  display: flex;
+  padding: 20px 41px 20px 20px;
+}
+
+#header .menu-functions>div {
+  padding-left: 20px;
+}
+
+#nav {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#nav>li>a {
+  color: #fff;
+  text-decoration: none;
+  padding-bottom: 20px;
+  font-family: "Proxima Nova Semibold";
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+#nav>li>a:hover {
+  border-bottom: 5px solid #c0964a;
+}
+
+#nav>li {
+  padding: 0 25px;
+}
+
+.nav-opener {
+  width: 50px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  text-indent: -9999px;
+  display: none;
+}
+
+.nav-opener:hover {
+  opacity: .9;
+}
+
+.nav-active .nav-opener span {
+  opacity: 0;
+}
+
+.nav-active .nav-opener:before,
+.nav-active .nav-opener:after {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 50%;
+  left: 20%;
+  right: 20%;
+}
+
+.nav-active .nav-opener:after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.nav-opener span,
+.nav-opener:before,
+.nav-opener:after {
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  right: 25%;
+  height: 2px;
+  margin-top: -1px;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.nav-opener:before,
+.nav-opener:after {
+  content: "";
+  top: 30%;
+}
+
+.nav-opener:after {
+  top: 70%;
+}
+
+#footer {
+  background-color: #0b0b0b;
+  color: #fff;
+  padding: 75px 60px 30px;
+}
+
+.subscribe-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 0 60px;
+  margin: 0 0 75px;
+  border-bottom: 1px solid #4d4d4d;
+}
+
+.subscribe-holder .heading {
+  width: 50%;
+  font-size: 34px;
+  line-height: 64px;
+  font-weight: 600;
+  font-style: italic;
+  text-transform:uppercase;
+}
+
+.subscribe-holder .subscribe {
+  width: 50%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.subscribe-holder .klaviyo-form-Q9mMYL {
+  width:50% !important;
+}
+.subscribe-holder .klaviyo-form-Q9mMYL form {
+  max-width:100% !important;
+}
+.subscribe-holder .klaviyo-form-Q9mMYL input[type="email"] {
+  height: 65px !important;
+  width: 100% !important;
+  border: 2px solid #fff !important;
+  background: #000 !important;
+  color: #fff !important;
+  font-size: 18px !important;
+  padding: 0px 20px !important;
+  margin: 0 !important;
+  font-style: italic !important;
+  letter-spacing: 2px !important;
+  font-family: "Proxima Nova Regular" !imporant;
+}
+
+.subscribe-holder .klaviyo-form-Q9mMYL input[type="email"]::-webkit-input-placeholder {
+  color: #fff !important;
+}
+
+.subscribe-holder .klaviyo-form-Q9mMYL input[type="email"]::-moz-placeholder {
+  color: #fff !important;
+}
+
+.subscribe-holder .klaviyo-form-Q9mMYL input[type="email"]:-moz-placeholder {
+  color: #fff !important;
+}
+
+.subscribe-holder .klaviyo-form-Q9mMYL input[type="email"]:-ms-input-placeholder {
+  color: #fff !important;
+}
+
+.subscribe-holder .klaviyo-form-Q9mMYL button {
+  background-color: #b88b41 !important;
+  color: #fff !important;
+  border: none !important;
+  margin: 0 10px !important;
+  padding: 0 30px !important;
+  font-size: 16px !important;
+  margin: 0px 0px 0px 10px !important;
+  font-family: "Proxima Nova Semibold" !important;
+  letter-spacing: 2px !important;
+  height:65px !important;
+  border-radius:0px !important; 
+}
+.kl-private-quill-wrapper-Lkqws1.kl-private-quill-wrapper-Lkqws1.kl-private-quill-wrapper-Lkqws1 .ql-editor p {
+  font-size: 14px;
+  color: #fff !important;
+  font-family: "Proxima Nova Semibold" !important;
+}
+
+.footer-col .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+.footer-col .col {
+  width: 26%;
+  padding: 0 10px;
+}
+
+.footer-col .col-img {
+  width: 40%;
+  padding: 0 10px;
+  text-align: right;
+  margin-top:20px;
+}
+.footer-col>.container>.col>ul {
+  list-style: none;
+}
+
+.footer-col>.container>.col>ul>li {
+  padding: 1px 0px;
+}
+
+.footer-col>.container>.col>ul>.bold-row {
+  font-weight: bold;
+}
+
+.footer-col>.container>.col>ul>.bold-row a {
+  font-family: "Proxima Nova Bold";
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.footer-col .container .col a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Proxima Nova Regular";
+  letter-spacing: 1px;
+}
+
+.footer-col .container .col a:hover {
+  text-decoration: none;
+  color: #4d4d4d;
+}
+
+.footer-panel>.social-block {
+  padding: 0 0 60px;
+  margin: 0 0 15px;
+  border-bottom: 1px solid #4d4d4d;
+}
+
+.footer-panel ul.social-list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.footer-panel ul.social-list>li {
+  padding: 0 10px;
+}
+
+.footer-panel .bottom-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 13px;
+  letter-spacing: .5px;
+  font-family: "Proxima Nova Semibold";
+}
+
+.footer-panel .bottom-info .right-col ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer-panel .bottom-info .right-col ul>li {
+  padding: 0 10px;
+}
+
+.footer-panel .bottom-info .right-col ul>li>a {
+  text-decoration: none;
+  color: #666666;
+}
+
+.footer-panel .bottom-info .left-col p {
+  color: #666666;
+}
+
+.drop {
+  background-color: #fff;
+  color: #000;
+}
+
+.drop>.about-drop ul {
+  list-style: none;
+}
+
+.drop>.about-drop li {
+  padding: 0px;
+}
+
+.drop>.about-drop a {
+  text-decoration: none;
+  color: #000;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "Proxima Nova Bold";
+  letter-spacing: 2px;
+}
+
+.drop>.about-drop a:hover {
+  color: #b3b3b3;
+}
+
+.drop>.about-drop h3 {
+  font-size: 31px;
+  line-height: 34px;
+  font-weight: bold;
+  margin: 5px 0;
+  font-family: "Proxima Nova Bold";
+}
+
+.drop>.about-drop p {
+  font-size: 14px;
+  line-height: 17px;
+  margin: 0;
+  font-family: "Proxima Nova Medium";
+  line-height: 21px;
+}
+
+.drop .about-image {
+  padding: 0 10px;
+  width: auto;
+}
+
+.drop .about-image img {
+  display: block;
+}
+
+.drop .about-description {
+  padding-right: 30px;
+  width: 25%;
+}
+
+.shop-drop {
+  padding: 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.shop-drop .banner-col {
+  width: 350px;
+  padding: 20px 20px 0px 20px;
+  border-right: 1px solid #cacaca;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.shop-drop .banner-col span {
+  font-family: "Proxima Nova Bold";
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 13px;
+  width: 100%;
+  line-height: 262px;
+}
+
+.shop-drop .banner-col img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.shop-drop .menu-col {
+  width: calc(100% - 350px);
+  padding: 0 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.shop-drop .menu-col .col {
+  width: 20%;
+  padding: 0 20px;
+}
+
+.shop-drop .menu-col .col:first-child,
+.shop-drop .menu-col .col:nth-child(2) {
+  width: 25%;
+}
+
+.shop-drop .menu-col .h2 {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: bold;
+  display: block;
+  margin: 0 0 15px;
+  font-family: "Proxima Nova bold";
+  letter-spacing: 1px;
+}
+
+.shop-drop .menu-col .h2:hover {
+  color: #b3b3b3;
+}
+
+.shop-drop .menu-col .list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.shop-drop .menu-col .list li {
+  padding: 0px;
+}
+
+.shop-drop .menu-col .list a {
+  text-decoration: none;
+  color: #000;
+  font-family: "Proxima Nova SemiBold";
+  font-size: 13px;
+  line-height: 15.6px;
+  letter-spacing: 1px;
+}
+
+.shop-drop .menu-col .list a:hover {
+  color: #b3b3b3;
+}
+
+.about-menu {
+  padding: 10px 40px;
+  width: 20%;
+}
+
+.about-drop {
+  padding: 0px 20px 0px 0px;
+}
+
+.btn {
+  background-color: #b88b41;
+  color: #fff;
+  border: none;
+  padding: 20px 60px;
+  font-size: 16px;
+  font-family: "Proxima Nova Semibold";
+  letter-spacing: 2px;
+  text-shadow: none;
+  font-weight: normal;
+  text-decoration:none;
+}
+
+.shopify-challenge__message {
+  font-family: "Proxima Nova Regular";
+}
+
+
+/* Login Page */
+
+.login .login_content {
+  text-align: center;
+}
+
+.login .login_content h1 {
+  font-family: "Proxima Nova Bold";
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+
+/* homepage banner */
+
+#homepage-new .main-content {
+  padding-top: 0px;
+}
+
+.herobanner {
+  min-height: 597px;
+  background-repeat: no-repeat;
+}
+
+.template-product .product-video-carousel .slideset .slick-arrow.slick-prev {
+  right: 85px;
+  border-width: 5px 10px 5px 0;
+  border-color: transparent #ffffff transparent transparent;
+  top: 25px;
+}
+.template-product .product-video-carousel .slideset .slick-arrow.slick-next {
+  right: 29px;
+  border-width: 5px 0px 6px 10px;
+  border-color: transparent transparent transparent #ffffff;
+  top: 25px;
+}
+.template-product .product-video-carousel .slideset .img-holder .inner h2 {
+  font-family:"Bely";
+  letter-spacing: 2px;
+}
+.template-product .product-video-carousel .slideset .img-holder .inner .btn-watch {
+  font-family: "Proxima Nova Bold";
+  letter-spacing:1px;
+}
+
+.template-product .slick-slide img {
+  max-height:900px;
+}
+.product_form {
+  position: relative;
+  margin-top: 20px;
+}
+
+.open-search {
+  min-width: 45px;
+}
+.open-search .slide {
+  position: absolute;
+  right: 0;
+  left: 0;
+  padding: 0 20%;
+  top: 100%;
+  background: #000;
+  border-top: 1px solid #161616;
+  text-align: center;
+  background: #000;
+}
+.open-search .search-form {
+  background: #000;
+  width: 50%;
+  margin: 0 auto;
+}
+.open-search .search-form input[type="text"] {
+  border: none;
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;
+  line-height: 28px;
+  font-family: "Bely Bold";
+  background: #000;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.open-search .search-form input[type="text"]::-webkit-input-placeholder {
+  color: #fff;
+}
+.open-search .search-form input[type="text"]::-moz-placeholder {
+  color: #fff;
+}
+.open-search .search-form input[type="text"]:-moz-placeholder {
+  color: #fff;
+}
+.open-search .search-form input[type="text"]:-ms-input-placeholder {
+  color: #fff;
+}
+.open-search .search-form input[type="submit"] {
+  background: url(search.png) no-repeat 50% 50% / 20px 20px;
+  text-indent: -9999px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  padding: 0;
+  position: absolute;
+  top: 15px;
+  left: 26%;
+  cursor: pointer;
+}
+.open-search.active .opener img {
+  display: none;
+}
+.open-search.active .opener {
+  position: absolute;
+  right: 27%;
+  top: calc(100% + 10px);
+  width: 25px;
+  height: 25px;
+  background: #000;
+  z-index: 10;
+  margin-top: 5px;
+}
+.open-search.active .opener:before,
+.open-search.active .opener:after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background: #fff;
+  transform: rotate(45deg);
+  top: 50%;
+  left: 15%;
+  right: 15%;
+  z-index: 10;
+}
+.open-search.active .opener:after {
+  transform: rotate(-45deg);
+}
+
+.reviews__title {
+  color: #0b0d0d;
+  font-family: Bely, sans-serif;
+  font-size: 46px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.guarantee-box-mobi {
+  display: none;
+}
+.guarantee-desk {
+  display: block;
+}
+
+/* Start Mobile */
+
+@media (min-width: 1025px) {
+  #nav>li {
+    padding: 0 15px;
+  }
+  .drop {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 100;
+    color: #000;
+    overflow: hidden;
+    max-height:0;
+  }
+  .drop>.about-drop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .drop.active {
+    transition: max-height 0.3s ease-in;
+    max-height: 350px;
+  }
+  /*     #nav>li:hover .drop {
+  transition: max-height 0.3s ease-in;
+  max-height: 350px;
+} */
+
+
+
+}
+
+@media (min-width: 1300px) {
+  .main-menu {
+    padding: 0 161px 0 0;
+  }
+  #nav>li {
+    padding: 0 25px;
+  }
+  #nav>li>a {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 1024px) {
+  #nav>li>a {
+    padding-bottom: 0;
+    display: block;
+    padding: 10px 15px;
+  }
+  #nav>li>a:hover {
+    border-bottom: none;
+  }
+  #nav>li>a.opener-drop {
+    position: relative;
+  }
+  #nav>li>a.opener-drop:after {
+    content: "";
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    width: 10px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 1px 1px 0 0;
+    transform: rotate(45deg);
+  }
+  #nav>li.active>a.opener-drop:after {
+    border: solid #fff;
+    border-width: 0 1px 1px 0;
+  }
+  #nav>li {
+    padding: 0;
+  }
+  #header .menu-functions {
+    padding: 20px 70px 20px 0;
+  }
+  .nav-opener {
+    display: block;
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    z-index: 1;
+  }
+  .main-menu {
+    position: absolute;
+    right: 0;
+    width: 250px;
+    display: block;
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: -webkit-transform .5s linear 0s;
+    transition: transform .5s linear 0s;
+    z-index: 100;
+    background: #000;
+    height: 100vh;
+    top: 62px;
+  }
+  .nav-active .main-menu {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  #nav {
+    display: block;
+  }
+  .subscribe-holder .heading {
+    font-size: 24px;
+    line-height: 27px;
+  }
+  .footer-col .col,
+  .footer-col .col-img {
+    width: 25%;
+  }
+  .shop-drop .banner-col {
+    display: block;
+  }
+  .shop-drop .banner-col {
+    width: 100%;
+  }
+  .shop-drop {
+    padding: 0;
+    background: #000;
+    display: block;
+  }
+  .shop-drop .menu-col a.h2 {
+    padding-bottom: 0;
+    display: block;
+    padding: 10px 15px;
+    margin: 0;
+    font-weight: normal;
+    font-family: "Proxima Nova Semibold";
+    color: #fff;
+    position: relative;
+  }
+  .shop-drop .menu-col a.h2:after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    width: 10px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 1px 1px 0 0;
+    transform: rotate(45deg);
+  }
+  .shop-drop .menu-col .active a.h2:after {
+    top: 12px;
+    border: solid #fff;
+    border-width: 0 1px 1px 0;
+  }
+  .shop-drop .menu-col .h2:hover {
+    color: #fff;
+  }
+  .drop .about-image,
+  .drop .about-description {
+    display: none;
+  }
+  .about-drop {
+    padding: 0;
+    background: #000;
+  }
+  .about-menu {
+    width: 100%;
+    padding: 0;
+  }
+  .drop>.about-drop a {
+    display: block;
+    padding: 10px 15px;
+    margin: 0;
+    font-weight: normal;
+    font-family: "Proxima Nova Semibold";
+    color: #fff;
+    position: relative;
+  }
+  .shop-drop .menu-col .list a {
+    display: block;
+    padding: 10px 15px;
+    color: #fff;
+  }
+  .shop-drop .menu-col {
+    width: 100%;
+    padding: 0;
+    display: block;
+  }
+  .shop-drop .menu-col .col {
+    width: 100%;
+    padding: 0 0 15px;
+  }
+  .shop-drop .menu-col .col:first-child,
+  .shop-drop .menu-col .col:nth-child(2) {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .guarantee-box-mobi {
+    display: block;
+  }
+  .guarantee-desk {
+    display: none;
+  }
+  #header .container .logo img {
+    width: 130px;
+    height: auto;
+  }
+  #header .panel .login-block {
+    display: none;
+  }
+  #header .panel {
+    display: block;
+    text-align: center;
+  }
+  .subscribe-holder {
+    display: block;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .subscribe-holder .heading {
+    font-size: 24px;
+    line-height: 27px;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 20px;
+  }
+  .subscribe-holder {
+    border-bottom: none;
+  }
+  .subscribe-holder .subscribe {
+    display: block;
+    width: 100%;
+  }
+  .subscribe-holder .subscribe input[type="email"] {
+    margin: 0 0 10px;
+    padding: 18px 20px;
+  }
+  .subscribe-holder .subscribe input[type="submit"] {
+    width: 100%;
+    margin: 0 0 10px;
+    padding: 18px 30px;
+  }
+  #footer {
+    padding: 35px 30px;
+  }
+  .footer-col {
+    position: relative;
+  }
+  .footer-col .col-img {
+    position: absolute;
+    top: 0;
+    right: 20px;
+  }
+  .footer-col .container {
+    display: block;
+  }
+  .footer-col .col {
+    width: 100%;
+    display: block;
+  }
+  .footer-col .col:first-child {
+    display: block;
+  }
+  .footer-panel>.social-block {
+    padding: 30px 0 15px;
+    margin: 0;
+    border-top: 1px solid #666;
+    border-bottom: none;
+  }
+  .footer-panel ul.social-list {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+  .footer-panel .bottom-info {
+    display: block;
+  }
+  .footer-panel .bottom-info .right-col ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+  }
+  .footer-panel .bottom-info .right-col ul>li {
+    padding: 0 0 10px;
+  }
+  .footer-col>.container>.col>ul {
+    margin: 0 0 30px;
+    padding: 0;
+  }
+  .subscribe-holder .klaviyo-form-Q9mMYL {
+    width: 100% !important;
+  }
+}
+
+
+/* inner page */
+
+.main-content>.hero-block {
+  margin-top: -5%;
+}
+
+.filter-open,
+.products-block {
+  background-color: #fff;
+  position: relative;
+}
+
+.hero-block {
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 115px 0;
+}
+
+.hero-block h1 {
+  margin: 0;
+  font-size: 50px;
+  line-height: 78px;
+  color: #fff;
+}
+
+.hero-block p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+}
+
+.product-manager {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  margin: 0 20px;
+}
+
+.product-manager .products-way a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.product-manager .products-way .arrow-path {
+  display: inline-block;
+  position: relative;
+  width: 15px;
+  height: 15px;
+}
+
+.product-manager .products-way .arrow-path:before {
+  content: "";
+  display: inline-block;
+  border: solid #7d7d7d;
+  border-width: 1px 1px 0 0;
+  width: 7px;
+  height: 7px;
+  transform: rotate(45deg);
+  margin-bottom: 2px;
+  margin-left: 2px;
+}
+
+.products-filter {
+  display: flex;
+  align-items: center;
+  font-family: "Bely";
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.products-filter a {
+  text-decoration: none;
+  color: #000;
+}
+.products-filter a.opener {
+  margin-left: 25px;
+}
+.filter-open.active .scents--opener .bottom-arrow {
+  display: none;
+}
+
+.products-filter .bottom-arrow:before {
+  content: "";
+  display: inline-block;
+  border: solid #000;
+  border-top-width: medium;
+  border-right-width: medium;
+  border-bottom-width: medium;
+  border-left-width: medium;
+  border-width: 0 1px 1px 0;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  margin: 0px 15px 3px 15px;
+}
+
+.products-filter .top-arrow {
+  display: none;
+}
+
+.filter-open.active .scents--opener .top-arrow {
+  display: inline-block;
+}
+
+.products-filter .top-arrow:before {
+  content: "";
+  display: inline-block;
+  border: solid #000;
+  border-top-width: medium;
+  border-right-width: medium;
+  border-bottom-width: medium;
+  border-left-width: medium;
+  border-width: 1px 0 0 1px;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  margin: 0px 15px -3px 15px;
+}
+
+.current-colors {
+  display: flex;
+}
+
+.current-colors .current-color-block {
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  cursor: pointer;
+  display: none;
+}
+
+.current-colors .current-color-block.active {
+  display: flex;
+}
+
+.current-colors .current-color-block p {
+  margin: 0;
+}
+
+.current-colors .current-color-block .square {
+  height: 20px;
+  width: 20px;
+  margin: 0 10px;
+  border: 1px solid #ccc;
+}
+
+.current-colors .current-color-block .square.red {
+  border: none;
+  background-color: #eb1407;
+}
+
+.current-colors .current-color-block .square.white {
+  border: 1px solid #ccc background-color: white;
+}
+
+.current-colors .current-color-block .square.gold {
+  border: none;
+  background-color: #dfa709;
+}
+
+.current-colors .current-color-block .square.blue {
+  border: none;
+  background-color: #2bbef1;
+}
+
+.current-colors .current-color-block .square.orange {
+  border: none;
+  background-color: #765031;
+}
+
+.current-colors .current-color-block .square.pink {
+  border: none;
+  background-color: #016423;
+}
+
+.current-colors .current-color-block .square.purple {
+  border: none;
+  background-color: #efb652;
+}
+
+.current-colors .current-color-block .square.brown {
+  border: none;
+  background-color:#0422b0;
+}
+
+.current-colors .current-color-block>a.close {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.current-colors .current-color-block>a.close:before,
+.current-colors .current-color-block>a.close:after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background: #545555;
+  transform: rotate(45deg);
+  top: 50%;
+  left: 15%;
+  right: 15%;
+  z-index: 10;
+}
+
+.current-colors .current-color-block>a.close:after {
+  transform: rotate(-45deg);
+}
+
+.drop-colors-filter {
+  display: none;
+  justify-content: center;
+  text-align: center;
+}
+
+.filter-open.active .drop-colors-filter {
+  display: flex;
+  flex-wrap:wrap;
+}
+.filter-open.active .drop-colors-filter .select-scent {
+  width: 100%;
+  padding:20px 0px;
+  font-family:"Bely";
+  font-size:30px;
+  font-weight:bold;
+}
+.filter-open.active .drop-colors-filter .reached-warnning {
+  display: none;
+  width: 100%;
+  margin: 0;
+}
+.filter-open.active .drop-colors-filter .reached-warnning.active {
+  display: block;
+}
+.drop-colors-filter .current-block-with-color {
+  padding: 20px 10px;
+}
+
+.drop-colors-filter .current-block-with-color .big-square {
+  height: 80px;
+  width: 80px;
+  margin: 0 10px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.drop-colors-filter .current-block-with-color .big-square>a {
+  width: 100%;
+  height: 80px;
+}
+
+.drop-colors-filter .current-block-with-color .big-square.orange {
+  border: none;
+  background-color: #765031;
+}
+.drop-colors-filter .current-block-with-color .big-square.stagecoach {
+  border: none;
+  background-color: #765031;
+}
+
+.drop-colors-filter .current-block-with-color .big-square.blue {
+  border: none;
+  background-color: #2bbef1;
+}
+.drop-colors-filter .current-block-with-color .big-square.magic {
+  border: none;
+  background-color: #2bbef1;
+}
+
+.drop-colors-filter .current-block-with-color .big-square.gold {
+  border: none;
+  background-color: #dfa709;
+}
+
+.drop-colors-filter .current-block-with-color .big-square.red {
+  border: none;
+  background-color: #eb1407;
+}
+.drop-colors-filter .current-block-with-color .big-square.hammer {
+  border: none;
+  background-color: #eb1407;
+}
+.drop-colors-filter .current-block-with-color .big-square.pink {
+  border: none;
+  background-color: #016423;
+}
+.drop-colors-filter .current-block-with-color .big-square.vetiverx {
+  border: none;
+  background-color: #016423;
+}
+
+.drop-colors-filter .current-block-with-color .big-square.purple {
+  border: none;
+  background-color: #efb652;
+}
+.drop-colors-filter .current-block-with-color .big-square.gatsby {
+  border: none;
+  background-color: #efb652;
+}
+
+.drop-colors-filter .current-block-with-color .big-square.brown {
+  border: none;
+  background-color: #0422b0;
+}
+.drop-colors-filter .current-block-with-color .big-square.royaloud {
+  border: none;
+  background-color: #0422b0;
+}
+.drop-colors-filter .current-block-with-color .big-square>a.selected {
+  display: inline-block;
+  transform: rotate(45deg);
+  height: 35px;
+  width: 14px;
+  border-bottom: 5px solid white;
+  border-right: 5px solid white;
+}
+
+.drop-colors-filter .current-block-with-color .big-square.white>a.selected {
+  display: inline-block;
+  transform: rotate(45deg);
+  height: 35px;
+  width: 14px;
+  border-bottom: 5px solid red;
+  border-right: 5px solid red;
+}
+
+.drop-colors-filter .current-block-with-color .big-square:hover a {
+  display: inline-block;
+  transform: rotate(45deg);
+  height: 35px;
+  width: 14px;
+  border-bottom: 5px solid white;
+  border-right: 5px solid white;
+}
+
+.drop-colors-filter .current-block-with-color .big-square.white:hover a {
+  display: inline-block;
+  transform: rotate(45deg);
+  height: 35px;
+  width: 14px;
+  border-bottom: 5px solid red;
+  border-right: 5px solid red;
+}
+
+.drop-colors-filter .current-block-with-color h4 {
+  font-size: 21px;
+  line-height: 25px;
+  margin: 20px 0 10px;
+  font-family: "Bely";
+  font-weight: bold;
+}
+
+.drop-colors-filter .current-block-with-color p {
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0;
+  font-family: "Proxima Nova Semibold";
+}
+
+.products-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 70px 50px;
+}
+
+.product-block {
+  padding: 30px 6px;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.product-block .image-block {
+  width: 100%;
+  height: 400px;
+  background-color: #fff;
+  border:1px solid #efefef;
+  position: relative;
+}
+
+.product-block .image-block .add-to-cart-block {
+  position: absolute;
+  bottom: 105px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  text-align: center;
+  display: none;
+}
+
+.product-block .image-block:hover .add-to-cart-block {
+  display: block;
+  border:1px solid #efefef;
+}
+
+.product-block .image-block .add-to-cart-block a {
+  color: #000;
+  text-decoration: none;
+  font-family: "Proxima Nova Semibold";
+  font-size: 15px;
+  font-weight: bold;
+  padding: 15px 60px;
+  background-color: #fff;
+}
+
+.product-block h4 {
+  font-size: 16px;
+  line-height: 21px;
+  height: auto;
+  margin-top: 10px;
+  font-family:"Proxima Nova Semibold"; 
+  min-height:40px;
+}
+
+.product-block h4 a {
+  color: black;
+  text-decoration: none;
+}
+#shopify-section-product-related .product-block h4 {
+  margin-bottom:5px;
+}
+#shopify-section-product-related .product-block p.price {
+  font-family:"Proxima Nova bold"; 
+  font-size:13px;
+}
+#shopify-section-product-related .product-block .image-block a img {
+  object-fit: contain;
+}
+#shopify-section-product-related .product-block h4 a:hover {
+  color:#c0964a;
+}
+.product-block p.price {
+  font-size: 16px;
+  line-height: 21px;
+  margin: 0 0 10px;
+}
+.okeReviews input, .okeReviews textarea, .okeReviews select, .okeReviews button {
+  font-family:"Proxima Nova Semibold" !important;"
+}
+.okeReviews .okeReviews-widgetNavBar-item[aria-selected="true"] {
+  border-bottom: 3px solid #c0964a !important;
+}
+.okeReviews .okeReviews-reviewsWidget.is-okeReviews-reviewsWidget-large .okeReviews-reviewsAggregate-side,
+.okeReviews .okeReviews-reviewsWidget.is-okeReviews-reviewsWidget-large .okeReviews-reviewsAggregate-primary {
+  border: 1px solid #bf993f !important;
+}
+.okeReviews.okeReviews--theme .okeReviews-barGraph-layer--background {
+  background: #e1e1e1 !important;
+}
+.okeReviews.okeReviews--theme .okeReviews-barGraph-layer--foreground {
+  background: #bf993f !important;
+}
+.okeReviews .okeReviews-reviewsWidget.is-okeReviews-reviewsWidget-large .okeReviews-reviewsAggregate-side {
+  border-right:0px !important;
+}
+.okeReviews {
+  font-family:"Proxima Nova Regular" !important;
+}
+.okeReviews-reviewsAggregate-side .okeReviews .okeReviews-badge span {
+  color:#bf993f !important;
+}
+.okeReviews.okeReviews--theme .okeReviews-badge {
+  color: #fff !important;
+}
+.okeReviews .okeReviews-button {
+  border:0px !important;
+}
+.okeReviews .okeReviews-reviewsWidget.is-okeReviews-reviewsWidget-medium .okeReviews-reviewsAggregate-side, .okeReviews .okeReviews-reviewsWidget.is-okeReviews-reviewsWidget-medium .okeReviews-reviewsAggregate-primary, .okeReviews .okeReviews-reviewsWidget.is-okeReviews-reviewsWidget-medium .okeReviews-review-side, .okeReviews .okeReviews-reviewsWidget.is-okeReviews-reviewsWidget-medium .okeReviews-review-primary, .okeReviews .okeReviews-reviewsWidget.is-okeReviews-reviewsWidget-large .okeReviews-reviewsAggregate-side, .okeReviews .okeReviews-reviewsWidget.is-okeReviews-reviewsWidget-large .okeReviews-reviewsAggregate-primary, .okeReviews .okeReviews-reviewsWidget.is-okeReviews-reviewsWidget-large .okeReviews-review-side, .okeReviews .okeReviews-reviewsWidget.is-okeReviews-reviewsWidget-large .okeReviews-review-primary {
+  border: 1px solid #bf993f !important;
+}
+.okeReviews .okeReviews-review-main-heading {
+  font-family: "Proxima Nova Bold" !important;
+}
+.okeReviews.okeReviews--theme .okeReviews-reviewsWidget.is-okeReviews-reviewsWidget-large .okeReviews-poweredBy {
+  display:none !important
+}
+.okeReviews .okeReviews-reviewsWidget.is-okeReviews-reviewsWidget-large .okeReviews-reviewsAggregate-primary,
+.okeReviews .okeReviews-reviewsWidget.is-okeReviews-reviewsWidget-large .okeReviews-review-primary {
+  border-left:0px !important;
+}
+.okeReviews .okeReviews-reviews-showMore {
+  background: #bf993f !important;
+  border: 1px solid #bf993f !important;
+}
+.okeReviews .okeReviews-reviews-showMore:hover {
+  color:#000 !important;
+  transform:scale(1.01);
+  transition: 0.1s;
+}
+.okeReviews.okeReviews--theme .okeReviews-reviews-showMore {
+  color:#fff !important;
+  text-transform:uppercase;
+}
+.okeReviews.okeReviews--theme .okeReviews-reviews-showMore:hover {
+  color:#000 !important;
+}
+.okeReviews .okeReviews-reviews-footer:before:before {
+  background: #bf993f !important;
+}
+.okeReviews .okeReviews-starRating-indicator-layer { 
+  background-size: 105px 15px !important;
+}
+.okeReviews .okeReviews-starRating {
+  margin-left: -10px;
+}
+.product-block p.price>span.old-price {
+  text-decoration: line-through;
+}
+.okeReviews .okeReviews-reviews-footer:before {
+  background: #bf993f !important;
+}
+
+.product-block p.price>span.new-price {
+  color: red;
+}
+
+.product-block .colors-option-block .square {
+  height: 30px;
+  width: 30px;
+  margin: 0 10px 10px 0;
+  display: flex;
+}
+
+.product-block .colors-option-block .square>a {
+  width: 100%;
+}
+
+.product-block .colors-option-block .square.orange {
+  border: none;
+  background-color: #e49918;
+}
+
+.product-block .colors-option-block .square.blue {
+  border: none;
+  background-color: #077bbf;
+}
+
+.product-block .colors-option-block .square.gold {
+  border: none;
+  background-color: #e4d87b;
+}
+
+.product-block .colors-option-block .square.red {
+  border: none;
+  background-color: #f1513d;
+}
+
+.product-block .colors-option-block .square.black {
+  border: none;
+  background-color: #000000;
+}
+
+.product-block .colors-option-block .square.pink {
+  border: none;
+  background-color: #ffc0cb;
+}
+
+.product-block .colors-option-block .square.green {
+  border: none;
+  background-color: #32cd32;
+}
+
+.product-block .colors-option-block .square.purple {
+  border: none;
+  background-color: #9400d3;
+}
+
+.product-block .colors-option-block .square>a.selected {
+  margin: 3px;
+  border: 1px solid #fff;
+}
+
+.product-block .colors-option-block .square.white>a.selected {
+  margin: 3px;
+  border: 1px solid #ccc;
+}
+
+.product-block .colors-option-block .square>a:hover {
+  margin: 3px;
+  border: 1px solid #fff;
+}
+
+.product-block .colors-option-block .square.white>a:hover {
+  margin: 3px;
+  border: 1px solid #ccc;
+}
+
+.product-block .colors-option-block .square>a.inactive {
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.product-block .colors-option-block .square>a.inactive:after {
+  content: "";
+  position: absolute;
+  left: -60%;
+  top: 62%;
+  width: 200%;
+  height: 1px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+
+.mobile-filter {
+  display: none;
+}
+
+.mobile-filter .filter-panel {
+  background: #f7f7f7;
+  padding: 0 10px;
+}
+
+.open-filter {
+  display: block;
+  margin: 0 0 0 auto;
+  width: 50px;
+  height: 50px;
+  background: url(btn-filter.jpg) no-repeat 0 0 / 50px auto;
+}
+
+.filter-drop {
+  width: 280px;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 20px;
+  transform: translateX(-280px);
+  transition: transform .2s linear 0s;
+  z-index: 100;
+}
+
+.filter-active .filter-drop {
+  transform: translateX(0);
+}
+
+.filter-drop .block {
+  border-top: 1px solid #fff;
+  padding: 30px 0 1px;
+}
+
+.filter-drop .block:first-child {
+  border: none;
+  padding: 0 0 1px;
+}
+
+.filter-drop .h3 {
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+.filter-drop ul {
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.filter-drop ul li {
+  position: relative;
+  padding: 0 10px 10px 0;
+}
+
+.filter-drop ul li.checked:before {
+  content: "";
+  width: 12px;
+  height: 6px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  border: 1px solid #fff;
+  border-width: 0 0 1px 1px;
+  -moz-transform: rotate(-55deg);
+  -ms-transform: rotate(-55deg);
+  -webkit-transform: rotate(-55deg);
+  transform: rotate(-55deg);
+  margin: -12px 0 0;
+}
+
+.filter-drop .color-list {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 9px;
+}
+
+.filter-drop .color-list li {
+  width: 33%;
+  padding: 0 5px 30px;
+  text-align: center;
+}
+
+.filter-drop .color-list .color-block {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto 10px;
+}
+
+
+/* product-page */
+
+.product-manager>.buy-stages {
+  border: 2px solid #888;
+}
+
+.product-manager>.buy-stages>a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+  line-height: 16px;
+  font-style: italic;
+  font-weight: bold;
+  background-color: #000;
+  padding: 3px 25px;
+  margin: 1px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: "Proxima Nova Regular";
+}
+.okeReviews.okeReviews--theme .okeReviews-reviewsSummary-starRating span {
+  margin-left: -5px !important;
+  width: 80px !important;
+}
+.okeReviews .okeReviews-starRating--small .okeReviews-starRating-indicator-layer {
+  background-size: 90px 10px !important;
+}
+.okeReviews .okeReviews-reviewsSummary-ratingCount {
+  vertical-align: top !important;
+  margin-top: -3px !important;
+}
+.okeReviews.okeReviews--theme .okeReviews-reviewsSummary {
+  margin-left: -15px;
+}
+/*.product-slider .slick-slide.slick-current:after {
+position:absolute;
+top:20px;
+right:25px;
+background-image: url('https://cdn.shopify.com/s/files/1/2283/7011/files/expand2x.png?v=1590524198');
+background-size: 25px 25px;
+display: inline-block;
+width: 25px; 
+height: 25px;
+content:"";
+}*/
+.product-manager>.buy-stages>a.active-stage {
+  background-color: #c0964a;
+}
+
+.product-manager>.buy-stages>a:hover {
+  background-color: #c0964a;
+}
+
+.carousel {
+  position: relative;
+  background: #000;
+}
+
+.carousel .mask {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel .slideset {
+  width: 99999px;
+  float: left;
+}
+
+.carousel .slide {
+  width: 100%;
+  float: left;
+  position: relative;
+}
+
+.carousel .img-holder img {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+.carousel .btn-holder {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  z-index: 100;
+}
+
+.carousel .btn-holder .btn-prev {
+  text-indent: -9999px;
+  overflow: hidden;
+  border: solid transparent;
+  border-width: 8px 10px;
+  border-right-color: #fff;
+  display: inline-block;
+  vertical-align: top;
+  height: 10px;
+  margin: 0 5px 0 0;
+}
+
+.carousel .btn-holder .btn-next {
+  text-indent: -9999px;
+  overflow: hidden;
+  border: solid transparent;
+  border-width: 8px 10px;
+  border-left-color: #fff;
+  display: inline-block;
+  vertical-align: top;
+  height: 10px;
+  margin: 0 0 0 5px;
+}
+
+.carousel .inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #fff;
+}
+
+.carousel h2 {
+  font-size: 37px;
+  line-height: 40px;
+}
+
+.carousel .btn {
+  background: #c6a348;
+  padding: 10px 50px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+}
+
+.carousel .btn-holder strong {
+  font-weight: normal;
+}
+
+
+/* Slick slider styles */
+
+/* .slick-slider {
+position: relative;
+display: block;
+box-sizing: border-box;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+-ms-touch-action: pan-y;
+touch-action: pan-y;
+-webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+position: relative;
+overflow: hidden;
+display: block;
+margin: 0;
+padding: 0;
+}
+
+.slick-list:focus {
+outline: none;
+}
+
+.slick-list.dragging {
+cursor: pointer;
+cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+-webkit-transform: translate3d(0, 0, 0);
+-moz-transform: translate3d(0, 0, 0);
+-ms-transform: translate3d(0, 0, 0);
+-o-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+position: relative;
+left: 0;
+top: 0;
+display: block;
+}
+
+.slick-track:before,
+.slick-track:after {
+content: "";
+display: table;
+}
+
+.slick-track:after {
+clear: both;
+}
+
+.slick-loading .slick-track {
+visibility: hidden;
+}
+
+.slick-slide {
+float: left;
+height: 100%;
+min-height: 1px;
+display: none;
+}
+
+[dir="rtl"] .slick-slide {
+float: right;
+}
+
+.slick-slide img {
+display: block;
+}
+
+.slick-slide.slick-loading img {
+display: none;
+}
+
+.slick-slide.dragging img {
+pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+display: block;
+}
+
+.slick-loading .slick-slide {
+visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+display: block;
+height: auto;
+border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+display: none;
+}
+
+.slider-nav {
+position: relative;
+display: block;
+box-sizing: border-box;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+-ms-touch-action: pan-y;
+touch-action: pan-y;
+-webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+position: relative;
+overflow: hidden;
+display: block;
+margin: 0;
+padding: 0;
+}
+
+.slick-list:focus {
+outline: none;
+}
+
+.slick-list.dragging {
+cursor: pointer;
+cursor: hand;
+}
+
+.slider-nav .slick-track,
+.slider-nav .slick-list {
+-webkit-transform: translate3d(0, 0, 0);
+-moz-transform: translate3d(0, 0, 0);
+-ms-transform: translate3d(0, 0, 0);
+-o-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+position: relative;
+left: 0;
+top: 0;
+display: block;
+}
+
+.slick-track:before,
+.slick-track:after {
+content: "";
+display: table;
+}
+
+.slick-track:after {
+clear: both;
+}
+
+.slick-loading .slick-track {
+visibility: hidden;
+}
+
+.slick-slide {
+float: left;
+height: 100%;
+min-height: 1px;
+display: none;
+}
+
+[dir="rtl"] .slick-slide {
+float: right;
+}
+
+.slick-slide img {
+display: block;
+}
+
+.slick-slide.slick-loading img {
+display: none;
+}
+
+.slick-slide.dragging img {
+pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+display: block;
+}
+
+.slick-loading .slick-slide {
+visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+display: block;
+height: auto;
+border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+display: none;
+} */
+
+.product-holder {
+  max-width: 1800px;
+  margin: 0 Auto;
+  padding: 50px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-content: stretch;
+  
+
+}
+
+.product-holder .gallery-column {
+  width: 60%;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+
+
+  
+}
+
+.product-holder .gallery-column .product-slider {
+  order: 2;
+  
+  width: 60%;
+  
+  visibility: visible;
+  opacity: 0;
+  position: relative;
+  margin-top: 5px;
+  margin-left: 20px;  
+}
+
+.product-holder .gallery-column .slider-nav {
+    display: flex;
+  flex-grow: 0;
+  order: 1;
+  position: relative;
+  top: 0;
+    margin-top: 10px;
+  width: 12%;
+  visibility: hidden;
+  opacity: 0;
+}
+
+
+/* .product-holder .product-slider{
+width: calc(100% - 144px);
+background: #f8f8f8;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+order: 2;
+} */
+
+
+/* .product-holder .product-slider .slick-list{
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+}
+
+.product-holder .product-slider .slick-track{
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+} */
+
+
+/* .product-holder .product-slider .slick-slide{
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-align: center;
+-ms-flex-align: center;
+align-items: center;
+-webkit-box-pack: center;
+-ms-flex-pack: center;
+justify-content: center;
+} */
+
+
+/* .product-holder .slider-nav{
+width: 124px;
+margin: 0 20px 0 0;
+padding: 0 0 46px;
+order: 1;
+} */
+
+
+/* .product-holder .slider-nav .slick-slide{
+height: 124px;
+margin: 0 0 10px;
+background: #f8f8f8;
+overflow: hidden;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-align: center;
+-ms-flex-align: center;
+align-items: center;
+-webkit-box-pack: center;
+-ms-flex-pack: center;
+justify-content: center;
+} */
+
+
+.product-holder .slider-nav .slick-slide.slick-current img {
+  border: 1px solid #8c8c8c;
+}
+
+.product-holder .slider-nav .slick-prev{
+  display: none !important;
+}
+
+
+.product-holder .slider-nav .slick-next{
+  background: white;
+  border: none;
+  width: 100%;
+  padding: 5px 10px;
+  text-align: center;
+  height: 46px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  cursor: pointer;
+  font-size: 0;
+}
+
+.product-holder .slider-nav .slick-next:focus {
+  outline: none;
+}
+
+.product-holder .slider-nav .slick-next:before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border: solid #8c8c8c;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin: -12px 0 0 -8px;
+}
+
+.product-holder .description {
+
+  width: 35%;
+  padding: 0 0 0 30px;
+  align-content: stretch;
+
+}
+
+/* .product-holder img {
+max-width: 100%;
+height: auto;
+} */
+
+.product-holder .description h1 {
+  font-size: 37px;
+  line-height: 40px;
+  margin: 0 0 15px;
+}
+
+
+.usa-badge {
+  max-width: 70px;
+}
+
+ .usa-badge img {
+  width: 100%;
+}
+
+.remove-qty-sidecart {
+  display: block;
+  color: black;
+}
+
+.product-holder .description .price .new {
+  font-weight: bold;
+  color: black;
+  font-family: "Proxima Nova Semibold";
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.product-holder .description .price .old {
+  display: none;
+  text-decoration: line-through;
+  font-size: 20px;
+  font-family: "proxima nova semibold";
+}
+
+.product-holder .description .btn {
+  display: block;
+  text-align: center;
+  width: 100%;
+  border: 0;
+  background: #c6a348;
+  padding: 15px 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+}
+
+#BIS_trigger {
+  background-color: black;
+}
+
+/* .product-holder .description .style-list {
+margin: 0 -10px 10px 0;
+padding: 0;
+list-style: none;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-ms-flex-wrap: wrap;
+flex-wrap: wrap;
+font-size: 12px;
+text-transform: uppercase;
+font-weight: bold;
+}
+
+.product-holder .description .style-list li {
+width: 33.3%;
+padding: 0 10px 10px 0;
+display: flex;
+}
+
+.product-holder .description .style-list a {
+width: 100%;
+display: block;
+border: 1px solid #e9e9e9;
+text-decoration: none;
+text-align: center;
+padding: 15px 10px;
+color: #000;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-pack: center;
+-ms-flex-pack: center;
+justify-content: center;
+-webkit-box-align: center;
+-ms-flex-align: center;
+align-items: center;
+}
+
+.product-holder .description .style-list .active a {
+border: 3px solid #077bbf;
+} */
+
+.product-holder .textholder {
+  padding: 25px 0 5px;
+  font: 14px/24px 'Times New Roman', Times, serif;
+}
+
+.product-holder .textholder a {
+  color: inherit;
+}
+
+.product-holder .textholder p {
+  margin: 0 0 15px;
+}
+
+.product-holder .rating-block {
+  margin: 0px;
+}
+
+.product-holder .guarantee-block {
+  padding: 0px 0 18px 0;
+}
+
+.product-holder .guarantee-block > a {
+  display: block;
+  border: solid #e8e8e8;
+  border-width: 1px 0;
+  padding: 15px 25px 15px 0;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: bold;
+  color: #000;
+  font-family:"Proxima Nova Bold";
+  letter-spacing:1px;
+}
+
+.product-holder .guarantee-block>a:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  width: 10px;
+  height: 10px;
+  border: solid #7b7b7b;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin: -6px 0 0;
+}
+
+.product-holder .guarantee-block.active >a:after {
+  display: none;
+}
+
+.product-holder .guarantee-block.active >a:before {
+  display: block;
+}
+
+.product-holder .guarantee-block>a:before {
+  display: none;
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  width: 10px;
+  height: 10px;
+  border: solid #7b7b7b;
+  border-width: 0 2px 2px 0;
+  transform: rotate(225deg);
+  margin: -6px 0 0;
+}
+
+.product-holder .recomended-block {
+  padding: 0 0 10px;
+  margin: 0 0 25px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.product-holder .recomended-block .row {
+  padding: 0 0 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.product-holder .recomended-block .text {
+  width: calc(100% - 156px);
+  padding: 0 15px;
+  font-size: 12px;
+}
+
+.product-holder .recomended-block .text .name {
+  font: 700 14px/17px 'Times New Roman', Times, serif;
+}
+
+.product-holder .recomended-block .text span {
+  display: block;
+}
+
+.product-holder .recomended-block .btn1 {
+  display: block;
+  border: 0;
+  padding: 12px 22px;
+  background: #ddd;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: bold;
+  color: #000;
+}
+
+.product-holder .recomended-block .more {
+  width: 10px;
+  height: 10px;
+  border: solid #7b7b7b;
+  border-width: 2px 2px 0 0;
+  transform: rotate(45deg);
+  margin: -5px 0 0 20px;
+}
+
+.survey-block {
+  padding: 10px 0 0;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.product-holder .recomended-block .total-price {
+  padding: 10px 0 0;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.product-holder .recomended-block .total-price .new {
+  font-weight: bold;
+  color: #f00;
+}
+
+.product-holder .recomended-block .total-price .old {
+  text-decoration: line-through;
+}
+
+.product-holder .kits-holder {
+  padding: 30px 15px 15px;
+  margin: 0 0 15px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.product-holder .kits-holder h2 {
+  margin: 0 0 20px;
+}
+
+.product-holder .kits-holder h2 {
+  font-size: 30px;
+  line-height: 25px;
+  margin-bottom:40px;
+}
+
+.product-holder .kits-holder .btn2 {
+  background: #fff;
+  color: #000;
+  border: 0;
+  padding: 15px 20px;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 15px;
+  font-weight: bold;
+  display: block;
+  font-family: "Proxima Nova Bold";
+  text-decoration: none;
+}
+.product-holder .kits-holder .btn2:hover {
+  background:#c6a348;
+}
+.product-holder .kits-holder .btn2:after {
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  width: 8px;
+  height: 6px;
+  background: url(//cdn.shopify.com/s/files/1/2283/7011/t/68/assets/arrow1.png?v=1588187583) no-repeat 0 0 / 8px 6px;
+  margin: 5px 0 0 7px;
+}
+
+.product-nav {
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: bold;
+  background: #000;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.product-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.product-nav ul li {
+  padding: 15px;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.product-nav ul a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  padding: 15px 10px;
+  border-bottom: 3px solid transparent;
+}
+
+.product-nav ul li.active,
+.product-nav ul li:hover {
+  border-bottom: 3px solid #077bbf;
+}
+
+.product-tab-content > div {
+  display: none;
+}
+
+.product-tab-content .tab-content.active {
+  display: flex;
+  justify-content: center;
+}
+
+.tab-content {
+  height: 538px;
+  position: relative;
+}
+
+.ingredients-content .textholder {
+  z-index: 1;
+}
+
+.ingredients-content .colors-list li.active .scent-tab-item-content {
+  display: block;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#the-quot-big-boss-quot-beard-care-kit-bossman-brands .ingredients-content .colors-list li.active .scent-tab-item-content {
+  text-align: center;
+}
+#the-quot-big-boss-quot-beard-care-kit-bossman-brands .ingredients-content .colors-list li.active .scent-tab-item-content p {
+  width: 100%;
+}
+#the-quot-big-boss-quot-beard-care-kit-bossman-brands .ingredients-content {
+  height: 1100px;
+}
+
+
+.ingredients-content .scent-tab-item-content p,
+.details-content__inner p {
+  color: white;
+  font-size: 22px;
+  line-height: 30px;
+  font-family: "Bely";
+  font-weight: bold;
+  width: 500px;   
+}
+
+.ingredients-content {
+  height: 538px;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.product-tab-content .details-content {
+  padding: 120px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color:#C0964A;
+}
+
+
+.details-content__inner {
+  max-width: 700px;
+  padding: 0 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.details-content__inner h1 {
+  color: #C0964A;
+  margin-bottom: 40px;
+  font-size: 36px;
+}
+
+
+.details-content__inner p {
+  font-size: 22px;
+  line-height: 28px;
+  color: white;
+}
+.template-product .product-video-carousel .slideset .slide-count-wrap {
+  color: white;
+  font-size: 15px;
+}
+#accessories-container-heading > h3 {
+  display: none;
+}
+
+.product-twocolumns {
+  position: relative;
+  background: #c0964a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.product-twocolumns .textholder {
+  width: 50%;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.product-twocolumns .textholder p {
+  max-width: 450px;
+  margin: 0 auto 15px;
+  font: 20px/30px 'Times New Roman', Times, serif;
+}
+
+.product-twocolumns .textholder .view {
+  text-decoration: none;
+  color: inherit;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:13px;
+  font-family:"Proxima Nova Semibold";
+}
+
+.product-twocolumns .textholder .view:after {
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  width: 8px;
+  height: 6px;
+  background: url(//cdn.shopify.com/s/files/1/2283/7011/t/68/assets/arrow1.png?v=1588187583) no-repeat 0 0 / 8px 6px;
+  margin-left: 10px;
+}
+
+.product-twocolumns .textholder h2 {
+  font-size: 38px;
+  line-height: 45px;
+  margin: 0 0 20px;
+}
+
+.product-twocolumns .img-holder {
+  width: 50%;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.product-twocolumns .img-holder img {
+  vertical-align: top;
+}
+
+.tab-content .colors-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  -webkit-box-pack: baseline;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height:75%;
+}
+
+.tab-content .colors-list li.magic:before {
+  background-color: #2bbef1;
+}
+
+.tab-content .colors-list li.gold:before {
+  background-color: #dfa709;
+}
+
+.tab-content .colors-list li.stagecoach:before {
+  background-color: #765031;
+}
+
+.tab-content .colors-list li.naked:before {
+  background-color: #ffffff;
+}
+
+.tab-content .colors-list li.hammer:before {
+  background-color: #eb1407;
+}
+
+.tab-content .colors-list li.royal-oud:before {
+  background-color: #0422b0;
+}
+
+.tab-content .colors-list li.vetiver-x:before {
+  background-color: #016423;
+}
+
+.tab-content .colors-list li.the-gatsby:before {
+  background-color: #efb652;
+
+}
+
+.scent-content .colors-list li.active .scent-tab-item-content {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.tab-content .colors-list li .scent-tab-item-content {
+  display: none;
+}
+
+.tab-content .colors-list li:before {
+  display: block;
+  width: 27px;
+  height: 27px;
+  content: '';
+}
+
+
+.tab-content .colors-list li {
+  padding: 0;
+  margin: 10% 5px 0;
+  cursor: pointer;
+  list-style-type: none;
+}
+.tab-content.ingredients-content .colors-list li {
+  margin: 50% 5px 0;
+}
+.ingredients-content .scent-tab-item-content h1 {
+  font-size: 48px;
+  line-height: 45px;
+  margin: 0 0 20px;
+  font-family: "Bely";
+  font-weight: bold;
+  color:#c0964a;
+}
+.tab-content .colors-list li.active:before {
+  border: 1px solid #000;
+}
+
+.product-reviews-area {
+  padding: 70px 10px;
+  text-align: center;
+}
+
+.product-reviews-area h2 {
+  font-size: 32px;
+  line-height: 35px;
+  margin: 0 0 15px;
+  font-family: "Bely";
+}
+
+.product-reviews-area .view,
+.product-video-area .view {
+  text-decoration: none;
+  color: inherit;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 18px;
+  font-family:"Proxima Nova Semibold";
+  letter-spacing: 1px;
+}
+.product-reviews-area .view:hover,
+.product-video-area .view:hover {
+  color:#c0964a;
+}
+.product-video-area iframe {
+  border:0px;
+}
+.product-reviews-area .view:after,
+.product-video-area .view:after {
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  width: 8px;
+  height: 6px;
+  background: url(//cdn.shopify.com/s/files/1/2283/7011/t/68/assets/arrow1.png?v=1588187583) no-repeat 0 0 / 8px 6px;
+  margin: 7px 0 0 7px;
+}
+.product-reviews-area .treecolumns .column:hover,
+.okeReviews .okeReviews-reviews-review:hover {
+  transform:scale(1.01);
+  transition: 0.1s;
+}
+.product-reviews-area .treecolumns {
+  max-width: 1310px;
+  margin: 0 auto;
+  padding: 45px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-reviews-area .treecolumns .column {
+  width: calc(33.3% - 10px);
+  margin: 0 5px;
+  padding: 70px 40px 100px;
+  background: #f8f8f8;
+  border-bottom: 10px solid #c0964a;
+  position: relative;
+  text-align: left;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.product-reviews-area .treecolumns blockquote {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.product-reviews-area .treecolumns blockquote p {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+  font-family:"Proxima Nova Semibold"
+}
+
+.product-reviews-area .treecolumns blockquote footer {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  font-size: 12px;
+  line-height: 22px;
+}
+
+.product-reviews-area .treecolumns blockquote footer span {
+  display: block;
+}
+
+.product-reviews-area .treecolumns blockquote footer .name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.product-video-area .video-columns {
+  max-width: 1366px;
+  margin: 0 auto 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.product-video-area .video-columns .col {
+  width: 50%;
+  padding: 0 5px 10px;
+  position: relative;
+  display: none;
+}
+
+.product-video-area .video-columns .col:first-child,
+.product-video-area .video-columns .col:nth-child(2) {
+  display: block;
+}
+
+.product-video-area {
+  text-align: center;
+  padding: 0 0 55px;
+}
+
+.product-video-area .view {
+  text-decoration: none;
+  color: inherit;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.product-video-area .view:after {
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  width: 8px;
+  height: 6px;
+  background: url(//cdn.shopify.com/s/files/1/2283/7011/t/68/assets/arrow1.png?v=1588187583) no-repeat 0 0 / 8px 6px;
+  margin: 5px 0 0 7px;
+}
+
+
+.products-holder {
+  padding: 0 70px 25px;
+  margin: 0 0 80px;
+  position: relative;
+}
+
+.products-holder h2 {
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: bold;
+  margin: 0 0 25px;
+  text-transform: uppercase;
+  text-align: center;
+}
+#shopify-section-product-related .products-holder h2 {
+  font-family:"Proxima Nova Bold";
+  text-align:left;
+}
+.products-gallery .slick-slide {
+  padding: 0 20px 0 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.products-gallery .slick-slide .img-holder {
+  margin: 0 0 15px;
+}
+
+.products-gallery .slick-slide .img-holder img {
+  width: 100%;
+  height: auto;
+}
+
+.products-gallery .slick-slide .name {
+  display: block;
+}
+
+.products-gallery .slick-prev {
+  display: none !important;
+}
+
+.products-gallery .slick-next {
+  position: absolute;
+  right: 60px;
+  top: 37%;
+  border: 0;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0;
+}
+
+.products-gallery .slick-next:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border: solid #000;
+  border-width: 2px 2px 0 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin: -5px 0 0 -5px;
+}
+
+
+/* progress bar */
+
+.slider-progress {
+  width: calc(100% - 140px);
+  height: 1px;
+  background: #e5e5e5;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.slider-progress .progress {
+  width: 0%;
+  height: 10px;
+  background: #6d6d6d;
+}
+
+.products-reviews-block {
+  background-color: #eee;
+  padding: 80px;
+}
+
+.products-reviews-block p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.products-reviews-block .write-a-review a {
+  margin: 0;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: right;
+  padding: 10px 0 40px;
+  display: inline-block;
+  width: 100%;
+  color: #000;
+  text-decoration: none;
+}
+
+.stars-and-reviews-block {
+  background-color: #fff;
+  border: 1px solid #b88b41;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stars-and-reviews-block>.stars {
+  width: 25%;
+  padding: 20px 35px;
+  border-right: 1px solid #b88b41;
+}
+
+.stars-and-reviews-block>.stars>p {
+  padding: 15px 0;
+}
+
+.stars-and-reviews-block>.stars>div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5px;
+}
+
+.stars-and-reviews-block>.stars>div>.rating {
+  background-color: #eee;
+  width: 75%;
+  color: #fff;
+}
+
+.stars-and-reviews-block>.stars>div>.rating p {
+  padding: 3px;
+}
+
+.stars-and-reviews-block>.stars>div>.rating>.current-rating {
+  background-color: #b88b41;
+}
+
+.stars-and-reviews-block>.stars>div>.rating>.current-rating.five-stars {
+  width: 75%;
+}
+
+.stars-and-reviews-block>.stars>div>.rating>.current-rating.four-stars {
+  width: 15%;
+}
+
+.stars-and-reviews-block>.stars>div>.rating>.current-rating.zero {
+  width: 0%;
+}
+
+.stars-and-reviews-block>.review {
+  width: 75%;
+  padding: 20px 105px 20px 35px;
+}
+
+.stars-and-reviews-block>.review>p {
+  padding: 0 0 30px;
+}
+
+.stars-and-reviews-block>.review>.reviews-and-images-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stars-and-reviews-block>.review>.reviews-and-images-block>.current-reviews {
+  width: 60%;
+}
+
+.stars-and-reviews-block>.review>.reviews-and-images-block>.current-reviews>.current-review {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.stars-and-reviews-block>.review>.reviews-and-images-block>.current-reviews>.current-review>div {
+  background-color: #eee;
+  width: 75%;
+  position: relative;
+  height: 8px;
+  border: 1px solid #ccc;
+  display: flex;
+}
+
+.stars-and-reviews-block>.review>.reviews-and-images-block>.current-reviews>.current-review>div>span {
+  position: absolute;
+  margin: 0;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.stars-and-reviews-block>.review>.reviews-and-images-block>.current-reviews>.current-review>div>div {
+  width: 25%;
+  border-right: 1px solid #ccc;
+}
+
+.stars-and-reviews-block>.review>.reviews-and-images-block>.current-reviews>.current-review>div>.toddler {
+  top: -3px;
+  right: 10px;
+  height: 13px;
+  width: 8px;
+  background: #000;
+}
+
+.stars-and-reviews-block>.review>.reviews-and-images-block>.current-reviews>.current-review>div>.toddler.custom-toddler {
+  right: 20px;
+}
+
+.stars-and-reviews-block>.review>.reviews-and-images-block>.current-reviews>.current-review>div>.start {
+  top: 12px;
+  left: 0;
+}
+
+.stars-and-reviews-block>.review>.reviews-and-images-block>.current-reviews>.current-review>div>.end {
+  top: 12px;
+  right: 0;
+}
+
+.stars-and-reviews-block>.review>.reviews-and-images-block>.current-reviews-images {
+  display: flex;
+  flex-wrap: wrap;
+  width: 198px;
+}
+
+.stars-and-reviews-block>.review>.reviews-and-images-block>.current-reviews-images>div {
+  width: calc(33.3% - 6px);
+  min-height: 60px;
+  background-color: #eee;
+  margin: 3px;
+}
+
+.sort-reviews {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.sort-reviews>.current-sort {
+  margin-left: 20px;
+  position: relative;
+}
+
+.sort-reviews>.current-sort a {
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration: none;
+  color: #000;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+}
+
+.sort-reviews>.current-sort .open-select>.arrow-bottom {
+  border-left: 1px solid #ccc;
+  padding: 0 0 0 10px;
+  margin: 0 0 0 10px;
+}
+
+.sort-reviews>.current-sort .open-select>.arrow-bottom:after {
+  content: '';
+  border: solid transparent;
+  border-top-color: #000;
+  border-width: 5px;
+  position: absolute;
+  right: 6px;
+  top: 7px;
+}
+
+.sort-reviews>.current-sort>.slide-select {
+  position: absolute;
+  top: 27px;
+  right: 0;
+}
+
+.sort-reviews>.current-sort>.slide-select>ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sort-reviews>.current-sort>.slide-select>ul>li {
+  padding-bottom: 9px;
+}
+
+.stars-and-reviews-block.custom-review {
+  margin-bottom: 30px;
+}
+
+.stars-and-reviews-block.custom-review>.stars {
+  padding: 20px 35px 30px;
+}
+
+.stars-and-reviews-block.custom-review>.stars h4 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 27px;
+  padding: 10px 0;
+}
+
+.stars-and-reviews-block.custom-review>.stars>.verify-status {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 0 20px;
+  border-bottom: 1px solid #b88b41;
+}
+
+.stars-and-reviews-block.custom-review>.stars>.verify-status>img {
+  margin: 0 10px 0 0;
+}
+
+.stars-and-reviews-block.custom-review>.stars>.like-status {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px 0 10px;
+}
+
+.stars-and-reviews-block.custom-review>.stars>.like-status>img {
+  margin: 0 10px 0 0;
+}
+
+.stars-and-reviews-block.custom-review>.stars>.bonus-points {
+  font-weight: bold;
+}
+
+.stars-and-reviews-block.custom-review>.stars>.tags {
+  color: #b88b41;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.stars-and-reviews-block.custom-review>.stars>.tags>a {
+  color: #b88b41;
+  text-decoration: none;
+}
+
+.stars-and-reviews-block.custom-review>.review {
+  padding: 20px 35px 20px 35px;
+}
+
+.stars-and-reviews-block.custom-review>.review>.rating-and-help {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stars-and-reviews-block.custom-review>.review a {
+  color: #888;
+  text-decoration: none;
+  margin: 0;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.stars-and-reviews-block.custom-review>.review h4 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 27px;
+  padding: 10px 0 15px;
+}
+
+.stars-and-reviews-block.custom-review>.review>p.post-text {
+  margin: 0;
+  font-size: 17px;
+  line-height: 21px;
+  padding: 10px 0 15px;
+}
+
+.stars-and-reviews-block.custom-review>.review>.help-and-like-or-dislike {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.stars-and-reviews-block.custom-review>.review>.help-and-like-or-dislike>a {
+  color: #000;
+  opacity: 0.7;
+  padding-left: 10px;
+}
+
+.stars-and-reviews-block.custom-review>.review>.help-and-like-or-dislike>a:hover {
+  transition: all 0.5s;
+  opacity: 1;
+}
+
+.products-reviews-block>.show-more {
+  border-top: 2px solid #ccc;
+  text-align: center;
+}
+
+.products-reviews-block>.show-more>a {
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration: none;
+  color: #000;
+  padding: 5px 30px 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  position: relative;
+  margin-top: -1px;
+  display: inline-block;
+}
+
+.products-reviews-block>.show-more>a>span.arrow-bottom:after {
+  content: '';
+  border: solid transparent;
+  border-top-color: #000;
+  border-width: 5px;
+  position: absolute;
+  right: 11px;
+  top: 11px;
+}
+
+.product-bottom-banner {
+  background: url('//cdn.shopify.com/s/files/1/2283/7011/t/68/assets/footer_banner.jpg?v=1588185909');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  padding: 100px 50px;
+  text-align: center;
+}
+
+.product-bottom-banner h4 {
+  color: #fff;
+  font-style: italic;
+  letter-spacing: 10px;
+  font-size: 21px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.product-bottom-banner h2 {
+  color: #b88b41;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: 10px;
+  font-size: 34px;
+  line-height: 37px;
+  margin: 0;
+  padding: 10px 0 30px;
+}
+
+.product-bottom-banner a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 10px 60px;
+  border: 1px solid #b88b41;
+}
+
+.product-bottom-banner a:hover {
+  background-color: #b88b41;
+  transition: background 0.5s ease 0s;
+}
+
+.product-holder .guarantee-block .guarantee-content {
+  display: none;
+}
+.product-holder .guarantee-block.active .guarantee-content {
+  display: block;
+  padding:20px 0px
+}
+.accessories-item .accessories-right .accessory-variant-select {
+  margin-bottom: 0;
+  margin-right: 10px;
+  width: 230px;
+  height: 30px;
+  border: 1px solid #efefef;
+  font-size: 14px;
+  font-family: "Proxima Nova Regular";
+  padding: 5px;
+  float:left;
+}
+#w3-product-accessories {
+  margin-top: -40px;
+}
+.accessory-price {
+  float:left;
+  font-family: "Proxima Nova Semibold" !important;
+  margin-right: 10px;
+}
+.accessory-price.small {
+  text-decoration: line-through !important;
+}
+#accessories-info-text {
+  display: none !important;
+}
+.accessories-right s {
+  width:auto;
+  float:left;
+}
+#accessories-container-heading {
+  display: none !important;
+}
+.accessories-title {
+  font:inherit;
+  font-family:"Proxima Nova Bold";
+  font-size:16px !important;
+}
+.accessories-item {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 1px 1%;
+  grid-template-areas: ". . . . .";
+  font-family: "Proxima Nova !important";
+}
+.accessories-item input {
+  margin-top: 40px !important;
+}
+.accessories-item .accessories-right {
+  display:inline-block !important;
+}
+.accessories-item .accessories-img-wrapper img {
+  max-width:100px;
+  max-height:100px;
+}
+.product-holder .guarantee-block.recommended .guarantee-content {
+  padding:0px 0px 10px 0px;
+}
+.product-holder .recomended-block>a.add-all-mobile {
+  display: none;
+}
+
+.products-reviews-block>.write-a-review>h4.write-a-review-title,
+.products-reviews-block>.write-a-review>img {
+  display: none;
+}
+
+@media(max-width: 1023px) {
+  #the-quot-big-boss-quot-beard-care-kit-bossman-brands .ingredients-content {
+    height: 1250px;
+  }
+  .product-block {
+    width: 50%
+  }
+  .product-manager {
+    justify-content: center;
+    background-color: #f8f8f8;
+    margin: 0;
+    border: none;
+  }
+  .product-manager>.products-way {
+    display: none;
+  }
+  .product-holder {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+  /*.product-holder .gallery-column {
+    width: 100%;
+  }
+  .product-holder .product-slider {
+    width: 100%;
+  }*/
+  .product-holder .description {
+    /*width: 100%;*/
+    padding: 20px;
+  }
+  .product-holder .description .style-list a {
+    font-size: 10px;
+    line-height: 14px;
+  }
+  .product-holder .guarantee-block>a {
+    text-align: center;
+    padding: 15px 0 15px 0;
+  }
+  .product-holder .guarantee-block.recommended {
+    display: block;
+  }
+  .product-holder .guarantee-block.recommended>a {
+    border: none;
+  }
+  .product-holder .guarantee-block.recommended>a:after {
+    display: none;
+  }
+  .product-holder .recomended-block {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: none;
+  }
+  .product-holder .recomended-block>.row {
+    width: 31%;
+    background-color: #eee;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .product-holder .recomended-block>.row>a.more {
+    display: none;
+  }
+  .product-holder .recomended-block .text {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+  }
+  .product-holder .recomended-block>.row>img {
+    width: 100%;
+  }
+  .product-holder .recomended-block .btn1 {
+    background-color: #fff;
+    width: 90%;
+    border: 1px solid #000;
+  }
+  .product-holder .recomended-block>.row.add-all {
+    display: none;
+  }
+  .product-holder .recomended-block>a.add-all-mobile {
+    display: block;
+    text-align: center;
+    width: 100%;
+    border: 0;
+    background: #c6a348;
+    padding: 15px 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    margin: 20px 0 0 0;
+  }
+  .product-holder .recomended-block>a.add-all-mobile>span.new {
+    font-weight: bold;
+    color: #f00;
+  }
+  .product-holder .recomended-block>a.add-all-mobile>span.old {
+    text-decoration: line-through;
+  }
+  /*.slider-nav.slick-initialized.slick-slider.slick-vertical {
+    display: none;
+  }*/
+  .product-nav ul li {
+    padding: 0 10px;
+  }
+  .product-twocolumns {
+    flex-wrap: wrap;
+    background-color: #000;
+    color: #fff;
+  }
+  .product-twocolumns .textholder {
+    width: 100%;
+  }
+  .product-twocolumns .colors-list {
+    width: 100%;
+  }
+  .product-twocolumns .colors-list li.active {
+    border: 1px solid #fff;
+  }
+  .product-twocolumns .img-holder {
+    width: 100%;
+  }
+  .product-twocolumns .img-holder img {
+    width: 100%;
+  }
+  .carousel.gallery-js-ready.autorotation-disabled {
+    padding: 10px;
+    background-color: #eee;
+  }
+  .carousel.gallery-js-ready.autorotation-disabled .img-holder {
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+  .carousel .img-holder img {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+  .carousel .btn-holder {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    color: #000;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .carousel .btn-holder .btn-prev {
+    border-right-color: #000;
+  }
+  .carousel .btn-holder .btn-next {
+    border-left-color: #000;
+  }
+  .reviews-area {
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+  }
+  .reviews-area h2 {
+    order: 0;
+  }
+  .reviews-area a.view {
+    order: 2;
+    padding: 20px 0;
+  }
+  .reviews-area div.treecolumns {
+    order: 1;
+    padding: 0;
+  }
+  .reviews-area .treecolumns .column {
+    display: none;
+  }
+  .reviews-area .treecolumns .column.mobile-active-review {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .reviews-area .treecolumns blockquote footer {
+    width: 100%;
+    left: 0;
+  }
+  .products-holder {
+    padding: 30px 0 25px 0;
+  }
+  .products-holder .slick-list {
+    padding: 0;
+  }
+  .products-holder h2 {
+    text-align: center;
+  }
+  .products-gallery .slick-slide {
+    position: relative;
+  }
+  .products-gallery .slick-slide>span.name {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .products-gallery .slick-slide>span.price {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .slider-progress {
+    display: none;
+  }
+  .products-reviews-block>.write-a-review>h4.write-a-review-title,
+  .products-reviews-block>.write-a-review>img {
+    display: block;
+    margin: 0 auto;
+  }
+  .products-reviews-block {
+    background-color: #fff;
+    padding: 20px;
+  }
+  .products-reviews-block>.write-a-review {
+    text-align: center;
+    align-items: center;
+  }
+  .products-reviews-block>.write-a-review>h4.write-a-review-title {
+    font-size: 26px;
+    line-height: 30px;
+    margin: 5px 0;
+  }
+  .products-reviews-block>.write-a-review a {
+    text-align: center;
+    padding: 5px 10px;
+    border: 1px solid #b88b41;
+    width: 60%;
+    background-color: #fff;
+    margin: 30px 0;
+  }
+  .products-reviews-block>.stars-and-reviews-block,
+  .sort-reviews {
+    display: none;
+  }
+  .products-reviews-block>.stars-and-reviews-block.custom-review {
+    display: flex;
+    border: none;
+    border-top: 2px solid #ccc;
+    box-sizing: border-box;
+    align-items: center;
+    position: relative;
+  }
+  .products-reviews-block>.stars-and-reviews-block.custom-review>.stars {
+    order: 1;
+    border: none;
+    padding: 20px 0 0 0;
+  }
+  .products-reviews-block>.stars-and-reviews-block.custom-review>.review {
+    order: 0;
+    padding: 20px 30px 0 0;
+  }
+  .stars-and-reviews-block.custom-review>.review>.rating-and-help>a,
+  .stars-and-reviews-block.custom-review>.review>.help-and-like-or-dislike>a,
+  .stars-and-reviews-block.custom-review>.stars>.bonus-points,
+  .stars-and-reviews-block.custom-review>.stars>.tags {
+    display: none;
+  }
+  .stars-and-reviews-block.custom-review>.stars>.verify-status {
+    border: none;
+  }
+  .stars-and-reviews-block.custom-review>.stars>.like-status {
+    position: absolute;
+    bottom: -23px;
+    left: 0;
+  }
+  .stars-and-reviews-block.custom-review>.review>p.post-text {
+    padding: 50px 0 20px;
+  }
+  .stars-and-reviews-block.custom-review>.review h4 {
+    position: absolute;
+    top: 8px;
+    left: 150px;
+  }
+}
+@media(max-width: 900px) {
+  #the-quot-big-boss-quot-beard-care-kit-bossman-brands .ingredients-content {
+    height: 1350px;
+  }
+}
+@media(max-width: 767px) {
+  #the-quot-big-boss-quot-beard-care-kit-bossman-brands .ingredients-content {
+    height: 1550px;
+  }
+   .product-holder .gallery-column {
+    width: 100%;
+  }
+  .product-holder .product-slider {
+    width: 100%;
+  }
+  .product-holder .description {
+    width: 100%;
+  }
+  .stars-and-reviews-block.custom-review>.review h4 {
+    position: inherit;
+  }
+  /* inner page */
+  .filter-open {
+    display: block;
+  }
+  .product-block {
+    width: 100%;
+    padding: 0 6px 70px;
+  }
+  .products-block {
+    padding: 35px 10px;
+  }
+  .mobile-filter {
+    display: none;
+  }
+
+  .stage-dropdown {
+    width: 90%;
+    position: relative;
+    top: 20px;
+    right: unset;
+    margin: 0 auto;
+    padding: 0px;
+  }
+  .current-colors {
+    display:block;
+    width: 100%;
+  }
+  .current-colors .current-color-block.active {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 0px 1%;
+    margin: 5% 0px;
+  }
+  .products-filter a.opener {
+    margin-left: 0px;
+  }
+  .products-filter .bottom-arrow:before {
+    margin: 0px 5px 3px 5px;
+  }
+  .products-filter {
+    display: block;
+  }
+}
+
+.row {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main-content {
+  background: white;
+  min-height: 600px;
+}
+
+
+.panel .empty-top-bar {
+  width: 64%;
+}
+
+.mobile {
+  display: none !important;
+}
+
+.desktop {
+  display: block !important;
+}
+
+
+/* Login Page */
+
+.login .login_content {
+  text-align: center;
+}
+
+.login .login_content h1 {
+  font-family: "Proxima Nova Bold";
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+
+/* homepage banner */
+
+#homepage-new .main-content {
+  padding-top: 0px;
+}
+
+.herobanner.desktop {
+  min-height: 597px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding-top: 12%;
+  text-transform: uppercase;
+  background-position: center;
+}
+
+.herobanner.desktop span {
+  font-family: "Proxima Nova Regular";
+  font-size: 26px;
+  color: #fff;
+  line-height: 32px;
+  letter-spacing: 5px;
+}
+
+.herobanner.desktop h1 {
+  font-family: "Bely";
+  font-size: 98px;
+  color: #fff;
+  font-weight:bold;
+  line-height: 58px;
+  letter-spacing: 5px;
+  text-transform: none;
+  margin-top: 25px;
+}
+#shopify-section-ourstory .herobanner.desktop .btn {
+  color:#fff;
+  background:transparent !important;
+}
+
+.herobanner.desktop .btn {
+  color: #fff;
+  font-family: "Proxima Nova Semibold";
+  font-size: 16px;
+  background-color: #bf993f !important;
+  margin-top: 25px;
+  padding: 10px 70px;
+  letter-spacing: 3px;
+}
+
+.herobanner.desktop .btn:hover {
+  color: #000;
+  background-color: #fff !important;
+}
+
+
+/* Home Styles */
+
+.home.row {
+  padding: 50px 0px;
+}
+
+.section_titles {
+  color: #0E0F0F;
+  margin: 0 15px
+}
+
+.section_titles h3 {
+  font-family: "Bely";
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 43px;
+  margin-bottom:5px;
+}
+
+.section_titles a.section_link {
+  font-family: "Proxima Nova Semibold";
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration:none;
+  color:#000;
+}
+.section_titles a.section_link:hover{
+  color:#bf993f;
+  transition:0.1s;
+}
+.section_titles a.section_link:hover {
+  font-size:14px;
+}
+
+.section_titles a.section_link span:after {
+  content: ' \279E';
+}
+
+
+/* Home Top Sellers Slider */
+
+#shopify-section-topsellers .top-sellers h3 {
+  margin-bottom:5px;
+  margin-top: 0;
+}
+#topsellers-home {
+}
+
+#topsellers-home .topsellers {
+  display:none;
+  margin-top:10px;
+}
+#topsellers-home .topsellers .prod-image {
+  border:1px solid #f2f2f2;
+  display:inline-block;
+  text-align:center;
+  width:100%;
+}
+#topsellers-home .topsellers .slick-slide {
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+}
+#topsellers-home .topsellers a{
+  text-decoration:none;
+}
+
+#topsellers-home .topsellers .slick-slide img {
+  max-width: 350px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#topsellers-home .topsellers .slick-slide h4 {
+  font-family: "Proxima Nova Semibold";
+  font-size: 16px;
+  color: #0E0F0F;
+  line-height: 20px;
+  margin: 10px 0px 5px 0px;
+  font-weight: normal;
+  text-align:left;
+}
+
+#topsellers-home .topsellers .slick-slide span {
+  color: #000;
+  font-size: 16px;
+  font-family: "Proxima Nova Semibold";
+  text-align:left;
+  float:left;
+}
+
+#topsellers-home .topsellers ul.slick-dots li button,
+.shop-scent-featured-blocks ul.slick-dots li button {
+  display: none;
+}
+
+
+#topsellers-home .topsellers ul.slick-dots,
+.shop-scent-featured-blocks ul.slick-dots {
+  text-align: center;
+  width: 100%;
+  list-style: none;
+  margin-top: 30px;
+}
+
+#topsellers-home .slick-dots li,
+.shop-scent-featured-blocks .slick-dots li {
+  width: 10%;
+  height: 25px;
+  background: #fff;
+  position: relative;
+  display: inline-block;
+  border-bottom: 8px solid #ccc;
+}
+#topsellers-home .topsellers {
+  position:relative;
+}
+#topsellers-home .topsellers .slick-arrow {
+  position: absolute;
+  top: 39%;
+  z-index: 10;
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  margin: 0;
+  border: 1px solid #efefef;
+  outline: none;
+  border-radius:50%;
+}
+#topsellers-home .topsellers .slick-arrow.slick-prev {
+  left:-7px;
+}
+#topsellers-home .topsellers .slick-arrow.slick-next {
+  right: -7px;
+}
+#topsellers-home .topsellers .slick-next:before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: -1px;
+  border: solid transparent;
+  border-width: 10px;
+  border-left-color: #000;
+}
+#topsellers-home .topsellers .slick-prev:before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0px;
+  border: solid transparent;
+  border-width: 10px;
+  border-right-color: #000;
+}
+.shop-scent-featured-blocks .slick-dots li {
+  width: 18%;
+}
+.shop-scent-featured-blocks .slick-dots li {
+  border-bottom: 4px solid #ccc;
+
+}
+.shop-scent-featured-blocks .slick-dots li {
+  background:#f8f8f8;
+}
+#topsellers-home .slick-dots li button,
+.shop-scent-featured-blocks .slick-dots li button {
+  width: 40px;
+  height: 5px;
+}
+
+#topsellers-home .slick-dots li.slick-active,
+#topsellers-home .slick-dots li:hover {
+  background: #fff;
+  border-bottom: 8px solid #777;
+}
+.shop-scent-featured-blocks .slick-dots li.slick-active,
+.shop-scent-featured-blocks .slick-dots li:hover {
+  background: #f8f8f8;
+  border-bottom: 4px solid #777;
+}
+#topsellers-home .slick-dots li button,
+#topsellers-home .slick-dots li button:before {
+  color: transparent;
+  opacity: 0;
+}
+
+#shopify-section-topsellers
+{
+  clear: both;
+}
+
+
+/* Build Your Own Kit */
+
+.build-row {
+  width: 100%;
+  height: 100%;
+  clear: both;
+}
+
+.build-row .col {
+  width: 50%;
+  margin: 0;
+  background: #efefef;
+  height: 800px;
+  float: left;
+  text-align: center;
+}
+
+.build-row .col .colbg {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  height: 100%;
+  width: 100%;
+}
+
+.build-row .col a.btn {
+  text-align: center;
+  background: #fff;
+  color: #0E0F0F;
+  position: relative;
+  top: 84%;
+  font-size: 17px;
+  text-transform:uppercase;
+}
+
+.build-row .col.left {
+  background: #cccccc;
+}
+
+.build-row .col.right {
+  background: #efefef;
+}
+
+.build-row .col a.btn:hover {
+  background: #b88b41;
+  color: #fff;
+}
+
+.fourstepprocess {
+  margin-top: 20px;
+}
+
+.fourstepprocess span.mobile {
+  font-family: "Proxima Nova Semibold";
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.fourstepprocess span.mobile:after {
+  content: ' \279E';
+}
+
+.fourstepprocess .mobile {
+  display: none;
+}
+
+.fourstep {
+  display: flex;
+  margin-bottom: 100px;
+  padding: 0 15px;
+}
+
+.fourstep .col {
+  width: 25%;
+  text-align: left;
+  clear: both; 
+
+}
+
+.fourstep .col span {
+  font-weight: bold;
+  font-family: "Bely";
+  font-size: 22px;
+}
+
+.fourstep .col .stage-video {
+  width: 322px;
+  height:431px;
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+video::-webkit-media-controls {
+  display:none !important;
+}
+
+.fourstep .col .stage-video--1 {
+  background-image: url('https://cdn.shopify.com/s/files/1/2283/7011/files/Step-1.jpg?v=1591208598');
+}
+
+.fourstep .col .stage-video--2 {
+  background-image: url('https://cdn.shopify.com/s/files/1/2283/7011/files/Step-2.jpg?v=1591211296');    
+}
+
+.fourstep .col .stage-video--3 {
+  background-image: url('https://cdn.shopify.com/s/files/1/2283/7011/files/Step-3.jpg?v=1591211585');    
+}
+
+.fourstep .col .stage-video--4 {
+  background-image: url('https://cdn.shopify.com/s/files/1/2283/7011/files/Step-4.jpg?v=1591211648');    
+}
+
+/* .fourstep .col #videoList
+#videosList {
+max-width: 332px; 
+height:445px;
+overflow: hidden;
+}
+
+.video {
+
+background-size:cover;
+background-position:center;
+max-width: 332px; 
+height:445px;
+}
+.thevideo {
+width: 100%; 
+height:100%;
+}
+/* Hide Play button + controls on iOS */
+video::-webkit-media-controls {
+  display:none !important;
+} */
+
+.fourstep .col span {
+  width: 100%;
+  margin: 10px 0px 5px 0px;
+  font-family: "Bely";
+  font-weight:bold;
+  font-size: 21px;
+  line-height: 30px;
+  float:left;
+}
+
+.fourstep .col .btn {
+  color: #0E0F0F;
+  font-family: "Proxima Nova Bold";
+  font-size: 12px;
+  text-align:left;
+  text-transform:uppercase;
+  background: none;
+  padding: 5px 0px;
+  cursor:pointer;
+}
+
+@media(max-width: 991px) {
+  .fourstep .col .btn {
+    text-align: center;
+  }
+}
+
+.fourstep .col .btn:after {
+  content: ' \279E';
+}
+
+.fourstep .col .btn.mobile {
+  display: none;
+  font-family: "Proxima Nova Bold";
+  font-size: 12px;
+  text-transform: uppercase;
+  background: transparent;
+  padding: 0px;
+  text-decoration: underline;
+}
+
+.fourstep .col .btn.mobile:hover {
+  color: #000;
+}
+
+#shopify-section-watchvideo h1 {
+  font-family: "Proxima Nova Bold";
+  font-size: 63px;
+  font-style: normal;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform:uppercase;
+}
+
+#shopify-section-watchvideo .btn {
+  background-color: #bf993f !important;
+  color: #fff;
+  font-family: "Proxima Nova Semibold";
+}
+
+#shopify-section-watchvideo .btn:hover {
+  color: #0E0F0F;
+  background-color: #fff !important;
+  border: 1px solid #fff !important;
+}
+
+#shopify-section-watchvideo {
+  margin-bottom: 0px;
+}
+
+.beardcarepackages .package-wrapper {
+  width: 100%;
+  display: flex;
+  margin: 2% 0;
+  opacity: 0;
+  visibility: hidden;
+  position: relative;
+}
+
+.beardcarepackages .package-wrapper button {
+  position: absolute;
+  top: 39%;
+  z-index: 10;
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  margin: 0;
+  border: 1px solid #efefef;
+  outline: none;
+  border-radius: 50%;
+  font-size: 0;
+}
+
+.beardcarepackages .package-wrapper button.slick-next {
+  right: -7px;
+}
+
+.beardcarepackages .package-wrapper button.slick-next:before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: -1px;
+  border: solid transparent;
+  border-width: 10px;
+  border-left-color: #000;
+}
+
+.beardcarepackages .package-wrapper button.slick-prev {
+  left: -7px;
+}
+
+.beardcarepackages .package-wrapper button.slick-prev:before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0px;
+  border: solid transparent;
+  border-width: 10px;
+  border-right-color: #000;
+}
+
+
+.beardcarepackages .package-wrapper .package {
+  width: 33%;
+  margin: 0 1% 0 1%;
+  height: 430px;
+  text-decoration:none;
+}
+.beardcarepackages .package-wrapper .package a {
+  text-decoration:none;
+  color: #0E0F0F;
+}
+
+.beardcarepackages .package-wrapper .package h4 {
+  font-size: 24px;
+  font-family: "Bely";
+  color: #0E0F0F;
+  line-height: 28px;
+  padding: 5px 10px;
+  margin-bottom:0px;
+  margin-top:10px;
+}
+.beardcarepackages .package-wrapper .package h4 a {
+  text-decoration:none;
+  color: #0E0F0F;
+}
+
+.beardcarepackages .package-wrapper .package span {
+  font-family: "Proxima Nova Semibold";
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  padding-left: 10px;
+}
+
+.beardcarepackages .package-wrapper .package span:after {
+  content: ' \279E';
+}
+
+.beardcarepackages .package-wrapper .package-img {
+  text-align: center;
+  background: #fff;
+  padding: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#shopify-section-beardcarepackages .beardcarepackages .package-wrapper .package-img {
+  border: 1px solid #f2f2f2;
+}
+
+#shopify-section-beardcarepackages .beardcarepackages .package-wrapper .slick-slide {
+  padding: 10px;
+}
+
+.beardcarepackages .package-wrapper .package-img img {}
+
+#shopify-section-fromthebrotherhood {
+  background: rgb(242, 242, 242);
+  background: linear-gradient(180deg, rgba(242, 242, 242, 1) 0%, rgba(255, 255, 255, 1) 100%);
+  padding: 50px 0px 160px 0px;
+  min-height: 600px;
+}
+
+#shopify-section-fromthebrotherhood .title-head {
+  text-align: center;
+}
+
+#shopify-section-fromthebrotherhood .title-head h1 {
+  font-family: "Bely";
+  font-size: 36px;
+  color: #000;
+  font-weight: bold;
+}
+#shopify-section-fromthebrotherhood .title-head a{
+  text-decoration:none;
+}
+#shopify-section-fromthebrotherhood .title-head span {
+  font-family: "Proxima Nova Semibold";
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #0E0F0F;
+  letter-spacing: 2px;
+}
+
+#shopify-section-fromthebrotherhood .title-head span:after {
+  content: ' \279E';
+}
+
+#shopify-section-fromthebrotherhood .frombrotherhood-wrapper {
+  padding: 0px;
+  max-width: 1400px;
+  margin: 50px auto 0;
+}
+
+#shopify-section-fromthebrotherhood .title-head span.pagingInfo:after,
+#shopify-section-fromthebrotherhood .title-head span.pagingInfo span:after {
+  content: none !important;
+}
+
+#shopify-section-fromthebrotherhood .title-head span.pagingInfo span {
+  font-size: 20px;
+  font-family: "Bely";
+}
+
+#shopify-section-fromthebrotherhood .title-head span.pagingInfo {
+  text-align: right;
+  float: right;
+  font-size: 12px;
+  font-family: "Proxima Nova Semibold";
+  letter-spacing: 5px;
+  margin-right: 10px;
+}
+
+#shopify-section-fromthebrotherhood .frombrotherhood-slider {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#shopify-section-fromthebrotherhood .frombrotherhood-slider .slick-slide {
+  background: #fff !important;
+  padding: 70px 30px 30px 30px;
+  border-bottom: 8px solid #b88b41;
+  margin: 0px 10px;
+  min-height: 400px;
+}
+
+#shopify-section-fromthebrotherhood .frombrotherhood-slider .slick-slide p {
+  color: #0E0F0F;
+  font-family: "Proxima Nova Regular";
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 25px;
+  min-height:101px;
+}
+
+#shopify-section-fromthebrotherhood .frombrotherhood-slider .slick-slide h4,
+#shopify-section-fromthebrotherhood .frombrotherhood-slider .slick-slide span {
+  color: #000000;
+  font-family: "Proxima Nova Semibold";
+}
+
+#shopify-section-fromthebrotherhood .frombrotherhood-slider .slick-slide h4 {
+  font-size: 16px;
+  margin-top: 100px;
+}
+
+#shopify-section-fromthebrotherhood .frombrotherhood-slider .slick-slide span {
+  font-size: 11px;
+}
+
+#shopify-section-fromthebrotherhood .slick-dots {
+  display: none !important;
+}
+
+#shopify-section-ourstory {
+  text-align: center;
+}
+
+#shopify-section-ourstory h1 {
+  color: #FFFFFF;
+  font-family: "Bely";
+  font-size: 61px;
+  font-weight: bold;
+  text-align: center;
+  font-style: normal;
+  text-transform: initial;
+  margin-bottom: 0;
+}
+
+#shopify-section-ourstory .btn {
+  background: transparent;
+  border: 0px;
+  font-family: "Proxima Nova Semibold";
+  font-size: 25px;
+}
+
+#shopify-section-ourstory .btn:hover {
+  background-color: transparent !important;
+  border: 0px;
+  color: #b88b41;
+}
+
+#shopify-section-ourstory .btn:after {
+  content: ' \279E';
+}
+
+#shopify-section-watchvideo .herobanner.desktop {
+  min-height: 700px;
+  padding-top: 20%;
+}
+#shopify-section-ourstory .herobanner.desktop {
+  background-position:center;
+  padding-top:12%;
+}
+
+#shopify-section-blog .package-img img {
+  width: 100%;
+}
+
+.build-row .col:hover,
+#topsellers-home .topsellers .slick-slide .prod-image:hover,
+.beardcarepackages .package-wrapper .package-img:hover,
+#shopify-section-fromthebrotherhood .frombrotherhood-slider .slick-slide:hover {
+  transform: scale(1.01);
+  transition: 0.2s;
+}
+
+#shopify-section-instagram-feed {
+  padding: 50px 0px 0px 0px;
+  text-align: center;
+}
+
+#shopify-section-instagram-feed h4 {
+  font-family: "Proxima Nova Semibold";
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+#shopify-section-instagram-feed h4 a {
+  color:#000;
+  text-decoration:none;
+}
+.insta-feed-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: ". . . . ." ". . . . .";
+}
+
+.insta-feed-grid .insta-box {
+  height: 200px;
+  width: 100%;
+}
+
+.insta-feed-grid .insta-box:nth-child(odd) {
+  background-color: white;
+}
+
+.insta-feed-grid .insta-box:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#shopify-section-thisweekspicks {
+  display: none;
+}
+
+
+/* Blog */
+
+.blog-categories .slick-arrow.slick-hidden {
+  display:block !important;
+}
+
+.shopify-challenge__container {
+  margin-top:200px !important;
+}
+#challenge .main-content,
+#terms-amp-conditions .main-content,
+#refund-policy .main-content,
+#private-policy .main-content {
+  min-height:400px;
+}
+
+
+/* Reviews */
+#reviews .okeReviews,
+#subscribe.template-page .page  {
+  max-width:800px;
+  margin:0 auto;
+}
+#subscribe.template-page .page  {
+  text-align:center;
+}
+#subscribe.template-page .subscribe-page {
+  margin:50px auto;
+  width:50%;
+}
+#subscribe .klaviyo-form-U2ef5J {
+  background:#fff !important;
+  margin:50px auto;
+}
+#subscribe .klaviyo-form-U2ef5J {
+  background:#fff !important;
+}
+
+#subscribe. .klaviyo-form-U2ef5J input[type="email"],
+#subscribe .cqBkCT.cqBkCT.cqBkCT.cqBkCT.cqBkCT.cqBkCT {
+  display: inline-block !important;
+  width: 100% !important;
+  height: 49px !important;
+  border: 1px solid #231f20 !important;
+  background-color: #ffffff !important;
+  padding: 0 17px 0 !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  -webkit-transition: all .3s !important;
+  -o-transition: all .3s !important;
+  transition: all .3s !important;
+  color: #999999 !important;
+  font-family: proxima-nova, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.65px !important;
+  text-transform: uppercase !important;
+  margin:10px 0px !important;
+}
+
+#subscribe. .klaviyo-form-U2ef5J button  {
+  background-color: #b88b41 !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 20px 60px !important;
+  font-size: 16px !important;
+  font-family: "Proxima Nova Semibold" !important;
+  letter-spacing: 2px !important;
+  text-shadow: none !important;
+  font-weight: normal !important;
+  width:100% !important;
+  margin:20px auto !important;
+}
+.cqBkCT.cqBkCT.cqBkCT.cqBkCT.cqBkCT.cqBkCT {
+  margin:20px 0px !important;
+}
+.klaviyo-form-U2ef5J .hxGbPe {
+  background: #b88b41 !important;
+  height:65px !important;
+  width: 200px !important;
+}
+.lcVffh.lcVffh.lcVffh.lcVffh.lcVffh.lcVffh {
+  border:0px !important;
+}
+
+
+#reviews h1,
+#private-policy h1, 
+#terms-amp-conditions h1, 
+#refund-policy h1,
+#subscribe h1 {
+  text-align:center;
+  font-family: "Bely";
+  font-size: 46px;
+  color: #000;
+  font-weight: bold;
+  margin: 50px 0px 0px 0px;
+}
+
+#private-policy .page, #terms-amp-conditions .page, #refund-policy .page {
+  color: #000;
+  font-family:"Proxima Nova Regular";
+  max-width:1200px;
+  margin:0 auto;
+}
+#terms-amp-conditions .brands_content {
+  margin:0 auto;
+  text-align:center;
+}
+#private-policy .page {
+  margin-bottom:50px;
+}
+.footer-panel .bottom-info .right-col ul > li > a:hover {
+  color:#4d4d4d;
+}
+.contact-us__support.link {
+  text-transform:uppercase;
+}
+.contact-us .fa-arrow-right:before {
+  font-size:10px;
+  margin-left:5px;
+}
+.contact-us__help {
+  margin-bottom:5px;
+}
+.contact-hero {
+  background-position: right;
+}
+.template-customers-login .btns {
+  display: block;
+  text-align: left;
+  float: left;
+}
+.template-customers-login .return {
+  display:block;
+  text-align:left;
+  text-decoration:none;
+  font-size:12px;
+  background:transparent;
+}
+.login .login_content h1 {
+  margin-top:100px;
+}
+.login form input {
+  text-transform: uppercase;
+}
+.customer-logged-in .account {
+  max-width:1200px;
+  margin: 0 auto;
+}
+.customer-logged-in .account h1,
+.account-address_header h1 {
+  margin-top:80px;
+  text-align:center;
+  font-family: "Bely";
+  font-size: 46px;
+  color: #000;
+  font-weight: bold;
+}
+.orders h2,
+.account_details h2 {
+  margin: 0 0 10px;
+  text-align: left;
+  font-family: "Proxima Nova Regular";
+  text-transform: uppercase;
+}
+.account_details h3 {
+  text-align:center;
+  font-family:"Proxima Nova Regular"
+}
+.account_details .btn {
+  text-transform:uppercase;
+}
+.account-address {
+  width:1200px;
+  margin: 0 auto;
+}
+.account-address_header {
+  display:block !important;
+  text-align:center;
+}
+
+#addresses.customer-logged-in .main-content {
+  min-height:300px;
+}
+#AddAddress h2 {
+  font-family:"Proxima Nova Regular";
+  text-transform: uppercase;
+  margin: 30px 0px auto !important;
+}
+#AddAddress .edit-form_wrap label {
+  font-family:"Bely";
+  font-style:normal;
+}
+#AddAddres .btn {
+  padding:12px 20px !important;
+  text-transform:uppercase;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  background: #fafafa url("https://cdn.shopify.com/s/files/1/2283/7011/files/ar-down_2x_c3f1ec95-2f63-4563-8324-9266a7fcc49e.png?v=1589308025") no-repeat 97% 50%;
+  background-color: rgb(250, 250, 250);
+  background-size: auto;
+  background-size: 3%;
+}
+#AddAddress select {
+  background-size: 2%;
+}
+#AddAddress input, 
+#AddAddress select {
+  color: #999999;
+  font-family: proxima-nova, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.65px;
+  text-transform: uppercase;
+  height: 49px;
+  border: 1px solid #231f20;
+  background-color: #ffffff;
+  padding: 0 17px 0;
+}
+#address_form_new {
+  width:62%;
+  margin:0 auto;
+}
+.account-address_header .btns .return,
+#AddAddress .edit-form_btns input.btn,
+#AddAddress .edit-form_btns .return {
+  background-color: #b88b41;
+  color: #fff;
+  border: none;
+  padding: 12px 20px !important;
+  font-size: 16px;
+  font-family: "Proxima Nova Semibold";
+  letter-spacing: 2px;
+  text-shadow: none;
+  font-weight: normal;
+  text-decoration: none;
+}
+.account-address_header .btns .btn {
+  padding: 12px 20px;
+  text-transform:uppercase;
+  font-size: 16px;
+  font-family: "Proxima Nova Semibold";
+}
+#AddAddress .edit-form_btns input.btn {float:left;}
+#AddAddress .edit-form_btns .return {height:49px;float:left;margin-left:10px;margin-top:0px;}
+.edit-form_btns {margin-bottom:100px;}
+.address_wrap {
+  background: #efefef;
+  padding: 30px !important;
+  margin-bottom: 30px;    
+}
+.address_wrap ul li {
+  font-family: "Proxima Nova Regular";
+}
+.template-404 .main-content {
+  max-width:1200px;
+  margin: 0 auto;
+}
+#challenge .main-content, #terms-amp-conditions .main-content, #refund-policy .main-content, #private-policy .main-content {
+  margin-bottom: 100px;
+}
+#bossman-gift-card #shopify-section-product-tabs,
+#bossman-gift-card .slider-nav
+{ display:none;}
+#bossman-gift-card .product-slider {width:100%;}
+#bossman-gift-card .slick-slide img {width:90%;float:right;}
+.atc-banner--product-title {
+  font-family: Proxima Nova Semibold;
+  text-transform: uppercase;
+}
+.atc-button--viewcart {
+  color: #c6a348;
+}
+.atc-button--viewcart, .atc-button--checkout {
+  font-family:"proxima nova semibold";
+  text-decoration:none;
+  font-size:13px;
+  text-transform:uppercase;
+}
+.atc-button--checkout {
+  background-color:#c6a348;
+}
+.atc-button--checkout.normal-checkout,
+.atc-button--checkout.recharge-checkout {
+  display: none;
+}
+.atc--product-details,
+.atc-banner--cart-subtotal{
+  font-family: proxima nova;
+}
+#your-shopping-cart .cart {
+  max-width:1200px;
+  margin:50px auto;
+  display:flex;
+}
+
+.main .cart {
+  display: grid;
+  grid-template-columns: .65fr 2fr;
+  grid-column-gap: 20px;
+}
+.main .cart_sidebar .guarantee {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1px solid #e8e9eb;
+  margin-bottom: 10px;
+}
+.main .cart_sidebar .guarantee_box {
+  margin-bottom: 8px;
+  width:100%;
+  display:inline-block;
+}
+.guarantee_box {
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  font-family:Proxima Nova;
+}
+.main .cart_sidebar .guarantee_box img {
+  text-align: center;
+}
+.guarantee_box div {
+  line-height: 1.3;
+  padding-top: 10px;
+}
+.main .cart_sidebar .guarantee_box:last-child {
+  margin-bottom: 0;
+}
+.main .cart_sidebar .banner {
+  border: 1px solid #e8e9eb;
+  padding: 8px 15px;
+  text-align: center;
+}
+.main .cart_main_head {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+.main .cart_main .table_head {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr 1.2fr 1fr;
+  border-bottom: 1px solid #dfdfdf;
+}
+.main .cart_main .table_head span {
+  text-transform: capitalize;
+  font-size: 13px;
+  color: #666;
+  text-align: center;
+}
+.main .cart_main .table_head span:nth-child(2) {
+  text-align: left;
+}
+.main .cart_main .table_main_row {
+  display: grid;
+  grid-template-columns: .8fr 1.55fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  padding-top: 10px;
+  border-bottom: 1px solid #cecece;
+}
+.main .cart_main .table_main_row span {
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: .5px;
+  border-right: 1px solid #cecece;
+  border-bottom: 1px solid #cecece;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-bottom: 10px;
+  color: #000;
+}
+.main .cart_main .table_main_row span a {
+  text-decoration: none;
+  color: #b88b41 !important;
+}
+.main .cart_main .table_main_row span:nth-child(2) {
+  width: 100%;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding-left: 20px;
+  border-right: none;
+}
+.main .cart_main .table_main_row span:nth-child(4) {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+.main .cart_main .continue:after {
+  display: block;
+  width: 32px;
+  height: 7px;
+  background-position: 0 0;
+  margin-left: 10px;
+}
+.main .cart_main .table_main_row span button::before {
+  content: '';
+  background-image: url(icons.svg);
+  background-repeat: no-repeat;
+}
+.main .cart_main .comments div span {
+  text-transform: uppercase;
+  color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  letter-spacing: .3px;
+  font-size: 25px;
+  margin-bottom: 10px;
+  text-align: right;
+}
+.main .cart_main .comments div .buttons {
+  margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.main .cart_main .comments div .buttons .btn-white {
+  margin-right: 20px;
+  border:1px solid #000;
+}
+.main .cart_main .comments div .buttons .btn {
+  width: 100%;
+  padding: 20px;
+  font-size: 12px;
+  background-color: #05901f;
+  margin-left:20px;
+  text-transform:uppercase;
+}
+.cart_main_head h1 {
+  font-family:"Bely";
+  text-transform:uppercase;
+}
+.cart_main_head .btn {
+  padding:10px 60px;
+  text-transform:uppercase;
+  display:none;
+}
+.main .cart_main .table_main_row span input {
+  display: inline-block;
+  text-align: center;
+  color: #000;
+  background-color: #f9f9f9;
+  border: 3px solid #f6f5f1;
+  width: 58px;
+  height: 41px;
+  font-size: 14px;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.main .cart_main .table_main_row,
+.main .cart_main .comments div span {
+  font-family:"Proxima Nova Regular";
+}
+.main .cart_main .continue {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: #ee2445;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-decoration:none;
+}
+.template-search .main-content {
+  max-width:1200px;
+  margin: 50px auto;
+}
+.template-search .search_content h1 {
+  text-align:center;
+  font-family:"Bely";
+  font-size:40px;
+}
+.template-search label input.search {
+  width: 100%;
+  padding: 18px 20px;
+  font-size: 18px;
+  font-family:"Proxima Nova Regular";
+  background-color: #fff;
+  border: 1px solid #000;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  color: #000;
+  background: url(search.png) no-repeat 50% 50% / 20px 20px;
+  background-position: 98%;
+}
+.search-grid h3 {
+  font-family: "Bely";
+  margin-bottom: 0px;
+  font-size: 22px;
+}
+.search-grid .okeReviews .okeReviews-reviewsSummary-ratingCount {
+  font-family:"Proxima Nova Regular";
+}
+.search-grid .btn {
+  text-transform:uppercase;
+}
+.search-grid .products_content_main__grid_box {
+  width: 100%;
+  background: #efefef;
+  margin: 0 auto;
+  text-align: center;
+  padding:20px;
+  min-height: 550px;
+}
+.search-grid .products_content_main__grid_box .main {
+  min-height:340px;
+
+}
+.search-grid .products_content_main__grid_box img {
+  min-height:200px;
+}
+.search-grid .products_content_main__grid_box .main-article {
+  margin-top:50px;
+}
+.template-search .pagination {
+  text-align: center;
+  padding: 20px 0 40px;
+}
+.template-search .pagination ul {list-style:none;}
+.template-search .pagination ul li {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px;
+  font-size: 14px;
+  line-height: 25px;
+  color:#000;
+  font-family:"Proxima Nova Regular";
+}
+.template-search .pagination ul li.next, .pagination ul li.prev {
+  border: none;
+  background-color:#b88b41;
+  position: relative;
+}
+.template-search .pagination ul li.prev {
+  margin-right: 10px;
+}
+.template-search .pagination {
+  text-align: center;
+}
+.template-search .pagination ul li.active {
+  border: 1px solid #b88b41;
+  color:#000;
+}
+.template-search .pagination ul li.next::before, 
+.template-search .pagination ul li.prev::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 7px;
+  background-position: 0 -365px;
+}
+.template-search .pagination ul li.next::before, 
+.template-search .pagination ul li.prev::before {
+  background-image: url(icons.svg);
+  background-repeat: no-repeat;
+}
+.template-search .pagination ul li.next {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  margin-left: 10px;
+}
+.template-search .pagination ul li.pages:before {
+  display: inline-block;
+  width: 23px;
+  height: 5px;
+  background-image: url(icons.svg);
+  background-position: 0 -360px;
+  background-repeat: no-repeat;
+}
+.pagination ul li.pages::before {
+  content:'';
+}
+#boss-bucks h3,
+#boss-bucks .hypervisual__text-medium * {
+  font-family:"Bely";
+}
+#boss-bucks a.hypervisual__button {
+  background-color: #b88b41 !important;
+  font-family: "Proxima Nova Semibold";
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+#boss-bucks .hypervisual__text-xlarge * {
+  font-family: "Proxima Nova Semibold";
+}
+#boss-bucks .hypervisual__content-block * {
+  font-family:"Proxima Nova Regular"
+}
+.template-collection .hero-block h1 {
+  font-family: "Bely";
+  font-weight: bold;
+}
+.template-collection .hero-block p {
+  font-family: "Lora Regular";
+}
+.template-collection .breadcrumb {
+  font-family: "Bely";
+  font-weight: bold;
+  font-size: 16px;
+}
+.breadcrumb-arrow {
+  margin: 0px 10px;
+  font-size: 20px;
+  font-family: "Lora Regular";
+}
+.products-filter a.opener {
+  margin-left: 25px;
+}
+.products-filter a {
+  color: #000;
+}
+
+.template-collection .product-block .image-block a img {
+  object-fit: contain;
+}
+
+.template-collection .product-block .image-block .slick-arrow {
+  display: none !important;
+}
+
+.template-collection .product-block .image-block {
+  height: auto;
+  padding: 5px;
+  text-align:center;
+}
+.template-collection .product-block .product-review {
+  height: 15px;
+}
+.template-collection .okeReviews.okeReviews--theme .okeReviews-reviewsSummary-starRating span {
+  margin-left: -7px !important;
+}
+.template-collection .okeReviews.okeReviews--theme .okeReviews-reviewsSummary-starRating span {
+  margin-left: -7px !important;
+}
+.template-collection .okeReviews .okeReviews-starRating--small .okeReviews-starRating-indicator-layer {
+  background-size: 100px 10px;
+}
+.template-collection .product-block h4 {
+  font-size: 16px;
+  line-height: 21px;
+  font-family: "Proxima Nova Semibold";
+  margin: 5px 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.template-collection .product-block h4 a {
+  color: #0e0f0f;
+  text-decoration: none;
+}
+.template-collection .product-block p.price {
+  font-family: "Proxima Nova Regular";
+  font-size: 16px;
+  line-height: 27px;
+  margin: 0 0 10px;
+}
+.product-block .colors-option-block {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.product-block .colors-option-block .select-all-variant-warnning {
+  display: none;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+}
+
+.product-block .colors-option-block .select-all-variant-warnning.active {
+  display: block;
+}
+.template-collection .swatch_options .swatch {
+  position: relative;
+  width: auto;
+  float: left;
+  height: auto;
+}
+.swatch_options input:checked + .swatch-element:not(.Scent) {
+  border-color: #000;
+  box-shadow: 0px 0px 0px 2px #fff;
+}
+.swatch_options input:checked + .swatch-element:not(.Scent) {
+  border-color: #000;
+  box-shadow: 0px 0px 0px 2px #fff;
+}
+.template-collection .swatch .Size label {
+  font-size: 12px;
+  font-family: "Proxima Nova Regular";
+}
+.template-collection .product-block p.price {
+  font-family: "Proxima Nova Regular";
+  font-size: 16px;
+  line-height: 21px;
+}
+.product-block .colors-option-block .swatch-element.Color > label, .product-block .colors-option-block .swatch-element.Size > label, .product-block .colors-option-block .swatch-element.Kit > label, .product-block .colors-option-block .swatch-element.Title > label {
+  padding: 6px 10px;
+  font-size: 12px;
+  font-family: "Proxima Nova Regular";
+}
+.template-collection .swatch_options .swatch:nth-child(2) {
+  position: relative;
+  top: unset;
+  left: unset;
+  z-index: 1;
+}
+#beard-combs-amp-brushes .products-filter,
+#jelly-beard-oil-variety-samples .products-filter,
+#accessories .products-filter,
+#apparel .products-filter {
+  display:none;
+}
+.products-way.breadcrumb {
+  font-family:"Bely";
+  font-size:16px;
+}
+.products-way.breadcrumb span {
+  font-weight:bold;
+}
+.template-product #AddToCartForm {
+  position: relative;
+}
+.template-product div.ro_widget {
+  bottom: 70px;
+  font-family:"Proxima Nova Semibold";
+  position:absolute;
+  z-index: 111;
+  display:none !important;
+}
+.bold-ro__radio-div.bold-ro__recurring-div.bold-ro__sub.bold-ro__bold-active .bold-ro__frequency-div {
+  border-bottom: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  background: #fff;
+  width: 99%;
+  text-align: center;
+  text-transform: uppercase;
+}
+.ro_widget select {
+  margin: 10px 0px !important;
+}
+.template-product .purchase-details {
+  margin-top: 10px;
+}
+.product-holder .textholder {
+  font: inherit;
+  font-size: 17px;
+  line-height: 25px;
+  margin-bottom: 20px;
+  font-family:"Bely";
+}
+.template-product .purchase-details .action_button:hover {
+  transform:scale(1.01);
+  transition:0.1s;
+}
+.template-product .swatch_options input:checked + .swatch-element label,
+.template-product .scent-option a span,
+.okeReviews.okeReviews--theme .okeReviews-reviewsSummary-ratingCount,
+.template-product .swatch .swatch-element label {
+  font-family:"Proxima Nova Semibold";
+  letter-spacing: 1px;
+  font-weight:bold;
+}
+.product-holder .description h1,
+.product-twocolumns .textholder h2 {
+  font-family:"Bely";
+  font-weight:bold;
+}
+.template-product .bold-ro__recurring-div {
+  display: table-row-group;
+  height: 40px;
+}
+.bold-ro__bold-active {
+  background-color: transparent !important;
+}
+.product-holder .description {
+  font-family: "Bely";
+  font-size: 16px;
+  line-height: 25px;
+}
+.product-nav ul li {
+  padding: 15px;
+  margin: 0 20px;
+  cursor: pointer;
+  font-family: "Proxima Nova Bold";
+  font-size:13px !important;
+  letter-spacing: 2px;
+}
+.product-twocolumns .textholder p {
+  font-family:"Bely";
+}
+.scent-variations {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 32%;
+  z-index: 11;
+  padding-bottom: 10px;
+}
+.bold-ro__product {
+  margin-bottom:0px !important;
+  display:flex !important;
+  width:100% !important;
+}
+.bold-ro__bold-active {
+  border:0px !important;
+  background-color:transparent !important;
+}
+
+
+#jelly-beard-oil-5-pack-magic-stagecoach-hammer-gold-royal-oud-bossman-brands .scent-variations,
+#jelly-beard-oil-5-pack-magic-stagecoach-hammer-gold-royal-oud-bossman-brands .swatch .swatch-element,
+#beard-styling-balm-4-pack-magic-stagecoach-hammer-gold-bossman-brands .swatch .swatch-element,
+#beard-styling-balm-4-pack-magic-stagecoach-hammer-gold-bossman-brands .scent-variations ,
+#beard-conditioner-4-pack-stagecoach-magic-hammer-gold-bossman-brands .swatch .swatch-element,
+#beard-conditioner-4-pack-stagecoach-magic-hammer-gold-bossman-brands .scent-variations,
+#natural-soap-for-men-bossman-brands .swatch .swatch-element,
+#natural-soap-for-men-bossman-brands .scent-variations,
+#beard-growth-supplements-bossman-brands .swatch .swatch-element,
+#beard-growth-supplements-bossman-brands .scent-variations,
+#colotion-3-pack-variety-vetiver-x-the-gatsby-royal-oud .swatch .swatch-element,
+#colotion-3-pack-variety-vetiver-x-the-gatsby-royal-oud .scent-variations ,
+#bossman-brands-ultimate-beard-care-beard-pomade-set .swatch .swatch-element,
+#bossman-brands-ultimate-beard-care-beard-pomade-set .scent-variations
+
+{
+  width:50% !important;
+}
+
+#beard-oil-for-men-bossman-brands .product-video-area .video-columns .col {
+  margin:0 auto;
+}
+
+#beard-conditioner-bossman-brands .ingredients-content .scent-tab-item-content p,
+#beard-conditioner-4-pack-stagecoach-magic-hammer-gold-bossman-brands p {
+  width:100%;
+}
+.template-product .tab-content .no-scent:before {
+  width:0px;
+  height:0px;
+}
+
+.ingredients-content .no-scent .scent-tab-item-content {
+  top:48% !important;
+}
+#beard-and-mustache-wax-bossman-brands .ingredients-content .colors-list li.active .scent-tab-item-content {
+  top:55%
+}
+
+#beard-and-mustache-wax-bossman-brands .tab-content.ingredients-content .colors-list li {
+  margin-top: 100px;
+}
+.product-video-area .video-columns .col {
+  margin: 0 auto;
+}
+.template-product .product-slider .slick-slide.slick-active img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#colotion-3-pack-variety-vetiver-x-the-gatsby-royal-oud .purchase-details,
+#the-quot-big-boss-quot-beard-care-kit-bossman-brands® .purchase-details,
+#complete-facial-hair-care-kit-bossman-brands .purchase-details,
+.product-block--3887260663886 .purchase-details,
+#colotion-sample-kit .purchase-details,
+#straight-razor-shaving-kit-bossman-brands .purchase-details,
+#jelly-amp-colotion-combo-sample-kits .purchase-details 
+{
+  margin-top: 10px;
+}
+
+#the-quot-big-boss-quot-beard-care-kit-bossman-brands® .ingredients-content .scent-tab-item-content p,
+#the-quot-big-boss-quot-beard-care-kit-bossman-brands® .details-content__inner p,
+#complete-facial-hair-care-kit-bossman-brands .ingredients-content .scent-tab-item-content p,
+#complete-facial-hair-care-kit-bossman-brands .details-content__inner p,
+#reload-package-kit-bossman-brands .scent-tab-item-content p,
+#reload-package-kit-bossman-brands .details-content__inner p,
+#beard-starter-kit-bossman-brands .scent-tab-item-content p,
+#beard-starter-kit-bossman-brands .details-content__inner p,
+#professional-beard-kit-bossman-brands .scent-tab-item-content p,
+#professional-beard-kit-bossman-brands .details-content__inner p,
+#men-s-shower-kits-bossman-brands .scent-tab-item-content p,
+#men-s-shower-kits-bossman-brands .details-content__inner p,
+#bossman-professional-barber-scissors .details-content__inner p,
+#the-claw-brush-cleaner .details-content__inner p
+{
+  width:100%;
+  text-align:center;
+}
+
+#bossman-professional-barber-scissors .details-content__inner {
+  max-width: 80%;
+}
+
+#the-quot-big-boss-quot-beard-care-kit-bossman-brands® .ingredients-content .no-scent .scent-tab-item-content,
+#complete-facial-hair-care-kit-bossman-brands .ingredients-content .no-scent .scent-tab-item-content,
+#reload-package-kit-bossman-brands .ingredients-content .no-scent .scent-tab-item-content,
+#beard-starter-kit-bossman-brands .ingredients-content .no-scent .scent-tab-item-content,
+#professional-beard-kit-bossman-brands .ingredients-content .no-scent .scent-tab-item-content,
+#men-s-shower-kits-bossman-brands .ingredients-content .no-scent .scent-tab-item-content {
+  width:90%;
+  background: rgba(0, 0, 0, 0.5);
+  padding:10px;
+}
+
+#the-quot-big-boss-quot-beard-care-kit-bossman-brands® .ingredients-content,
+#complete-facial-hair-care-kit-bossman-brands .ingredients-content,
+#reload-package-kit-bossman-brands .ingredients-content,
+#beard-starter-kit-bossman-brands .ingredients-content,
+#professional-beard-kit-bossman-brands .ingredients-content,
+#men-s-shower-kits-bossman-brands .ingredients-content
+{
+  height: 638px;
+}
+
+#the-quot-big-boss-quot-beard-care-kit-for-bearded-bosses-bossman-brands .ingredients-content,
+#professional-beard-care-and-grooming-kit-bossman-brands .ingredients-content{
+  height:1300px;
+  text-align:center;
+}
+#complete-facial-hair-care-kit-for-bearded-bosses-bossman-brands .ingredients-content,
+#reload-package-beard-care-and-grooming-kit-bossman-brands .ingredients-content {
+  height:1100px;
+  text-align:center;
+}
+#essentials-beard-care-kit-for-beaded-bosses-bossman-brands .ingredients-content,
+#cleansing-beard-care-shower-kit-bossman-brands .ingredients-content {
+  height:900px;
+  text-align:center;
+}
+.product-block--3887260663886 .scent-variations {
+  display:flex;
+  width:67%;
+}
+.product-block--3887260663886 .scent-option {
+  width:99%;
+  height:86px;
+  margin-right:1%;
+}
+.product-block--3887260663886 .scent-variations a  {
+  height:86px;
+}
+
+#straight-razor-shaving-kit-bossman-brands .details-content__inner p {
+  width:100%;
+}
+#straight-razor-shaving-kit-bossman-brands .product-tab-content .details-content {
+  padding: 100px 0;
+  height:700px;
+}
+#straight-razor-shaving-kit-bossman-brands .details-content__inner {
+  max-width: 80%;
+}
+#straight-razor-shaving-kit-bossman-brands .details-content__inner h1 {
+  display:none;
+}
+#straight-razor-shaving-kit-bossman-brands .swatch .swatch-element {
+  width:50%;
+}
+.template-collection .products-block {
+  padding: 70px 10px;
+  visibility: hidden;
+  opacity: 0;
+}
+.template-collection .products-block.slick-init {
+  visibility: visible;
+  opacity: 1;
+}
+.template-collection .okeReviews.okeReviews--theme .okeReviews-reviewsSummary-starRating span {
+  margin-left: 0px !important;
+}
+.u-vmenu ul li a.normal-link {
+  text-transform:none;
+  display:initial !important;
+  color:#bf954a;
+}
+.template-article .hypervisual__collection-4up .hypervisual__collection-product-column {
+  width: 33% !important;
+  margin: 0 auto !important;
+}
+#shopify-section-about-header .top-banner {
+  display:block;
+  padding-top:150px;
+}
+#shopify-section-about-header .top-banner__title {
+  margin-bottom:10px;
+}
+#shopify-section-about-header .top-banner .btn {
+  text-transform:uppercase;
+  background:transparent;
+}
+#shopify-section-about-header .top-banner .btn:hover {
+  text-transform:uppercase;
+  background:transparent;
+  color:#c0964a;
+}
+.cart.empty .cart_main {
+  text-align: left;
+}
+.cart.empty .cart_main_head {
+  display:inline-block;
+}
+.cart.empty .cart_main_head span {
+  font-family: "Proxima Nova Semibold";
+  padding: 20px 0px;
+  width: 100%;
+  display: block;
+  float: left;
+  margin: 20px 0px;
+}
+.main .cart.empty .cart_main_head p {
+  font-family: "Proxima Nova Regular";
+}
+.cart.empty .cart_main_head .btn {
+  display: inline-block;
+  width: auto;
+
+}
+.shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-title label {
+  background:rgba(0, 0, 0, 0.5);
+  line-height: 47px;
+}
+
+
+.product-block.sale-badge:before {
+  content: "SALE";
+  background: #f1513d;
+  font-size: 12px;
+  position: absolute;
+  top: 55px;
+  left: 7px;
+  z-index: 9;
+  font-family: "Proxima Nova Semibold";
+  color: #fff;
+  padding: 5px 40px;
+  text-transform: uppercase;
+  max-width: 120px;
+}
+.scent-list-mobile{
+  display:none;
+}
+#create-account form {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+}
+#create-account .register {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+#create-account .btn {
+  text-transform:uppercase;
+}
+#create-account .return {
+  background: none;
+  color:#000;
+  text-decoration: none;
+}
+#fourstep-desktop {display:flex !important; flex-wrap: wrap;}
+#fourstep-mobile {display:none !important;}
+
+.article__content--copy .first-letter>div::first-letter{
+  font-size:2em;
+  font-weight:bold;
+}
+
+
+.scent-descriptions {
+  color:#000;
+  text-align: center;
+  padding: 5px;
+  max-width: 100%;
+  width:100%;
+  margin: 0px auto 30px auto;
+  height:60px;
+}
+
+.scenthover-description {
+  display: none;
+}
+
+.scenthover-description.active {
+  display: block;
+}
+
+.scenthover-description span {font-weight:bold;}
+
+.hammer-color span {color: #eb1407;}
+.stagecoach-color span {color: #765031;}
+.magic-color span {color: #2bbef1;}
+.gold-color span {color: #dfa709;}
+.naked-color span {color:#000;}
+.vetiverx-color span {color: #016423;}
+.thegatsby-color span {color: #efb652;}
+.royaloud-color span {color: #0422b0;}
+
+.smile-launcher-frame-container{
+  display:none !important;
+}
+body.template-index .smile-launcher-frame-container{
+  display:block !important;
+}
+.rc_label.rc_label__deliver_every select {
+  border: 0px;
+  font-size: 16px;
+  font-family: "bely";
+}
+div.rc_popup__block {
+  width: 300px;
+}
+img.rc_popup__badge {
+  display:none;
+}
+div.rc_popup__block__content a {
+  color: #4DD6B7 !important;
+  display: none;
+}
+
+.cart_main {
+  padding-bottom:50px;
+}
+.template-product .products-gallery {
+  visibility: visible;
+  opacity: 1;
+/*   display: flex; */
+}
+.template-customers-order .order {
+    padding: 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+a.rc_popup__hover, div.rc_popup__hover {display:none !important;}
+
+
+#ultimate-5-pack-beard-styling-pomade-bossman-brands .swatch .swatch-element,
+#ultimate-5-pack-beard-styling-pomade-bossman-brands .scent-variations,
+#relaxing-beard-styling-balm-5-pack-bossman-brands .swatch .swatch-element,
+#relaxing-beard-styling-balm-5-pack-bossman-brands .scent-variations {
+  width: 50%;
+}
+#all-natural-beard-growth-supplements-online-bossman-brands .swatch .swatch-element {
+  width:50% !important;
+  
+}
+.product-single__media {
+    position: relative;
+    max-width: 1000px;
+}
+.product-holder .gallery-column .product-slider {
+    width: 80%;
+}
+#colotion-men-39-s-beard-fregrance-3-pack-variety-bossman-brands .swatch .swatch-element,
+#colotion-men-39-s-beard-fregrance-3-pack-variety-bossman-brands .scent-variations {
+  width:50% !important;
+}
+
+
+
+
+/* End Desktop */
+
+
+
+
+
+@media screen and (max-width:1366px) {
+  .products-holder {
+    padding: 30px 10px 20px;
+  }
+  .product-video-area {
+    padding: 0 10px 50px;
+  }
+}
+
+@media screen and (max-width:1280px) {
+  #shopify-section-ourstory h1 {
+    margin-top: 90px;
+  }
+  .footer-col>.container>.col:first-child>ul {
+    padding-left: 0;
+  }
+  #fourstep-desktop {
+    justify-content: space-between;
+  }
+
+  .fourstep .col {
+    width: 24%;
+  }
+
+  .fourstep .col .stage-video {
+    width: 100%;
+    height: 401px;
+  }
+  .fourstep .col .stage-video video {
+    width: 100%;
+  }
+
+  #topsellers-home,
+  #beard-packages{
+    padding: 0 10px;
+  }
+  #header .panel .login-block {
+    width: 15%;
+  }
+}
+@media screen and (max-width:1200px) {
+  .fourstep .col .stage-video {
+    height: 375px;
+  }
+}
+
+@media screen and (max-width:1024px) {
+  #header .panel .login-block {
+    width: 20%;
+  }
+  .fourstep .col .stage-video {
+    height: 319px;
+  }
+}
+@media(max-width: 991px) {
+  .fourstep .col {
+    width: 49%;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .fourstep .col .stage-video {
+    margin: 0 auto 20px;
+    background-size: cover;
+  }
+  .fourstep .col .stage-video {
+    height: 629px;
+  }
+}
+
+@media screen and (max-width:991px) {
+  .product-holder .gallery-column {
+    width: 50%;
+  }
+  .product-holder .description {
+    width: 50%;
+  }
+}
+
+
+@media screen and (max-width:834px) {
+  
+  .template-product .swatch_options .swatch {
+    font-size: 11px;
+  }
+  .drop-colors-filter .current-block-with-color .big-square {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+  }
+  .drop-colors-filter .current-block-with-color {
+    padding: 20px 0;
+    width: 25%;
+  }
+  #shopify-section-watchvideo h1 {
+    font-size: 50px;
+    margin-top: 80px;
+  }
+  #topsellers-home .topsellers .slick-slide h4,
+  .topsellers-rating-block,
+  #topsellers-home .topsellers .slick-slide span,
+  .home.top-sellers .section_titles h3,
+  .home.beardcarepackages .section_titles h3,
+  .beardcarepackages .package-wrapper .package h4,
+  .beardcarepackages-rating-block {
+    text-align: center;
+  }
+  #topsellers-home .topsellers .slick-slide span{
+    float: none;
+  }
+  .section_titles a.section_link,
+  .beardcarepackages .package-wrapper .package span{
+    display: block;
+    text-align: center;
+  }
+  #header .panel .login-block {
+    width: 25%;
+  }
+  .fourstep .col .stage-video {
+    height: 526px;
+  }
+}
+@media screen and (max-width:800px) {
+  .fourstep .col .stage-video {
+    height: 504px;
+  }
+  .scent-variations a {
+    min-height: 76px;
+  }
+}
+@media screen and (max-width:768px) {
+  .fourstep .col .stage-video {
+    height: 483px;
+  }
+  .scent-variations {
+    width: 31% !important;
+    padding-bottom: 10px !important;
+  }
+  
+}
+@media screen and (max-width:767px) {
+  .fourstep .col .stage-video {
+    margin: 0 auto 20px;
+  }
+  /*Shop by Scent - Mobile Design*/
+  .shop-by-scent .shop-by-scent-hero .scent-title-des h2,
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-title h2{
+    font-size: 42px!important;
+  }
+  .shop-by-scent .shop-by-scent-hero .scent-title-des p,
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-title label,
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-content p,
+  .shop-by-scent .scent-blocks .scent-block .scent-block-recommendation .scent-block-title span{
+    font-size: 16px!important;
+  }
+  .shop-by-scent .scent-blocks{
+    margin: 5% 0 2% 0%!important;
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-recommendation{
+    padding: 8% 0%!important;
+    max-width: 95%!important;
+    margin: 0 auto!important;
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-nav{
+    display:none;
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-title{
+    background-color:#0b0d0c;
+    left: 0!important;
+    top:426x!important;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-100%);
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-recommendation .scent-recommendation-blocks .slick-slide{
+    padding:0!important;
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main{
+    height: 400px!important;
+    padding-top: 400px;
+    background-size: 100% auto!important;
+    background-position: center top!important;
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-bg,
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-bg{
+    width:0!important;
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-content{
+    position: relative!important;
+    max-width: 100%!important;
+    text-align: center;
+    top: auto!important;
+    right: auto!important;
+    padding: 20px;
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-content p{
+    color:#000!important;
+    background:transparent !important;
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-recommendation .scent-recommendation-blocks .slick-arrow.slick-prev {
+    z-index:9;
+  }
+
+
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-content a{
+    background-color:#000!important;
+    color:#fff!important;
+    max-width: 200px!important;
+    margin: 0 auto;
+  }
+  .shop-by-scent .shop-scent-featured h3{
+    text-align:center;
+  }
+  .shop-by-scent .shop-scent-featured .shop-scent-featured-block{
+    position:relative;
+  }
+  .shop-by-scent .shop-scent-featured .shop-scent-featured-blocks .shop-scent-featured-block a label{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px;
+    color:#fff!important;
+  }
+  .shop-by-scent .shop-scent-featured .shop-scent-featured-blocks .shop-scent-featured-block a span{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    color:#fff!important;    
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-title label.magic{
+    color:#2b9dd3!important;
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-title label.stagecoach{
+    color:#ffa223!important;
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-title label.gold{
+    color:#b69544!important;
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-title label.hammer{
+    color:#f32027!important;
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-title label.naked{
+    color:#e5e5e5!important;
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-title label.royal_oud{
+    color:#c4994c!important;
+  }
+  .shop-by-scent .shop-by-scent-hero .scent-list-mobile{
+    display:block;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    font-size: 15px;
+    color: #c0964a;
+    font-weight: bold;
+    font-family: 'Proxima Nova Bold';
+  }
+  .shop-by-scent .shop-by-scent-hero .scent-list-mobile:after{
+    content:'';
+    width: 10px;
+    height: 10px;
+    border: solid #c4994c;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg);
+    display:block;
+    margin: 10px auto 0;
+    transition:0.5s all;
+  }
+  .shop-by-scent .shop-by-scent-hero.scent-active .scent-list-mobile:after{
+    transform: rotate(-135deg);
+    transition:0.5s all;
+  }
+  .shop-by-scent .shop-by-scent-hero .scent-list-mobile+.scent-list {
+    margin: 0!important;
+    position: absolute;
+    top: 100%;
+    transform: translateY(0%)!important;
+    padding: 20px!important;
+    left: 0;
+    background: #fff;
+    z-index: 100;
+    width: 100%;
+    text-align: center;
+  }
+  .shop-by-scent .shop-by-scent-hero .scent-list>li>a{
+    color:#000!important;
+  }
+  .shop-by-scent .shop-by-scent-hero .scent-title-des{
+    width:80%;
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-title label {
+    background: transparent;
+    line-height: 19px;
+  }
+  .shop-by-scent .shop-by-scent-hero .scent-title-des p, .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-title label, .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-content p, .shop-by-scent .scent-blocks .scent-block .scent-block-recommendation .scent-block-title span {
+    font-size: 15px !important;
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-content {
+    height:240px !important;
+    float:left;
+    width:100%;
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-content a {
+    margin:20px auto;
+    font-size:14px !important;
+  }
+  .shop-by-scent .scent-blocks .scent-block .scent-block-recommendation .scent-recommendation-blocks .scent-recommendation-block a label {
+    margin: 20px 0px;
+  }
+  .klaviyo-form-U2ef5J .fpUOs.fpUOs {
+    margin:20px auto !important;
+    width:90% !important;
+  }
+  .klaviyo-form-U2ef5J .hxGbPe {
+    background: #b88b41 !important;
+    height: 65px !important;
+    width: auto !important;
+    border-radius:0px !important;
+  }
+}
+
+@media screen and (max-width:640px) {
+  #the-quot-big-boss-quot-beard-care-kit-bossman-brands .ingredients-content .colors-list li.active .scent-tab-item-content {
+    width: 100%;
+    padding: 0 15px;
+  }
+  #the-quot-big-boss-quot-beard-care-kit-bossman-brands .ingredients-content {
+    height: 1250px;
+  }
+  .drop-colors-filter .current-block-with-color h4 {
+    font-size: 16px;
+  }
+  .fourstep .col .stage-video {
+    height: 399px;
+  }
+  .scent-variations {
+    width: 31% !important;
+  }
+}
+
+/* Start 480 Mobile */
+@media screen and (max-width:480px) {
+  .product-holder .description {
+    width: 100%;
+  }
+  .product-holder .gallery-column {
+    width: 100%;
+  }
+  
+  #the-quot-big-boss-quot-beard-care-kit-bossman-brands .ingredients-content {
+    height: 1100px;
+  }
+  #the-quot-big-boss-quot-beard-care-kit-bossman-brands .ingredients-content .colors-list li.active .scent-tab-item-content p {
+    font-size: 16px;
+  }
+  
+  .products-way.breadcrumb {
+    font-family: "Bely";
+    font-size: 16px;
+    margin: 0px 0px 20px 0px;
+    display:block;
+	}
+  .product-manager {
+    display:inline-block;width:100%;
+  }
+  .products-filter {
+    text-align:center;
+  }
+
+  .product-manager > .products-way {
+    display: inherit;
+    width: 100%;
+    float: none;
+    text-align:center;
+   }
+  
+  .product-video-area iframe {
+    height: 300px !important;
+   }
+  
+  
+  .product-manager > .buy-stages {
+    border: 2px solid #888;
+    margin: 0px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   }
+  .products-filter a.opener {
+    margin-left: 10px;
+  }
+  .template-collection .products-block {
+    padding: 40px 10px;
+  }
+  
+  .shop-by-scent .scent-blocks .scent-block .scent-block-main .scent-block-content a {
+    margin: 0px auto !important;
+  }
+  
+  #shopify-section-watchvideo h1 {
+    margin-top: 0;
+  }
+  .section_titles a.section_link,
+  .home.top-sellers .section_titles h3,
+  .home.beardcarepackages .section_titles h3 {
+    text-align: left;
+  }
+  #header {
+    padding-top: 60px;
+  }
+  .mobile {
+    display: block !important;
+  }
+  .desktop {
+    display: none !important;
+  }
+  #header .panel {
+    height: 60px;
+  }
+  #header .panel p {
+    padding: 10px 30px;
+    line-height: 19px;
+    width: 100%;
+  }
+  #header .panel p a {
+    text-transform: uppercase;
+    font-family: "Proxima Nova Semibold";
+  }
+  #header .panel p.mobile {
+    text-align:center;
+  }
+  #header .panel p.mobile a {
+    text-decoration:underline;
+  }
+  .herobanner.desktop {
+    padding-top: 42%;
+    min-height: 500px;
+  }
+  .herobanner.mobile {
+    background-size: cover;
+    background-position: center;
+    min-height:450px;
+    text-align:center;
+  }
+  .herobanner.desktop h1 {
+    margin: 0px;
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .herobanner.desktop span {
+    font-size: 16px;
+  }
+  .herobanner.desktop .btn {
+    font-size: 13px;
+    padding: 5px 50px;
+  }
+  .herobanner.mobile h1 {
+    margin: 0px 0px 30px 0px;
+    font-size: 43px;
+    line-height: 32px;
+    font-family: "Bely";
+    font-weight:bold;
+    color: #fff;
+    letter-spacing: 7px;
+    text-transform:normal;
+  }
+  .herobanner.mobile {
+    padding-top:12%;
+  }
+  .herobanner.mobile span {
+    font-size: 16px;
+    font-family: "Proxima Nova Regular";
+    color: #fff;
+    line-height: 32px;
+    letter-spacing: 5px;
+    text-transform:uppercase;
+  }
+  .herobanner.mobile .btn {
+    font-size: 13px;
+    padding: 10px 50px;
+    color: #fff;
+    font-family: "Proxima Nova Bold";
+    background-color: #bf993f !important;
+    text-transform:uppercase;
+  }
+  .home.row.top-sellers {
+    padding: 0px 10px;
+  }
+  .home.row.buildyourownkit {
+    padding: 50px 0px 20px 0px;
+  }
+  .build-row .col {
+    width: 100%;
+    height:300px;
+  }
+  .fourstep {
+    display: block;
+    margin-bottom: 50px;
+  }
+  .fourstep .col {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .fourstep .col .stage-video {
+    height: 600px;
+  }
+  .section_titles h3 {
+    font-size: 26px;
+    line-height:34px;
+  }
+  .top-sellers .section_titles {
+    margin:0px 0px 0px 5px;
+  }
+  .buildyourownkit .section_titles {
+    margin:0px 0px 0px 14px;
+  }
+  #topsellers-home .topsellers .slick-slide {
+    margin-right: 0px;
+    padding:5px;
+  }
+  #topsellers-home .topsellers .slick-slide img,
+  #shopify-section-thisweekspicks .slick-slide img {
+    max-width: 300px;
+  }
+  .build-row .col:hover,
+  #topsellers-home .topsellers .slick-slide .prod-image:hover,
+  .fourstep .col:hover,
+  .beardcarepackages .package-wrapper .package-img:hover,
+  #shopify-section-fromthebrotherhood .frombrotherhood-slider .slick-slide:hover {
+    transform: none;
+    transition: 0.2s;
+  }
+  #shopify-section-watchvideo .herobanner.desktop,
+  #shopify-section-ourstory .herobanner.desktop {
+    min-height: 309px;
+    padding-top: 20%;
+    background-size: cover;
+  }
+  #shopify-section-watchvideo h1 {
+    font-size: 22px;
+    line-height:28px;
+    margin-bottom:30px;
+  }
+  #shopify-section-watchvideo .herobanner.desktop .btn {
+    padding: 10px 50px;
+  }
+  #shopify-section-beardcarepackages,
+  #shopify-section-fromthebrotherhood,
+  #shopify-section-ourstory,
+  #shopify-section-blog,
+  #shopify-section-instagram-feed,
+  #shopify-section-video,
+  #shopify-section-ourbrothers,
+  #shopify-section-rewards {
+    display: none !important;
+  }
+  .fourstepprocess .mobile {
+    display: block;
+  }
+  .fourstep .col .btn.mobile {
+    display: block;
+    text-align:center;
+    margin-top:5px;
+  }
+  .fourstep .col .btn.desktop {
+    display: none;
+  }
+  .fourstep .col span {
+    margin-bottom: 0px;
+  }
+  .fourstepprocess a {
+    text-decoration:none;
+    color:#000;
+  }
+
+  .btn {
+    padding: 10px 50px;
+    font-size: 14px;
+  }
+  .build-row .col a.btn {
+    top: 80%;
+  }
+  .nav-active .main-menu {
+    min-height: 100%;
+    top: 62px;
+  }
+  #shopify-section-thisweekspicks {
+    display: block;
+  }
+  .video {
+    height: 513px;
+    max-width: 100%;
+  }
+  #shopify-section-watchvideo .herobanner.desktop {
+    display:block !important;
+    min-height: 268px;
+    background-position: center;
+  }
+  #header .open-search .search-form {
+    background: #000;
+    height: 100%;
+    min-height: 736px;
+  }
+  .open-search.active .opener {
+    background: #000;
+    right: 20px;
+    top: 20px;
+    width: 25px;
+    height: 25px;
+  }
+  .open-search.active .opener::before, .open-search.active .opener::after {
+    background: #fff;
+  }
+  .open-search .slide {
+    top:0px;
+  }
+  .open-search.active .opener div.logo,
+  .open-search.active .nav-opener {
+    display:none !important;
+  }
+  .open-search.active .search-logo {
+    background: #0000;
+    float: left;
+    display: block;
+    height: 60px;
+    border-bottom: 1px solid #191919;
+    width: 100%;
+    margin-top:15px;
+    padding-left:20px;
+  }
+  #mobile-search-input {
+    position: absolute;
+    top: 90px;
+    left: 17px;
+    height: 50px;
+    width: 90%;
+    padding: 10px;
+    border: 0px;
+    color: #f5f5f5;
+    background: transparent;
+    font-family: bely bold;
+    font-size: 20px;
+  }
+  .open-search .search-form input[type="submit"] {
+    background: url(search.png) no-repeat 50% 50% / 17px 17px;
+    text-indent: -9999px;
+    width: 17px;
+    height: 17px;
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: 100px;
+    left: 87%;
+    cursor: pointer;
+  }
+  .open-search.active .search-menu {
+    background: #000;
+    height: 573px;
+    top: 161px;
+    position: absolute;
+    border-top: 1px solid #6D6E71;
+    width:90%;
+    left:20px;
+    font-family:"Proxima Nova Regular";
+    color:#fff;
+    text-transform:uppercase;
+    list-style:none;
+    float:left;
+    text-align:left;
+    padding-top:30px;
+    letter-spacing:2px;
+  }
+  .open-search.active .search-menu a {
+    color:#fff;
+    text-decoration:none;
+  }
+  .open-search.active .search-menu h3 {
+    font-size:15px;
+    margin-bottom:5px;
+  }
+  .open-search.active .search-menu ul {
+    list-style: none;
+    float: left;
+    width: 100%;
+    font-size:13px;
+    padding-left:0px;
+    border-bottom: 1px solid #6D6E71;
+    padding-bottom:20px;
+  }
+  .open-search.active .search-menu .searchmenu-top {
+    margin-top:0px;
+    padding-top:0px;
+  }
+  .open-search.active .search-menu ul li {
+    margin:15px 0px;
+  }
+  .open-search.active .search-menu .searchmenu-bottom {
+    font-size:12px;
+  }
+  .open-search.active .search-menu .search-btns {
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+  }
+  .open-search.active .search-menu .search-btns .btn {
+    width: 48%;
+    display: block;
+    float: left;
+    margin: 0px 1%;
+    background: transparent;
+    border: 1px solid #b88b41;
+    text-align: center;
+  }
+  .nav-opener {
+    width: 30px;
+    height: 30px;
+  }
+  .stage-hero-section {
+    margin: 0;
+    padding: 289px 50px 166px;
+  }
+  .stage-bottom-block > .banner > .text-holder h3 {
+    font-size: 37px;
+  }
+  .stage-bottom-block > .banner > .text-holder a {
+    font-size: 18px;
+  }
+  .stage-bottom-block > .banner > .text-holder a::after {
+    background:none;
+  }
+  .about-us-content__right .content-text {
+    font-size:18px !important;
+    padding:20px !important;
+  }
+  .about-us-bottom .large-text {
+    font-size:21px !important;
+  }
+  .about-us-bottom .small-text {
+    font-size:14px !important;
+  }
+  .login .login_content h1 {
+    margin-top: 50px;
+  }
+  .login form {
+    display: inline-block;
+    width: 90% !important;
+  }
+  .return {width:100% !important;}
+  .template-customers-login .btns {
+    display: block;
+    text-align: center;
+    float: none;
+  }
+  .template-customers-login .return {
+    text-align:center;
+  }
+  .template-customers-login .main-content {
+    min-height:auto !important;
+  }
+  .customer-logged-in .account {
+    max-width: 90%;
+  }
+  .account h1 {display:block !important;}
+  .customer-logged-in .account h1 {
+    margin-top: 20px;
+    font-size:36px;
+  }
+  .account_content {
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .orders h2, .account_details h2 {
+    text-align:center;
+  }
+  .account-address {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .account-address_header .btns .btn {
+    display:block;
+    margin-bottom:30px;
+  }
+  .address_wrap ul {
+    width: 80% !important;
+    margin-left: 0px;
+    padding-left: 0px;
+  }
+  .address_wrap .editbtns {
+    float:right;
+    text-align:right;
+  }
+  .editbtns a:first-child {
+    margin:5px 0px !important;
+  }
+  #private-policy .page, #terms-amp-conditions .page, #refund-policy .page {
+    width:90%;
+    margin:0 auto;
+  }
+  #reviews h1, #private-policy h1, #terms-amp-conditions h1, #refund-policy h1, #subscribe h1 {
+    font-size:36px;
+  }
+  #bossman-gift-card .slick-slide img {
+    float: none;
+    text-align: center;
+    margin: 20px auto;
+  }
+  .template-product .product-okendo-review .product-okendo-review__inner {
+    max-width:90% !important;
+  }
+  #your-shopping-cart .cart {
+    max-width: 90%;
+    margin: 50px auto;
+    display: block;
+  }
+  .main .cart_main_head {
+    display:block;
+    text-align:center;
+  }
+  .main .cart_main .table_head {display:none;}
+  .main .cart_main .table_main_row {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "img name name" "price count totalprice";
+  }
+  .main .cart_main .table_main_row span:first-child {
+    grid-area: img;
+  }
+  .main .cart_main .table_main_row span:nth-child(2) {
+    grid-area: name;
+    padding: 0 0 20px;
+  }
+  .main .cart_main .table_main_row span:nth-child(3) {
+    grid-area: price;
+  }
+  .main .cart_main .table_main_row span:nth-child(4) {
+    grid-area: count;
+  }
+  .main .cart_main .table_main_row span:last-child {
+    grid-area: totalprice;
+  }
+  .main .cart_main .continue {
+    display: block;
+    width: 100% !important;
+    text-align: center;
+    margin-bottom:30px;
+  }
+  .main .cart_main .comments div span {
+    text-align:center;
+  }
+  .main .cart_main .comments div .buttons {
+    display:block;
+  }
+  .template-search .main-content {
+    max-width: 90%;
+  }
+  .search-grid .products_content_main__grid_box {
+    padding: 20px 20px 50px 0px;
+    min-height: auto;
+  }
+  .search-grid .products_content_main__grid_box .main-article {
+    min-height: 250px;
+  }
+  .template-search .pagination ul {
+    list-style: none;
+    margin: 20px 0px;
+    padding: 0px;
+  }
+  .template-search .search_content h1 {
+    font-size: 20px;
+  }
+  .product-manager > .buy-stages > a {
+    padding: 4px 19px;
+  }
+  .product-manager {
+    background-color: transparent;
+  }
+  .product-slider ul.slick-dots {
+    display:flex;
+  }
+  .product-holder .gallery-column .product-slider {
+    margin:0 auto;
+  }
+  .product-slider ul.slick-dots li button {
+    display: none;
+    color: transparent;
+    opacity: 0;
+  }
+  .product-slider .slick-dots li.slick-active, 
+  .product-slider .slick-dots li:hover {
+    background: #fff;
+    border-bottom: 4px solid #777;
+  }
+  .product-slider .slick-dots li {
+    width: 8%;
+    height: 20px;
+    background: #fff;
+    position: relative;
+    display: inline-block;
+    border-bottom: 4px solid #ccc;
+  }
+  .scent-variations a {
+    margin-top: 10px;
+  }
+  .scent-variations {
+    width: 118px !important;
+    bottom: 10px !important;
+    height: 61px !important;
+  }
+  .bold-ro__one-time-div {
+    display: flex;
+  }
+  .template-product .bold-ro__recurring-div {
+    display: grid !important;
+    height: 40px;
+    padding: 0px 8px !important;
+  }
+  .bold-ro__one-time-div, .bold-ro__recurring-div, .bold-ro__frequency-label, .bold-ro__mix-div {
+    text-align: center;
+  }
+  .bold-ro__radio-div.bold-ro__recurring-div.bold-ro__sub.bold-ro__bold-active .bold-ro__frequency-div {
+    width:100%;
+  }
+  .accessories-item .accessories-right .accessory-variant-select {
+    width:100%;
+  }
+  .scent-content .colors-list li.active .scent-tab-item-content {
+    top:31%;
+    left: 50%;
+    width: 100%;
+  }
+  .product-twocolumns .textholder h2 {
+    font-size: 34px;
+  }
+  .product-twocolumns .textholder p {
+    font-size:18px;
+    padding:0px 20px;
+  }
+  .tab-content {
+    height: 700px;
+  }
+  .tab-content .colors-list {
+    min-height:85%;
+  }
+  .product-twocolumns .textholder {
+    min-height:450px;
+  }
+  .product-twocolumns .textholder .view:after {
+    line-height: 7px;
+    background: none;
+    content: ' \279E';
+  }
+  .scent-content .colors-list li.royal-oud.active .scent-tab-item-content{
+    top:35%;
+  }
+  .product-twocolumns .img-holder {
+    height:250px;
+    background-position: bottom;
+  }
+  .tab-content.ingredients-content {
+    height:500px;
+  }
+  .ingredients-content .colors-list li.active .scent-tab-item-content {
+    width:90%;
+    top:50%;
+  }
+  .ingredients-content .scent-tab-item-content h1 {
+    font-size: 34px;
+  }
+  .ingredients-content .scent-tab-item-content p, .details-content__inner p {
+    color: white;
+    font-size: 18px;
+    line-height: 30px;
+    font-family: "Bely";
+    font-weight: bold;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .tab-content .colors-list li::before {
+    display: block;
+    width: 37px;
+    height: 37px;
+  }
+  .tab-content .colors-list li,
+  .tab-content.ingredients-content .colors-list li {
+    margin: 10% 10px 0;
+  }
+  .product-tab-content .details-content {
+    height: 500px;
+    padding: 100px 40px;
+  }
+  .product-holder .guarantee-block.recommended > a:after {
+    display:block;
+  }
+  .product-holder .guarantee-block.recommended.active > a:after {
+    display:none;
+  }
+  .template-product .product-video-carousel .slideset .img-holder .inner h2 {
+    color: white;
+    font-size: 28px;
+  }
+  .template-product .product-video-carousel .slideset .img-holder .inner {
+    width: 100%;
+    top:56%;
+  }
+  .template-product .product-video-carousel .slideset .img-holder .inner .btn-watch {
+    padding: 10px;
+    width: 200px;
+    font-size:16px;
+  }
+  #shopify-section-product-video-carousel {
+    padding:10px;
+    background:#f2f2f2;
+    min-height:auto;
+  }
+  .product-reviews-area {
+    background:#f2f2f2;
+  }
+  .template-product .product-video-carousel .slideset .slide-count-wrap {
+    position:relative;
+    text-align: center;
+    padding-top: 20px;
+    top:unset;
+    right:unset;
+    font-family:"Bely";
+    color:#000;
+    font-size:18px;
+    font-weight:bold;
+  }
+  .template-product .product-video-carousel .slideset .slide-count-wrap span {
+    color:#000;
+  }
+  .template-product .product-video-carousel .slideset .slick-arrow.slick-prev:before {
+    content: ' \2190';
+    font-size:20px;
+  }
+  .template-product .product-video-carousel .slideset .slick-arrow.slick-next:after {
+    content: ' \2192';
+    font-size:20px;
+  }
+  .template-product .product-video-carousel .slideset .slick-arrow.slick-prev {
+    border-color:transparent;
+    border-width:0px;
+    left: 150px;
+    top: 414px;
+  }
+  .template-product .product-video-carousel .slideset .slick-arrow.slick-next {
+    border-color:transparent;
+    border-width:0px;
+    top: 390px;
+    right:170px;
+  }
+  .product-reviews-area h2 {
+    font-size: 20px;
+  }
+  .product-reviews-area .treecolumns {
+    max-width:100%;
+  }
+  .product-reviews-area .treecolumns .column {
+    width:100%;
+    margin:20px 0px;
+    text-align:center;
+    padding: 70px 40px 20px;
+  }
+  .product-reviews-area .treecolumns .column img {
+    margin:30px 0px 0px 0px;
+  }
+  .product-reviews-area .treecolumns blockquote p {
+    text-align:center;
+  }
+  .product-reviews-area .treecolumns blockquote footer {
+    text-align:center;
+    position:relative;
+    bottom:unset;
+    left:unset;
+    display:block;
+  }
+  .product-video-area .video-columns .col {
+    width: 100%;
+    padding: 30px;
+  }
+  .template-product .fancybox-content {
+    padding:5px;
+  }
+  #shopify-section-product-related .products-holder h2 {
+    text-align: center;
+  }
+  .products-gallery .slick-prev {
+    display: block !important;
+  }
+  .products-gallery .product-block .image-block {
+    border:0px;
+    height:330px;
+  }
+  .products-gallery .slick-slide {
+    border:0px solid #f7f7f7;
+    margin-right:10px;
+    height:435px;
+  }
+  .products-gallery .product-block h4 {
+    font-family:"Bely";
+  }
+  .okeReviews .okeReviews-reviewsAggregate-side, .okeReviews .okeReviews-reviewsAggregate-primary,
+  .okeReviews .okeReviews-review-side, 
+  .okeReviews .okeReviews-review-primary {
+    border-right: 0px !important;
+    border-left: 0px !important;
+  }
+  .template-product .products-holder {
+    margin:0px !important;
+  }
+  .template-product .swatch_options .swatch {
+    font-size:11px;
+  }
+  .bold-ro__one-time-div, .bold-ro__recurring-div, .bold-ro__frequency-label, .bold-ro__mix-div {
+    font-size: 13px !important;
+    text-transform: uppercase;
+    text-align: left;
+    width: 100% !important;
+  }
+  .template-product .bold-ro__recurring-div {
+    margin-top:-13px;
+  }
+  #beard-oil-for-men-bossman-brands .product-slider .slick-dots li {
+    width: 50%;
+  }
+  #beard-oil-for-men-bossman-brands .swatch .swatch-element,
+  #beard-styling-balm-4-pack-magic-stagecoach-hammer-gold-bossman-brands .swatch .swatch-element{
+    width:100%;
+  }
+
+  #beard-styling-balm-4-pack-magic-stagecoach-hammer-gold-bossman-brands .swatch_options{
+    display:flex;
+  }
+  #beard-oil-for-men-bossman-brands .swatch_options {display:block;}
+  #beard-oil-for-men-bossman-brands .scent-variations {width: 50% !important;padding-right: 10px;}
+  #beard-oil-for-men-bossman-brands .swatch .swatch-element{width:50%;}
+  #beard-oil-for-men-bossman-brands .scent-variations a {padding: 12px 10px;margin-top: 10px;}
+  #beard-oil-for-men-bossman-brands .swatch_options .swatch,
+  #beard-styling-balm-4-pack-magic-stagecoach-hammer-gold-bossman-brands .swatch_options .swatch{
+    width:100%;
+  }
+  #beard-oil-for-men-bossman-brands #shopify-section-product-video-carousel,
+  #the-quot-big-boss-quot-beard-care-kit-bossman-brands®  #shopify-section-product-video-carousel  {
+    display:none;
+  }
+  #beard-styling-balm-4-pack-magic-stagecoach-hammer-gold-bossman-brands .scent-variations {
+    width: 50% !important;
+    bottom: 20px !important;
+  }
+  #beard-styling-balm-4-pack-magic-stagecoach-hammer-gold-bossman-brands .swatch .swatch-element {
+    width: 50%;
+  }
+  #beard-conditioner-4-pack-stagecoach-magic-hammer-gold-bossman-brands .product-slider .slick-dots li {
+    width: 50%;
+  }
+
+  #beard-conditioner-bossman-brands .scent-variations a,
+  #beard-conditioner-bossman-brands .scent-variations,
+  #beard-conditioner-bossman-brands .scent-option {
+    height:86px !important;
+  }
+  #natural-soap-for-men-bossman-brands .products-holder {
+    padding: 25px 0 25px 0;
+  }
+  #beard-growth-supplements-bossman-brands .product-slider .slick-dots li {
+    width: 17%;
+  }
+  #beard-growth-supplements-bossman-brands #shopify-section-product-video-carousel,
+  #complete-facial-hair-care-kit-bossman-brands  #shopify-section-product-video-carousel,
+  #reload-package-kit-bossman-brands #shopify-section-product-video-carousel,
+  #beard-starter-kit-bossman-brands #shopify-section-product-video-carousel,
+  #professional-beard-kit-bossman-brands #shopify-section-product-video-carousel,
+  #men-s-shower-kits-bossman-brands #shopify-section-product-video-carousel,
+  #straight-razor-shaving-kit-bossman-brands #shopify-section-product-video-carousel,
+  #bossman-double-edge-replacement-blades-100-pack #shopify-section-product-video-carousel,
+  #bossman-pocket-size-sandalwood-comb-amp-protective-case #shopify-section-product-video-carousel,
+  #bossman-pocket-size-sandalwood-comb-amp-protective-case .product-video-area,
+  #bossman-beard-brush-with-boar-hair-amp-nylon-bristles #shopify-section-product-video-carousel,
+  #bossman-soap-dish-3-piece #shopify-section-product-video-carousel,
+  #bossman-professional-barber-scissors #shopify-section-product-video-carousel
+  {
+    display:none;
+  }
+  #beard-and-mustache-wax-bossman-brands .swatch_options .swatch-element.color {
+    width:100%;
+  }
+  #beard-and-mustache-wax-bossman-brands .swatch-element.Size {
+    width:50%;
+  }
+  #beard-and-mustache-wax-bossman-brands .product-slider .slick-dots li {
+    width: 11%;
+  }
+  .template-product .product-slider .slick-slide.slick-active img {
+    width: 100%;
+    margin: 0 auto;
+  }
+  #the-quot-big-boss-quot-beard-care-kit-bossman-brands® .product-slider .slick-dots li {
+    width: 15%;
+  }
+  #complete-facial-hair-care-kit-bossman-brands .product-slider .slick-dots li {
+    width: 11%;
+  }
+  #the-quot-big-boss-quot-beard-care-kit-bossman-brands® .ingredients-content, 
+  #complete-facial-hair-care-kit-bossman-brands .ingredients-content,
+  #beard-starter-kit-bossman-brands .ingredients-content,
+  #men-s-shower-kits-bossman-brands .ingredients-content {
+    height: 1000px;
+    background-repeat: repeat;
+  }
+  #reload-package-kit-bossman-brands .product-slider .slick-dots li,
+  #professional-beard-kit-bossman-brands .product-slider .slick-dots li,
+  #men-s-shower-kits-bossman-brands  .product-slider .slick-dots li {
+    width: 15%;
+  }
+  #beard-starter-kit-bossman-brands .product-slider .slick-dots li {
+    width: 9%;
+  }
+  #reload-package-kit-bossman-brands .ingredients-content {
+    height: 1200px;
+    background-repeat: repeat;
+  }
+  #professional-beard-kit-bossman-brands .ingredients-content {
+    height: 1400px;
+  }
+  .product-block--3887260663886 .scent-variations {
+    display: flex;
+    width: 67% !important;
+  }
+  .product-block--3887260663886 .scent-variations a {
+    height: 86px;
+    margin-top: -25px;
+  }
+  .product-block--3887260663886 .product-slider .slick-dots li {
+    width: 43%;
+  }
+  #colotion-sample-kit .product-slider .slick-dots li {
+    width: 15%;
+  }
+  #straight-razor-shaving-kit-bossman-brands .product-slider .slick-dots li {
+    width: 20%;
+  }
+  #straight-razor-shaving-kit-bossman-brands .product-tab-content .details-content {
+    height:1000px;
+  }
+
+  #straight-razor-shaving-kit-bossman-brands .product-tab-content .details-content br,
+  #straight-razor-shaving-kit-bossman-brands .product-video-area{
+    display:none;
+  }
+  #straight-razor-shaving-kit-bossman-brands .product-tab-content .details-content p {
+    margin-bottom:30px;
+  }
+
+
+  #bossman-double-edge-replacement-blades-100-pack .product-slider .slick-dots li {
+    width: 42%;
+  }
+  #bossman-pocket-size-sandalwood-comb-amp-protective-case .product-slider .slick-dots li {
+    width: 27%;
+  }
+  #bossman-pocket-size-sandalwood-comb-amp-protective-case .product-tab-content .details-content {
+    height: 700px;
+  }
+  #bossman-beard-brush-with-boar-hair-amp-nylon-bristles .product-tab-content .details-content {
+    height: 300px;
+  }
+  #bossman-beard-brush-with-boar-hair-amp-nylon-bristles .product-slider .slick-dots li {
+    width: 23%;
+  }
+
+  #bossman-professional-barber-scissors .product-tab-content .details-content {
+    height: 900px;
+  }
+
+  #bossman-professional-barber-scissors .product-slider .slick-dots li {
+    width: 22%;
+  }
+  #fourstep-desktop {flex-direction: column;}
+
+  #fourstep-mobile .fancybox-slide--video .fancybox-content {
+    width:100% !important;
+    height:100% !important;
+  }
+  .fourstep .col a span {
+    color:#000;
+    text-decoration: none;
+  }
+  #fourstep-mobile .fancybox-slide--video .fancybox-content {
+    background: #000;
+    height: 100% !important;
+  }
+  .article__content--copy {
+    max-width: 100% !important;
+    margin-left: 0px !important;
+  }
+  .smile-launcher-frame-container{
+    display:none !important;
+  }
+  body.template-index .smile-launcher-frame-container{
+    display:block !important;
+  }
+  .gAGmWj.gAGmWj.gAGmWj.gAGmWj.gAGmWj.gAGmWj::placeholder,
+  .jEVuaV.jEVuaV.jEVuaV.jEVuaV.jEVuaV.jEVuaV::placeholder {
+    font-size: 11px !important;}
+  
+    #ultimate-5-pack-beard-styling-pomade-bossman-brands .swatch .swatch-element,
+  	#ultimate-5-pack-beard-styling-pomade-bossman-brands .scent-variations{
+  		width: 50% !important;
+  	}
+    #relaxing-beard-styling-balm-5-pack-bossman-brands .swatch .swatch-element,
+	#relaxing-beard-styling-balm-5-pack-bossman-brands .scent-variations {
+ 	 width: 50% !important;
+	}
+  .scent-variations {
+    width: 32% !important;
+  }
+  .scent-variations a {
+    min-height: auto !important;
+   }
+  #colotion-men-39-s-beard-fregrance-3-pack-variety-bossman-brands .swatch .swatch-element,
+  #colotion-men-39-s-beard-fregrance-3-pack-variety-bossman-brands .scent-variations {
+ 	 width:50% !important;
+  }
+  .product-holder .description h1 {
+      font-size: 28px;
+      line-height: 33px;
+  }
+  #colotion-men-39-s-beard-fragrances-online-bossman-brands .scent-variations {
+    width: 32% !important;
+    bottom: 10px !important;
+  }
+  
+}
+/* end 480 mobile */
+
+@media screen and (max-width:414px) {
+  .fourstep .col .stage-video {
+    height: 513px;
+  }
+  #colotion-men-39-s-beard-fregrance-3-pack-variety-bossman-brands .swatch .swatch-element,
+  #colotion-men-39-s-beard-fregrance-3-pack-variety-bossman-brands .scent-variations {
+ 	 width:50% !important;
+  }
+    #colotion-men-39-s-beard-fragrances-online-bossman-brands .scent-variations a {
+    	min-height:75px !important
+  }
+  #colotion-men-39-s-beard-fragrances-online-bossman-brands .scent-variations {
+      width: 32% !important;
+      bottom: 35px !important;
+  }
+  
+}
+
+@media screen and (max-width:384px) {
+  .fourstep .col .stage-video {
+    height: 473px;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .fourstep .col .stage-video {
+    height: 461px;
+  }
+  .footer-col > .container > .col > ul {
+    width:70%;
+  }
+
+  .product-manager > .buy-stages > a {
+    font-size:11px;
+    padding: 4px 17px;
+  }
+  .template-product .bold-ro__recurring-div {
+    margin-top: -5px;
+  }
+  .accessories-title {
+    font-size:14px !important;
+  }
+  .product-nav ul li {
+    font-size:12px !important;
+    margin:0 10px;
+  }
+  .product-reviews-area .treecolumns .column {
+    font-size:14px;
+  }
+  #shopify-section-product-related .products-holder h2 {
+    margin: 50px 0 25px;
+  }
+  .template-product .product-video-carousel .slideset .slick-arrow.slick-prev {
+    left: 120px;
+    top: 376px;
+  }
+  .template-product .product-video-carousel .slideset .slick-arrow.slick-next {
+    top: 350px;
+    right: 145px;
+  }
+    #colotion-men-39-s-beard-fregrance-3-pack-variety-bossman-brands .swatch .swatch-element,
+    #colotion-men-39-s-beard-fregrance-3-pack-variety-bossman-brands .scent-variations {
+ 	 width:50% !important;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .fourstep .col .stage-video {
+    height: 441px;
+  }
+  .scent-variations {
+    width: 99px !important;
+  }
+  #relaxing-beard-balm-for-a-stylish-beard-bossman-brands .scent-variations {
+    width: 99px !important;
+    bottom: 34px !important;
+  }
+  #relaxing-beard-balm-for-a-stylish-beard-bossman-brands .scent-variations a {
+    padding: 24px 5px;font-size:11px;
+  }
+  
+  .template-product .swatch_options .swatch {
+    font-size: 10px;
+   }
+  
+}
+
+@media screen and (max-width:320px) {
+  .fourstep .col .stage-video {
+    height: 387px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Start 360px Mobile */
+@media screen and (max-width:360px) {
+
+}
+/* End 360px Mobile */
+
+
+/* Start 320px Mobile */
+@media screen and (max-width:320px) {
+  .product-manager > .buy-stages > a {
+    font-size: 11px;
+    padding: 4px 11px;
+  }
+  .product-holder .description h1 {
+    font-size: 28px;
+  }
+  #header .panel p { 
+    font-size:12px;
+  }
+  .blog .blog_content .blog_articles__box .blog-meta .title {
+    margin-bottom:0px !important;
+  }
+
+
+}
+/* End 320px Mobile */
+
+/*homepage video */
+.herobanner.desktop {
+    height: 100%;
+    padding:0px;
+}
+.home.herobanner video {
+    height: 100%;
+    min-height: 100%;
+}
+@media screen and (max-width:834px) {
+  .herobanner.desktop {
+    min-height: 470px;
+  }
+}
+@media screen and (max-width:640px) {
+  .herobanner.desktop {
+    min-height: 355px;
+  }
+  #shopify-section-topsellers .top-sellers h3,
+  #shopify-section-topsellers .top-sellers a.section_link {
+    text-align:left;
+  }
+}
+@media screen and (max-width:480px) {
+.herobanner.mobile {
+    padding-top: 0% !important;
+  	min-height: 600px;
+ }
+}
+@media screen and (max-width:414px) {
+  .herobanner.mobile {
+    min-height: 520px;
+  }
+}
+@media screen and (max-width:375px) {
+  .herobanner.mobile {
+    min-height: 470px;
+  }
+}
+/* end homepage video */
+/* new collection page content */
+.template-collection .hero-block h2 {
+    font-family: "Bely";
+    font-weight: normal;
+  	font-size:24px;
+  	padding:0px;
+  	margin:0px;
+  	color:#fff;
+  
+}
+.template-collection .collectioncontent-intro,
+.template-collection .collection-content {
+  margin: 0 auto;
+  font-family:"Bely";
+  font-size:18px;
+  color:#000;
+}
+.template-collection .collectioncontent-intro {
+  max-width:1100px;
+  margin-top:55px;
+}
+.template-collection .collection-content {
+    max-width:90%;
+    margin-bottom:50px;
+}
+.template-collection .collectioncontent-intro {text-align:center;}
+.template-collection .collection-content h2,
+.template-collection .collection-content h3,
+.collection-content-steps h2{
+  font-family: "Bely";
+  font-weight: bold;
+}
+.template-collection .collection-content h3, 
+.template-collection .collection-content-steps p{
+  padding:0px;
+  margin:0px;
+}
+.template-collection .collection-content-steps p {
+    font-family:"bely";
+  	font-size:18px;
+  	color:#000;
+}
+.template-collection .collection-content-faqs {margin-bottom:100px;margin-top:50px;}
+
+.template-collection .u-vmenu ul {
+    padding-left:40px;
+}
+.template-collection .u-vmenu ul li {
+    width: 100%;
+    list-style: none;
+    margin: 40px 0;
+}
+
+.template-collection .u-vmenu ul li a {
+    display: block;
+    text-decoration: none;
+    font-family: "Proxima Nova Regular";
+    outline: none;
+    text-transform: uppercase;
+    position: relative;
+    font-weight:bold;
+}
+
+.template-collection .u-vmenu ul li a:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: 0;
+    background: url('https://cdn.shopify.com/s/files/1/2283/7011/files/arr-on_2x_f361dd38-c3c3-462d-adcd-601e37e697c6.png?v=1589362833') left center no-repeat;
+    background-size: contain;
+  	color:#000;
+}
+
+.template-collection .u-vmenu > ul > li > a {
+    padding-left: 30px;
+    letter-spacing: 1px;
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+}
+
+.template-collection .u-vmenu > ul > li > a:before {
+    width: 19px;
+    height: 11px
+}
+
+.template-collection .u-vmenu > ul > li > a:before {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+.template-collection .u-vmenu > ul > li.show > a:before {
+  -webkit-transform: rotate(180);
+  -ms-transform: rotate(180);
+  transform: rotate(180)
+}
+.template-collection .u-vmenu > ul > li > a.arrow-down:before {
+        -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+}
+.template-collection .faq_content.inner {
+  padding-left:30px;
+  display: none;
+  padding-top:15px;
+}
+.template-collection .faq_content.inner ul li {
+  margin:10px 0;
+  list-style: disclosure-closed;
+}
+
+/*.template-collection .show .faq_content.inner {
+  display: block;
+}*/
+.template-collection .collection-content-steps h3 {
+  font-family:"Proxima Nova Regular";
+  font-size:20px;
+  margin:0px !important;
+  padding:0px !important;
+  font-weight:bold;
+}
+#organic-beard-care-products-online-bossman-brands.template-collection .products-block,
+#innovative-beard-grooming-kits-online-bossman-brands.template-collection .products-block,
+#quality-men-39-s-shaving-products-online-bossman-brands.template-collection .products-block,
+#essential-beard-accessories-online-bossman-brands.template-collection .products-block 
+#all-natural-beard-combs-amp-brushes-online-bossman-brands.template-collection .products-block,
+#bossman-apparel-clothes-that-mean-something-bossman-brands.template-collection .products-block {
+    padding: 50px 10px 70px 0px;
+}
+@media screen and (max-width:640px) {
+  #organic-beard-care-products-online-bossman-brands.template-collection .hero-block h1,
+  #innovative-beard-grooming-kits-online-bossman-brands.template-collection .hero-block h1,
+  #quality-men-39-s-shaving-products-online-bossman-brands.template-collection .hero-block h1,
+  #essential-beard-accessories-online-bossman-brands.template-collection .hero-block h1, 
+  #all-natural-beard-combs-amp-brushes-online-bossman-brands.template-collection .hero-block h1,
+  #bossman-apparel-clothes-that-mean-something-bossman-brands.template-collection .hero-block h1 {
+    font-size:35px;
+    line-height: 35px;
+	margin-bottom: 20px;
+   }
+  #organic-beard-care-products-online-bossman-brands.template-collection .hero-block h2,
+  #innovative-beard-grooming-kits-online-bossman-brands.template-collection .hero-block h2,
+  #quality-men-39-s-shaving-products-online-bossman-brands.template-collection .hero-block h2,
+  #essential-beard-accessories-online-bossman-brands.template-collection .hero-block h2, 
+  #all-natural-beard-combs-amp-brushes-online-bossman-brands.template-collection .hero-block h2,
+  #bossman-apparel-clothes-that-mean-something-bossman-brands.template-collection .hero-block h2 {
+    font-size:22px;
+   }
+  .template-collection .collectioncontent-intro {
+    max-width: 90%;
+  }
+  .template-collection .faq_content.inner ul {
+  	padding-left:45px;
+  }
+}
+@media screen and (max-width:480px) {
+  #organic-beard-care-products-online-bossman-brands.template-collection .hero-block h2,
+  #innovative-beard-grooming-kits-online-bossman-brands.template-collection .hero-block h2,
+  #quality-men-39-s-shaving-products-online-bossman-brands.template-collection .hero-block h2,
+  #essential-beard-accessories-online-bossman-brands.template-collection .hero-block h2, 
+  #all-natural-beard-combs-amp-brushes-online-bossman-brands.template-collection .hero-block h2,
+  #bossman-apparel-clothes-that-mean-something-bossman-brands.template-collection .hero-block h2 {
+    font-size:22px;
+    width:80%;
+      margin:0 auto;
+   }
+  .template-collection .collection-content {
+    text-align:center;
+  }
+  .template-collection .u-vmenu ul {
+    padding-left: 0;
+    text-align: left;
+  }
+  .collection-content-faqs {
+    text-align:left;
+  }
+}
+/* end new collection page content */

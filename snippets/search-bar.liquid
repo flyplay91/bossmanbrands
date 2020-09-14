@@ -1,0 +1,13 @@
+<form action="/search" method="get" class="search-form" role="search">
+  {% comment %}<input type="hidden" name="type" value="product">{% endcomment %}
+  <label for="search">
+    <input type="search" name="q" id="search" class="search" value="{{ search.terms | escape }}" placeholder="What are you looking for?" aria-label="{{ 'general.search.placeholder' | t }}">
+  </label>
+</form>
+
+<style>
+  input[type="search"]::-webkit-search-decoration,
+	input[type="search"]::-webkit-search-cancel-button,
+	input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration { display: none}
+</style>

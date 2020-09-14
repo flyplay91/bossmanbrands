@@ -1,0 +1,26 @@
+
+{% if product.metafields.accentuate.video_link %}
+<div class="product-video-carousel">
+	<div class="slideset">
+        {% for ytLink in product.metafields.accentuate.video_link %}
+		<div class="slide">
+			<div class="img-holder">
+				<img src="{{ product.metafields.accentuate.video_image[forloop.index0] }}" alt="" class="desktop">
+
+				<img src="{{ product.metafields.accentuate.video_mobile_image[forloop.index0] }}" alt="" class="mobile">
+
+				<div class="inner">
+					<h2>{{ product.metafields.accentuate.video_title[forloop.index0] }}</h2>
+                    <a class="btn-watch" data-fancybox="iframe" href="{{product.metafields.accentuate.video_link[forloop.index0]}}" title="youtube">Watch now</a>
+
+				</div>
+			</div>
+            <div class="slide-count-wrap">
+                <span class="current"></span> /
+                <span class="total"></span>
+            </div>
+		</div>
+        {% endfor %}
+	</div>
+</div>
+{% endif %}

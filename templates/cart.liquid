@@ -1,0 +1,149 @@
+{% capture bb_total_price %}{% render 'bb', type: 'bb_total_price' %}{% endcapture %}{% assign bb_total_price = bb_total_price | plus: 0 %}
+{% capture bb_checkout_link %}{% render 'bb', type: 'bb_checkout_link' %}{% endcapture %}
+
+
+{% include 'subscription-cart-footer' %}
+
+{% assign on_sale = false %}
+{% if item.compare_at_price > bb_price %}
+  {% assign on_sale = true %}
+{% endif %}
+<section class="main">
+  <div class="container">
+    <div {% if cart.item_count > 0 %}class="cart"{% else %}class="cart empty"{% endif %}>
+      
+      <div class="cart_sidebar">
+        {% if cart.item_count > 0 %}
+        
+          <div class="guarantee-desk">
+            {% section 'guarantee-box' %}
+          </div>
+       	{% else %}
+        
+       		<div class="guarantee-desk"></div>
+        {% endif %}
+        <div class="menu">
+          <ul>
+            {% for link in linklists.cart-nav.links %}
+                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% if cart.item_count > 0 %}
+       	 <div class="banner">
+          <img src="{{ "security.png" | asset_url }}" alt="Security">
+        </div>
+       	{% endif %}
+      </div>
+      
+      <div class="cart_main">
+        {% if cart.item_count > 0 %}
+
+        <form action="{% if bb_checkout_link != blank %}{{ bb_checkout_link }}{% else %}/cart{% endif %}" method="post">
+		  {% render 'bb', type: 'cart' %}
+		
+
+          <center><h1>Your shopping cart</h1></center>
+
+          <div class="table">
+            <div class="table_head">
+              <span></span>
+              <span>Product name</span>
+              <span>Unit price</span>
+              <span>Qty</span>
+              <span>Subtotal</span>
+            </div>
+            <div class="table_main">
+              {% for item in cart.items %}
+                {% capture bb_price %}{% render 'bb', type: 'bb_price', item: item %}{% endcapture %}{% assign bb_price = bb_price | plus: 0 %}
+                <div class="table_main_row" data-label="{{ 'customer.order.product' | t }}">
+                  <span>
+                    <a href="{{item.url}}"><img src="{{ item | img_url: 'small' }}" alt="{{ item.title | escape }}"></a>
+                  </span>
+                  <span><a href="{{item.url}}">{{ item.title | escape }}</a></span>
+                  {% if on_sale %}
+                    <span class="startprice">{{ item.compare_at_price | money }}</span>
+                  {% else %}
+                    <span class="startprice">{{ bb_price | money }}</span>
+                  {% endif %}
+                  <span>
+                      <input type="text" name="updates[]" size="4" id="updates_{{ item.id }}" class="update_item" value="{{ item.quantity }}" />
+                    <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="cart__remove" data-id="{{ item.id }}" type="reset" id="resetCount"><i class="fas fa-times"></i></a>
+                  </span>
+                  <span class="totalprice">{{ bb_price | times: item.quantity | money }}</span> 
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <a href="/collections/all" class="continue" style="width: 50%">Continue shopping</a>
+          <div class="comments">
+            {% comment %}<span>Order comments</span>{% endcomment %}
+            <div>
+              {% comment %}
+              {% if settings.cart_notes_enable %}
+          		<textarea name="note" class="input-full" style="border: 1px solid #efefef" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+      		  {% endif %}
+              {% endcomment %}
+                <span>
+                  <span>Subtotal</span>
+                  <span><span id=''>{{ bb_total_price | money }}</span></span>
+                </span>
+              <div class="buttons">
+
+                <button class="btn-white" style="cursor: pointer">Update cart</button>
+                
+                {% assign has_subscriptions = false %}
+                {% for i in cart.items %}
+                    {% for p in i.properties %}
+                        {% if p.first == 'shipping_interval_frequency' %}
+                            {% assign has_subscriptions = true %}
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+                <button class="checkout_button btn" {% if has_subscriptions %}{% else %} name="checkout" {% endif %}>Proceed to checkout</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        {% else %}
+        <div class="cart_main_head">
+
+			<span>Your cart is currently empty.</span>
+      <a href="/collections/all" class="btn">Return to Shop</a>
+
+          </div>
+        <div class="cart_main_grid">
+          {% assign collectionName = 'beard-care-packages' %}
+          {% for product in collections[collectionName].products limit: 1 %}
+          	{% include 'related-cart-product' %}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      
+      {% if cart.item_count > 0 %}
+        <div class="guarantee-box-mobi">
+          {% section 'guarantee-box' %}
+          </div>
+      {% else %}
+        <div class="guarantee-box-mobi"></div>
+      {% endif %}
+    </div>
+    {% comment %}{% section 'customer-review' %}{% endcomment %}
+    </section>
+    
+<style>
+
+  .main .cart_main .table_main_row span {
+  
+    border: none;
+    
+  }
+  
+  .main .cart_main .table_main_row {
+  
+        border-bottom: 1px solid #cecece;
+    
+  }
+
+</style>

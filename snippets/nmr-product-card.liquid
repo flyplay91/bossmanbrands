@@ -1,0 +1,32 @@
+{% assign on_sale = false %}
+{% if product.compare_at_price > product.price %}
+    {% assign on_sale = true %}
+{% endif %}
+
+<div class="products_content_main__grid_box">
+    <div class="img" style="margin-bottom: 1em">
+        <a href="{{ product.url }}"><img src="{{ product.featured_image.src | img_url: '250x' }}" alt="{{ product.title }}"></a>
+    </div>
+    <a href="{{ product.url }}" class="mt-5 mb-2 w-full uppercase font-bold text-sm text-center leading-snug truncate">
+        {{ product.title }}
+    </a>
+    <div class="reviews" style="margin-bottom: 0">
+        <a href="{{ product.url }}">
+            {% include 'okendo-reviews-product-rating-summary' %}
+        </a>
+    </div>
+    <div class="price">
+        {% if on_sale %}
+            <span style="font-size: 14px !important">{{ product.price | money }}</span>
+            <span class="sale" style="font-size: 14px !important">{{ product.compare_at_price | money }}</span>
+        {% else %}
+            <span>{{ product.price | money }}</span>
+        {% endif %}
+    </div>
+
+    <div class="main" style="text-align: center; width: 100%;">
+        {% include 'nmr-cta-js' with product: product %}
+    </div>
+
+
+</div>

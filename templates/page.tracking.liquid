@@ -1,0 +1,40 @@
+<div id="content" class="col-md-12 center-column content-with-background">
+  <div class="row">
+    <div class="col-sm-12 tracking-page">
+      {{page.content}}
+      	<div class="form-group">
+          <label for="tracking-number">Enter your track number:</label>
+          <input type="text" class="form-control" id="tracking-number" required>
+          <button class="btn btn-default" id="status">Get Status</button>
+  		</div>
+    </div>
+  </div>
+</div>
+<script>
+  $('#status').click(function(){
+    if($('#tracking-number').val()!=''){
+      if($(this).text()=='Get Status'){
+        var number = $('#tracking-number').val();
+        $(this).text('Hide Status').parent().after('<iframe id="iframe" height="450" width="800" src="https://showmyreviews.tk/frontend/web/site/check-tracking?id='+number+'" frameborder="0" allowfullscreen scrolling="no"></iframe>');
+      }
+      else{
+        $(this).text('Get Status');
+        $('#tracking-number').val('');
+        $('#iframe').remove();
+      }
+   	}
+  });
+</script>
+<style>
+.form-group{display: flex;justify-content:center;align-items:center;}
+label:after{display:none;}
+.form-group label{color:#fff;padding-right:10px;}
+button#status {padding: 7px 25px;font-size: 22px;}
+input#tracking-number {height: 42px;width: 250px;font-size: 18px;padding-left: 10px;}
+main.wrapper.main-content {padding-top: 80px;}
+iframe {padding-top: 20px;display:flex;margin: 0 auto;}
+@media all and (max-width:640px){
+  .form-group{flex-direction: column;}
+  input#tracking-number{margin: 20px 0;}
+}
+</style>

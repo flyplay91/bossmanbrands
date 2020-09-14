@@ -1,0 +1,14 @@
+<table>
+  {% tablerow product in collection.products cols:3 %}
+    {% include 'product-grid-item' %}
+  {% endtablerow %}
+  
+</table>
+
+<style>
+  .products_content_main__grid table tr {display: grid; grid-template-columns: 1fr 1fr 1ft; grid-column-gap: 20px}
+  @media only screen and (max-width : 768px) {
+    .products_content_main__grid table tr {grid-template-columns: 1fr; grid-row-gap: 40px}
+    .products_content_main__grid_box .main .img img {height: 200px}
+  }
+</style>

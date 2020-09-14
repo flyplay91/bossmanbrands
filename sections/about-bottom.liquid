@@ -1,0 +1,95 @@
+
+<div class="about-us-bottom" style="background-image: url('{{ section.settings.bg_image | img_url: '1000x'}}');">
+		<div class="about-us-bottom__inner">
+			<p class="small-text">{{ section.settings.small_text }}</p>
+			<p class="large-text">{{ section.settings.large_text }}</p>
+			<a href="{{ section.settings.button_url }}" class="c-btn btn-clear">{{ section.settings.button_text }}</a>
+		</div>
+</div>
+
+{% schema %}
+  {
+    "name": "Bottom",                     
+    "settings": [
+
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "text",
+        "id": "small_text",
+        "label": "Small Title",
+		"default": "The search is on"
+      },
+      {
+        "type": "text",
+        "id": "large_text",
+        "label": "Large Title",
+		"default": "Be your own boss"
+      },
+	  {
+		"id": "button_text",
+		"type": "text",
+		"label": "Button Text",
+		"default": "Learn More"
+	  },
+	  {
+		"id": "button_url",
+		"type": "url",
+		"label": "Button Url"
+      }
+
+	]
+  }
+{% endschema %}
+
+<style type="text/css">
+.about-us-bottom {
+  	margin-top: -5px;
+    width: 100%;
+    height: 287px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.about-us-bottom__inner {
+    text-align: center
+}
+
+.about-us-bottom .small-text {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-style: italic;
+    letter-spacing: 10px;
+    font-size: 21px;
+    margin-bottom: 7px;
+    margin-top: 0;
+}
+
+.about-us-bottom .large-text {
+    text-transform: uppercase;
+    color: #bf954a;
+    letter-spacing: 7px;
+    font-size: 44px;
+    font-style: italic;
+    font-weight: 700;
+  	margin-top: 0;
+    margin-bottom: 12px;
+}
+  
+</style>
+
+{% javascript %}
+{% endjavascript %}

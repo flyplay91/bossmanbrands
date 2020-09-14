@@ -1,0 +1,73 @@
+<!-- /secion/blog-article-grid-with-nav.liquid -->
+{% comment %}
+  Articles grid with navigation bar for tag filters.
+{% endcomment %}
+
+<section class="blog">
+    <div class="nav">
+        <div class="nav-container">
+
+            <ul class="blog-listing nav-menu">
+                  <li {% if blog.url == "/blogs/blog" %}class="active"{% endif %}><a href="/blogs/blog">All</a></li>
+            </Ul>
+
+
+
+            <a href="#" class="dropdown-toggler"><span></span><span></span><span></span></a>
+
+            {% if blog.all_tags.size > 0 %}
+            <ul class="blog-listing nav-menu">
+                {% for tag in blog.all_tags %}
+                    {% if current_tags contains tag %}
+                    <li class="active">{{ tag | replace: 'Beard', '' | upcase }}</li>
+                    {% else %}
+                    <li>{{ tag | replace: 'Beard', '' | upcase | link_to_tag: tag }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            <div class="blog-search-form">
+                <form action="/search?view=blogs" method="get" class="search-form" role="search">
+                    <input type="hidden" name="view" value="blogs" >
+                    <input type="text" name="q" value="" placeholder="SEARCH BLOGS...">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog_content">
+        <div class="blog_articles">
+            {%- paginate blog.articles by 8 -%}
+            {% for article in blog.articles %}
+                <div class="blog_articles__box">
+                    {% if article.image %}
+                        <div class="blog-thumbnail">
+                            <a href="{{ article.url }}">
+                                {{ article.image | img_url: '680x' | img_tag: article.title }}
+                            </a>
+                        </div>
+                    {% endif %}
+
+                    <div class="blog-meta">
+                        <span class="category">
+                            {% for tag in article.tags %}
+                                {{ tag | replace: 'Beard', '' | upcase | append: ' ' }}
+                            {% endfor %}
+                        </span>
+
+                        <a href="{{ article.url }}" class="title">{{ article.title | upcase | escape }}</a>
+
+                        <span class="date">{{ article.published_at | time_tag: format: 'month_day_year' }}</span>
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% if paginate.pages > 1 %}
+            {% include 'pagination' %}
+            {% endif %}
+
+            {% endpaginate %}
+        </div>
+    </div>
+</section>

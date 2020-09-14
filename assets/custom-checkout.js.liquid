@@ -1,0 +1,78 @@
+var cname; var cvalue; var exdays;
+var timeoutHandle;
+function countdown(minutes,stat) {
+    var seconds = 60;
+    var mins = minutes;
+
+
+    if(getCookie("minutes")&&getCookie("seconds")&&stat){
+        var seconds = getCookie("seconds");
+        var mins = getCookie("minutes");
+    }
+
+    function tick() {
+
+        var counter = document.getElementById("timertime");
+        setCookie("minutes",mins,10);
+        setCookie("seconds",seconds,10);
+        var current_minutes = mins-1;
+        seconds--;
+        counter.innerHTML = 
+        current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+       if( seconds > 0 ) {
+            timeoutHandle=setTimeout(tick, 1000);
+        } else {
+            if(mins > 1){  
+                setTimeout(function () { countdown(parseInt(mins)-1,false); }, 1000);
+            }
+            if(seconds == 0 && mins == 1){
+            //alert(mins);
+                setCookie("seconds",seconds,0);
+                counter.innerHTML = "An item you ordered is in high demand. Order reservation ended.";
+            }
+        }
+
+    }
+    
+    tick();
+}
+		
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname+"="+cvalue+"; "+expires;
+
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+window.onload = function startingTimer(){
+      countdown("10",true);
+}
+
+/*
+
+Это условно лишнее. Оно не нужно если в разметке есть элемент с id="timertime"
+
+function timer()
+{
+	$(".main__header").after("<div class='timerarea'><div class='imagetimer'><img src='https://checkoutbump.com/admin/icons/flame-in-cart_2018.png' class='imageinnertimer' /></div><div class='timertext'> An item you ordered is in high demand.We have reserved you order for <span id='timertime'></span> minutes!</div></div>");
+  
+}
+
+timer();
+
+*/
+

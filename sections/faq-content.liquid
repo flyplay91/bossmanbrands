@@ -1,0 +1,281 @@
+<div class="custom-container">
+
+    <div class="custom-wrapper">
+        <div class="faq-wrapper">
+            <div class="u-vmenu">
+                <ul class="accordion">
+                  {% for block in section.blocks %}
+                    <li>
+                      
+                        <a class="toggle" href="javascript:void(0);">{{ block.settings.heading }}</a>
+                      		
+                        <ul class="inner">
+                          {% if block.settings.sub_heading1 != blank %}
+ 							<li>
+                              <a class="toggle" href="javascript:void(0);">{{ block.settings.sub_heading1 }}</a>
+                                <ul class="faq_content inner">
+                                    <li>{{ block.settings.content1 }}</li>
+                                </ul>
+                            </li>
+                          {% endif %}
+                          
+                          {% if block.settings.sub_heading2 != blank %}
+ 							<li>
+                              <a class="toggle" href="javascript:void(0);">{{ block.settings.sub_heading2 }}</a>
+                                <ul class="faq_content inner">
+                                    <li>{{ block.settings.content2 }}</li>
+                                </ul>
+                            </li>
+                          {% endif %}
+                          
+                          {% if block.settings.sub_heading3 != blank %}
+ 							<li>
+                              <a class="toggle" href="javascript:void(0);">{{ block.settings.sub_heading3 }}</a>
+                                <ul class="faq_content inner">
+                                    <li>{{ block.settings.content3 }}</li>
+                                </ul>
+                            </li>
+                          {% endif %}
+                          
+                          {% if block.settings.sub_heading4 != blank %}
+ 							<li>
+                              <a class="toggle" href="javascript:void(0);">{{ block.settings.sub_heading4 }}</a>
+                                <ul class="faq_content inner">
+                                    <li>{{ block.settings.content4 }}</li>
+                                </ul>
+                            </li>
+                          {% endif %}
+                          {% if block.settings.sub_heading5 != blank %}
+ 							<li>
+                              <a class="toggle" href="javascript:void(0);">{{ block.settings.sub_heading5 }}</a>
+                                <ul class="faq_content inner">
+                                    <li>{{ block.settings.content5 }}</li>
+                                </ul>
+                            </li>
+                          {% endif %}
+
+                        </ul>
+                      
+                    </li>
+                  {% endfor %}
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% schema %}
+  {
+    "blocks": [
+      {
+        "type": "content",
+        "name": "Faq's question",
+        "settings": [
+          {
+            "id": "heading",
+            "type": "text",
+            "label": "Main Heading"
+          },
+          {
+            "id": "sub_heading1",
+            "type": "text",
+            "label": "Subheading 1"
+          },
+          {
+            "id": "content1",
+            "type": "textarea",
+            "label": "Answer 1"
+          },
+          {
+            "id": "sub_heading2",
+            "type": "text",
+            "label": "Subheading 2"
+          },
+          {
+            "id": "content2",
+            "type": "textarea",
+            "label": "Answer 2"
+          },
+          {
+            "id": "sub_heading3",
+            "type": "text",
+            "label": "Subheading 3"
+          },
+          {
+            "id": "content3",
+            "type": "textarea",
+            "label": "Answer 3"
+          },
+          {
+            "id": "sub_heading4",
+            "type": "text",
+            "label": "Subheading 4"
+          },
+          {
+            "id": "content4",
+            "type": "textarea",
+            "label": "Answer 4"
+          },
+          {
+            "id": "sub_heading5",
+            "type": "text",
+            "label": "Subheading 5"
+          },
+          {
+            "id": "content5",
+            "type": "textarea",
+            "label": "Answer 5"
+          }
+          
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+
+<style type="text/css">
+  .faq-wrapper {
+    width: 80%;
+    margin: 0 auto;
+  }
+  @media (max-width: 768px) {
+    .faq-wrapper {
+      width: 100%;
+    }
+  }
+  .u-vmenu > ul {
+    padding-left:0;
+  }
+  .u-vmenu ul li {
+    width: 100%;
+    list-style: none
+}
+
+.u-vmenu ul ul {
+/*     display: none; */
+    padding: 0
+}
+  .inner {display:none;}
+  a.toggle{display: block;}
+
+.u-vmenu > ul > li {
+    border-top: 2px solid #c8c6c7
+}
+
+.u-vmenu > ul > li:last-child {
+    border-bottom: 2px solid #c8c6c7
+}
+
+.u-vmenu > ul > li > ul > li {
+    border-top: 2px solid #c8c6c7
+}
+
+.u-vmenu ul li a {
+    display: block;
+    text-decoration: none;
+    font-family: proxima-nova, sans-serif;
+    outline: none;
+    text-transform: uppercase;
+    position: relative
+}
+
+.u-vmenu ul li a:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 31px;
+    left: 0;
+    background: url('https://cdn.shopify.com/s/files/1/2283/7011/files/arr-on_2x_f361dd38-c3c3-462d-adcd-601e37e697c6.png?v=1589362833') left center no-repeat;
+    background-size: contain
+}
+
+.u-vmenu > ul > li > a {
+    height: 74px;
+    line-height: 74px;
+    padding-left: 30px;
+    letter-spacing: 1px;
+    font-size: 20px;
+    color: #999999;
+    font-weight: 700
+}
+
+.u-vmenu > ul > li > a:before {
+    width: 19px;
+    height: 11px
+}
+
+.u-vmenu > ul > li > a:before {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+.u-vmenu > ul > li > a.arrow-down:before {
+        -webkit-transform: none;
+    -ms-transform: none;
+    transform: none
+    
+  }
+
+.u-vmenu > ul > li > ul > li > a {
+    padding-left: 30px;
+    height: 60px;
+    line-height: 60px;
+    color: #0b0d0d;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.77px;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s
+}
+  @media (max-width: 768px) {
+    .u-vmenu > ul > li > ul > li > a {
+      height: auto;
+      line-height: 35px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+  }
+
+.u-vmenu > ul > li > ul > li > a:before {
+    width: 12px;
+    height: 15px;
+    top: 22px;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+  .u-vmenu > ul > li > ul > li > a{
+    color: #bf954a;
+}
+
+.u-vmenu > ul > li > ul > li > a.arrow-down {
+    color: #000;
+}
+  
+
+.u-vmenu > ul > li > ul > li > a.arrow-down:before {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg)
+}
+
+.u-vmenu .faq_content {
+    padding-left: 30px;
+    color: #0b0d0d;
+    font-family: proxima-nova, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 40px
+}
+
+</style>
+
+{% javascript %}
+{% endjavascript %}

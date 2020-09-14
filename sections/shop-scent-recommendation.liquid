@@ -1,0 +1,154 @@
+
+{% for block in section.blocks %}
+
+    {% if block.type == 'scent-block' %}
+    <div class="scent-block" data-value='{{block.settings.scent_title}}'>
+        <div class="scent-block-main" style="background-image: url({{block.settings.scent_bg | img_url: '2000x'}})">
+            <div class="scent-block-bg"></div>
+            <div class="scent-bg"></div>
+            <div class="scent-block-title">
+                <h2>{{block.settings.scent_title}}</h2>
+                <label>{{block.settings.scent_thumb}}</label>
+            </div>
+            <ul class="scent-block-nav">
+                <li class="{% if block.settings.scent_title == block.settings.scent_option_1 %}active{% endif %}"><a href="javascript: void(0)">{{block.settings.scent_option_1}}</a></li>
+                <li class="{% if block.settings.scent_title == block.settings.scent_option_2 %}active{% endif %}"><a href="javascript: void(0)">{{block.settings.scent_option_2}}</a></li>
+                <li class="{% if block.settings.scent_title == block.settings.scent_option_3 %}active{% endif %}"><a href="javascript: void(0)">{{block.settings.scent_option_3}}</a></li>
+                <li class="{% if block.settings.scent_title == block.settings.scent_option_4 %}active{% endif %}"><a href="javascript: void(0)">{{block.settings.scent_option_4}}</a></li>
+                <li class="{% if block.settings.scent_title == block.settings.scent_option_5 %}active{% endif %}"><a href="javascript: void(0)">{{block.settings.scent_option_5}}</a></li>
+                <li class="{% if block.settings.scent_title == block.settings.scent_option_6 %}active{% endif %}"><a href="javascript: void(0)">{{block.settings.scent_option_6}}</a></li>
+            </ul>
+            <div class="scent-block-content">
+                <p>{{block.settings.scent_content}}</p>
+                <a href="{{block.settings.button_url}}">{{block.settings.button_text}}</a>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if block.type == 'recommend-block' %}
+        <div class="scent-block-recommendation">
+            <div class="scent-block-title">
+                <span class="text-hr__text">{{block.settings.recommendaton_title}}</span>
+            </div>
+           
+            {% assign current_tag = block.settings.scent_tag %}
+           
+            <div class="scent-recommendation-blocks">
+                   
+                {% for product in collections.all.products %}
+                    {% if product.tags contains current_tag %}
+                        {% for variant in product.variants %}
+                            {% if variant.option1 contains current_tag %}
+                            <div class="scent-recommendation-block">
+                                <a href="{{variant.url}}">
+                                    <img src="{{variant.image.src | img_url: '600x'}}" width="300px"/>
+                                     <span>{{product.title}}</span>
+                                  <div class="scent-recommendation-rating-block">
+                                        {% include 'okendo-reviews-product-rating-summary' %}
+                                    </div>
+                                    <label>{{variant.title}}</label>
+                                    <span>{{ variant.price | money }}</span>
+                                </a>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+{% endfor %}
+
+
+{% schema %}
+{
+    "name": "Scent Recommendation",
+    "settings": [],
+    "blocks": [
+        {
+            "type": "scent-block",
+            "name": "Scent Block",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "scent_bg",
+                    "label": "Scent Image"
+                },
+                {
+                    "type": "text",
+                    "id": "scent_title",
+                    "label": "Scent Title"
+                },
+                {
+                    "type": "text",
+                    "id": "scent_thumb",
+                    "label": "Scent Thumb"
+                },
+                {
+                    "type": "text",
+                    "id": "scent_option_1",
+                    "label": "Scent Option 1"
+                },
+                {
+                    "type": "text",
+                    "id": "scent_option_2",
+                    "label": "Scent Option 2"
+                },
+                {
+                    "type": "text",
+                    "id": "scent_option_3",
+                    "label": "Scent Option 3"
+                },
+                {
+                    "type": "text",
+                    "id": "scent_option_4",
+                    "label": "Scent Option 4"
+                },
+                {
+                    "type": "text",
+                    "id": "scent_option_5",
+                    "label": "Scent Option 5"
+                },
+                {
+                    "type": "text",
+                    "id": "scent_option_6",
+                    "label": "Scent Option 6"
+                },
+                {
+                    "type": "html",
+                    "id": "scent_content",
+                    "label": "Scent Content"
+                },
+                {
+                    "type": "url",
+                    "id": "button_url",
+                    "label": "Button Link"
+                },
+                {
+                    "type": "text",
+                    "id": "button_text",
+                    "label": "Button Text"
+                }
+            ]
+        },
+        {
+            "type": "recommend-block",
+            "name": "Recommend Block",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "recommendaton_title",
+                    "label": "Recommend Title"
+                },
+                {
+                    "type": "text",
+                    "id": "scent_tag",
+                    "label": "Scent Tag"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

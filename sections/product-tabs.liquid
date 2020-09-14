@@ -1,0 +1,76 @@
+<div class="product-sticky-stopper">
+  <div class="product-tab-block">
+    <div class="product-nav">
+      <ul>
+        {% if product.metafields.accentuate.scent_tab_image %}
+        <li class="active" data-value="tab-1">Scent</li>{% endif %}
+
+        {% if product.metafields.accentuate.ingredients_tab_image %}	
+        <li data-value="tab-2" {% if product.metafields.accentuate.no_scent_product %}class="active"{% endif %}>Ingredients</li>{% endif %}
+
+        {% if product.metafields.accentuate.details_description %}
+
+        <li data-value="tab-3" {% if product.metafields.accentuate.no_ingredients_product %}class="active"{% endif %}>Details</li>{% endif %}
+
+      </ul>
+    </div>
+
+    <div class="product-tab-content">
+
+      {% if product.metafields.accentuate.scent_tab_image %}
+
+      <div class="product-twocolumns tab-content scent-content active" data-value="tab-1">
+        <div class="textholder">
+          <ul class="colors-list">
+            {% for value in product.metafields.accentuate.scent_tab_repeater_title %} 
+            <li class="{{ value }} {% if forloop.index0 == 0%}active{% endif %}" data-value="{{ value }}">
+              <div class="scent-tab-item-content" data-value="{{value}}">
+                {{ product.metafields.accentuate.scent_tab_repeater_content[forloop.index0] }}
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+          <div>
+            <a class="view" href="/pages/shop-by-scent" title="Shop By Scent">View all scents</a>
+          </div>
+
+        </div>
+        <div class="img-holder lazyload" data-bg="{{product.metafields.accentuate.scent_tab_image}}" style="background-image:url({{product.metafields.accentuate.scent_tab_image}});">
+        </div>
+      </div>
+      {% endif %}
+
+
+      {% if product.metafields.accentuate.ingredients_tab_image %}
+      <div class="product-onecolumn tab-content ingredients-content lazyload {% if product.metafields.accentuate.no_scent_product %}active{% endif %}" data-value="tab-2" data-bg="{{product.metafields.accentuate.ingredients_tab_image}}" style="background-image: url({{product.metafields.accentuate.ingredients_tab_image}})">
+        <div class="textholder">
+          <ul class="colors-list">
+            {% for value in product.metafields.accentuate.ingredients_tab_repeater_handl %} 
+            <li class="{{ value }} {% if forloop.index0 == 0%}active{% endif %}" data-value="{{ value }}">
+              <div class="scent-tab-item-content" data-value="{{value}}">
+                {{ product.metafields.accentuate.ingredients_tab_repeater_conte[forloop.index0] }}
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if product.metafields.accentuate.details_description %}
+      <div class="product-onecolumn tab-content details-content lazyload {% if product.metafields.accentuate.no_ingredients_product %}active{% endif %}" data-bg="{{ product.metafields.accentuate.details_bg_image }}" style="background-image: url({{ product.metafields.accentuate.details_bg_image }})" data-value="tab-3">
+        <div class="details-content__inner">
+
+          {% if product.metafields.accentuate.details_title %}
+          <h1>
+            {{ product.metafields.accentuate.details_title }}
+          </h1> 
+          {% endif %}
+
+          {{ product.metafields.accentuate.details_description }}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

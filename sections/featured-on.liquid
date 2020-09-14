@@ -1,0 +1,47 @@
+<div class="home row featured-on">
+	<h3>{{section.settings.title}}</h3>
+	<div class="featured-on-logos">
+		{% for block in section.blocks %}
+		<img src="{{block.settings.logo_img | img_url: '350x'}}">
+		{% endfor %}
+	</div>
+    <div class="trust-by-logo">
+      <h3>{{section.settings.trust_title}}</h3><img src="{{section.settings.trust_img | img_url: '200x'}}">
+    </div>
+</div>
+
+{% schema %}
+{
+	"name": "Featured",
+	"settings": [
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		},
+        {
+            "type": "text",
+            "id": "trust_title",
+            "label": "Trust Title"
+        },
+        {
+            "type": "image_picker",
+            "id": "trust_img",
+            "label": "Trust Logo"
+        }
+	],
+	"blocks": [
+		{
+			"type": "logo",
+			"name": "Logo",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "logo_img",
+					"label": "Logo Image"
+				}
+			]
+		}
+	]
+}
+{% endschema %}

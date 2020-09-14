@@ -1,0 +1,47 @@
+{% if product.metafields.accentuate.show_more_about_module %}
+    <div class="py-24 md:py-32 lg:py-48" style="background-color: #E7E3E1">
+        <div class="mb-10">
+            <h2 class="nmr-title-dark text-4xl text-center leading-tight mb-5">{{ product.metafields.accentuate.more_about_title }}</h2>
+        </div>
+        <div class="nmr-more-about-slider">
+            {% for article_handle in product.metafields.accentuate.more_about_article limit:6 %}
+                <div class="nmr-more-about-slide">
+                    <div class="content py-10 px-5 md:px-10 mx-auto max-w-3xl">
+                        <div class="flex flex-wrap items-center justify-center m-0 md:-mx-4">
+                            {% if articles[article_handle].image.src %}
+                                <div class="flex-none w-full md:w-2/5 px-10 pb-10 md:pb-0 md:px-4 image">
+                                    <div class="lazy nmr-image-square rounded-full bg-gray-500 shadow-md bg-cover bg-center bg-no-repeat" data-bg="url({{ articles[article_handle].image.src | img_url: 'master' }})"></div>
+                                </div>
+                            {% endif %}
+
+                            <div class="flex-1 px-4 {% unless articles[article_handle].image.src %}text-center{% endunless %}">
+                                <h2 class="nmr-title text-3xl leading-tight mb-5">{{ articles[article_handle].title }}</h2>
+                                <div class="text-lg leading-snug mb-8">{{ articles[article_handle].content | strip_html | truncate: 100 }}</div>
+
+                                <a class="uppercase tracking-widest font-bold" href="{{ articles[article_handle].url }}" style="color:#C0964A">
+                                    <span class="mr-1 hover:mr-2">Learn More</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+{% schema %}
+
+{
+    "name": "NMR Module More About",
+    "tag": "section"
+}
+
+{% endschema %}
+
+<!-- 
+    - posts
+        - blog.title
+        - blog.summary
+        - blog.url
+ -->

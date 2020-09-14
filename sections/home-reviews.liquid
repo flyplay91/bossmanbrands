@@ -1,0 +1,162 @@
+<div class="reviews_container" id="home_reviews">
+
+    <h2 class="title">{{section.settings.section_title}}</h2>
+
+    <div class="reviews clearfix">
+
+        {% for block in section.blocks %}
+
+            <div class="review">
+
+                {% for i in (1..block.settings.reviews_count) %}
+
+                    <span class="star yellow">&#9733;</span>
+
+                {% endfor %}
+
+                {% assign empty_review = 5 | minus: block.settings.reviews_count  %}
+
+                {% if empty_review > 0 %}
+
+                    {% for i in ( 1..empty_review ) %}
+        
+                        <span class="star">&#9733;</span>
+
+                    {% endfor %}
+
+                {% endif %}
+
+                <h2>{{block.settings.review_title}}</h2>
+
+                <p>{{block.settings.review_subtitle}}</p>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+<style>
+
+    .reviews_container .review .star.yellow {
+        color: #fac600;
+        font-size: 24px;
+        margin: -2px;
+    }
+
+    .reviews_container .review .star {
+        color: #585656;
+        font-size: 24px;
+        margin: -2px;
+    }
+
+    .reviews_container .reviews {
+        padding: 40px 0;
+    }
+
+    .reviews_container .reviews .review p {
+        font-size: 14px;
+        line-height: 1.5;
+        width: 240px;
+        text-align: center;
+        color: #666;
+        font-weight: 700;
+        margin: auto;
+    }
+
+    .clearfix:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+
+    .reviews_container {
+        max-width: 970px;
+        margin: 40px auto;
+        padding: 0 10px;
+    }
+
+    .reviews_container h1 {
+        text-align: center;
+    }
+
+    .reviews_container .review {
+        width: 33.33%;
+        float: left;
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    .reviews_container h2.title {
+        text-align: center;
+        text-transform: uppercase;
+        font-family: 'Abril Fatface',serif;
+    }
+
+    .reviews_container h2 {
+        text-transform: uppercase;
+        padding: 15px 0;
+    }
+
+    @media ( max-width: 768px ) {
+
+        .reviews_container .review {
+            width: 100%;
+        }
+
+    }
+
+</style>
+
+{% schema %}
+
+    {
+        "name":"home reviews",
+        "settings":[
+            {
+                "type":"text",
+                "id":"section_title",
+                "label":"Section title"
+            }
+        ],
+        "blocks":[
+          {
+            "name":"Reviews",
+            "type":"text",
+            "settings":[
+                {
+                    "type": "select",
+                    "id": "reviews_count",
+                    "options": [
+                        { "value": "1", "label": "1"},
+                        { "value": "2", "label": "2"},
+                        { "value": "3", "label": "3"},
+                        { "value": "4", "label": "4"},
+                        { "value": "5", "label": "5"}
+                    ],
+                    "label": "Review count"
+                },
+                {
+                    "type":"text",
+                    "id":"review_title",
+                    "label":"Enter Title"
+                },
+                {
+                    "type":"text",
+                    "id":"review_subtitle",
+                    "label":"Enter Sub Title"
+                }
+            ]
+          }
+        ],
+        "presets":[
+            {
+                "name":"home reviews section",
+                "category":"reviews"
+            }
+        ]
+    }
+
+{% endschema %}

@@ -1,0 +1,218 @@
+<header id="header">
+			<div class="panel">
+              <div class="empty-top-bar"></div>
+				<p class="desktop">{{ section.settings.announcementbar_desktop }}</p>
+				<p class="mobile header-free-shipping-bar">
+					{{ section.settings.announcementbar_mobile }}<br /><a href="/collections/all">Shop Now</a>
+					<span class="close-free-shipping">X</span>
+				</p>
+
+
+				<div class="login-block">
+					<a href="/account" title="My Bossman Account">My Account</a>
+				</div>
+			</div>
+			
+			<div class="container">
+              <a href="#" class="nav-opener"><span>Menu</span></a>
+				<div class="logo">
+					<a href="/" title="Bossman Products"><img src="{{ 'MASTERBossmanLogos.png' | asset_img_url: '325x' }}" alt="Bossman" width="325" height="50"></a>
+				</div>
+				<nav class="main-menu">
+					<ul id="nav" class="accordion">
+						<li>
+							<a href="/collections/all" class="opener-drop">SHOP</a>
+							<div class="drop">
+								<div class="shop-drop">
+									<div class="banner-col">
+									{% if section.settings.menu_promo_image != blank %}
+									<a href="{{ section.settings.menu_promo_image_url }}">
+										<img src="{{ section.settings.menu_promo_image | img_url: '1200x' }}" alt="Build Your Own Kit" width="300" height="300"/>
+									</a>
+									{% endif %}
+									</div>
+									<div class="menu-col">
+										<div class="col">
+											<a href="/collections/beard-care" title="Beard Care Products" class="h2">Beard Care Products</a>
+											<ul class="list">
+												<li><a href="/products/jelly-beard-oil" title="Jelly Beard Oil">Jelly Beard Oil</a></li>
+												<li><a href="/products/beard-oil" title="Beard Oil">Beard Oil</a></li>
+												<li><a href="/products/beard-pomade" title="Beard Pomade">Beard Pomade</a></li>
+												<li><a href="/products/beard-balm" title="Beard Balm">Beard Balm</a></li>
+												<li><a href="/products/beard-conditioner" title="Beard Conditioner">Beard Conditioner</a></li>
+												<li><a href="/products/exfoliating-beard-body-bar-soap" title="Beard, Body, Hair Bar Soap">Beard, Body, Hair Bar Soap</a></li>
+												<li><a href="/products/beard-supplement" title="Beard Growth Supplements">Beard Growth Supplements</a></li>
+												<li><a href="/products/mustache-wax" title="Mustache Wax">Mustache Wax</a></li>
+                                                <li class="mobile"><a href="/collections/beard-care" title="Beard Care Products">View Beard Care Products</a></li>
+
+											</ul>
+										</div>
+										<div class="col">
+											<a href="/collections/beard-grooming-kits" class="h2" title="Beard Grooming Kits">Beard Grooming Kits</a>
+											<ul class="list">
+												<li><a href="/products/big-boss-beard-care-kit" title="The Big BOSS Kit">The Big BOSS Kit</a></li>
+												<li><a href="/products/complete-facial-hair-care-kit" title="The Complete Kit">The Complete Kit</a></li>
+												<li><a href="/products/reload-package-kit" title="The Reload Kit">The Reload Kit</a></li>
+												<li><a href="/products/beard-essentials-kit" title="The Essentials Kit">The Essentials Kit</a></li>
+												<li><a href="/products/professional-kit" title="The Proffessional Kit">The Professional Kit</a></li>
+												<li><a href="/products/beard-washing-kit" title="The Cleansing Care Kit">The Cleansing Care Kit</a></li>
+												<li><a href="/products/5-scent-jelly-beard-oil-sample-kit" title="Beard Jelly Sample Kit">Beard Jelly Sample Kit</a></li>
+												<li><a href="/products/colotion-sample-kit" title="Colotion Sample Kit">Colotion Sample Kit</a></li>
+                                              	<li><a href="/products/jelly-colotion-combo-sample-kits" title="Beard Jelly & Colotion Combo Sample Kit">Beard Jelly & Colotion Combo Sample Kit</a></li>
+												<li class="mobile"><a href="/collections/beard-grooming-kits" title="Beard Grooming Kits">View Beard Grooming Kits</a></li>
+
+											</ul>
+										</div>
+										<div class="col">
+											<a href="/collections/shaving" class="h2" title="Shaving Products">Shaving Products</a>
+											<ul class="list">
+												<li><a href="/products/straight-blade-razor" title="Bossman Straight Razors">Straight Razors</a></li>
+												<li><a href="/products/double-edge-replacement-blades" title="Double Edge Replacement Blades (100 Pack)">Double Edge Replacement Blades (100 Pack)</a></li>
+												<li class="mobile"><a href="/collections/shaving" title="Shaving Products">View Shaving Products</a></li>
+											</ul>
+										</div>
+										<div class="col">
+											<a href="/collections/accessories" class="h2" title="Accessories">Accessories</a>
+											<ul class="list">
+                                              	<li><a href="/products/colotion-scented-beard-lotion" title="Cologne Lotion">Cologne Lotion</a></li>
+												<li><a href="/collections/beard-combs-brushes" title="Combs and Brushes">Combs and Brushes</a></li>
+												<li><a href="/products/barber-scissors" title="Professional Barber Scissors">Professional Barber Scissors</a></li>
+												<li><a href="/collections/apparel" title="Apparel">Apparel</a></li>
+                                                <li class="mobile"><a href="/collections/accessories" title="Accessories">View Accessories</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mobile"><a href="/collections/all" title="SHOP ALL PRODUCTS">SHOP ALL PRODUCTS</a></li>
+						<li><a href="/pages/4stage-process" title="4-STAGE PROCESS">4-STAGE PROCESS</a></li>
+                        <li><a href="/pages/shop-by-scent" title="SCENTS">SCENTS</a></li>
+						<li><a href="/blogs/blog" title="BLOG">BLOG</a></li>
+						<li>
+							<a href="/pages/about-us" class="opener-drop" title="ABOUT">ABOUT</a>
+							<div class="drop">
+								<div class="about-drop">
+									<div class="about-menu">
+										<ul>
+											<li><a href="/pages/about-us" title="ABOUT" class="scroll">ABOUT</a></li>
+											<li><a href="/pages/about-us#origins" class="scroll" title="ORIGINS">ORIGINS</a></li>
+											<li><a href="/pages/about-us#innovation" class="scroll" title="INNOVATION">INNOVATION</a></li>
+											<li><a href="/pages/about-us#history" class="scroll" title="HISTORY">HISTORY</a></li>
+											<li><a href="/pages/about-us#thebrand" class="scroll" title="THE BRAND">THE BRAND</a></li>
+										</ul>
+									</div>
+									<div class="about-image">
+										<a href="/pages/about-us"><img src="{{ 'aboutmenu-2x2.png' | asset_img_url: '616x' }}" alt="about-us-image" width="616" height="274"></a>
+									</div>
+									<div class="about-description">
+										<h3>ABOUT US</h3>
+										<p>With each product we create, our goal is to innovate and, in doing so, take beard care to the next level.</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li><a href="/pages/boss-bucks" title="REWARDS">REWARDS</a></li>
+                      	<li class="mobile"><a class="mobile" href="/account" title="MY ACCOUNT">MY ACCOUNT</a></li>
+
+					</ul>
+				</nav>
+				<div class="menu-functions">
+					<div class="open-search desktop">
+						<a href="#" class="opener"><img src="{{ 'search.png' | asset_img_url: '17x' }}" alt="search" width="17" height="17"></a>
+						<div class="slide" style="display:none;">
+							<form action="/search" method="get" class="search-form" role="search">
+								<input type="submit" for="search">
+								<input type="text" placeholder="Search products, blogs, rewards..." name="q" value="{{ search.terms | escape }}">
+							</form>
+						</div>
+					</div>
+
+<!-- Mobile Search Menu -->
+					<div class="open-search mobile">
+
+							<a href="#" class="opener"><img src="{{ 'search.png' | asset_img_url: '17x' }}" alt="search" width="17" height="17"></a>
+
+						<div class="slide" style="display:none;">
+
+							<div class="search-logo">
+								<img src="{{'BossmanSmallLogo.png' | asset_url}}" alt="logo" width="45" height="45">
+							</div>
+							
+							<form action="/search" method="get" class="search-form" role="search">
+								<input type="text" placeholder="Search products, blogs, rewards..." name="q" value="{{ search.terms | escape }}" id="mobile-search-input">
+								
+								<input type="submit" for="search">
+
+							</form>
+
+							<div class="search-menu">
+								<h3>Categories</h3>
+								<ul class="searchmenu-top">
+									<li><a href="/blogs/blog/tagged/grooming" title="Grooming">Grooming</a></li>
+									<li><a href="/blogs/blog/tagged/beard-success" title="Success">Success</a></li>
+									<li><a href="/blogs/blog/tagged/lifestyle" title="Lifestyle">Lifestyle</a></li>
+									<li><a href="/blogs/blog/tagged/beard-products" title="Products">Products</a></li>
+									<li><a href="/blogs/blog/tagged/beard-tips" title="Tips">Tips</a></li>
+								</ul>
+								<ul class="searchmenu-bottom">
+									<li><a href="/pages/about-us" title="About Us">About Us</a></li>
+									<li><a href="/pages/faq" title="Help Center">Help Center</a></li>
+									<li><a href="/pages/contact-us" title="Contact Us">Contact Us</a></li>
+								</ul>
+								<div class="search-btns">
+									<a href="/account/login" class="btn" title="Login">Login</a>
+									<a href="/account/register" class="btn" title="Sign-Up">Sign-Up</a>
+								</div>
+							</div>
+
+						</div>
+
+						
+					</div>
+
+<!-- End Mobile Search Menu -->
+
+
+
+					<div class="cart-block">
+						<a class="header-cart" href="/cart">
+							<img src="{{ 'cart-new.png' | asset_img_url: '17x' }}" alt="cart" width="17" height="17">
+							{% if cart.item_count != 0 %}
+							<span>{{ cart.item_count }}</span>
+							{% endif %}
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+
+{% schema %}
+  {
+    "name": "Header & Menu",
+    "settings": [
+				{
+                    "id": "announcementbar_desktop",
+                    "type": "text",
+                    "label": "Announcement Bar Desktop",
+                    "default": "FREE SHIPPING ON ORDER OVER $35"
+                },
+				{
+                    "id": "announcementbar_mobile",
+                    "type": "text",
+                    "label": "Announcement Bar Mobile",
+                    "default": "FREE SHIPPING ON ORDER OVER $35"
+                },
+				{
+                    "id": "menu_promo_image",
+                    "type": "image_picker",
+                    "label": "Shop Promo Image"
+                },
+				{
+                    "id": "menu_promo_image_url",
+                    "type": "url",
+                    "label": "Shop Promo Image URL"
+                }  
+	]
+  }
+{% endschema %}

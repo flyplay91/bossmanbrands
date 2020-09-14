@@ -1,0 +1,59 @@
+{%- include 'bold-cart' -%}
+<!-- <div class="yotpo yotpo-reviews-carousel"
+     data-header-customisation-enabled="1"
+     data-header-customisation-color="#56575f"
+     data-header-customisation-font-size="18"
+     data-header-customisation-text="Real Reviews From Real Patients"
+     data-header-customisation-alignment="left"
+     data-background-color="transparent"
+     data-mode="most_recent"
+     data-type="site"
+     data-count="9"
+     data-show-bottomline="1"
+     data-autoplay-enabled="1"
+     data-autoplay-speed="7000"
+     data-show-navigation="1"
+     data-testimonials-page-enabled="1"
+     data-testimonials-page-text="See All Reviews"
+     data-testimonials-page-link="https://www.healthtestingcenters.com/reviews">&nbsp;</div> -->
+
+<div class="reviews">
+  <div class="reviews_head">
+    <h1>Real Reviews From Real Customers</h1>
+    <div class="owl-nav">
+      <button type="button" role="presentation" class="owl-prev disabled">
+        <span class="prev"></span>
+      </button>
+      <button type="button" role="presentation" class="owl-next">
+        <span class="next"></span>
+      </button>
+    </div>
+  </div>
+  <div class="owl-carousel">
+    {% for product in collections.home-page.products  %}
+    <div class="reviews_item">
+      <div class="reviews_item_head">
+        <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.title }}" />
+        <h3>{{product.title}}</h3>
+      </div>
+      <div class="reviews_item_main">
+        <div class="reviews_item_main_head">
+          {% include 'okendo-reviews-product-rating-summary' %}
+        </div>
+        <p>{{review_data.message}}</p>
+      </div>
+      <div class="reviews_item_footer">
+        <span>{{ review.author }}</span>
+        <a href="{{product.url}}">Read more</a>
+      </div>
+    </div>   
+    {% endfor %}
+  </div> 
+</div>
+
+<style>
+  .yotpo-clr {display: none; !important}
+.yotpo.bottomLine.yotpo-small { width: 100% !important;  }
+.yotpo-bottomline.pull-left.star-clickable { width: 100% !important; display: flex !important; justify-content: space-between !important; align-items: center !important; }
+
+</style>

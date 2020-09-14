@@ -1,0 +1,77 @@
+{% if product.metafields.accentuate.show_stages_module %}
+
+    {% for col in product.collections %}
+        {% if col.handle contains 'stage-' %}
+            {% assign stage = col.handle | replace: "stage-", "" | plus: 0 %}
+        {% endif %}
+    {% endfor %}
+
+    <div class="my-32">
+        <div class="mb-10 md:mb-24 px-5">
+            <h2 class="nmr-title text-4xl text-center leading-tight">
+                {{ product.metafields.accentuate.stage_module_title }}
+            </h2>
+        </div>
+
+        <!-- desktop "tabs" -->
+        <div class="container" id="stages">
+            <div class="flex flex-wrap m-0 md:-mx-5">
+                <div class="w-full mb-5 md:mb-0 md:w-1/3 lg:w-2/5 px-5">
+                    <div id="nmr-tabs">
+                        {% for title in product.metafields.accentuate.stage_title %}
+                            <div key="{{ forloop.index }}" class="nmr-tab {% if forloop.index == stage %}nmr-active{% endif %} flex flex-wrap items-center mb-10">
+                                <div class="nmr-tab-number flex flex-wrap items-center justify-center">
+                                    <div class="text-4xl">{{ forloop.index }}</div>
+                                </div>
+                                <div class="nmr-tab-title">
+                                    <h1 class="text-2xl bg-white px-5">{{ title }}</h1>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3 lg:w-3/5 px-5">
+                    <div id="nmr-info-boxes">
+                        {% for desc in product.metafields.accentuate.stage_description %}
+                            <div key="{{ forloop.index }}" class="nmr-info-box {% unless forloop.index == stage %}hidden{% endunless %}">
+                                <div class="content p-8 md:p-0">
+                                    <div class="w-full mb-20 bg-white">
+                                        <h1 class="block md:hidden text-4xl nmr-title mb-5">{{ product.metafields.accentuate.stage_title[forloop.index0] }}</h1>
+                                        <div class="text-lg font-light mb-10">{{ desc | strip_html }}</div>
+                                        <a class="nmr-classy-butt inline-block pl-12 pr-5 py-3 text-white font-bold text-xs md:text-base tracking-widest leading-none rounded shadow hover:shadow-lg uppercase" href="{{ collections[product.metafields.accentuate.stage_collection[forloop.index0]].url }}">
+                                            <div class="stripe bg-red-700"></div>
+                                            <div class="stripe2 bg-gray-700"></div>
+                                            Shop All Stage
+                                            {{ forloop.index }}
+                                            Products
+                                            <i class="fas fa-arrow-right ml-2" style="font-size: inherit"></i>
+                                        </a>
+                                    </div>
+                                    <div class="w-full">
+                                        <div class="flex flex-wrap justify-center -mx-4">
+                                            {% for thing in collections[product.metafields.accentuate.stage_collection[forloop.index0]].products limit:3 %}
+                                                <div class="w-full sm:w-1/2 md:w-1/3 px-4 md:px-6">
+                                                    {% include 'nmr-product-card' with product: thing %}
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end desktop "tabs" -->
+    </div>
+{% endif %}
+
+
+{% schema %}
+{
+    "name": "NMR Module Stages",
+    "tag": "section"
+}
+{% endschema %}

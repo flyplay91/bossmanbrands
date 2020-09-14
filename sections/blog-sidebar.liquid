@@ -1,0 +1,37 @@
+{% schema %}
+  {
+    "name": "Sidebar",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "blog_category",
+        "label": "Blog category",
+	"info": "categories are selective tags. Mention those selective tags seperated with comma above."
+      }
+    ]
+  }
+{% endschema %}
+
+<div class="nav-container">
+	{% comment %}
+      Blog Categories
+    {% endcomment %}
+    {% if blog.all_tags.size > 0 %}
+      <ul class="blog-listing">
+        {% for tag in blog.all_tags %}
+        	{% if section.settings.blog_category contains tag %}  
+            {% if current_tags contains tag %}
+              <li class="active">{{ tag }}</li>
+              {% else %}
+              <li>{{ tag | link_to_tag: tag }}</li>
+              {% endif %}
+        	{% endif %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <div class="search-form">
+      <form>
+        <input type="text" value="" placeholder="SEARCH BLOGS..." placeholder="">
+      </form>
+    </div>
+</div>

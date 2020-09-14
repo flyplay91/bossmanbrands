@@ -1,0 +1,46 @@
+{% comment %}
+
+{% paginate blog.articles by 25 %}
+<section class="blog">
+    <div class="container">
+        <div class="blog_content">
+            <div class="blog_articles">
+                {% for article in blog.articles %}
+                <div class="blog_articles__box" style="border-bottom: 2px solid #dfdfdf; padding: 0 0 10px">
+                    {% if article.image %}<a
+                        href="{{ article.url }}">{{ article | img_url: '640x335' | img_tag: article.title }}</a>{% endif %}
+
+                    <a href="{{ article.url }}">
+                        <h1>{{ article.title }}</h1>
+                    </a>
+                    <span class="date"> {{ article.published_at | date: format: 'month_day_year' }}</span>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="page-width">
+                <div class="blog-holder">
+                    <div class="blog-listing-left">
+                    </div>
+                    <div class="blog-sidebar-right">
+                        {% section 'blog-sidebar' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'pagination' %}
+    </div>
+</section>
+{% endpaginate %}
+{% endcomment %}
+
+{% assign current_url = canonical_url %}
+
+{% if current_url contains '/tagged/'  %}
+    {% comment %} When blog template is loaded for specific category (tag).{% endcomment %}
+    {% include 'blog-tagged-template' %}
+{% else %}
+    {% comment %} When blog template is loaded.{% endcomment %}
+    {% include 'blog-template' %}
+{% endif %}

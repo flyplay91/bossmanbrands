@@ -1,0 +1,56 @@
+<!-- /secion/blog-featured-article.liquid -->
+{% comment %}
+  Blog category template hero section
+{% endcomment %}
+
+{% for article in blog.articles %}
+    {%- if forloop.first -%}
+        {% comment %} Select background image {% endcomment %}
+        {% assign background_styles = '' %}
+        {% assign background_image = article.image | img_url: '1400x' %}
+        {% assign background_styles = ' style="background-image: url(' | append: background_image | append: ');"' %}
+
+        <section class="blog-category-hero"{{ background_styles }}>
+            <div class="container">
+                <div class="hero-content">
+                    {% for tag in article.tags %}
+                        {% if current_tags contains tag %}
+                            <span class="category">{{ tag | replace: 'Beard', '' | upcase }}</span>
+                        {% endif %}
+                    {% endfor %}
+
+                    <a href="{{ article.url }}" class="title"><h2>{{ article.title | escape }}</h2></a>
+
+                    {% if article.excerpt.size > 0 %}
+                        <p>{{ article.excerpt }}</p>
+                    {% else %}
+                        <p>{{ article.content | strip_html | truncate: 50 }}</p>
+                    {% endif %}
+
+                    <span class="date">{{ article.published_at | time_tag: format: 'month_day_year' }}</span>
+
+                </div>
+            </div>
+        </section>
+    {%- endif -%}
+{% endfor %}
+
+{% schema %}
+{
+  "name": "Category: Article",
+  "settings": [
+    {
+        "type": "header",
+        "content": "Featured article"
+    },
+    {
+        "type": "paragraph",
+        "content": "1. This section holds featured article for current category."
+    },
+    {
+        "type": "paragraph",
+        "content": "2. This section shows latest article in the category by default."
+    }
+  ]
+}
+{% endschema %}

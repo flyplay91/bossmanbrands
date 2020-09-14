@@ -1,0 +1,63 @@
+
+	<div class="bucks-cashing-content">
+		<h2>{{section.settings.cashing_title}}</h2>
+		<div class="bucks-cashing-block">
+			{% for block in section.blocks %}
+				<div class="cashing-item cashing-item--{{forloop.index}}">
+					<h3>{{block.settings.item_title}}</h3>
+					<label>{{block.settings.item_sub_title}}</label>
+					<p>{{block.settings.item_des}}</p>
+				</div>
+			{% endfor %}
+		</div>
+		<a href="{{section.settings.btn_link}}">{{section.settings.btn_title}}</a>
+	</div>
+
+
+
+{% schema %}
+{
+	"name": "Cashing",
+	"class": "boss-bucks-cashing",
+	"settings": [
+		{
+			"type": "text",
+			"id": "cashing_title",
+			"label": "Title"
+		},
+		{
+			"type": "text",
+			"id": "btn_link",
+			"label": "Btn Link"
+		},
+		{
+			"type": "text",
+			"id": "btn_title",
+			"label": "Btn Title"
+		}
+	],
+	"blocks": [
+		{
+			"type": "item",
+			"name": "Item",
+			"settings": [
+				{
+					"type": "text",
+					"id": "item_title",
+					"label": "Item Title"
+				},
+				{
+					"type": "text",
+					"id": "item_sub_title",
+					"label": "Item Sub Title"
+				},
+				{
+					"type": "html",
+					"id": "item_des",
+					"label": "Item Des"
+				}
+			]
+		}
+	]
+}
+{% endschema %}

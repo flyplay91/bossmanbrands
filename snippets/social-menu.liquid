@@ -1,0 +1,9 @@
+{% assign youtube = "Youtube" %}
+{% assign facebook = "Facebook" %}
+{% assign instagram = "Instagram" %}
+{% for link in linklists.social-menu.links %}
+	<a href="{{ link.url }}">
+      <span class="{% if link.title == youtube %}youtube{% endif %}{% if link.title == facebook %}facebook{% endif %}{% if link.title == instagram %}instagram{% endif %}"></span>
+      <span class="social_text">{{ link.title }}</span>
+	</a>
+{% endfor %}

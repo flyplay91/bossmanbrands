@@ -1,0 +1,126 @@
+<div class="our_story_container clearfix">
+    
+    <div class="image_container">
+
+        <img src="{{section.settings.image | img_url : '2800x' }}" />
+
+    </div>
+
+    <div class="text_container">
+
+        <h1>{{section.settings.story_title}}</h1>
+
+        <p>{{section.settings.story_text}}</p>
+
+        <a href="{{section.settings.story_button_url}}"><button>{{section.settings.story_button_text}}</button></a>
+
+    </div>
+
+</div>
+
+<style>
+
+    .clearfix:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+
+    .our_story_container {
+        max-width: 970px;
+        margin: 0 auto;
+        padding: 40px 10px;
+    }
+
+    .our_story_container .image_container {
+        width: 50%;
+        float: left;
+    }
+
+    .our_story_container .image_container img {
+        width: 100%;
+    }
+
+    .our_story_container .text_container {
+        width: 50%;
+        float: left;
+        padding: 0 0 0 50px;
+    }
+
+    .our_story_container .text_container h1 {
+        margin-top: 0;
+        text-transform: uppercase;
+        font-size: 35px;
+    }
+
+    .our_story_container .text_container button {
+        background-color: #408d33;
+        padding: 15px 25px;
+        margin: 10px 0;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .our_story_container .text_container p {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #666;
+        font-weight: 700;
+    }
+
+    @media ( max-width: 768px ) {
+
+        .our_story_container {
+            margin: 30px 0;
+        }
+
+        .our_story_container .image_container, .our_story_container .text_container {
+            width: 100%;
+            padding-left: 0;
+        }
+
+    }
+
+</style>
+
+{% schema %}
+
+    {
+        "name":"Our story",
+        "settings":[
+            {
+                "type":"image_picker",
+                "id":"image",
+                "label":"Select Image"
+            },
+            {
+                "type":"text",
+                "id":"story_title",
+                "label":"Enter Title"
+            },
+            {
+                "type":"text",
+                "id":"story_text",
+                "label":"Enter Text"
+            },
+            {
+                "type":"text",
+                "id":"story_button_text",
+                "label":"Enter Button Text"
+            },
+            {
+                "type":"url",
+                "id":"story_button_url",
+                "label":"Enter Button URL"
+            }
+        ],
+        "presets":[
+            {
+                "name":"Our story section",
+                "category":"text"
+            }
+        ]
+    }
+
+{% endschema %}

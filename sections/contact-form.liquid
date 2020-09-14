@@ -1,0 +1,295 @@
+
+<div class="custom-container">
+		<div class="custom-wrapper">
+
+			{% assign youtube = "Youtube" %}
+			{% assign facebook = "Facebook" %}
+			{% assign instagram = "Instagram" %}
+
+			<section class="contact contact-form-wrapper">
+              	{% comment %}<h1>Contact form</h1>{% endcomment %}
+					
+              {% form 'contact' %}
+              
+              {% if form.posted_successfully? %}
+              
+              <h2 class="contact_success_msg">Thank You for getting in touch with Bossman Brands!<br />
+                Your message was sent.  Someone will get back to you shortly!</h2>
+              <style>
+                .form-group,
+                .contact-form-wrapper input[type="submit"],
+                .contact-us__title,
+                .custom-wrapper.contact-us{
+                  display:none !important;
+                }
+                .contact_success_msg {
+                  text-align:center;
+                  line-height:32px;
+                  color: #000000;
+                  font-family: "Bely", sans-serif;
+                  font-size: 28px;
+                  font-weight: 600;
+                  padding-top:55px;
+                }
+                
+              </style>
+              
+              {% endif %}
+
+					{% assign name_attr = 'contact.form.name' | t | handle %}
+
+				<div class="contact-two-col">
+
+					<div class="form-group">
+						<input type="text" required  onfocus="return focusEl(event);" id="ContactFormName" class="form-control" name="contact[{{ name_attr }}]" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% endif %}" placeholder="First name">
+            
+						<input type="text" required  onfocus="return focusEl(event);" id="ContactFormLastName" class="form-control" name="contact[{{ name_attr }}]" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% endif %}" placeholder="Last name">
+					</div>
+
+				</div>
+
+				<div class="form-group">
+           <div class="form-control select-wrapper">
+          <select id="address_country_new" class="c-select" name="contact[country]" data-default="{{form.country}}">{{ country_option_tags }}</select>
+           </div>
+				</div>
+
+        <div class="form-group">
+					<input class="form-control" id="address" name="address" placeholder="address" type="text">
+				</div>
+
+				<div class="form-group">
+					<input class="form-control" id="city" name="city" placeholder="City" type="text">
+				</div>
+
+        	<div class="form-group">
+            <select id="address_province_new" class="address_form form-control" placeholder="State" name="contact[province]" data-default="{{form.province}}"></select>				
+        </div>
+
+				
+				<div class="form-group">
+					<input class="form-control" id="zip" name="zip" placeholder="Zip Code" type="text" placeholder="Zip Code">
+				</div>
+
+				<div class="form-group">
+								{% assign name_attr = 'contact.form.phone' | t | handle %}
+					<input type="tel" id="ContactFormPhone" onfocus="return focusEl(event);" class="form-control" name="contact[{{ name_attr }}]" pattern="[0-9\-]*" value="{% if form[name_attr] %}{{ form[name_attr] }}{% endif %}" placeholder="Phone Number">
+				</div>
+
+				<div class="form-group">
+					<input type="email" required  onfocus="return focusEl(event);" id="ContactFormEmail" class="form-control" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% endif %}" placeholder="Email">
+				</div>
+				<div class="form-group">
+					<textarea placeholder="HOW CAN WE HELP?" id="ContactFormMessage" cols="30" rows="5" required="required" onfocus="return focusEl(event);" class="form-control" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+				</div>
+				
+				<input type="submit" class="btn" value="Submit">
+				{% endform %}
+
+			</section>
+
+		</div>
+	</div>
+
+{% comment %}<div class="contact_col">
+							<ul>
+								<li><i class="far fa-envelope"></i><a href="mailto:stephen@bossmanbrand.com">stephen@bossmanbrand.com</a></li>
+								<li><i class="fas fa-map-marked-alt"></i>2211 S. I35 suite 204 Austin, Texas 78741</li>
+							</ul>
+							<div class="social">
+								<div class="social_info">
+									Join us in our groups where we interact daily with thousands of bearded brothers:
+								</div>
+								<div class="social_icons">
+									{% for link in linklists.social-menu.links %}
+									<a href="{{ link.url }}" class="{% if link.title == youtube %}youtube{% endif %}{% if link.title == facebook %}facebook{% endif %}{% if link.title == instagram %}instagram{% endif %}"></a>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+{% endcomment %}
+
+
+{% schema %}
+  {
+    "name": "Top Banner",
+    "settings": [],
+	"blocks": [
+        	{
+            "type": "content",
+            "name": "Form Field",
+            "settings": []
+        	}
+
+      
+     
+		
+    ]
+	
+  }
+  
+{% endschema %}
+
+<style type="text/css">
+
+  select.c-select {
+    width: 100%;
+    height: 49px;
+    padding-left: 17px;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    color: #999999;
+    font-family: proxima-nova, sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.65px;
+    text-transform: uppercase;
+  }
+  select.c-select:focus {
+    outline: none;
+}
+  
+.contact-form-wrapper .form-group {
+    width: 100%;
+    margin-bottom: 16px
+}
+
+.contact-form-wrapper .form-group .form-control {
+    display: inline-block;
+    width: 100%;
+    height: 49px;
+    border: 1px solid #231f20;
+    background-color: #ffffff;
+    padding: 0 17px 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    color: #999999;
+    font-family: proxima-nova, sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.65px;
+    text-transform: uppercase
+}
+  .form-control.select-wrapper {
+    padding-left: 0!important;
+    padding-right: 0!important;
+    position: relative;
+    background: #fafafa url("https://cdn.shopify.com/s/files/1/2283/7011/files/ar-down_2x_c3f1ec95-2f63-4563-8324-9266a7fcc49e.png?v=1589308025") no-repeat 97% 50%;
+    background-size: 3%;
+  }
+
+
+.contact-form-wrapper .form-group .form-control::-webkit-input-placeholder {
+    color: #999999;
+    text-transform: uppercase;
+    opacity: 1
+}
+
+.contact-form-wrapper .form-group .form-control::-moz-placeholder {
+    color: #999999;
+    text-transform: uppercase;
+    opacity: 1
+}
+
+.contact-form-wrapper .form-group .form-control:-ms-input-placeholder {
+    color: #999999;
+    text-transform: uppercase;
+    opacity: 1
+}
+
+.contact-form-wrapper .form-group .form-control::-ms-input-placeholder {
+    color: #999999;
+    text-transform: uppercase;
+    opacity: 1
+}
+
+.contact-form-wrapper .form-group .form-control::placeholder {
+    color: #999999;
+    text-transform: uppercase;
+    opacity: 1
+}
+
+.contact-form-wrapper .form-group textarea.form-control {
+    resize: none;
+    height: 227px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 15px 17px;
+    overflow: auto;
+    background-color: #fff
+}
+
+.contact-form-wrapper .form-group textarea.form-control::-webkit-input-placeholder {
+    color: #999999;
+    text-transform: uppercase;
+    opacity: 1
+}
+
+.contact-form-wrapper .form-group textarea.form-control::-moz-placeholder {
+    color: #999999;
+    text-transform: uppercase;
+    opacity: 1
+}
+
+.contact-form-wrapper .form-group textarea.form-control:-ms-input-placeholder {
+    color: #999999;
+    text-transform: uppercase;
+    opacity: 1
+}
+
+.contact-form-wrapper .form-group textarea.form-control::-ms-input-placeholder {
+    color: #999999;
+    text-transform: uppercase;
+    opacity: 1
+}
+
+.contact-form-wrapper .form-group textarea.form-control::placeholder {
+    color: #999999;
+    text-transform: uppercase;
+    opacity: 1
+}
+
+.contact-form-wrapper .contact-two-col .form-group {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.contact-form-wrapper .contact-two-col .form-group .form-control {
+    width: 49%
+}
+  .contact-form-wrapper input[type='submit']{
+    width: 100%;
+    text-transform: uppercase;
+  }
+  
+  @media (max-width: 576px) {
+    .contact-form-wrapper .contact-two-col .form-group {
+      display: inline-block;
+      margin-bottom: 0;
+    }
+    .contact-form-wrapper .contact-two-col .form-group .form-control {
+    	width: 100%;
+      	margin-bottom: 16px;
+	}
+  }
+  
+</style>
+
+{% javascript %}
+{% endjavascript %}

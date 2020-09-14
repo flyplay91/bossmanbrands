@@ -1,0 +1,35 @@
+{% if butt_color == 'isWhite' %}
+    {% assign butt_class = 'nmr-butt-white' %}
+{% endif %}
+
+<form action="/cart/add" class="form-vertical" enctype="multipart/form-data" method="post">
+    <select name="id" class="product-single__variants" {% if product.variants.size > 1 %} {% else %} style="display:none;" {% endif %}>
+        {% for variant in product.variants %}
+            {% if variant.available %}
+                <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }}
+                    -
+                    {{ variant.price | money_with_currency }}</option>
+            {% else %}
+                <option disabled="disabled">{{ variant.title }}
+                    -
+                    {{ 'products.product.sold_out' | t }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+
+
+    <input class="quantity-selector" min="1" name="quantity" type="hidden" value="1">
+    <button class="nmr-butt {{ butt_class }} show_popup_added" name="add" type="submit">
+        {% if butt_text %}
+            <span>{{ butt_text }}</span>
+        {% else %}
+            <span>Add to Cart</span>
+        {% endif %}
+        <div class="icon-adding">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </div>
+        <div class="icon-added">
+            <i class="fas fa-check"></i>
+        </div>
+    </button>
+</form>

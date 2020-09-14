@@ -1,0 +1,274 @@
+
+<header class="header media" id="mobile-menu-block" style="display: none">
+  <div class="free-ship"><span class="mc-free-ship"><a href="/pages/byob-be-your-own-boss">BE YOUR OWN BOSS AND WIN $10,000 CASH!</a></div>
+  <div class="container">
+    <div class="icons">
+      <a href="#" id="menu"><span class="menu"><i class="fas fa-bars"></i></span>Menu</a>
+      {% comment %}<a href="/search"><span class="search"><i class="fas fa-search"></i></span>Search</a>{% endcomment %}
+      {% comment %}<a href="/account"><span class="login"><i class="fas fa-user"></i></span>Log In</a>{% endcomment %}
+      <div class="info">
+        <a href="/" class="logo"></a>
+
+        {% comment %}{% include 'search-bar' %}{% endcomment %}
+        {% comment %}
+        <div class="callus">
+          <span class="callus_time">Call us anytime</span>
+          <span class="callus_number"></span>
+        </div>
+        {% endcomment %}
+      </div>
+      <a href="/cart"><span class="cart"><i class="fas fa-shopping-basket"></i>{% if cart.item_count > 0 %}<span class="cart_count_mobile">{{ cart.item_count }}</span>{% endif %}</span>Cart</a>
+    </div>
+  </div>
+  
+
+  {% comment %}
+  <div class="menu-line">
+    <div class="container">
+      <div class="menu-line_content">
+        <a href="/collections/jelly-beard-oil">Jelly beard oil</a>
+        <a href="/blogs/mens-grooming-tips">Grooming tips</a>
+        <a href="/collections/beard-care-packages">Packages</a>
+        <a href="/blogs/blog">Blog</a>
+      </div>
+    </div>
+  </div>
+  {% endcomment %}
+</header>
+
+<div class="menu media" style="display: none">
+  <div class="menu_content">
+    <div class="menu_content_wrap">
+      <div class="menu_content_head">
+        <a href="/" class="home"></a>
+        <a href="#" class="exit"></a>
+      </div>
+      <div class="menu_content_links">
+        {% include 'main-menu' with section.settings.mobile_main_menu %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="topbar big">
+  <div class="topbar_content">
+    <div class="free-ship"><a href="/pages/byob-be-your-own-boss">BE YOUR OWN BOSS AND WIN $10,000 CASH!</a></div>
+    <a id="close"><img src="{{ 'close.svg' | asset_url }}"></a>
+  </div>
+</div>
+
+<header class="header big">
+  <div class="container">
+    <div class="head">
+      <a href="/" id="menu--burger">
+      	<svg height="32px" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/></svg>
+      </a>
+      <a href="/" class="logo"></a>
+      {% comment %}
+      {% include 'search-bar' %}
+      {% endcomment %}
+      {% comment %}
+      <div class="buttons">
+        {% if customer %}
+        <a href="/account" class="account-btn">Account</a>
+        {% else %}
+        <a href="/account" class="login-btn">Login</a>
+        <a href="/account/register" class="register-btn">Register</a>
+        {% endif %}
+        <span class="delimeter"></span>
+        <a href="/cart" class="cart">
+          <span class="cart_img"></span>
+          <span class="count">{{ cart.item_count }}</span>
+        </a>
+      </div>
+      {% endcomment %}
+      
+        <div class="menu custom" >
+    <div class="container">
+      <div class="links">
+		{% include 'main-menu' with section.settings.main_menu %}
+      </div>
+    </div>
+   </div>
+      
+      <div class="buttons fa-icons">
+        {% if customer %}
+        <a href="/account" class="account">
+        <div class="fa-icons-block">
+        <span class="user-login"></span>
+        <span class="header-btn-text">ACCOUNT</span>
+        </div>
+        </a>
+        {% else %}
+        
+        <a href="/account/register" class="register">
+        <div class="fa-icons-block">
+        <span class="user-register"></span>
+        <span class="header-btn-text">REGISTER</span>
+        </div>
+        </a>
+        
+        <a href="/account" class="account">
+        <div class="fa-icons-block">
+        <span class="user-login"></span>
+        <span class="header-btn-text">LOG IN</span>
+        </div>
+        </a>
+        {% endif %}
+        <a href="/cart" class="cart">
+        <div class="fa-icons-block">
+        <span class="user-cart"><span class="count">{{ cart.item_count }}</span></span>
+        
+        <span class="header-btn-text">CART</span>
+          </div>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+  <div class="menu">
+    <div class="container">
+      <div class="links">
+		{% include 'main-menu' with section.settings.main_menu %}
+      </div>
+    </div>
+    
+    {% comment %}
+    <div class="hover">
+      <div class="container">
+        <div class="hover_content">
+          <div class="column">
+            <h1>Products</h1>
+            <ul>
+              	{% assign prod = "Products" %}
+              	{% for collection in collections %}
+              		{% if collection.description contains prod %}
+              			<li><a href="{{ collection.url }}">{{ collection.title }}</a></li>
+              		{% endif %}
+              	{% endfor %}
+            </ul>
+          </div>
+          <div class="column">
+            <h1>Packages</h1>
+            <ul>
+              	{% assign prod = "Packages" %}
+              	{% for collection in collections %}
+              		{% if collection.description contains prod %}
+              			<li><a href="{{ collection.url }}">{{ collection.title }}</a></li>
+              		{% endif %}
+              	{% endfor %}
+            </ul>
+          </div>
+          {% comment %}
+          <div class="column">
+            <h1>Apparel</h1>
+            <ul>
+              	{% assign prod = "Apparel" %}
+              	{% for collection in collections %}
+              		{% if collection.description contains prod %}
+              			<li><a href="{{ collection.url }}">{{ collection.title }}</a></li>
+              		{% endif %}
+              	{% endfor %}
+            </ul>
+          </div>
+          <div class="column">
+            <h1>Apparel</h1>
+            <ul>
+              	{% assign prod = "Apparel" %}
+              	{% for collection in collections %}
+              		{% if collection.description contains prod %}
+              			<li><a href="{{ collection.url }}">{{ collection.title }}</a></li>
+              		{% endif %}
+              	{% endfor %}
+            </ul>
+          </div>
+          {% endcomment %}
+          <div class="column">
+            <h1>Apparel & Accessories</h1>
+            <ul>
+              	{% assign prod = "Apparel & Accessories" %}
+              	{% for collection in collections %}
+              		{% if collection.description contains prod %}
+              			<li><a href="{{ collection.url }}">{{ collection.title }}</a></li>
+              		{% endif %}
+              	{% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endcomment %}
+    
+  </div>
+</header>
+
+<style>
+  
+  .header.media .icons a span.cart_count_mobile {
+    color: #fff;
+    background-color: {{ section.settings.cart_total_bg_color }} ;
+  }  
+  
+  @media only screen and (max-width : 768px) {
+      .header.media {display: block !important }
+    .topbar.big, .header.big {display: none;}
+  }
+  
+  
+  #close img {
+    width: 12px;
+    position: absolute;
+    right: 20px;
+    top: 16px;
+  }
+  .topbar {
+    visibility: visible;
+    opacity: 1;
+    
+  }
+  
+  .site-header-sticky--scrolled .topbar {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+  
+  .site-header-sticky--scrolled .header.big .head a.logo {
+    width: 140px;
+  }
+  
+</style>
+
+<script>
+window.onload = function(){
+    document.getElementById('close').onclick = function(){
+        this.parentNode.parentNode.parentNode
+        .removeChild(this.parentNode.parentNode);
+        return false;
+    };
+};
+  </script>
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "main_menu",
+        "label": "Main menu"
+      },
+      {
+        "type": "link_list",
+        "id": "mobile_main_menu",
+        "label": "Mobile Main menu"
+      },
+  	  {
+        "type": "color",
+        "id": "cart_total_bg_color",
+        "label": "Cart Total Background Color",
+        "default": "#e5e5e5"
+      }
+    ]
+  }
+{% endschema %}

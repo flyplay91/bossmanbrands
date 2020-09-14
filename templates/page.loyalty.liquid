@@ -1,0 +1,56 @@
+{% if page.url == "/pages/about" %}
+	{% include 'breadcrumb' %}
+{% endif %}
+
+  <div class="container">
+<section class="page-loyalty">
+
+    <div class="loyalty-list">
+      <h1 style="color: #B27839">Bronze</h1>
+      <span>Unlock When You Join</span>
+      <hr>
+      <ul>
+        <li>Exclusive Giveaways</li>
+        <li>Free B-day Gift</li>
+        <li>10% Off Coupon</li>
+      </ul>
+    </div>
+    <div class="loyalty-list">
+      <h1 style="color: #717171">Silver</h1>
+      <span>Spend $150 To Level-Up</span>
+      <hr>
+      <ul>
+        <li>Exclusive Giveaways</li>
+        <li>Free B-day Gift</li>
+        <li>15% Off Coupon</li>
+        <li>Early Access To New Products</li>
+        <li>Limited Edition Apparel</li>
+      </ul>
+    </div>
+    <div class="loyalty-list">
+      <h1 style="color: #FFCF00">Gold</h1>
+      <span>Spend $300 To Level-Up</span>
+      <hr>
+      <ul>
+        <li>Exclusive Giveaways</li>
+        <li>Free B-day Gift</li>
+        <li>20% Off Coupon</li>
+        <li>Early Access To New Products</li>
+        <li>Limited Edition Apparel</li>
+        <li>New Product Beta Tester</li>
+      </ul>
+    </div>
+
+</section>
+  </div>
+<style>
+  .page-loyalty{display:flex;justify-content: flex-start;flex-direction: row;flex-wrap: wrap;align-content: center;width:100%;}
+  .loyalty-list{display:flex;background-color:#f0f0f0;width:30%;padding:10px;margin:10px;flex-direction: column;}
+  .loyalty-list span{font-weight:bold;}
+  .loyalty-list h1, .loyalty-list span{margin:0 auto;}
+  .loyalty-list ul{padding-bottom:20px;}
+  .loyalty-list ul li{list-style:none;text-align:center;border-bottom:1px solid #e0e0e0;padding-top:20px;}
+  @media all and (max-width:768px){
+    .loyalty-list{width:100%;}
+  }
+</style>

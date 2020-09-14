@@ -1,0 +1,62 @@
+{% if product.metafields.accentuate.show_brotherhood_module %}
+    <div class="my-32 bg-cover bg-center bg-no-repeat">
+        <div class="container max-w-5xl">
+            <div class="flex flex-wrap items-center m-0 md:-mx-4">
+                <div class="w-full md:w-2/5 p-5">
+                    <div class="px-4 sm:px-10 md:px-0">
+                        <h2 class="nmr-title text-3xl leading-tight mb-5 nmr-title">{{ product.metafields.accentuate.brotherhood_title }}</h2>
+                        <div class="text-base">{{ product.metafields.accentuate.brotherhood_description }}</div>
+                    </div>
+                </div>
+
+
+                <div class="w-full md:w-3/5 px-4 flex justify-center">
+                    <div class="content relative w-full">
+                        <div data-bg="url({{ 'nmr-left-olive-branch.png' | file_img_url: '200x' }})" alt="" class="nmr-olive-left lazy"></div>
+                        <div data-bg="url({{ 'nmr-right-olive-branch.png' | file_img_url: '200x' }})" alt="" class="nmr-olive-right lazy"></div>
+                        <div class="nmr-bro-slider">
+                            {% for quote in product.metafields.accentuate.brotherhood_quote %}
+                                <div class="nmr-bro-slide">
+                                    <div class="p-5 sm:p-10">
+                                        <div class="px-6 py-8 shadow-md">
+                                            <div class="flex flex-wrap items-center -mx-4">
+                                                <div class="flex-1 px-4">
+                                                    <div class="leading-snug mb-5">"{{ quote }}"</div>
+                                                    <div class="m-0 leading-none">
+                                                        <small class="font-bold m-0">{{ product.metafields.accentuate.brotherhood_name[forloop.index0] }}</small>
+                                                    </div>
+                                                    <div class="m-0 leading-none">
+                                                        <small class="italic text-red-500 m-0">Member Since
+                                                            {{ product.metafields.accentuate.brotherhood_year[forloop.index0] }}</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% schema %}
+
+{
+    "name": "NMR Module Brotherhood",
+    "tag": "section"
+}
+
+{% endschema %}
+
+<!-- 
+    - section title
+    - section desc
+    - quotes
+        - quote
+        - name
+        - member since
+ -->

@@ -1,0 +1,269 @@
+<script type="text/javascript">
+
+    function updateSlides(info) {
+        indexPrev = info.indexCached,
+        indexCurrent = info.index;
+
+        // update style based on index
+        info
+            .slideItems[indexPrev]
+            .classList
+            .remove("nmr-active");
+        info
+            .slideItems[indexCurrent]
+            .classList
+            .add("nmr-active");
+    }
+
+
+    function stagesTabs() {
+        var tabs = document.querySelectorAll("#nmr-tabs .nmr-tab");
+        var boxes = document.querySelectorAll("#nmr-info-boxes .nmr-info-box");
+
+        var tabs_mobile = document.querySelectorAll("#nmr-tabs-mobile .nmr-tab");
+
+        function activateTab(current_index, mobile) { // check if input is greater than number of tabs
+
+            if (mobile) {
+                var tab_count = tabs_mobile.length;
+                if (current_index < tab_count) {
+
+                    for (var i = 0; i < tab_count; i++) {
+                        if (i != current_index) {
+                            tabs_mobile[i].classList.remove("nmr-active");
+                            tabs_mobile[i]
+                                .nextElementSibling
+                                .classList
+                                .add("hidden");
+                        } else {
+                            tabs_mobile[i].classList.add("nmr-active");
+                            tabs_mobile[i]
+                                .nextElementSibling
+                                .classList
+                                .remove("hidden");
+                        }
+                    }
+
+                }
+            } else {
+                var tab_count = tabs.length;
+                if (current_index < tab_count) {
+
+                    for (var i = 0; i < tab_count; i++) {
+                        if (i != current_index) {
+                            tabs[i].classList.remove("nmr-active");
+                            boxes[i].classList.add("hidden");
+                        } else {
+                            tabs[i].classList.add("nmr-active");
+                            boxes[i].classList.remove("hidden");
+                        }
+                    }
+
+                }
+            }
+
+            return current_index;
+        }
+
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].addEventListener("click", function () {
+                activateTab(Number.parseInt(this.getAttribute("key")) - 1, false);
+            });
+        }
+
+        for (var x = 0; x < tabs_mobile.length; x++) {
+            tabs_mobile[x].addEventListener("click", function (e) {
+                activateTab(Number.parseInt(this.getAttribute("key")), true);
+            });
+        }
+    }
+
+    function productTypesTabs() {
+        var tabs2 = document.querySelectorAll("#nmr-tabs-2 .nmr-tab");
+        var boxes2 = document.querySelectorAll("#nmr-info-boxes-2 .nmr-info-box");
+
+        var tabs2_mobile = document.querySelectorAll("#nmr-tabs-2-mobile .nmr-tab");
+
+        function activateTab2(current_index, mobile = false) { // check if input is greater than number of tabs
+
+            if (mobile) {
+                var tab_count = tabs2_mobile.length;
+                if (current_index < tab_count) {
+                    for (var i = 0; i < tab_count; i++) {
+                        if (i != current_index) {
+                            tabs2_mobile[i].classList.remove("nmr-active");
+                            tabs2_mobile[i]
+                                .nextElementSibling
+                                .classList
+                                .add("hidden");
+                        } else {
+                            tabs2_mobile[i].classList.add("nmr-active");
+                            tabs2_mobile[i]
+                                .nextElementSibling
+                                .classList
+                                .remove("hidden");
+                        }
+                    }
+                }
+            } else {
+                var tab_count = tabs2.length;
+                if (current_index < tab_count) {
+                    for (var i = 0; i < tab_count; i++) {
+                        if (i != current_index) {
+                            tabs2[i].classList.remove("nmr-active");
+                            boxes2[i].classList.add("hidden");
+                        } else {
+                            tabs2[i].classList.add("nmr-active");
+                            boxes2[i].classList.remove("hidden");
+                        }
+                    }
+                }
+            }
+
+            return current_index;
+        }
+
+        for (var i = 0; i < tabs2.length; i++) {
+            tabs2[i].addEventListener("click", function () {
+                activateTab2(Number.parseInt(this.getAttribute("key")) - 1);
+            });
+        }
+
+        for (var x = 0; x < tabs2_mobile.length; x++) {
+            tabs2_mobile[x].addEventListener("click", function (e) {
+                activateTab2(Number.parseInt(this.getAttribute("key")), true);
+            });
+        }
+    }
+
+    function testimonialsSlider() {
+
+        var container = document.querySelector(".nmr-testimonials-slider");
+
+        if (container) {
+            var testimonials_slider = tns({
+                container: container,
+                autoplay: false,
+                center: true,
+                gutter: 10,
+                controlsText: [
+                    "<i class=\"fas fa-arrow-left\"></i>", "<i class=\"fas fa-arrow-right\"></i>"
+                ],
+                mouseDrag: true,
+                items: 1,
+                responsive: {
+                    768: {
+                        items: 2
+                    }
+                },
+                onInit: function (info) {
+                    updateSlides(info)
+                }
+            });
+
+            testimonials_slider.events.on("indexChanged", updateSlides);
+        }
+
+    }
+
+    function videosSlider() {
+
+        var container = document.querySelector(".nmr-video-slider");
+
+        if (container) {
+            var video_slider = tns({
+                container: container,
+                autoplay: false,
+                center: true,
+                gutter: 10,
+                controlsText: [
+                    "<i class=\"fas fa-arrow-left\"></i>", "<i class=\"fas fa-arrow-right\"></i>"
+                ],
+                mouseDrag: true,
+                items: 1,
+                responsive: {
+                    768: {
+                        items: 2
+                    }
+                },
+                onInit: function (info) {
+                    updateSlides(info)
+                }
+            });
+
+            video_slider.events.on("indexChanged", updateSlides);
+        }
+    }
+
+    function moreAboutSlider() {
+
+        var container = document.querySelector(".nmr-more-about-slider");
+
+        if (container) {
+            var more_about_slider = tns({
+                container: container,
+                autoplay: false,
+                center: true,
+                controlsText: [
+                    "<i class=\"fas fa-arrow-left\"></i>", "<i class=\"fas fa-arrow-right\"></i>"
+                ],
+                mouseDrag: true,
+                items: 1,
+                responsive: {
+                    1028: {
+                        items: 2
+                    }
+                },
+                onInit: function (info) {
+                    updateSlides(info)
+                }
+            });
+
+            more_about_slider.events.on("indexChanged", updateSlides);
+        }
+    }
+
+    function brotherhoodSlider() {
+        var container = document.querySelector(".nmr-bro-slider");
+
+        if (container) {
+            var nmr_bro_slider = tns({
+                container: container,
+                autoplay: true,
+                mode: "gallery",
+                center: true,
+                items: 1,
+                gutter: 0,
+                controlsText: [
+                    "<i class=\"fas fa-arrow-left\"></i>", "<i class=\"fas fa-arrow-right\"></i>"
+                ],
+                autoplayButton: false,
+                mouseDrag: true
+            });
+        }
+    }
+
+    function sliders() {
+        var sliders = [];
+        var container = document.querySelectorAll(".nmr-testimonials-slider, .nmr-video-slider, .nmr-more-about-slider, .nmr-bro-slider");
+    }
+
+    function lazyLoadFunc() {
+        var bg = new LazyLoad({elements_selector: "[data-bg]"});
+        var reg = new LazyLoad({elements_selector: ".lazy"});
+    }
+
+
+    stagesTabs();
+    productTypesTabs();
+
+    window.addEventListener("load", function () {
+        videosSlider();
+        brotherhoodSlider();
+        testimonialsSlider();
+        moreAboutSlider();
+        lazyLoadFunc();
+
+        sliders();
+    })
+</script>

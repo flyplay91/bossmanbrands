@@ -1,0 +1,47 @@
+{% if main-menu != blank %}
+  <ul class="level-1">
+    {% for link in linklists[main-menu].links %}
+      <li class="{% if link.active %}active{% endif %}{% if link.links.size != 0 %} hasChild{% endif %}">
+	    <a href="{{ link.url }}">{{ link.title }}</a>
+        {% if link.links.size != 0 %}
+          <ul class="level-2 container">
+            <li class="menu_content_head">
+              <a href="/" class="back">Back</a>
+              <a href="#" class="exit"></a>
+            </li>
+            <li class="title-link"><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% for link2 in link.links %}
+              <li class="{% if link2.active %}active{% endif %}{% if link.links.size != 0 %} hasChild{% endif %}">
+                <a href="{{ link2.url }}">{{ link2.title }}</a>
+                {% if link2.links.size != 0 %}
+                  <ul class="level-3">
+                    {% for link3 in link2.links %}
+                      <li class="{% if link2.active %}active{% endif %}">
+                        <a href="{{ link3.url }}">{{ link3.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+    <li class="{% if link.active %}active{% endif %} brotherhood-menu">
+      <a href="/pages/boss-bucks">REWARDS</a>
+    </li>
+    <li class="{% if link.active %}active{% endif %} brotherhood-reviews4k">
+      <a href="#home_reviews"></a>
+    </li>
+
+    <li class="only-mobile">
+      <a href="/account"><i class="fa fa-user"></i> Account</a>
+    </li>
+
+    <li class="only-mobile">
+      <a href="/account/register">Register</a>
+    </li>
+
+  </ul>
+{% endif %}

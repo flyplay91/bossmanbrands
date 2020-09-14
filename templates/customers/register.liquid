@@ -1,0 +1,62 @@
+{% if customer %}
+<script>
+  document.location.href = "/";
+</script>
+{% endif %}
+<section class="register">
+	<div class="container">
+      	<div class="register_content">
+          <h1>{{ 'customer.register.title' | t }}</h1>
+
+        {% form 'create_customer' %}
+
+        {{ form.errors | default_errors }}
+
+        <label for="FirstName" class="hidden-label">{{ 'customer.register.first_name' | t }}</label>
+        <input type="text" name="customer[first_name]" required id="FirstName" class="input-full" placeholder="{{ 'customer.register.first_name' | t }}" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autocapitalize="words" autofocus>
+
+        <label for="LastName" class="hidden-label">{{ 'customer.register.last_name' | t }}</label>
+        <input type="text" name="customer[last_name]" required id="LastName" class="input-full" placeholder="{{ 'customer.register.last_name' | t }}" {% if form.last_name %}value="{{ form.last_name }}"{% endif %} autocapitalize="words">
+
+        <label for="Email" class="hidden-label">{{ 'customer.register.email' | t }}</label>
+        <input type="email" name="customer[email]" required id="Email" class="input-full{% if form.errors contains 'email' %} error{% endif %}" placeholder="{{ 'customer.register.email' | t }}" {% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off">
+
+        <label for="CreatePassword" class="hidden-label">{{ 'customer.register.password' | t }}</label>
+        <input type="password" name="customer[password]" required id="CreatePassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'customer.register.password' | t }}">
+
+        <p>
+          <input type="submit" value="{{ 'customer.register.submit' | t }}" class="btn" style="border: none;padding: 20px; width: 100%; margin-top: 30px; margin-bottom: 0">
+        </p>
+        <a href="{{ shop.url }}" class="return">{{ 'customer.register.cancel' | t }}</a>
+
+        {% endform %}
+      </div>
+	</div>
+</section>
+
+<style>
+  label:after {display: none;}
+  form {display: flex; flex-direction: column; width: 50%}
+  .hidden-label {display: none}
+  h1 {margin-bottom: 30px}
+  form input { padding: 20px 15px; border: 1px solid #efefef; margin-bottom: 30px}
+  .return { 
+    display: inline-block; 
+    margin: 30px 0; 
+    color: white; 
+    background: #6d6e7b; 
+    padding: 15px; 
+    text-transform: uppercase; 
+    text-align: center; 
+    font-weight: bold;
+    font-size: 12px
+  }
+  @media only screen and (max-width : 768px) {
+    form {width: 100%}
+    h1 {margin-top: 30px}
+  }
+  @media only screen and (max-width : 320px) {
+    form {width: 100%}
+    h1 {font-size: 30px; margin-bottom: 15px}
+  }
+</style>

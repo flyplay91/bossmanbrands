@@ -1,0 +1,106 @@
+{% unless template == 'index' or template == 'cart' or template == 'list-collections' %}
+<nav class="products-way breadcrumb" role="navigation" aria-label="breadcrumbs">
+  <!-- <a href="/collections/all" title="All Products">All</a> -->
+
+  {% if template contains 'page' %}
+    <span class="breadcrumb-arrow" aria-hidden="true">&rsaquo;</span>
+    <span>{{ page.title }}</span>
+  {% elsif template contains 'product' %}
+    <a href="/">Home</a>
+    <span class="breadcrumb-arrow" aria-hidden="true">&rsaquo;</span>
+    <a href="/collections/all">Shop</a>
+
+    {% if collection.url %}
+      {% unless collection.url == '/collections/all' %}
+        <span class="breadcrumb-arrow" aria-hidden="true">&rsaquo;</span>
+        <a href="{{collection.url}}">
+          {% if collection.handle == 'beard-care' %}
+          Beard Care
+          {% elsif collection.handle == "shaving" %}
+          Shaving
+          {% elsif collection.handle == "accessories" %}
+          Accessories
+          {% elsif collection.handle == "beard-combs-brushes" %}
+          Brushes & Combs
+          {% elsif collection.handle == "apparel" %}
+          Apparel
+          {% else %}
+          {{collection.title}}
+          {% endif %}
+        </a>
+      {% endunless %}
+    {% else %}
+      {% if product.handle == 'jelly-beard-oil' or product.handle == 'beard-oil' or product.handle == 'beard-pomade' or product.handle == 'beard-balm' or product.handle == 'beard-conditioner' or product.handle == 'exfoliating-beard-body-bar-soap' or product.handle == 'beard-supplement' or product.handle == 'mustache-wax' %}
+        <span class="breadcrumb-arrow" aria-hidden="true">&rsaquo;</span>
+        <a href="/collections/beard-care">Beard Care</a>
+
+      {% elsif product.handle == 'big-boss-beard-care-kit' or product.handle == 'complete-facial-hair-care' or product.handle == 'reload-package-kit' or product.handle == 'beard-essentials-kit' or product.handle == 'professional-kit' or product.handle == 'mens-shower-kit' or product.handle == '5-scent-jelly-beard-oil-sample-kit' or product.handle == 'colotion-sample-kit' or product.handle == 'jelly-colotion-combo-sample-kits' %}
+        <span class="breadcrumb-arrow" aria-hidden="true">&rsaquo;</span>
+        <a href="/collections/beard-grooming-kits">Beard Grooming Kits</a>
+      {% elsif product.handle == 'straight-blade-razor' or product.handle == 'double-edge-replacement-blades' %}
+        <span class="breadcrumb-arrow" aria-hidden="true">&rsaquo;</span>
+        <a href="/collections/shaving">Shaving</a>
+      {% elsif product.handle == 'colotion-scented-beard-lotion' or product.handle == 'barber-scissors' %}
+        <span class="breadcrumb-arrow" aria-hidden="true">&rsaquo;</span>
+        <a href="/collections/accessories">Accessories</a>
+      {% elsif product.handle == 'flexfit' or product.handle == 'gym-t-shirt' or product.handle == 'heather-grey-snapback-hat' or product.handle == 'feeling-cocky-t-shirt' or product.handle == 'red-black-mesh-hat' or product.handle == 'camo-hat' or product.handle == 'black-mesh-trucker-hat' or product.handle == 'knit-black-beanie' or product.handle == 'rooster-skull-raglan-baseball-3-4-sleeve-tee' or product.handle == 'rooster-skull-black-tee-shirt' or product.handle == 'black-zip-hoodie' or product.handle == 'black-pull-over-hoodie' or product.handle == 'grey-work-shirt' or product.handle == 'jersey-muscle-tank' or product.handle == 'big-rooster-t-shirt' or product.handle == 'bossman-polo-shirt' %}
+        <span class="breadcrumb-arrow" aria-hidden="true">&rsaquo;</span>
+        <a href="/collections/apparel">Apparel</a>
+      {% endif %}
+    {% endif %}
+    <span class="breadcrumb-arrow" aria-hidden="true">&rsaquo;</span>
+    <span>{{ product.title }}</span>
+
+  {% elsif template contains 'collection' and collection.handle %}
+    <a href="/">Home</a>
+    <span class="breadcrumb-arrow" aria-hidden="true">&rsaquo;</span>
+    <a href="/collections/all">Shop</a>
+
+    {% unless collection.handle == 'all' %}
+      <span class="breadcrumb-arrow" aria-hidden="true">&rsaquo;</span>
+      {{collection.title | link_to: url }}
+    {% endunless %}
+    {% comment %}
+    {% if current_tags %}
+      {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+       {% unless collection.handle == 'all' %}
+        {{collection.title | link_to: url }}
+      {% endunless %}
+    <span class="breadcrumb-arrow" aria-hidden="true">&rsaquo;</span>
+      <span>{{ current_tags | join: " + " }}</span>
+    {% else %}
+      <span>{{ collection.title }}</span>
+    {% endif %}
+     {% endcomment %}
+  {% elsif template == 'blog' %}
+    <span class="breadcrumb-arrow" aria-hidden="true">&rsaquo;</span>
+    {% if current_tags %}
+      {{ blog.title | link_to: blog.url }}
+    <span class="breadcrumb-arrow" aria-hidden="true">&rsaquo;</span>
+      <span>{{ current_tags | join: " + " }}</span>
+    {% else %}
+    <span>{{ blog.title }}</span>
+    {% endif %}
+  {% elsif template == 'article' %}
+    <span class="breadcrumb-arrow" aria-hidden="true">&rsaquo;</span>
+    {{ blog.title | link_to: blog.url }}
+    <span class="breadcrumb-arrow" aria-hidden="true">&rsaquo;</span>
+    <span>{{ article.title }}</span>
+  {% else %}
+    <span class="breadcrumb-arrow" aria-hidden="true">&rsaquo;</span>
+   <span>{{ page_title }}</span>
+  {% endif %}
+</nav>
+{% endunless %}
+
+<style>
+  @media only screen and (max-width : 768px) {
+    .breadcrumbs {margin-top: 0 !important}
+  }
+  @media only screen and (max-width : 480px) {
+    .products_content_main__grid_box .main {flex-direction: column; align-items: center; width:100%}
+    .products_content_main__grid_box .main form {display: block; width: 100%}
+    .products_content_main__grid_box .main .btn {width:100%}
+    .products_content_main__grid_box .main .img {margin-right: 0}
+  }
+</style>

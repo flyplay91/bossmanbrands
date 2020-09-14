@@ -1,0 +1,675 @@
+<style type="text/css">
+    html {
+        font-family: "Roboto", sans-serif !important;
+        font-size: 16px !important;
+        font-weight: 300 !important;
+        background-image: none !important;
+    }
+
+    /* this needs to be here */
+    .header .container,
+    .product_more .container {
+        max-width: 970px !important;
+        margin: 0 auto !important;
+        padding: 0 10px !important;
+    }
+    /* end this needs to be here */
+
+
+    /* nmr product card */
+    .nmr-butt,
+    button.nmr-butt {
+        transition-duration: 200ms;
+        border-radius: 3px;
+        line-height: 1;
+        padding: 0.5em 1em;
+        border: solid 1px #C0964A !important;
+        background-color: #ffffff;
+        color: #C0964A;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
+
+        position: relative;
+    }
+
+    .nmr-butt.nmr-butt-white,
+    button.nmr-butt.nmr-butt-white {
+        background-color: #C0964A;
+        border: solid 1px #FFFFFF !important;
+        color: #FFFFFF;
+    }
+
+    .nmr-butt.is-adding,
+    button.nmr-butt.is-adding {
+        border: solid 1px #C0964A !important;
+        background-color: #C0964A;
+        color: #FFFFFF;
+    }
+
+    .nmr-butt.is-added,
+    button.nmr-butt.is-added {
+        border: solid 1px #05901f !important;
+        background-color: #05901f;
+        color: #FFFFFF;
+    }
+
+    /* nmr button icon */
+    .nmr-butt .icon-added,
+    button.nmr-butt .icon-added,
+    .nmr-butt .icon-adding,
+    button.nmr-butt .icon-adding {
+        transition-duration: 200ms;
+        right: 0;
+        top: 50%;
+        transform: translate(175%, -50%);
+        color: #C0964A !important;
+
+        position: absolute;
+        display: none;
+    }
+
+    .nmr-butt.is-adding .icon-adding,
+    button.nmr-butt.is-adding .icon-adding,
+    .nmr-butt.is-added .icon-added,
+    button.nmr-butt.is-added .icon-added {
+        display: block;
+    }
+
+    .nmr-butt.nmr-butt-white.is-adding,
+    button.nmr-butt.nmr-butt-white.is-adding {
+        color: #C0964A !important;
+        background-color: #FFFFFF !important;
+        border: solid 1px #FFFFFF !important;
+
+    }
+
+    .nmr-butt.nmr-butt-white.is-adding .icon-adding,
+    button.nmr-butt.nmr-butt-white.is-adding .icon-adding,
+    .nmr-butt.nmr-butt-white.is-added .icon-added,
+    button.nmr-butt.nmr-butt-white.is-added .icon-added {
+        color: #FFFFFF !important;
+    }
+
+    .nmr-butt.nmr-butt-white.is-added,
+    button.nmr-butt.nmr-butt-white.is-added {
+        border: solid 1px #05901f !important;
+    }
+
+    .nmr-butt.nmr-butt-white.is-adding .icon-adding,
+    button.nmr-butt.nmr-butt-white.is-adding .icon-adding,
+    .nmr-butt.nmr-butt-white.is-added .icon-added,
+    button.nmr-butt.nmr-butt-white.is-added .icon-added {
+        color: #FFFFFF !important;
+    }
+
+    /* product content */
+    .products_content_main__grid_box {
+        margin-right: 0
+    }
+    .products_content_main__grid_box h3 {
+        display: inline-block;
+        font-size: 15px;
+        height: auto;
+    }
+    .products_content_main__grid_box .main .img img {
+        height: 137px
+    }
+    .yotpo-clr {
+        display: none;
+    }
+    .ro_widget {
+        display: none;
+    }
+    .jdgm-star {
+        font-family: "JudgemeStar" !important;
+    }
+
+    /* nmr globals */
+    .nmr-gold-bg {
+        background-color: #C0964A
+    }
+
+    .nmr-start button {
+        visibility: visible;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 1px !important;
+    }
+
+    .nmr-title,
+    .nmr-title-dark,
+    .nmr-title-light {
+        color: #C0964A;
+        font-family: "Abril Fatface", sans-serif;
+        /* margin-bottom: 0.5rem; */
+    }
+
+    .nmr-title-dark {
+        color: #374437;
+    }
+
+    .nmr-title-light {
+        color: #ffffff;
+    }
+
+
+    .nmr-image:after,
+    .nmr-image-square:after {
+        display: block;
+        width: 100%;
+        content: "";
+    }
+
+    .nmr-image:after {
+        padding-top: 150%;
+    }
+
+    .nmr-image-square:after {
+        padding-top: 100%
+    }
+
+    .nmr-cta {}
+
+    main .fas,
+    .far {
+        font-size: inherit !important;
+        color: inherit !important;
+    }
+
+    main button .fas {
+        font-size: 0.8rem;
+    }
+
+    #shopify-section-nmr-module-product-info {
+        margin: 5em 0;
+    }
+
+    .nmr-para-sm,
+    .nmr-para,
+    .nmr-para-lg {
+        display: block;
+    }
+
+    .nmr-para-sm {
+        font-size: 17px;
+        line-height: 20px;
+    }
+
+    .nmr-para {
+        font-size: 17px;
+        line-height: 20px;
+    }
+
+    .nmr-para-lg {
+        font-size: 23px;
+        line-height: 20px;
+    }
+
+    .nmr-container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .nmr-container-sm {
+        max-width: 856px;
+    }
+
+    .nmr-container-md {
+        max-width: 1200px;
+    }
+
+    .nmr-container-lg {
+        max-width: 1440px;
+    }
+
+    .nmr-content-box {
+        width: auto !important;
+        margin: 8em -1em;
+    }
+
+    .nmr-container .nmr-flex-box {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        width: auto;
+        justify-content: center;
+    }
+
+    /* Tiny Slider Overrides */
+
+    .nmr-image-landscape {
+        background-color: #efefef;
+        display: block;
+        content: "";
+        padding-top: 60%;
+        position: relative;
+    }
+
+    .tns-outer {
+        position: relative;
+    }
+
+    .tns-nav {
+        display: none;
+    }
+
+    .tns-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99;
+
+        outline: 0;
+
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        transform: translateY(50%);
+    }
+
+    .nmr-olive-left,
+    .nmr-olive-right {
+        position: absolute;
+        bottom: 0;
+        height: 4em;
+        width: 4em;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .nmr-olive-left {
+        left: 0;
+        transform: translate(18%, -20%);
+    }
+
+    .nmr-olive-right {
+        right: 0;
+        transform: translate(-18%, -20%);
+    }
+
+    button[data-controls=next],
+    button[data-controls=prev] {
+        cursor: pointer;
+        border-radius: 999999px;
+        width: 2rem;
+        height: 2rem;
+        background-color: #C0964A;
+        color: white;
+        margin: 0 0.25rem;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        outline: 0;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        transform: translateY(0);
+        transition-duration: 200ms;
+    }
+
+    button[data-action=start],
+    button[data-action=stop] {
+        display: none !important;
+    }
+
+    button[data-controls=next]:hover,
+    button[data-controls=prev]:hover {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        transform: translateY(-10%);
+    }
+
+    button,
+    button:hover,
+    button:focus,
+    button:active,
+    button .fas,
+    button:hover .fas,
+    button:focus .fas,
+    button:active .fas {
+        outline: 0 !important;
+    }
+
+
+    /* nmr product-type tabs css */
+    #nmr-tabs-2 {
+        position: relative;
+    }
+
+    #nmr-tabs-2:after {
+        content: "";
+        width: 1px;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        left: 1.75rem;
+        transform: translateX(-50%);
+        z-index: -1;
+
+        background-color: #EA1212;
+    }
+
+    .nmr-tab-number,
+    .nmr-tab-title {
+        font-family: "Abril Fatface", serif !important;
+    }
+
+    .nmr-tab {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .nmr-tab .nmr-tab-number,
+    .nmr-tab .nmr-tab-title h1,
+    .nmr-tab:after {
+        transition-duration: 300ms;
+        transition-timing-function: ease-in-out;
+    }
+
+    .nmr-tab .nmr-tab-number {
+        height: 3.5rem;
+        width: 3.5rem;
+        border-radius: 99999px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: #8D8D8B;
+
+        /* background-color: #FFF !important; */
+    }
+    /* 
+    .nmr-tab.nmr-active .nmr-tab-number {
+        background-color: #E7E3E1 !important;
+    }
+    */
+
+    .nmr-tab .nmr-tab-number,
+    .nmr-tab .nmr-tab-title h1 {
+        color: #E7E3E1;
+    }
+
+    .nmr-tab:hover .nmr-tab-number,
+    .nmr-tab:hover .nmr-tab-title h1 {
+        color: #8D8D8B !important;
+    }
+
+    .nmr-tab.nmr-active .nmr-tab-number,
+    .nmr-tab.nmr-active .nmr-tab-title h1 {
+        color: #C0964A !important;
+    }
+
+    .nmr-tab:after {
+        content: "";
+        height: 2px;
+        position: absolute;
+        width: 0;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        z-index: -1;
+    }
+
+    .nmr-tab:hover:after,
+    .nmr-tab.nmr-active:after {
+        width: 50%;
+    }
+
+    .nmr-tab:hover:after {
+        background-color: #E7E3E1;
+    }
+
+    .nmr-tab.nmr-active:after {
+        background-color: #C0964A;
+    }
+
+    /* @media (min-width: 640px) { ... } */
+
+    /* Medium (md) */
+    @media(max-width: 768px) {
+        #nmr-tabs-2 {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #nmr-tabs-2:after {
+            content: "";
+            width: 100%;
+            position: absolute;
+            top: 0;
+            height: 1px;
+            top: 1.75rem;
+            left: 0;
+            transform: translateX(0) translateY(-50%);
+            z-index: -1;
+
+            background-color: #EA1212;
+        }
+
+    }
+
+
+    /* nmr-module-stages css */
+    #nmr-tabs,
+    #nmr-tabs-mobile {
+        position: relative;
+    }
+
+    #nmr-tabs:after,
+    #nmr-tabs-mobile:after {
+        content: "";
+        width: 1px;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        left: 1.75rem;
+        transform: translateX(-50%);
+        z-index: -1;
+
+        background-color: #EA1212;
+    }
+
+    .nmr-tab-number,
+    .nmr-tab-title {
+        font-family: "Abril Fatface", serif !important;
+    }
+
+    .nmr-tab {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .nmr-tab .nmr-tab-number,
+    .nmr-tab .nmr-tab-title h1,
+    .nmr-tab:after {
+        transition-duration: 300ms;
+        transition-timing-function: ease-in-out;
+    }
+
+    .nmr-tab .nmr-tab-number {
+        height: 3.5rem;
+        width: 3.5rem;
+        border-radius: 99999px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: #DEDAD7 !important;
+        color: #7A7A78 !important
+    }
+
+    .nmr-tab.nmr-active .nmr-tab-number {
+        background-color: #283227 !important;
+        color: #fff !important
+    }
+
+    .nmr-tab:hover .nmr-tab-number,
+    .nmr-tab:hover .nmr-tab-title h1 {
+        color: #8D8D8B !important;
+    }
+
+    .nmr-tab.nmr-active .nmr-tab-number,
+    .nmr-tab.nmr-active .nmr-tab-title h1 {
+        color: #C0964A !important;
+    }
+
+    .nmr-tab:after {
+        content: "";
+        height: 2px;
+        position: absolute;
+        width: 0;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        z-index: -1;
+    }
+
+    .nmr-tab:hover:after,
+    .nmr-tab.nmr-active:after {
+        width: 50%;
+    }
+
+    .nmr-tab:hover:after {
+        background-color: #E7E3E1;
+    }
+
+    .nmr-tab.nmr-active:after {
+        background-color: #C0964A;
+    }
+
+    /* mobile tabs */
+    #nmr-tabs-mobile .nmr-tab + .nmr-info-box {
+        transition: max-height 300ms;
+
+        overflow: hidden;
+
+        height: auto;
+        display: block !important;
+        max-height: 0;
+    }
+
+    #nmr-tabs-mobile .nmr-tab.nmr-active + .nmr-info-box {
+        transition: max-height 300ms;
+        max-height: 500px;
+    }
+
+    @media(max-width: 768px) {
+        #nmr-tabs {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #nmr-tabs:after {
+            content: "";
+            width: 100%;
+            position: absolute;
+            top: 0;
+            height: 1px;
+            top: 1.75rem;
+            left: 0;
+            transform: translateX(0) translateY(-50%);
+            z-index: -1;
+
+            background-color: #EA1212;
+        }
+
+        .nmr-tab-number,
+        .nmr-tab-title {
+            font-family: "Abril Fatface", serif !important;
+        }
+
+        .nmr-tab {
+            cursor: pointer;
+        }
+
+        .nmr-tab .nmr-tab-number {
+            height: 3.5rem;
+            width: 3.5rem;
+            border-radius: 99999px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nmr-tab .nmr-tab-title {
+            display: none;
+        }
+
+        .nmr-tab:after {
+            display: none;
+        }
+
+        .nmr-tab.nmr-active .nmr-tab-number {
+            border: solid 2px;
+        }
+
+        .nmr-info-box {
+            border: solid 1px #C0964A;
+            border-radius: 0.5em;
+            padding-bottom: 1em;
+        }
+    }
+
+    /* classy button css */
+    .nmr-classy-butt {
+        transition-duration: 200ms;
+        background-color: #C0964A;
+        position: relative;
+    }
+
+    .nmr-classy-butt:hover {
+        transform: translateY(-1px);
+    }
+
+    .nmr-classy-butt .stripe,
+    .nmr-classy-butt .stripe2 {
+        width: 10px;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        transform: skewX(-20deg);
+    }
+
+    .nmr-classy-butt .stripe {
+        left: calc(0.5rem + 10px);
+    }
+
+    .nmr-classy-butt .stripe2 {
+        left: calc(0.5rem + 22px);
+    }
+
+    /* nmr testimonials css */
+    .nmr-testimonials-slide {
+        transition-duration: 500ms;
+        opacity: .2;
+    }
+
+    .nmr-testimonials-slide.nmr-active {
+        opacity: 1 !important;
+    }
+
+    /* nmr video slides */
+    .nmr-video-slide {
+        transition-duration: 500ms;
+        opacity: .2;
+    }
+
+    .nmr-video-slide.nmr-active {
+        opacity: 1 !important;
+    }
+
+    /* nmr divider css */
+    .nmr-divider {
+        border-color: #EA1212 !important;
+        max-width: 856px;
+        margin: 5em auto;
+    }
+</style>

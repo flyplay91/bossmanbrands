@@ -1,0 +1,177 @@
+
+
+.text-bold {
+  font-weight: bold!important;
+}
+/************* Common Styles Start *****************/
+.custom-container {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 15px
+}
+
+@media (max-width: 992px) {
+    .custom-container {
+        padding: 0 25px
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-container {
+        padding: 0 25px
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-container {
+        padding: 0 15px
+    }
+}
+
+.custom-wrapper {
+    width: 100%;
+    max-width: 1180px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    overflow: hidden
+}
+
+.top-banner {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.top-banner__title {
+    font-family: bely, sans-serif;
+    color: #ffffff;
+    font-size: 92px;
+    font-weight: bold
+}
+
+.c-btn, input.c-btn {
+    display: inline-block;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: proxima-nova, sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.46px;
+    width: 219px;
+    height: 36px;
+    padding: 8px 0;
+    background: #bf954a;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    outline: none;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    text-decoration: none
+}
+
+.c-btn::hover, .c-btn::focus, .c-btn::active, input.c-btn::hover, input.c-btn::focus, input.c-btn::active {
+    background: #c6a348e6;
+    outline: none;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #ffffff;
+    text-decoration: none
+}
+
+.c-btn.btn-clear {
+    border: 2px solid #c6a348;
+    background: transparent
+}
+
+.c-btn.btn-clear:hover, .c-btn.btn-clear:focus, .c-btn.btn-clear:active {
+    background: #bf954a
+}
+
+.content-text, .content-text * {
+    color: #0b0d0d;
+    font-family: proxima-nova, sans-serif;
+    font-size: 21px;
+    line-height: 2;
+    font-weight: 500
+}
+
+.content-large-text {
+    color: #0b0d0d;
+    font-family: bely, sans-serif;
+    font-size: 50px;
+    font-weight: 500
+}
+
+.content-heading {
+    color: #0f0f0f;
+    font-family: proxima-nova, sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1.1px;
+    padding: 10px 0 10px
+}
+
+.content-sub-heading {
+    text-transform: uppercase;
+    color: #0f0f0f;
+    font-family: proxima-nova, sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 2.85px
+}
+
+.link {
+    color: #0b0d0d;
+    font-family: proxima-nova, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.38px;
+    text-decoration: none
+}
+
+/************* Common Styles End *****************/
+
+/************* About us Styles  *****************/
+#about-new .main-content {
+  background: #ffffff;
+  padding-top: 0;
+}
+
+/************* Contact us Styles *****************/
+
+.contact-form-wrapper {
+  width: 62%;
+  margin: 40px auto 0;
+}
+@media (max-width: 768px) {
+  .contact-form-wrapper {
+  	width: 100%;
+   }
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+

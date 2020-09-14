@@ -1,0 +1,53 @@
+<a href="" class="scent-list-mobile">CHOOSE YOUR SCENT</a>
+    <ul class="scent-list">
+        {% for block in section.blocks %}
+            <li><a href="javascript: void(0)">{{block.settings.nav}}</a></li>
+        {% endfor %}
+    </ul>
+    <div class="scent-title-des">
+        <h2>{{section.settings.title}}</h2>
+        <p>{{section.settings.content}}</p>
+    </div>
+
+<style>
+.shop-by-scent-hero {
+    background-image: url({{section.settings.image | img_url: '2000x'}})
+}
+</style>
+
+{% schema %}
+{
+    "name": "Shop Scent Hero",
+    "class": "shop-by-scent-hero",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "html",
+            "id": "content",
+            "label": "Content"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "List",
+            "type": "text",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "nav",
+                    "label": "Nav"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

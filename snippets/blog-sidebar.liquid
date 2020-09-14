@@ -1,0 +1,35 @@
+<!-- /snippets/blog-sidebar.liquid -->
+{% comment %}
+  Recent blog posts
+{% endcomment %}
+<h3 class="h4">{{ 'blogs.sidebar.recent_articles' | t }}</h3>
+<ul class="no-bullets">
+  {% for article in blogs[blog.handle].articles limit:6 %}
+    <li>
+      <a href="{{ article.url }}">{{ article.title }}</a>
+      <br>
+      <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>
+    </li>
+  {% endfor %}
+</ul>
+
+
+<div id="sidebar-categories">
+	{% comment %}
+      Blog categories
+    {% endcomment %}
+    {% if blog.all_tags.size > 0 %}
+      <h3 class="h4">{{ 'blogs.sidebar.categories' | t }}</h3>
+      <ul class="blog-listing">
+        {% for tag in blog.all_tags %}
+        	{% if section.settings.blog_category contains tag %}  
+              {% if current_tags contains tag %}
+              <li>{{ tag }}</li>
+              {% else %}
+              <li>{{ tag | link_to_tag: tag }}</li>
+              {% endif %}
+        	{% endif %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+</div>

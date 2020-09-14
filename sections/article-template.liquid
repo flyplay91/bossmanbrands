@@ -1,0 +1,204 @@
+{% assign s = section.settings %}
+{%- paginate blog.articles by 250 -%}
+
+<div class="blog-list"> 
+    <ul>
+        {% for tag in blog.all_tags %}
+            {% if article.tags.first contains tag %}
+            <li class="active blog-tag" data-value="{{tag | handle}}">{{ tag | replace: 'Beard', '' | upcase }}</li>
+            {% else %}
+            <li class="blog-tag" data-value="{{tag | handle}}">{{ tag | replace: 'Beard', '' | upcase | link_to_tag: tag }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+  
+  	<div class="tags-blog-block">
+        {% for tag in blog.all_tags %}
+            {% assign count = 0 %}
+            <div class="tag-blog-item" data-value="{{tag | handle}}">
+                <div class="tag-blog-background">
+                    <div class="tag-blog-option">
+                        {% for article in blog.articles limit:250 %}
+                            {% if article.tags contains tag %}
+                            {% assign count = count | plus: 1 %}
+                                {% if count < 4 %}
+                                    
+                                    {% if article.image %}
+                                        <a href="{{ article.url }}">
+                                            {{ article | img_url: '640x335' | img_tag: article.title }}
+                                            <h2>{{ article.title }}</h2>
+                                        </a>
+                                    {% endif %}
+
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="tag-blog-all">
+                        <a href="/blogs/blog/tagged/{{tag | handle}}">Read All</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if article.tags.first != blank %}
+    <div class="current-category">
+        <h1 class="desktop">{{ article.tags.first | replace: 'Beard', '' | upcase }}</h1>
+                <h1 class="mobile">{{ article.tags.first | replace: 'Beard', '' | normal }}</h1>
+
+    </div>
+    {% endif %}
+</div>
+
+<section class="article">
+    <div class="article__header">
+        <div class="container">
+            <div class="article-image">
+                {{ article.image | img_url: 'master' | img_tag: 'lazyload' }}
+            </div>
+
+            <div class="article-meta">
+                <div class="blog-search-form">
+                    <form action="/search?view=blogs" method="get" class="search-form" role="search">
+                        <input type="hidden" name="view" value="blogs" >
+                        <input type="text" name="q" value="" placeholder="SEARCH BLOGS...">
+                    </form>
+                </div>
+                <span class="category">{{ article.tags.first | replace: 'Beard', '' | upcase }}</span>
+
+                <h1 class="title">{{ article.title | escape }}</h1>
+
+                <div class="social-links">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="article__content">
+        <div class="container">
+            <div class="article__content--sidebar sticky">
+                <div class="blocks-wrapper">
+                    {% if article.tags.size > 0 and s.show_categories  %}
+                        <div class="block">
+                            <span>CATEGORY</span>
+                            {% for tag in article.tags %}
+                          <p>{{ tag | replace: 'Beard', '' | link_to_tag: tag }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+					
+                  	{% comment %}
+                    {% if article.excerpt.size > 0 and show_excerpt %}
+                        <div class="block">
+                            <span>EXCERPT</span>
+                            <p>{{ article.excerpt }}</p>
+                        </div>
+                    {% endif %}
+
+                    {% if section.blocks.size > 0 and s.show_featured_products %}
+                        <div class="block">
+                            <span>FEATURED PRODUCTS</span>
+                        </div>
+                    {% endif %}
+                  	{% endcomment %}
+                </div>
+              
+                {% if article.metafields.accentuate.show_featured_products %}
+                    {% assign selected_handles = article.metafields.accentuate.featured_product | remove : '["' | remove : '"]' | split: '|' %}
+
+                    <div class="block">
+                        <span>FEATURED PRODUCTS</span>
+                    </div>
+
+                    <div class="featured-products-wrapper">
+                      
+                        {% for selected_handle in selected_handles %}
+                            {% assign p = all_products[selected_handle] %}
+                           
+                            {% assign on_sale = false %}
+                            {% if p.compare_at_price > p.price %}
+                                {% assign on_sale = true %}
+                            {% endif %}
+                        
+                            <div class="featured-product-block">
+                                <div class="img-wrapper">
+                                    <a href="{{ p.url }}" title="{{ p.title }}">
+                                        <img src="{{ p.featured_image.src | img_url: '1000x' }}" alt="{{ p.title }}">
+                                    </a>
+                                </div>
+                                <div class="product-meta">
+                                    <h4><a href="{{ p.url }}">{{ p.title }}</a></h4>
+                                    <p class="price">
+                                        {% if on_sale %}
+                                            <span class="current_price">{{ p.price | money }}</span>
+                                            <span class="sale was_price">{{ p.compare_at_price | money }}</span>
+                                        {% else %}
+                                            <span>{{ p.price | money }}</span>
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                {% endif %}
+
+                {% comment %}
+                {% if section.blocks.size > 0 and s.show_featured_products %}
+                    <div class="featured-products-wrapper">
+                        {% for block in section.blocks limit: s.max_products  %}
+                            {% assign b = block.settings %}
+                            {%- if b.featured_product != blank -%}
+                                {%- assign p = all_products[b.featured_product] -%}
+                                <div class="featured-product-block">
+                                    <div class="img-wrapper">
+                                        {{ p.featured_image | img_url: '130x', scale: '2x' | img_tag: 'lazyload' }}
+                                    </div>
+
+                                    <div class="product-meta">
+                                        <h4>{{ p.title | escape }}</h4>
+                                        <span>{{ p.price | money }}</span>
+                                    </div>
+                                </div>
+                            {%- endif -%}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {% endcomment %}
+            </div>
+
+            <div class="article__content--copy">
+                {% include 'hypervisual' %}
+                {{ article.content }}
+            </div>
+        </div>
+    </div>
+</section>
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "Posts",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_categories",
+      "label": "Show categories",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_excerpt",
+      "label": "Show excerpt",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_featured_products",
+      "label": "Show featured products",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

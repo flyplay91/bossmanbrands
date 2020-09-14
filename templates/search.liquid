@@ -1,0 +1,68 @@
+{% assign grid_results = false %}
+{% assign respond_js_secret_key = shop.domain | md5 %}
+{% unless search.terms == respond_js_secret_key %}
+{% paginate search.results by 9 %}
+
+<section class="search">
+  <div class="container">
+  	<div class="search_content">
+      {% if search.performed %}
+        {% if search.results_count == 0 %}
+            <h1 class="text-center">{{ 'general.search.no_results_html' | t: terms: search.terms }}</h1>
+        {% else %}
+            <h1 class="text-center">{{ 'general.search.results_for_html' | t: terms: search.terms }}</h1>
+        {% endif %}
+        {% else %}
+       		<h1 class="text-center">{{ 'general.search.title' | t }}</h1>
+        {% endif %}
+
+      <div class="search-bar">
+        {% include 'search-bar' %}
+      </div>
+      
+      {% if search.performed %}
+      	<div class="search-grid">
+        
+          
+          {% for item in search.results %}
+            {% if item.object_type == 'product'or item.object_type == 'article' %}
+  
+   				{% include 'search-grid-item', product:item %}
+          
+        	  {% elsif item.object_type == 'page' %}
+          
+           {% endif %}
+      	  {% endfor %}
+          
+          
+      	</div>
+      {% endif %}
+      {% if paginate.pages > 1 %}
+      	{% include 'pagination' %}
+      {% endif %}
+  </div>
+</section>
+{% endpaginate %}
+{% else %}
+  {% include 'respond' %}
+  {% layout none %}
+{% endunless %}
+
+
+
+<style>
+  h1 {margin-bottom: 40px}
+  .search-grid {display: grid; grid-template-columns: 1fr 1fr 1fr; grid-column-gap: 20px; grid-row-gap: 40px}
+  .search {padding: 0 0 40px}
+  .search-bar { display: flex; align-items: center; justify-content: center; margin-bottom: 30px}
+  .search-bar form {display: block; width: 100%}
+  .search-bar label {display: inline-block; width: 100%}
+  @media only screen and (max-width : 768px) {
+    h1 {margin-top: 30px}
+    .search-grid {grid-template-columns: 1fr; }
+    .products_content_main__grid_box {margin-right: 0}
+  }
+  @media only screen and (max-width : 320px) {
+    h1 {font-size: 24px}
+  }
+</style>

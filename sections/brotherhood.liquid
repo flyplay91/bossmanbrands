@@ -1,0 +1,103 @@
+<div class="brotherhood_container container">
+
+    <div class="brotherhood_content clearfix">
+
+        {% for block in section.blocks %}
+
+            <div class="brotherhood_items">
+
+                <img src="{{ block.settings.brotherhood_img | img_url: '200x200' , crop: 'top' }}">
+
+                <h3>{{ block.settings.brotherhood_content_title }}</h3>
+
+                <p>{{ block.settings.brotherhood_content_text }}</h3>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% schema %}
+
+    {
+        "name":"brotherhood",
+        "settings":[
+            {
+                "type":"checkbox",
+                "id":"brotherhood_section_enable",
+                "label":"Click to enable section"
+            }
+        ],
+        "blocks":[
+            {
+                "name":"brotherhood items",
+                "type":"text",
+                "settings":[
+                    {
+                        "type":"image_picker",
+                        "id":"brotherhood_img",
+                        "label":"Select image"
+                    },
+                    {
+                        "type":"text",
+                        "id":"brotherhood_content_title",
+                        "label":"Enter title"
+                    },
+                    {
+                        "type":"textarea",
+                        "id":"brotherhood_content_text",
+                        "label":"Enter text content"
+                    }
+                ]
+            }
+        ]
+    }
+
+{% endschema %}
+
+<style>
+
+    .brotherhood_items {
+        width: 33.33%;
+        float: left;
+        padding: 20px;
+    }
+
+    .brotherhood_items img {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .brotherhood_items h3 , .brotherhood_items p {
+       text-align:center;
+    }
+
+    .brotherhood_items h3 {
+        margin-bottom: 15px;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+
+    .brotherhood_items p {
+        font-weight: 100;
+        line-height: 17px;
+        font-size: 14px;
+    }
+
+    .brotherhood_container .brotherhood_content {
+        display: table;
+        margin: 30px 0;
+    }
+
+@media all and (max-width:768px){
+
+    .brotherhood_items {
+        width: 100%;
+    }
+
+}
+
+</style>

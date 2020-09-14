@@ -1,0 +1,55 @@
+<div class="home row top-sellers">
+<div class="section_titles">
+<h3>This Week's Pick</h3>
+<a href="/collections/all" class="section_link"><span>Shop Now</span></a>
+</div>
+
+<div class="slider-wrapper" id="topsellers-home">
+  <div class="topsellers">
+
+    {%- for block in section.blocks -%}
+                {% assign product_handle = block.settings.product %}
+                {% assign product = all_products[product_handle] %}
+                {% assign product_image =  product | img_url: '600x' %}
+
+                    <a href="{{ product.url }}">
+                     {%- assign disable_lazyload = section.settings.disable_lazyload -%}
+                        <div class="slide">
+                          <div class="prod-image">
+                                <img src="{{ product_image }}" />
+                          </div>
+                          <h4>{{ product.title }}</h4>
+                          <span>{{ product.price | money }}</span>
+                        </div>
+                      </a>
+
+ {%- endfor -%}
+
+
+  </div>
+</div>
+
+</div>
+
+
+{% schema %}
+{
+    "name": "This Week's Pick",
+    "settings": [
+        
+    ],
+    "blocks": [
+        {
+            "type": "product",
+            "name": "This Weeks Pick",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Product"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

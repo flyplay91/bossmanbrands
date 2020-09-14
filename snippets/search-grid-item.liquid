@@ -1,0 +1,55 @@
+<div class="products_content_main__grid_box">
+  <h3>{{ product.title }}</h3>
+  
+  {% if product.featured_image %}
+    <div class="reviews">
+      {% include 'okendo-reviews-product-rating-summary' %}
+    </div>
+    
+    <div class="main">
+      <div class="img">
+           <img src="{{ product.featured_image.src | img_url: '800x800' }}" alt="{{ product.title }}" style="width:300px">
+      </div>
+  	</div>
+
+     <a href="{{ product.url | within: collection }}" class="btn">VIEW PRODUCT</a>
+  {% else %}
+    <div class="main main-article">
+  		<div class="img article-img">
+           <img src="{{ product.image | img_url: '800x800' }}" alt="{{ product.title }}" style="width:300px">
+      	</div>  
+  	</div>
+    <a href="{{ product.url | within: collection }}" class="btn">VIEW ARTICLE</a>
+  {% endif %}
+</div>
+
+<style>
+  .products_content_main__grid_box .description {height: 90px; overflow: hidden}
+  .products_content_main__grid_box .description .text {
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -ms-line-clamp: 3;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    display: -webkit-box;
+    display: box;
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    font-size: 15px;
+    line-height: 19px;
+  }
+  .yotpo-clr {display: none; !important}
+  .ro_widget {display: none;}
+    @media only screen and (max-width: 480px) {
+      .products_content_main__grid_box .main .img {margin-right: 0}
+      .products_content_main__grid_box .main {flex-direction: column; align-items: center; width: 100%;}
+      .products_content_main__grid_box .main form {display: block; width: 100%}
+    .products_content_main__grid_box .main .btn {width: 100%}
+  }
+  @media only screen and (max-width: 320px) {
+    .products_content_main__grid_box .main form {display: block; width: 100%}
+    .products_content_main__grid_box .main .btn {width: 100%}
+  }
+</style>

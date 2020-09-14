@@ -1,0 +1,26 @@
+
+{% if product.metafields.accentuate.show_testimonials_module %}
+
+<div class="product-video-area">
+	<div class="video-columns">
+        {% for ytLink in product.metafields.accentuate.testimonial_videos %}
+		<div class="col">
+            <iframe width="100%" height="450" src="{{ product.metafields.accentuate.testimonial_videos[forloop.index0] }}"></iframe>
+		</div>
+        {% endfor %}
+	</div>
+    
+	{% if product.metafields.accentuate.testimonial_videos %}
+    <a href="#testimonialVideos" class="view">View More</a>
+    {% endif %}
+
+
+    <div id="testimonialVideos" style="display:none;">
+        <div class="testimonial-video-slider">
+            {% for ytLink in product.metafields.accentuate.testimonial_videos %}
+                <iframe src="{{ product.metafields.accentuate.testimonial_videos[forloop.index0] }}"  frameborder="0" allowfullscreen></iframe>
+            {% endfor %}
+    	</div>
+    </div>
+</div>
+{% endif %}

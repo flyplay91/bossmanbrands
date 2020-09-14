@@ -1,0 +1,9 @@
+#Simon - Dev
+
+development:
+  password: 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
+  theme_id: "83327418446"
+  store: bossmanproducts.myshopify.com
+  timeout: 120s
+
+

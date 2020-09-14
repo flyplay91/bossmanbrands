@@ -1,0 +1,283 @@
+<!-- TFC Abandonment -->
+<script type="text/javascript">
+ var _learnq = _learnq || [];
+ var item = {
+ Name: {{ product.title|json }},
+ ProductID: {{ product.id|json }},
+ Categories: {{ product.collections|map:'title'|json }},
+ ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+ URL: "{{ shop.secure_url }}{{ product.url }}",
+ Brand: {{ product.vendor|json }},
+ Price: {{ product.price|money|json }},
+ CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+ };
+ _learnq.push(['track', 'Viewed Product', item]);
+ _learnq.push(['trackViewedItem', {
+ Title: item.Name,
+ ItemId: item.ProductID,
+ Categories: item.Categories,
+ ImageUrl: item.ImageURL,
+ Url: item.URL,
+ Metadata: {
+ Brand: item.Brand,
+ Price: item.Price,
+ CompareAtPrice: item.CompareAtPrice
+ }
+ }]);
+</script>
+<!-- End TFC Abandonment -->
+
+{% assign on_sale = false %}
+{% if product.compare_at_price > product.price %}
+  {% assign on_sale = true %}
+{% endif %}
+
+{% assign stacked = false %}
+{% assign featured = false %}
+{% assign enable_image_zoom = false %}
+{% assign height = 850 %}
+{% assign width = 575 %}
+
+
+<div class="product-block--{{ product.id }} product-template" data-url="{{ product.url }}" data-section-id="product-template" data-section-type="product-template">
+	<div class="product-manager">
+	   	{% include 'breadcrumb' %}
+
+		<div class="buy-stages">
+			<a href="/collections/stage-1" class="stage-one {% if product.tags contains 'stage 1' or product.tags contains 'Stage 1' %}active-stage{% endif %}">Stage 1</a>
+	   		<a href="/collections/stage-2" class="stage-two {% if product.tags contains 'stage 2' or product.tags contains 'Stage 2' %}active-stage{% endif %}">Stage 2</a>
+	   		<a href="/collections/stage-3" class="stage-three {% if product.tags contains 'stage 3' or product.tags contains 'Stage 3' %}active-stage{% endif %}">Stage 3</a>
+	   		<a href="/collections/stage-4" class="stage-four {% if product.tags contains 'stage 4' or product.tags contains 'Stage 4' %}active-stage{% endif %}">Stage 4</a>
+	   	</div>
+	</div>
+
+	<div class="product-holder sticky">
+		<div class="gallery-column">
+			<div class="product-slider">
+				{% for media in product.media %}
+              		
+              		{%- capture thumbnail_alt -%}
+                      {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
+                          {{ 'products.product.video_thumbnail_alt' | t: imageAlt: media.alt | escape }}
+                      {%- elsif media.media_type == 'model' -%}
+                          {{ 'products.product.model_thumbnail_alt' | t: imageAlt: media.alt | escape }}
+                      {%- else -%}
+                          {{ 'products.product.gallery_thumbnail_alt' | t: imageAlt: media.alt | escape }}
+                      {%- endif -%}
+                  	{%- endcapture -%}
+              			{%- include 'media' with media, enable_image_zoom: enable_image_zoom, stacked: stacked, featured: featured, width: width, height: height -%}
+              		
+              	  {% endfor %}
+			</div>
+			<div class="slider-nav">
+				{% for media in product.media %}
+              		{% if product.media.size > 1 %}
+              			{%- capture thumbnail_alt -%}
+                          {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
+                            {{ 'products.product.video_thumbnail_alt' | t: imageAlt: media.alt | escape }}
+                          {%- elsif media.media_type == 'model' -%}
+                            {{ 'products.product.model_thumbnail_alt' | t: imageAlt: media.alt | escape }}
+                          {%- else -%}
+                            {{ 'products.product.gallery_thumbnail_alt' | t: imageAlt: media.alt | escape }}
+                          {%- endif -%}
+                        {%- endcapture -%}
+                      <div>
+                        <picture>
+				          {%- comment -%}
+				              DESKTOP -- we're targeting range of widths here
+				                1280-1600px screen = 1600px image
+				                1601-1920px screen = 1920px image
+				                >1920px screen     = 2560px image
+				          {%- endcomment -%}
+				          <source media="(min-width: 1601px)" srcset="{{ media | img_url: '200x' }} 1x, {{ media | img_url: '200x', scale: 2 }} 2x">
+				          <source media="(min-width: 1280px)" srcset="{{ media | img_url: '200x' }} 1x, {{ media | img_url: '200x', scale: 2 }} 2x">
+
+				          {%- comment -%}
+				              TABLET -- 768px & 1024px (we're being very specific here)
+				          {%- endcomment -%}
+				          <source media="(min-width: 1024px)" srcset="{{ media | img_url: '200x' }} 1x, {{ media | img_url: '200x', scale: 2 }} 2x">
+				          <source media="(min-width: 768px)"  srcset="{{ media | img_url: '200x' }} 1x, {{ media | img_url: '200x', scale: 2 }} 2x">
+
+				          {%- comment -%}
+				              MOBILE -- 414px max because it's the widest among the most popular screen widths
+				          {%- endcomment -%}
+				          <img
+				              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+				              srcset="{{ media | img_url: '200x' }} 1x, {{ media | img_url: '200x', scale: 2 }} 2x"
+				              class="img-responsive lazyload"
+				              alt="{{ thumbnail_alt }}"
+				            >
+				      </picture>
+                      </div>
+              		{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+
+
+		<div class="description">
+			<form action="/cart/add" data-productid="{{ product.id }}" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
+				
+				<h1>{{ product.title }}</h1>
+              <div class="rating-block">
+					{% include 'okendo-reviews-product-rating-summary' %}
+				</div>
+				<div class="price">
+					{% if on_sale %}
+						<span class="new current_price">{{ product.price | money }}</span>
+						<span class="sale old was_price">{{ product.compare_at_price | money }}</span>
+					{% else %}
+						<span class="new current_price">{{ product.price | money }}</span>
+					{% endif %}
+				</div>
+              
+              	{% if product.metafields.accentuate.featured_on_image %}
+				<div class="featured-on-image">
+					<img src="{{product.metafields.accentuate.featured_on_image}}">
+				</div>
+				{% endif %}
+
+				{% include 'product-form-new' %}
+
+				{% if product.metafields.accentuate.show_information_module %}
+				<div class="textholder">
+					{{ product.metafields.accentuate.product_description }}
+				</div>
+				{% endif %}
+
+				{% if product.metafields.accentuate.product_guarantee %}
+				<div class="guarantee-block">
+					<a href="javascript: void(0)">Our guarantee</a>
+					<div class="guarantee-content">{{ product.metafields.accentuate.product_guarantee }}</div>
+				</div>
+				{% endif %}
+
+				{% if product.metafields.accentuate.show_information_module %}
+				<div class="guarantee-block recommended active">
+					<a href="javascript: void(0)">FREQUENTLY BOUGHT TOGETHER</a>
+					<div class="guarantee-content">
+						<div id="w3-product-accessories" data-product-handle="{{ product.handle }}">
+		                    <div id="w3-money-format" style="display:none;">{{ shop.money_format }}</div>
+		                </div>
+		            </div>
+				</div>
+				{% endif %}
+
+                <a class="btn-fbt-add" href="javascript: void(0)">Add Items To Cart</a>
+
+                
+			</form>
+		</div>
+	</div>
+</div>
+
+{% section 'product-tabs' %}
+
+{% section 'product-video-carousel' %}
+
+{% section 'product-testimonial' %}
+
+{% section 'product-testimonial-video' %}
+
+{% section 'product-related' %}
+
+{% if product.handle == 'beard-balm' %}
+<div class="product-faq-content">
+	<div class="tabset">
+	    <!-- Tab 1 -->
+	    <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
+	    <label for="tab1">Content</label>
+	    <!-- Tab 2 -->
+	    <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
+	    <label for="tab2">FAQ</label>
+	    
+	    <div class="tab-panels">
+	        <section id="marzen" class="tab-panel">
+	        	<div class="product-content-block">
+		            <h2>Bossman Beard Balm for a Beard Care Routine</h2>
+		            <p>
+					If you're thinking about growing a beard, or if you already have one but are not sure how to style it, beard balm can help. If you are serious about your beard, you want to look like a boss. In that case, you must adopt a complete routine with all the necessary beard products that you need, including a naturally-formulated beard balm to maintain your beard and keep it looking neat and healthy.
+					We recommend any bearded man have some beard balm on hand.<br>
+
+					<a href="https://bossmanbrand.com/products/beard-balm">Beard balm</a> is a pomade that you leave in your beard as a conditioner. It is thick and best for taming medium to long-length beards. It contains natural ingredients such as shea butter or beeswax. We don’t use synthetic ingredients, such as petroleum jelly in our beard balms, as they can cause skin irritation and mess with your facial hair. Balms with artificial ingredients won't properly seal in moisture, leading to dry facial hair and breakage.<br>
+
+					A good beard balm should help style and shape your beard. It should also tame flyaway hairs and keep your beard moisturized and shiny.<br>
+
+					Beard balm is not only for your beard. You can use beard balm as skin and face moisturizer as well. You can also use it to style and condition your mustache or sideburns.<br><br>
+					</p>
+				</div>
+
+				<div class="product-content-block">
+					<h3>Choose Your Beard’s Balm Scent</h3>
+					<p>When you choose a personal grooming product, it must smell great. That’s why <a href="https://bossmanbrand.com/products/beard-balm">Bossman Relaxing Beard Balm</a> comes in various scents specifically formulated all types of lifestyles. You may like to shop for one or buy a pack of three to decide which fragrance is your favorite. We only use essential oils for our scents, so you don’t have to worry about alcohol-based substances harming your skin.<br><br>
+					</p>
+				</div>
+
+				<div class="product-content-block">
+					<h3>Only Natural Ingredients for Your Beard Balm</h3>
+					<p>Not all products are created alike. This is something that the discerning customer is well aware of. And that is why it is important to look at the ingredients in a beard balm. Synthetic ingredients dry out the skin and the hair as well.
+					Our Bossman Beard Balm is jam-packed with Coconut Oil, Soybean Oil, Beeswax, Shea Butter, Mango Seed Butter, Cocoa Seed Butter, and more.<br>
+
+					Shea and mango butter soften the beard and are great for the hair roots. The balm should also contain beeswax, which makes the hair soft and makes it thick enough for you to apply easily. The beeswax acts as a sealant and locks the moisture into the hair. Thus, keeping the beard healthy and easy to groom. Beeswax is usually thrown into the mix for styling purposes, and it’s easy to see why! This stuff will keep those wiry-whiskers in check like nothing else.</p>
+				</div>
+
+				<div class="product-content-block">
+					<h3>Natural Oils for your Beard’s Rescue</h3>
+					<p>Natural oils, such as sweet almond, grape seed, and fruit oils, moisturize the hair and boost hair growth. These oils will give you the most bang for your buck when it comes to preventing and treating beardruff. These oils can be abundantly found in many skin care products currently on the market, including natural shampoos, aftershave balms, and even shaving creams. Some of the most popular carrier oils are jojoba, argan, and sweet almond oil. More often than not, these guys will be doing most of the heavy lifting to lubricate your skin and hair follicles.</p>
+				</div>
+			</section>
+			
+	        <section id="rauchbier" class="tab-panel">
+	        	<div class="product-faq-block active">
+		            <h3>Why Do I Need Beard Balm?</h3>
+					<p>Beard balm is crucial for maintaining a strong, healthy, and full beard. Just like with the hair on your head, conditioning will always lead to healthier and thicker-looking hair. Think of Beard balm as a leave-in conditioning treatment that helps to shape your beard while protecting it from oil, dirt, and other environmental factors.<br>
+
+					At Bossman, beard balm is the last step in our simple 4-Step Beard Care Process. Bossman Beard Balm nourishes your actual beard hair while giving it an enhanced hold throughout the rigors of the day.</p>
+				</div>
+				<div class="product-faq-block">
+					<h3>When Should I Use Beard Balm?</h3>
+					<p>As mentioned above, beard balm comes in stage four of the Bossman 4-step process. So, use after you have cleaned, conditioned, and nourished your beard.</p>
+				</div>
+				<div class="product-faq-block">
+					<h3>How to Apply</h3>
+					<p>If you are not sure how to use beard balm, simply follow these four steps:</p>
+					<ul>
+						<li>Step 1: Use the back of your thumb to get a small amount of balm.</li>
+
+						<li>Step 2: Rub the balm in the palm of your hands until it softens into an oil.</li>
+
+						<li>Step 3: Apply the balm throughout your beard and your skin.</li>
+
+						<li>Step 4: Use a brush or comb to apply the balm evenly and to style your beard.</li>
+					</ul>
+				</div>
+				<div class="product-faq-block">
+					<h3>What Should I Look for in a Beard Balm?</h3>
+					<p>There are a few key components of beard balm that will make or break its effectiveness. First and foremost, keep an eye out for alcohol-based scents, which can damage the skin instead of leaving it hydrated and healthy. Some balms also use synthetic ingredients, such as petroleum jelly, but we don't recommend those as they can cause skin irritation and mess with your facial hair. Balms with synthetic ingredients won't properly seal in moisture, which eventually leads to dry facial hair and breakage.</p>
+				</div>
+				<div class="product-faq-block">
+					<h3>How Does Beard Balm Differ From Other Beard Products?</h3>
+					<p>Even though both terms may often be used interchangeably, it’s important that you can distinguish between beard oil and beard balm. Each product is formulated with different ingredients specifically selected for a purpose. A complete beard routine should ideally include both oil and balm, along with other products like conditioners and waxes; however, it all depends on your individual needs and beard goals.</p>
+				</div>
+				<div class="product-faq-block">
+					<h3>Beard Oil vs. Beard Balm?</h3>
+					<p>Beard oil is similar to beard balm, but it's not as thick. While balm keeps your beard moisturized, beard oil is mainly for moisturizing the skin on your face.<br>
+
+					The skin on our faces is thinner and more prone to irritation and dryness than the rest of our bodies. Good-quality beard oil can keep facial skin healthy and soft. Healthy skin can promote healthy beard growth.
+					</p>
+				</div>
+				<div class="product-faq-block">
+					<h3>When to Use Beard Oil or Beard Balm</h3>
+					<p>Not sure when to use oil or balm? You can generally apply beard balm when you need to style your beard or tame it for certain occasions, such as a formal event or a job interview. If your beard is thin or patchy and you want it to appear thicker, try using a balm with shea butter. The shea butter can help make your beard look fuller.</p>
+				</div>
+	        </section>
+	    </div>
+	</div>
+</div>
+{% else %}
+	{% section 'product-okendo-review' %}
+{% endif %}
+
+{% comment %}
+{% section 'product-bottom' %}
+{% endcomment %}

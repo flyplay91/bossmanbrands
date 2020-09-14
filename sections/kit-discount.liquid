@@ -1,0 +1,33 @@
+	<h3>{{section.settings.title}}</h3>
+	<ul>
+		{% for block in section.blocks %}
+			<li class="{% if forloop.index == 2 %}active{% endif %}">{{block.settings.discount_text}}</li>
+		{% endfor %}
+	</ul>
+
+{% schema %}
+{
+	"name": "Discount",
+	"class": "kit-discount",
+	"settings": [
+		{
+			"type": "html",
+			"id": "title",
+			"label": "Title"
+		}
+	],
+	"blocks": [
+		{
+			"name": "Item",
+			"type": "item",
+			"settings": [
+				{
+					"type": "text",
+					"id": "discount_text",
+					"label": "Discount Text"
+				}
+			]
+		}
+	]
+}
+{% endschema %}

@@ -1,0 +1,21 @@
+{% include 'breadcrumb' %}
+
+<section class="products">
+  <div class="container">
+    <div class="products_content">
+      {% include 'collection-sidebar' %}
+      <div class="products_content_main">
+        <div class="head">
+          <h1>{{ collection.title }}</h1>
+          <p>{{ collection.description }}</p>
+        </div>
+        {% paginate collection.products by 8 %}
+        <div class="products_content_main__grid">
+			{% include 'product-grid' %}
+        </div>
+        {% include 'pagination' %}
+        {% endpaginate %}
+      </div>
+    </div>
+  </div>
+</section>

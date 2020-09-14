@@ -1,0 +1,86 @@
+<div class="home row beardcarepackages blog">
+<div class="section_titles">
+<h3>Blog</h3>
+<a href="/blogs/blog" class="section_link"><span>Read All</span></a>
+</div>
+
+
+<div id="beard-packages">
+  <div class="package-wrapper">
+              
+{% for block in section.blocks %}
+    {% assign b = block.settings %}
+          {% assign current_article = articles[b.featured_article] %}
+                    
+                    <div class="package">
+    <div class="package-img">
+    <a href="{{ current_article.url }}">
+      <picture>
+        {%- comment -%}
+        DESKTOP -- we're targeting range of widths here
+        1280-1600px screen = 1600px image
+        1601-1920px screen = 1920px image
+        >1920px screen     = 2560px image
+        {%- endcomment -%}
+        <source media="(min-width: 1601px)" srcset="{{ block.settings.image | img_url: '700x' }} 1x, {{ block.settings.image | img_url: '700x', scale: 2 }} 2x">
+        <source media="(min-width: 1280px)" srcset="{{ block.settings.image | img_url: '500x' }} 1x, {{ block.settings.image | img_url: '500x', scale: 2 }} 2x">
+
+        {%- comment -%}
+        TABLET -- 768px & 1024px (we're being very specific here)
+        {%- endcomment -%}
+        <source media="(min-width: 1024px)" srcset="{{ block.settings.image | img_url: '400x' }} 1x, {{ block.settings.image | img_url: '400x', scale: 2 }} 2x">
+        <source media="(min-width: 768px)"  srcset="{{ block.settings.image | img_url: '300x' }} 1x, {{ block.settings.image | img_url: '300x', scale: 2 }} 2x">
+
+        {%- comment -%}
+        MOBILE -- 414px max because it's the widest among the most popular screen widths
+        {%- endcomment -%}
+        <img
+             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+             srcset="{{ block.settings.image | img_url: '414x' }} 1x, {{ block.settings | img_url: '414x', scale: 2 }} 2x"
+             alt="{{ block.settings.image.alt }}"
+             class="img-responsive lazyload"
+             >
+      </picture>
+    </a>
+    </div>
+    <h4>
+      <a href="{{ current_article.url }}">{{ current_article.title | escape }}</a>
+    </h4>
+    <span><a href="{{ current_article.url }}">Read</span></a>
+</div>
+ {% endfor %}
+
+
+  </div>
+</div>
+
+
+</div>
+
+
+{% schema %}
+{
+    "name": "Home Blogs",
+    "settings": [
+        
+    ],
+    "blocks": [
+        {
+            "type": "article",
+            "name": "Home Blog",
+            "settings": [
+                {
+                    "type": "article",
+                    "id": "featured_article",
+                    "label": "Home Article"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Background Image"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

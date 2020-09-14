@@ -1,0 +1,78 @@
+{% assign tabs2 = "Stagecoach | Magic | Gold | Hammer | Naked" | split: ' | ' %}
+{% assign links2 = "jelly-beard-oil-stagecoach-scent | jelly-beard-oil-magic-scent | jelly-beard-oil-gold-scent | jelly-beard-oil-hammer-scent | jelly-beard-oil-naked-scent" | split: ' | ' %}
+{% assign content2 = "This Texas-sized blend of rugged leather, sweet tobacco, and aged Bourbon will make your beard look and smell like a gentleman as you belly up to any saloon. Saddle not required. | Warm blend of rich sandalwood and vanilla oils highlight bergamot, patchouli and frankincense accents. Our original scent, perfect for close encounters, special occasions and days when your beard needs to be as smooth as you are. | Fresh mix of woods such as Cedar, Spruce, Sandalwood with a hint of Lemon, Bergamot, Lavender, and Saffron Spice gives a clean and invigorating effect. It’s the perfect way to wake up or just feel refreshed throughout your day. | Every man's scent that just doesn't quit. Geranium and lavender are masterfully mixed with vanilla and patchouli to bring you a strong mechanical smell for the blue-collar guy. | Clean, simple, and fragrance-free. Perfect for those times when you don’t want to compete with your favorite cologne." | split: ' | ' %}
+
+{% if product.metafields.accentuate.show_product_types %}
+    <div class="my-32">
+        <div class="mb-16 md:mb-24 px-5">
+            <div class="container mx-auto">
+                <h2 class="nmr-title-dark text-4xl text-center leading-tight mb-5">{{ product.metafields.accentuate.product_types_title }}</h2>
+            </div>
+        </div>
+
+        <!-- desktop tabs -->
+        <div class="container block">
+            <div class="flex flex-wrap m-0 md:-mx-5">
+                <div class="w-full mb-5 md:mb-0 md:w-1/3 lg:w-1/4 px-5">
+                    <div id="nmr-tabs-2">
+                        {% for thing in product.metafields.accentuate.product_object %}
+                            <div key="{{ forloop.index }}" class="nmr-tab {% if forloop.index0 == 0 %}nmr-active{% endif %} flex flex-wrap items-center mb-5">
+                                <div class="nmr-tab-number shadow bg-cover bg-center bg-no-repeat" data-bg="url({{ all_products[thing].featured_image | img_url: 'medium' }})"></div>
+                                <div class="nmr-tab-title">
+                                    <h1 class="text-2xl bg-white px-5">{{ product.metafields.accentuate.product_scent[forloop.index0] }}</h1>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3 lg:w-3/4 px-5">
+                    <div id="nmr-info-boxes-2">
+                        {% for thing in product.metafields.accentuate.product_object %}
+                            <div class="nmr-info-box {% unless forloop.index0 == 0 %}hidden{% endunless %}">
+                                <div class="flex flex-wrap items-center">
+                                    <div class="order-2 md:order-1 w-full sm:w-1/3 lg:2/5 order-2 sm:order-1">
+                                        <div class="nmr-image-square bg-center bg-cover bg-no-repeat" data-bg="url({{ all_products[thing].featured_image | img_url: '400x400' }})"></div>
+                                    </div>
+                                    <div class="order-1 md:order-2 w-full p-8 md:p-0 sm:w-2/3 lg:3/5 sm:pl-10 order-1 sm:order-2">
+                                        <h1 class="text-4xl nmr-title mb-5">{{ all_products[thing].title }}</h1>
+                                        <div class="nmr-para text-lg leading-snug mb-2">
+                                            {% if product.metafields.accentuate.product_type_description[forloop.index0] %}
+                                                {{ product.metafields.accentuate.product_type_description[forloop.index0] }}
+                                            {% else %}
+                                                {{ all_products[thing].content | strip_html | truncate: 350 }}
+                                            {% endif %}
+                                            <br><br>
+                                            <a class="uppercase tracking-widest font-bold" href="{{ all_products[thing].url }}" style="color:#C0964A">
+                                                <span class="mr-1 hover:mr-2">Try out {{ all_products[thing].title }}</span>
+                                                <i class="fas fa-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end desktop tabs -->
+    </div>
+{% endif %}
+
+{% schema %}
+
+{
+    "name": "NMR Module Stages",
+    "tag": "section"
+}
+
+{% endschema %}
+
+<!-- 
+    - section title
+    - tabs
+        - scent
+        - product
+            - product.url
+            - product.image
+ -->

@@ -1,0 +1,7 @@
+{% if collection.products.size > 0 %}
+  {% for product in collection.products %}
+    {% include 'collection-grid-item-new' %}
+  {% endfor %}
+{% else %}
+  <h2>No products found.</h2>
+{% endif %}

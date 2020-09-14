@@ -1,0 +1,100 @@
+
+<div class="custom-container">
+		<!-- main-content starts -->
+		<div class="custom-wrapper about-us-content">
+			<div class="about-us-content__left">
+				<img src="{{ section.settings.image | img_url: '300x'}}" alt="">
+			</div>
+			<div class="about-us-content__right">
+              <div>{{ section.settings.description }}</div>
+			</div>
+		</div>
+</div>
+
+
+
+
+{% schema %}
+  {
+    "name": "Content",                     
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Left Image"
+      },
+      {
+        "type": "html",
+        "id": "description",
+        "label": "Description"
+      }
+	]
+
+	
+  
+  }
+  
+{% endschema %}
+
+<style type="text/css">
+
+.about-us-content {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 100px
+}
+
+@media (max-width: 768px) {
+    .about-us-content {
+        display: inline-block
+    }
+}
+
+.about-us-content__left {
+    width: 18%;
+    text-align: center
+}
+
+@media (max-width: 768px) {
+    .about-us-content__left {
+        width: 100%;
+        margin-bottom: 40px
+    }
+}
+
+.about-us-content__left img {
+    width: 182px;
+    height: auto;
+    display: inline-block;
+    margin: 40px auto 0
+}
+
+.about-us-content__right {
+    width: 76%
+}
+
+@media (max-width: 768px) {
+    .about-us-content__right {
+        width: 100%;
+      	text-align: center;
+    }
+  .about-us-content__left img {
+    margin-top: 0;
+  }
+}
+
+
+</style>
+
+
+{% javascript %}
+
+{% endjavascript %}

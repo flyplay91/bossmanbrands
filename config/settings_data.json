@@ -1,0 +1,1399 @@
+{
+  "current": {
+    "color_primary": "#747474",
+    "color_secondary": "#bbb",
+    "color_borders": "#e5e5e5",
+    "color_body_bg": "#000000",
+    "color_body_text": "#ffffff",
+    "color_footer_bg": "#000000",
+    "color_footer_text": "#ffffff",
+    "color_footer_social_link": "#bbbbbb",
+    "logo_use_image": true,
+    "logo_max_width": "500",
+    "favicon_enable": true,
+    "footer_social_enable": true,
+    "footer_newsletter_enable": true,
+    "newsletter_form_action": "",
+    "cart_notes_enable": true,
+    "cart_vendor_enable": false,
+    "ajax_cart_method": "drawer",
+    "social_twitter_link": "",
+    "social_facebook_link": "",
+    "recurring-orders-loading": "Loading subscription info...",
+    "recurring-orders-inherit-classes": false,
+    "recurring-orders-additional-button-classes": "",
+    "checkout_header_image": "",
+    "checkout_use_storefront_logo": false,
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "main_menu": "main-menu",
+          "mobile_main_menu": "main-menu",
+          "cart_total_bg_color": "#05901f"
+        }
+      },
+      "video": {
+        "type": "video",
+        "settings": {}
+      },
+      "ourbrothers": {
+        "type": "ourbrothers",
+        "settings": {}
+      },
+      "rewards": {
+        "type": "rewards",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {}
+      },
+      "features-products": {
+        "type": "features-products",
+        "settings": {}
+      },
+      "guarantee-box": {
+        "type": "guarantee-box",
+        "blocks": {
+          "1599662257757": {
+            "type": "text",
+            "settings": {
+              "guarantee_box_image": "shopify:\/\/shop_images\/1_small_e9436d2e-20cb-4a93-8ba3-dd6cbc7656ac.png",
+              "guarantee_box_text": "Money Back Guarantee"
+            }
+          },
+          "1599662281752": {
+            "type": "text",
+            "settings": {
+              "guarantee_box_image": "shopify:\/\/shop_images\/2_small_5d88499a-e8ff-4385-8a71-348085562df4.png",
+              "guarantee_box_text": "Lifetime Guarantee"
+            }
+          }
+        },
+        "block_order": [
+          "1599662257757",
+          "1599662281752"
+        ],
+        "settings": {}
+      },
+      "brotherhood": {
+        "type": "brotherhood",
+        "blocks": {
+          "1569303348817": {
+            "type": "text",
+            "settings": {
+              "brotherhood_img": "shopify:\/\/shop_images\/lumberjack.jpg",
+              "brotherhood_content_title": "Test Title",
+              "brotherhood_content_text": "Bossman Brands makes the best products on the market and we stand by every one of them. We offer a LIFETIME Warranty and a Money-Back Guarantee."
+            }
+          },
+          "1569303416067": {
+            "type": "text",
+            "settings": {
+              "brotherhood_img": "shopify:\/\/shop_images\/image2.jpg",
+              "brotherhood_content_title": "Test Title",
+              "brotherhood_content_text": "Bossman Brands makes the best products on the market and we stand by every one of them. We offer a LIFETIME Warranty and a Money-Back Guarantee."
+            }
+          },
+          "1569303452560": {
+            "type": "text",
+            "settings": {
+              "brotherhood_img": "shopify:\/\/shop_images\/alan-from-the-hangover.jpg",
+              "brotherhood_content_title": "Test Title",
+              "brotherhood_content_text": "Bossman Brands makes the best products on the market and we stand by every one of them. We offer a LIFETIME Warranty and a Money-Back Guarantee."
+            }
+          },
+          "1569305671389": {
+            "type": "text",
+            "settings": {
+              "brotherhood_img": "shopify:\/\/shop_images\/2.jpg",
+              "brotherhood_content_title": "Ttitle",
+              "brotherhood_content_text": "Bossman Brands makes the best products on the market and we stand by every one of them. We offer a LIFETIME Warranty and a Money-Back Guarantee."
+            }
+          },
+          "1569305753375": {
+            "type": "text",
+            "settings": {
+              "brotherhood_img": "shopify:\/\/shop_images\/Stephen-Jedi-copy.jpeg",
+              "brotherhood_content_title": "Ttile",
+              "brotherhood_content_text": "Bossman Brands makes the best products on the market and we stand by every one of them. We offer a LIFETIME Warranty and a Money-Back Guarantee."
+            }
+          }
+        },
+        "block_order": [
+          "1569303348817",
+          "1569303416067",
+          "1569303452560",
+          "1569305671389",
+          "1569305753375"
+        ],
+        "settings": {
+          "brotherhood_section_enable": true
+        }
+      },
+      "related-products": {
+        "type": "related-products",
+        "settings": {}
+      },
+      "blog-sidebar": {
+        "type": "blog-sidebar",
+        "settings": {
+          "blog_category": "Beard Tips, Grooming Tips, Funny, How-To's, Beard Success, Austin, Beard Conditioner, Beard Facts, Beard Products,"
+        }
+      },
+      "header-new": {
+        "type": "header-new",
+        "settings": {
+          "announcementbar_desktop": "FREE SHIPPING ON ORDERS OVER $35",
+          "announcementbar_mobile": "FREE SHIPPING ON ORDERS OVER $35",
+          "menu_promo_image": "shopify:\/\/shop_images\/BYOK_Promo_coming-soon.png",
+          "menu_promo_image_url": "shopify:\/\/pages\/build-your-own-kit"
+        }
+      },
+      "footer-new": {
+        "type": "footer-new",
+        "settings": {}
+      },
+      "herobanner": {
+        "type": "herobanner",
+        "blocks": {
+          "1587987713605": {
+            "type": "quality",
+            "settings": {
+              "background_img": "shopify:\/\/shop_images\/JellyBeardOilKitBanner.jpg",
+              "sub_title": "THE WORLD'S FIRST",
+              "heading": "Jelly Beard Oil",
+              "button_text": "SHOP",
+              "button_url": "shopify:\/\/products\/jelly-beard-oil"
+            }
+          }
+        },
+        "block_order": [
+          "1587987713605"
+        ],
+        "settings": {}
+      },
+      "topsellers": {
+        "type": "topsellers",
+        "blocks": {
+          "1590267871124": {
+            "type": "product",
+            "settings": {
+              "product": "jelly-beard-oil",
+              "index": "1"
+            }
+          },
+          "1590267915439": {
+            "type": "product",
+            "settings": {
+              "product": "mustache-wax",
+              "index": "0"
+            }
+          },
+          "1590267945860": {
+            "type": "product",
+            "settings": {
+              "product": "beard-pomade",
+              "index": "10"
+            }
+          },
+          "1590267971712": {
+            "type": "product",
+            "settings": {
+              "product": "beard-conditioner",
+              "index": "2"
+            }
+          },
+          "1590267957728": {
+            "type": "product",
+            "settings": {
+              "product": "beard-balm",
+              "index": "2"
+            }
+          },
+          "1590267992456": {
+            "type": "product",
+            "settings": {
+              "product": "exfoliating-beard-body-bar-soap",
+              "index": ""
+            }
+          }
+        },
+        "block_order": [
+          "1590267871124",
+          "1590267915439",
+          "1590267945860",
+          "1590267971712",
+          "1590267957728",
+          "1590267992456"
+        ],
+        "settings": {}
+      },
+      "buildyourownkit": {
+        "type": "buildyourownkit",
+        "settings": {}
+      },
+      "fourstepprocess": {
+        "type": "fourstepprocess",
+        "settings": {}
+      },
+      "watchvideo": {
+        "type": "watchvideo",
+        "blocks": {
+          "1588061550944": {
+            "type": "quality",
+            "settings": {
+              "background_img": "shopify:\/\/shop_images\/BeardSoGoodBanner.png",
+              "sub_title": "",
+              "heading": "A beard so good<br>it should be illegal.",
+              "button_text": "Watch Now",
+              "button_url": "https:\/\/www.youtube.com\/watch?v=4td3T03r3YE&t=17s"
+            }
+          }
+        },
+        "block_order": [
+          "1588061550944"
+        ],
+        "settings": {}
+      },
+      "beardcarepackages": {
+        "type": "beardcarepackages",
+        "blocks": {
+          "1590273240506": {
+            "type": "product",
+            "settings": {
+              "product": "big-boss-beard-care-kit",
+              "index": "3"
+            }
+          },
+          "1590273270228": {
+            "type": "product",
+            "settings": {
+              "product": "complete-facial-hair-care-kit",
+              "index": "5"
+            }
+          },
+          "1590273297513": {
+            "type": "product",
+            "settings": {
+              "product": "beard-essentials-kit",
+              "index": "1"
+            }
+          },
+          "1592334635489": {
+            "type": "product",
+            "settings": {
+              "product": "reload-package-kit",
+              "index": ""
+            }
+          },
+          "1592494209350": {
+            "type": "product",
+            "settings": {
+              "product": "professional-kit",
+              "index": ""
+            }
+          },
+          "1592494236267": {
+            "type": "product",
+            "settings": {
+              "product": "beard-washing-kit",
+              "index": ""
+            }
+          }
+        },
+        "block_order": [
+          "1590273240506",
+          "1590273270228",
+          "1590273297513",
+          "1592334635489",
+          "1592494209350",
+          "1592494236267"
+        ],
+        "settings": {}
+      },
+      "fromthebrotherhood": {
+        "type": "fromthebrotherhood",
+        "blocks": {
+          "1590293140508": {
+            "type": "richtext",
+            "settings": {
+              "testimonial": "“I have tried a lot of different beard oils, none of them come close to Bossman Brands’ Beard Jelly. Seriously, this stuff is amazing.”<br>",
+              "name": "JMFK",
+              "member_since": "2014"
+            }
+          },
+          "1590293331478": {
+            "type": "richtext",
+            "settings": {
+              "testimonial": "\"If you're looking for a product to really hydrate your beard in the dry days! Look no further! Along with an amazing smell, it is a MUST HAVE PRODUCT for the gentlement with the longer beard!\"",
+              "name": "Émile C.",
+              "member_since": "2019"
+            }
+          },
+          "1590293385901": {
+            "type": "richtext",
+            "settings": {
+              "testimonial": "\"Now that my beard has gotten longer this balm works like the name implies, Magic! The scent is great too, gf loves it! A little goes a long way or if needed use a little more!\"",
+              "name": "Manny",
+              "member_since": "2018"
+            }
+          },
+          "1590293602604": {
+            "type": "richtext",
+            "settings": {
+              "testimonial": "\"I get this all the time, it's always great. I do wish there was an option like this w\/o the Beard Balm, as I don't is it as much, and don't need refills of that anytime soon. Just the jelly, soap and conditioner.\"",
+              "name": "Sampson O.",
+              "member_since": "2020"
+            }
+          },
+          "1590294557743": {
+            "type": "richtext",
+            "settings": {
+              "testimonial": "\"I have been enjoying these beard oils they keep my beard soft and smelling good. I'm looking forward to ordering more products in the near future.\"",
+              "name": "Tiago",
+              "member_since": "2019"
+            }
+          }
+        },
+        "block_order": [
+          "1590293140508",
+          "1590293331478",
+          "1590293385901",
+          "1590293602604",
+          "1590294557743"
+        ],
+        "settings": {}
+      },
+      "ourstory": {
+        "type": "ourstory",
+        "blocks": {
+          "1588071305481": {
+            "type": "quality",
+            "settings": {
+              "background_img": "shopify:\/\/shop_images\/OurStoryNew.jpg",
+              "sub_title": "",
+              "heading": "Our Story",
+              "button_text": "Read",
+              "button_url": "shopify:\/\/pages\/about-us"
+            }
+          }
+        },
+        "block_order": [
+          "1588071305481"
+        ],
+        "settings": {}
+      },
+      "instagram-feed": {
+        "type": "instagram-feed",
+        "settings": {}
+      },
+      "thisweekspicks": {
+        "type": "thisweekspicks",
+        "blocks": {
+          "1590304217902": {
+            "type": "product",
+            "settings": {
+              "product": "beard-supplement"
+            }
+          },
+          "1590304233873": {
+            "type": "product",
+            "settings": {
+              "product": "colotion-scented-beard-lotion"
+            }
+          },
+          "1590304261338": {
+            "type": "product",
+            "settings": {
+              "product": "reload-package-kit"
+            }
+          },
+          "1590304277225": {
+            "type": "product",
+            "settings": {
+              "product": "beard-conditioner"
+            }
+          },
+          "1590304295184": {
+            "type": "product",
+            "settings": {
+              "product": "double-edge-replacement-blades"
+            }
+          }
+        },
+        "block_order": [
+          "1590304217902",
+          "1590304233873",
+          "1590304261338",
+          "1590304277225",
+          "1590304295184"
+        ],
+        "settings": {}
+      },
+      "product-tabs": {
+        "type": "product-tabs",
+        "settings": {}
+      },
+      "product-video-carousel": {
+        "type": "product-video-carousel",
+        "settings": {}
+      },
+      "product-testimonial": {
+        "type": "product-testimonial",
+        "settings": {}
+      },
+      "product-testimonial-video": {
+        "type": "product-testimonial-video",
+        "settings": {}
+      },
+      "product-related": {
+        "type": "product-related",
+        "settings": {}
+      },
+      "product-okendo-review": {
+        "type": "product-okendo-review",
+        "settings": {}
+      },
+      "product-bottom": {
+        "type": "product-bottom",
+        "settings": {}
+      },
+      "shop-scent-hero": {
+        "type": "shop-scent-hero",
+        "blocks": {
+          "1589296006668": {
+            "type": "text",
+            "settings": {
+              "nav": "Magic"
+            }
+          },
+          "1589296021548": {
+            "type": "text",
+            "settings": {
+              "nav": "Stagecoach"
+            }
+          },
+          "1589296032730": {
+            "type": "text",
+            "settings": {
+              "nav": "Gold"
+            }
+          },
+          "1589296043226": {
+            "type": "text",
+            "settings": {
+              "nav": "Hammer"
+            }
+          },
+          "1589296052418": {
+            "type": "text",
+            "settings": {
+              "nav": "Naked"
+            }
+          },
+          "1589296065199": {
+            "type": "text",
+            "settings": {
+              "nav": "Royal Oud"
+            }
+          }
+        },
+        "block_order": [
+          "1589296006668",
+          "1589296021548",
+          "1589296032730",
+          "1589296043226",
+          "1589296052418",
+          "1589296065199"
+        ],
+        "settings": {
+          "image": "shopify:\/\/shop_images\/BossmanTFC_ShopByScent_Banner.png",
+          "title": "Shop by Scent",
+          "content": "Bossman is world-renowned for our face smells. Our face and hair smells are so tight. You’ll feel like a king. Browse below or use our selector to help decide which is right for you."
+        }
+      },
+      "shop-scent-recommendation": {
+        "type": "shop-scent-recommendation",
+        "blocks": {
+          "1589300126277": {
+            "type": "scent-block",
+            "settings": {
+              "scent_bg": "shopify:\/\/shop_images\/magic_f4383988-3bce-4b3e-9f82-228a1e1fbb86.jpg",
+              "scent_title": "Magic",
+              "scent_thumb": "Vanilla \/ Sandalwood <br> Bergamot \/ Frankincense \/ Patchouli",
+              "scent_option_1": "Magic",
+              "scent_option_2": "Stagecoach",
+              "scent_option_3": "Gold",
+              "scent_option_4": "Hammer",
+              "scent_option_5": "Naked",
+              "scent_option_6": "Royal Oud",
+              "scent_content": "Warm blend of rich Sandalwood and Vanilla oils highlight bergamot, patchouli and frankincense accents. This original scent is perfect  for close encounters, special occasions, and days when your beard needs to be as smooth as you are.",
+              "button_url": "\/collections\/all\/magic",
+              "button_text": "Shop Magic"
+            }
+          },
+          "1589300242101": {
+            "type": "recommend-block",
+            "settings": {
+              "recommendaton_title": "Magic Recommendations",
+              "scent_tag": "Magic"
+            }
+          },
+          "1589300264927": {
+            "type": "scent-block",
+            "settings": {
+              "scent_bg": "shopify:\/\/shop_images\/stagecoach_8a954797-53bd-4bd1-947b-bc331ab76ec1.jpg",
+              "scent_title": "Stagecoach",
+              "scent_thumb": "Fine leather \/ Sweet tobacco <br> Aged bourbon",
+              "scent_option_1": "Magic",
+              "scent_option_2": "Stagecoach",
+              "scent_option_3": "Gold",
+              "scent_option_4": "Hammer",
+              "scent_option_5": "Naked",
+              "scent_option_6": "Royal Oud",
+              "scent_content": "This Texas-sized blend of rugged leather, sweet tobacco, and aged Bourbon will make your beard look and smell like a gentleman as you belly up to any saloon. Saddle not required.",
+              "button_url": "\/collections\/all\/stagecoach",
+              "button_text": "Shop Stagecoach"
+            }
+          },
+          "1589300333269": {
+            "type": "recommend-block",
+            "settings": {
+              "recommendaton_title": "Stagecoach Recommendations",
+              "scent_tag": "Stagecoach"
+            }
+          },
+          "1589300347628": {
+            "type": "scent-block",
+            "settings": {
+              "scent_bg": "shopify:\/\/shop_images\/gold_1301af0b-4b2a-4e72-81f5-246622b38654.jpg",
+              "scent_title": "Gold",
+              "scent_thumb": "Lemon \/ Lavender \/ Bergamot <br> Cedarwood \/ Spruce Vetiver <br> Rosemary \/ Saffron \/ Sandalwood",
+              "scent_option_1": "Magic",
+              "scent_option_2": "Stagecoach",
+              "scent_option_3": "Gold",
+              "scent_option_4": "Hammer",
+              "scent_option_5": "Naked",
+              "scent_option_6": "Royal Oud",
+              "scent_content": "Fresh mix of woods such as Cedar, Spruce, Sandalwood with a hint of Lemon, Bergamot, Lavender, and Saffron Spice gives a clean and invigorating effect. It’s the perfect way to wake up or just feel refreshed throughout your day.",
+              "button_url": "\/collections\/all\/gold",
+              "button_text": "Shop Gold"
+            }
+          },
+          "1589300892582": {
+            "type": "recommend-block",
+            "settings": {
+              "recommendaton_title": "Gold Recommendations",
+              "scent_tag": "Gold"
+            }
+          },
+          "1589300902817": {
+            "type": "scent-block",
+            "settings": {
+              "scent_bg": "shopify:\/\/shop_images\/hammer_f5ff7b63-8952-4724-91ef-ad48b5ec0ea0.jpg",
+              "scent_title": "Hammer",
+              "scent_thumb": "Lavender \/ Vanilla <br> Geranium \/ Patchouli",
+              "scent_option_1": "Magic",
+              "scent_option_2": "Stagecoach",
+              "scent_option_3": "Gold",
+              "scent_option_4": "Hammer",
+              "scent_option_5": "Naked",
+              "scent_option_6": "Royal Oud",
+              "scent_content": "Every man's scent that just doesn't quit. Geranium and lavender are masterfully mixed with vanilla and patchouli to bring you a strong mechanical smell for the do-it-yourself kind of man.",
+              "button_url": "\/collections\/all\/hammer",
+              "button_text": "Shop Hammer"
+            }
+          },
+          "1589300982778": {
+            "type": "recommend-block",
+            "settings": {
+              "recommendaton_title": "Hammer Recommendations",
+              "scent_tag": "Hammer"
+            }
+          },
+          "1589301383676": {
+            "type": "scent-block",
+            "settings": {
+              "scent_bg": "shopify:\/\/shop_images\/naked_6b2d3a23-e8ac-4dc4-9e6c-9834ed875c7c.jpg",
+              "scent_title": "Naked",
+              "scent_thumb": "unScented",
+              "scent_option_1": "Magic",
+              "scent_option_2": "Stagecoach",
+              "scent_option_3": "Gold",
+              "scent_option_4": "Hammer",
+              "scent_option_5": "Naked",
+              "scent_option_6": "Royal Oud",
+              "scent_content": "No scent required. For the man who wants to sport his own natural scent or favorite cologne with no other scent competing for attention.",
+              "button_url": "\/collections\/all\/naked",
+              "button_text": "Shop Naked"
+            }
+          },
+          "1589301475068": {
+            "type": "recommend-block",
+            "settings": {
+              "recommendaton_title": "Naked Recommendations",
+              "scent_tag": "Naked"
+            }
+          },
+          "1589301574474": {
+            "type": "scent-block",
+            "settings": {
+              "scent_bg": "shopify:\/\/shop_images\/royal_oud.jpg",
+              "scent_title": "Royal Oud",
+              "scent_thumb": "Cedarwood \/ Bergamot <br> Lemon \/ Clove \/ Pepper",
+              "scent_option_1": "Magic",
+              "scent_option_2": "Stagecoach",
+              "scent_option_3": "Gold",
+              "scent_option_4": "Hammer",
+              "scent_option_5": "Naked",
+              "scent_option_6": "Royal Oud",
+              "scent_content": "Designed for a king, Royal Oud’s Cedarwood and Bergamot undertones are complemented with hints of lemon, clove, and pepper oils. This scent is for the Boss who garners attention from all of those around him based on not only his devilishly good looks, but his attitude and accolades as well.",
+              "button_url": "\/collections\/all\/royal-oud",
+              "button_text": "Shop Royal Oud"
+            }
+          },
+          "1589301767764": {
+            "type": "recommend-block",
+            "settings": {
+              "recommendaton_title": "Royal Oud Recommendations",
+              "scent_tag": "Royal Oud"
+            }
+          }
+        },
+        "block_order": [
+          "1589300126277",
+          "1589300242101",
+          "1589300264927",
+          "1589300333269",
+          "1589300347628",
+          "1589300892582",
+          "1589300902817",
+          "1589300982778",
+          "1589301383676",
+          "1589301475068",
+          "1589301574474",
+          "1589301767764"
+        ],
+        "settings": {}
+      },
+      "shop-scent-featured": {
+        "type": "shop-scent-featured",
+        "blocks": {
+          "1589307565115": {
+            "type": "product",
+            "settings": {
+              "product_item": "beard-pomade",
+              "product_image": "shopify:\/\/shop_images\/RelaxingBalm.png"
+            }
+          },
+          "1589307571094": {
+            "type": "product",
+            "settings": {
+              "product_item": "jelly-beard-oil",
+              "product_image": "shopify:\/\/shop_images\/RelaxingBalm.png"
+            }
+          },
+          "1589307577337": {
+            "type": "product",
+            "settings": {
+              "product_item": "colotion-scented-beard-lotion",
+              "product_image": "shopify:\/\/shop_images\/RelaxingBalm.png"
+            }
+          },
+          "1589307582389": {
+            "type": "product",
+            "settings": {
+              "product_item": "beard-pomade",
+              "product_image": "shopify:\/\/shop_images\/RelaxingBalm.png"
+            }
+          },
+          "1590319107691": {
+            "type": "product",
+            "settings": {
+              "product_item": "beard-conditioner",
+              "product_image": "shopify:\/\/shop_images\/RelaxingBalm.png"
+            }
+          }
+        },
+        "block_order": [
+          "1589307565115",
+          "1589307571094",
+          "1589307577337",
+          "1589307582389",
+          "1590319107691"
+        ],
+        "settings": {
+          "title": "You might also like"
+        }
+      },
+      "blog-hero": {
+        "type": "blog-hero",
+        "settings": {
+          "featured_article": "blog\/what-your-beard-style-says-about-you",
+          "background_image": "shopify:\/\/shop_images\/static-blog-hero.jpg",
+          "show_category": true,
+          "show_category_menu": true
+        }
+      },
+      "blog-categories-slider": {
+        "type": "blog-categories-slider",
+        "blocks": {
+          "1590086676839": {
+            "type": "article",
+            "settings": {
+              "featured_article": "blog\/how-to-shape-your-beard",
+              "thumbnail": "shopify:\/\/shop_images\/static-grooming-thumb.png"
+            }
+          },
+          "1590086745006": {
+            "type": "article",
+            "settings": {
+              "featured_article": "blog\/can-you-have-a-beard-for-an-interview",
+              "thumbnail": "shopify:\/\/shop_images\/static-success.png"
+            }
+          },
+          "1590086915236": {
+            "type": "article",
+            "settings": {
+              "featured_article": "blog\/beard-supplies-you-need-while-you-re-traveling",
+              "thumbnail": "shopify:\/\/shop_images\/static-lifestyle.png"
+            }
+          },
+          "1590091454668": {
+            "type": "article",
+            "settings": {
+              "featured_article": "blog\/how-to-keep-your-beard-cool-in-the-summer",
+              "thumbnail": "shopify:\/\/shop_images\/blog-thumb4.jpg"
+            }
+          },
+          "1590091469636": {
+            "type": "article",
+            "settings": {
+              "featured_article": "blog\/what-does-beard-balm-do",
+              "thumbnail": "shopify:\/\/shop_images\/blog-thumb5.jpg"
+            }
+          },
+          "1590091479779": {
+            "type": "article",
+            "settings": {
+              "featured_article": "blog\/how-does-exercise-impact-beard-growth",
+              "thumbnail": "shopify:\/\/shop_images\/blog-thumb6.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "1590086676839",
+          "1590086745006",
+          "1590086915236",
+          "1590091454668",
+          "1590091469636",
+          "1590091479779"
+        ],
+        "settings": {
+          "slider_title": "Highlights"
+        }
+      },
+      "blog-article-grid-with-nav": {
+        "type": "blog-article-grid-with-nav",
+        "settings": {}
+      },
+      "article-template": {
+        "type": "article-template",
+        "settings": {
+          "show_categories": true,
+          "show_excerpt": true,
+          "show_featured_products": true
+        }
+      },
+      "about-header": {
+        "type": "about-header",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/OurStoryNew.jpg",
+          "title": "Our Story"
+        }
+      },
+      "about-content": {
+        "type": "about-content",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/au-content-image_2x_f08886f7-de1a-439a-b504-7080c69dfe02.jpg",
+          "description": "<p class=\"content-text\" id=\"origins\">Our founder, Stephen Condon, is well-known for his competition-worthy beard. During the beginning of his bearded journey, he noticed his thick beard started getting a bit out of whack and unmanageable. After researching and testing many beard brands on his own beard, he realized most beard oils were almost identical and weren’t thick enough to hydrate his beard without dehydrating his wallet. So, Stephen took matters into his own hands and created the world’s frst, Jelly Beard Oil. Jelly Beard Oil’s thicker viscosity was an instant hit among his bearded friends and those he met in the competitive beard circuit. From there, Bossman Brands was born.\n<\/p>\n<p class=\"content-large-text\">With each product we create, our goal is to innovate and, in doing so, take beard care to the next level.<\/p>\n<p class=\"content-heading\" id=\"innovation\">OUR DIFFERENCE<\/p>\n<p class=\"content-sub-heading\">INNOVATION<\/p>\n<p class=\"content-text\">Bossman products aren’t your run of the mill cookie-cutter beard products. With each product we create, our goal is to innovate and, in doing so, take beard care to the next level. Our flagship product, jelly beard oil, was specifcally created to be twice as thick standard beard oils to bind to beard hair better and last longer. This helps solve a plethora of problems bearded men face on a daily basis including beard itch and dandruf.<\/p>\n<br>\n<p class=\"content-sub-heading\" id=\"history\">ALL-NATURAL<\/p>\n<p class=\"content-text\">Bossman products are made with all-natural and responsibly sourced ingredients. Each batch is tested by the Bossman to ensure quality for every customer.<\/p>\n<br>\n<p class=\"content-sub-heading\" id=\"thebrand\">CUSTOMER FIRST<\/p>\n<p class=\"content-text\">We always put our customers first, which is why if you <i>ever<\/i> decide you dislike a product, we will refund your money, no questions asked.  We just believe that’s the way business should be done.<\/p>\n<br>\n<p class=\"content-heading\" id=\"purpose\">OUR PURPOSE<\/p>\n<p class=\"content-text\">Bossman has one purpose and it’s to help the Bosses of the world live their best-bearded lives. Our focus will always be on making quality products and pushing the limits of what everyday beard care entails. Our products are designed to help with every stage of the\tbeard journey from pre-growth to competition styling.<\/p>\n<p class=\"content-text text-bold\">No matter what your beard needs are, or what stage your beard is in, we’ve got the products to make it even better.<\/p>"
+        }
+      },
+      "about-bottom": {
+        "type": "about-bottom",
+        "settings": {
+          "bg_image": "shopify:\/\/shop_images\/au-bottom-img_2x_4146534b-9a06-4352-bf83-eef78ed1b158.png",
+          "small_text": "The search is on",
+          "large_text": "Be your own boss",
+          "button_text": "Learn More",
+          "button_url": ""
+        }
+      },
+      "faq-header": {
+        "type": "faq-header",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/faq-bg_2x_13033e76-2a28-4919-b588-1dcb0c7ced2a.jpg",
+          "title": "Bossman Frequently Asked Questions"
+        }
+      },
+      "faq-content": {
+        "type": "faq-content",
+        "blocks": {
+          "1590097114861": {
+            "type": "content",
+            "settings": {
+              "heading": "SHIPPING & DELIVERY",
+              "sub_heading1": "How do I know my order has shipped?",
+              "content1": "You’ll receive an email from Bossman letting you know your order has shipped with your tracking number. If you do not receive an email from us, please contact customer service at support@bossmanbrand.com",
+              "sub_heading2": "What is the average delivery time?",
+              "content2": "<p>Delivery time varies based on location, demand, and shipping preference selected. For standard shipping, you can expect products to ship within 4-7 business days for domestic orders and 1-8 weeks for international orders. <\/p>\n<p>For expedited shipping, you will receive your products in 3-4 business days. <\/p>\n<p>For business shipping, you can expect your delivery in 2 business days. If you place your order after 1 PM, it will be processed the following day. \n<\/p>",
+              "sub_heading3": "What if I put in the wrong address?",
+              "content3": "If you haven’t yet received your tracking number yet, give us a call and we’ll get it adjusted before it is shipped. If you have received your tracking number, try to get in contact with the shipping company to reroute the package or request it be sent back.",
+              "sub_heading4": "Can I track my package?",
+              "content4": "Yes, you can. You will receive a tracking number when your package has been shipped.",
+              "sub_heading5": "",
+              "content5": ""
+            }
+          },
+          "1590097168829": {
+            "type": "content",
+            "settings": {
+              "heading": "RETURNS",
+              "sub_heading1": "What is your return policy?",
+              "content1": "You have 30 days to return an item from the date you received it. To be eligible for a return, your item must have been purchased within the last 30 days of the original order. Your item must be in the original packaging. Your item needs to have the receipt or proof of purchase.",
+              "sub_heading2": "Who pays shipping for returns?",
+              "content2": "You will be responsible for paying for your own shipping costs for returning your item. Shipping costs are non­-refundable. If you receive a refund, the cost of return shipping will be deducted from your refund.",
+              "sub_heading3": "How do I get a refund?",
+              "content3": "Once we receive your item, we will inspect it and notify you that we have received your returned item. We will immediately notify you of the status of your refund after inspecting the item. If your return is approved, we will initiate a refund to your credit card (or original method of payment). You will receive the credit within 3 to 5 business days, depending on your card issuer’s policies.",
+              "sub_heading4": "",
+              "content4": "",
+              "sub_heading5": "",
+              "content5": ""
+            }
+          },
+          "1590097192096": {
+            "type": "content",
+            "settings": {
+              "heading": "PAYMENT",
+              "sub_heading1": "What types of payments do you accept?",
+              "content1": "We currently accept American Express, MasterCard, Visa, Discover, PayPal, and more.",
+              "sub_heading2": "",
+              "content2": "",
+              "sub_heading3": "",
+              "content3": "",
+              "sub_heading4": "",
+              "content4": "",
+              "sub_heading5": "",
+              "content5": ""
+            }
+          },
+          "1590097203630": {
+            "type": "content",
+            "settings": {
+              "heading": "CONTACT US",
+              "sub_heading1": "How do I contact customer service?",
+              "content1": "You can submit a form to our customer support team <a href=\"https:\/\/bossmanbrand.com\/pages\/contact-us\" class=\"normal-link\">at this link<\/a>, call us at <a href=\"tel:(512)%20937-2677\" class=\"normal-link\">(512) 937-2677<\/a>, or send an email to support@bossmanbrand.com.",
+              "sub_heading2": "Who do I contact about investments?",
+              "content2": "You can contact us about investments <a href=\"https:\/\/bossmanbrand.com\/pages\/contact-us\" class=\"normal-link\">at this link<\/a>, call us at <a href=\"tel:(512)%20937-2677\" class=\"normal-link\">(512) 937-2677<\/a>, or send an email to support@bossmanbrand.com.",
+              "sub_heading3": "How do I get in touch about job opportunities or influencer programs?",
+              "content3": "You can contact us about job opportunities and influencer programs <a href=\"https:\/\/bossmanbrand.com\/pages\/contact-us\" class=\"normal-link\">at this link<\/a>, call us at <a href=\"tel:(512)%20937-2677\" class=\"normal-link\">(512) 937-2677<\/a>, or send an email to support@bossmanbrand.com.",
+              "sub_heading4": "",
+              "content4": "",
+              "sub_heading5": "",
+              "content5": ""
+            }
+          },
+          "1590097214787": {
+            "type": "content",
+            "settings": {
+              "heading": "PRODUCTS",
+              "sub_heading1": "What ingredients are used in your products?",
+              "content1": "We use all-natural ingredients and can assure you all Bossman products have no harsh chemicals or foaming agents in them.",
+              "sub_heading2": "Are your products safe?",
+              "content2": "While we encourage everyone to read through the ingredients to ensure they aren’t allergic to anything in our products, we use high-quality natural ingredients in all Bossman products.",
+              "sub_heading3": "Are your products tested on animals?",
+              "content3": "Our products are not tested on animals.",
+              "sub_heading4": "Where are your products made?",
+              "content4": "Our beard care products are made in the USA while some of our accessories are manufactured in China.",
+              "sub_heading5": "",
+              "content5": ""
+            }
+          },
+          "1590097230976": {
+            "type": "content",
+            "settings": {
+              "heading": "WORK WITH US",
+              "sub_heading1": "Do you have any job openings?",
+              "content1": "Send us a message <a href=\"https:\/\/bossmanbrand.com\/pages\/contact-us\" class=\"normal-link\">at this link<\/a>, call us at <a href=\"tel:(512)%20937-2677\" class=\"normal-link\">(512) 937-2677<\/a>, or send an email to support@bossmanbrand.com to inquire about opportunities to work with the Bossman Brands Team.",
+              "sub_heading2": "How do I become an influencer\/brand ambassador?",
+              "content2": "Send us a message <a href=\"https:\/\/bossmanbrand.com\/pages\/contact-us\" class=\"normal-link\">at this link<\/a>, call us at <a href=\"tel:(512)%20937-2677\" class=\"normal-link\">(512) 937-2677<\/a>, or send an email to support@bossmanbrand.com to inquire about opportunities to become an influencer or brand ambassador.",
+              "sub_heading3": "",
+              "content3": "",
+              "sub_heading4": "",
+              "content4": "",
+              "sub_heading5": "",
+              "content5": ""
+            }
+          }
+        },
+        "block_order": [
+          "1590097114861",
+          "1590097168829",
+          "1590097192096",
+          "1590097203630",
+          "1590097214787",
+          "1590097230976"
+        ],
+        "settings": {}
+      },
+      "faq-get-help": {
+        "type": "faq-get-help",
+        "settings": {
+          "button_text": "Get Help",
+          "button_url": "shopify:\/\/pages\/contact-us"
+        }
+      },
+      "contact-header": {
+        "type": "contact-header",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/contact_hero_2x_b3844824-6ac4-4c99-8e60-e0be48b8d0ab.jpg",
+          "title": "How Can we Help You?",
+          "post_title": "Have a question about products, shipping or returns?",
+          "link_title": "EXPLORE OUR FAQs <i class=\"fas fa-arrow-right\"><\/i>",
+          "link_url": "shopify:\/\/pages\/faq"
+        }
+      },
+      "contact-form": {
+        "type": "contact-form",
+        "settings": {}
+      },
+      "contact-bottom": {
+        "type": "contact-bottom",
+        "settings": {
+          "title": "Need more help?",
+          "link_title": "Contact Support",
+          "link_url": "mailto:support@bossmanbrand.com"
+        }
+      },
+      "blog": {
+        "type": "blog",
+        "blocks": {
+          "1590277555741": {
+            "type": "article",
+            "settings": {
+              "featured_article": "blog\/shaving-for-a-cause",
+              "image": "shopify:\/\/shop_images\/Blog1_a89c5ee4-a5a9-494b-a736-46d871c78c48.jpg"
+            }
+          },
+          "1590277616629": {
+            "type": "article",
+            "settings": {
+              "featured_article": "blog\/5-beard-mistakes-to-avoid",
+              "image": "shopify:\/\/shop_images\/Blog2.jpg"
+            }
+          },
+          "1590277638116": {
+            "type": "article",
+            "settings": {
+              "featured_article": "blog\/brief-history-of-beards-from-cavemen-onward",
+              "image": "shopify:\/\/shop_images\/Blog3.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "1590277555741",
+          "1590277616629",
+          "1590277638116"
+        ],
+        "settings": {}
+      },
+      "herobanner-mobile": {
+        "type": "herobanner-mobile",
+        "blocks": {
+          "1590301514419": {
+            "type": "quality",
+            "settings": {
+              "background_img": "shopify:\/\/shop_images\/boat-mobile.png",
+              "sub_title": "The World's First",
+              "heading": "Jelly Beard Oil",
+              "button_text": "Shop",
+              "button_url": "shopify:\/\/products\/jelly-beard-oil"
+            }
+          }
+        },
+        "block_order": [
+          "1590301514419"
+        ],
+        "settings": {}
+      },
+      "kit-hero": {
+        "type": "kit-hero",
+        "settings": {
+          "hero_img": "shopify:\/\/shop_images\/kit-hero.jpg",
+          "hero_title": "Build Your Own Kit",
+          "hero_sub_title": "Add By Stage"
+        }
+      },
+      "kit-discount": {
+        "type": "kit-discount",
+        "blocks": {
+          "1591124490970": {
+            "type": "item",
+            "settings": {
+              "discount_text": "10% Off 3 Products"
+            }
+          },
+          "1591124495694": {
+            "type": "item",
+            "settings": {
+              "discount_text": "15% Off 5 Products"
+            }
+          },
+          "1591124500357": {
+            "type": "item",
+            "settings": {
+              "discount_text": "20% Off 7 Products"
+            }
+          },
+          "1591124504882": {
+            "type": "item",
+            "settings": {
+              "discount_text": "30% Off 10 Products"
+            }
+          }
+        },
+        "block_order": [
+          "1591124490970",
+          "1591124495694",
+          "1591124500357",
+          "1591124504882"
+        ],
+        "settings": {
+          "title": "Create Your Perfect Four Stage<br> Beard Care Routine"
+        }
+      },
+      "kit-stage-slide": {
+        "type": "kit-stage-slide",
+        "blocks": {
+          "1591131602772": {
+            "type": "item",
+            "settings": {
+              "stage_link": "shopify:\/\/collections\/stage-1",
+              "stage_option": "Stage One",
+              "stage_title": "Clean & Prep",
+              "stage_content": "They say 80% of any job is in the prep work and your beard is no exception, Boss. Our beard brushes and 4-in-1 soap will leave your beard, face, and pores clean. A clean face means clean pores and a minimized chance at acne, excessive oil build-up, and ingrown hairs."
+            }
+          },
+          "1591131707210": {
+            "type": "item",
+            "settings": {
+              "stage_link": "shopify:\/\/collections\/stage-2",
+              "stage_option": "Stage Two",
+              "stage_title": "Repair & Condition",
+              "stage_content": "They say 80% of any job is in the prep work and your beard is no exception, Boss. Our beard brushes and 4-in-1 soap will leave your beard, face, and pores clean. A clean face means clean pores and a minimized chance at acne, excessive oil build-up, and ingrown hairs."
+            }
+          },
+          "1591131746540": {
+            "type": "item",
+            "settings": {
+              "stage_link": "shopify:\/\/collections\/stage-3",
+              "stage_option": "Stage Three",
+              "stage_title": "Nourish & Enhance",
+              "stage_content": "Your beard is repaired and set up for success but there’s more work to be done, Boss. A clean and repaired beard is the perfect match for our Jelly Beard Oil which nourishes and enhances growth. It’s all-natural ingredients fight beard itch and will help you grow a beard that feels as good as it looks."
+            }
+          },
+          "1591131772550": {
+            "type": "item",
+            "settings": {
+              "stage_link": "shopify:\/\/collections\/stage-4",
+              "stage_option": "Stage Four",
+              "stage_title": "Tame & Protect",
+              "stage_content": "They say 80% of any job is in the prep work and your beard is no exception, Boss. Our beard brushes and 4-in-1 soap will leave your beard, face, and pores clean. A clean face means clean pores and a minimized chance at acne, excessive oil build-up, and ingrown hairs."
+            }
+          }
+        },
+        "block_order": [
+          "1591131602772",
+          "1591131707210",
+          "1591131746540",
+          "1591131772550"
+        ],
+        "settings": {}
+      },
+      "kit-related-product": {
+        "type": "kit-related-product",
+        "blocks": {
+          "1591135858256": {
+            "type": "product",
+            "settings": {
+              "product_item": "jelly-beard-oil",
+              "product_image": ""
+            }
+          },
+          "1591135878179": {
+            "type": "product",
+            "settings": {
+              "product_item": "jelly-beard-oil",
+              "product_image": ""
+            }
+          },
+          "1591135888594": {
+            "type": "product",
+            "settings": {
+              "product_item": "jelly-beard-oil",
+              "product_image": ""
+            }
+          },
+          "1591135909335": {
+            "type": "product",
+            "settings": {
+              "product_item": "jelly-beard-oil",
+              "product_image": ""
+            }
+          },
+          "1591136013554": {
+            "type": "product",
+            "settings": {
+              "product_item": "jelly-beard-oil",
+              "product_image": ""
+            }
+          }
+        },
+        "block_order": [
+          "1591135858256",
+          "1591135878179",
+          "1591135888594",
+          "1591135909335",
+          "1591136013554"
+        ],
+        "settings": {}
+      },
+      "featured-on": {
+        "type": "featured-on",
+        "blocks": {
+          "1592504492113": {
+            "type": "logo",
+            "settings": {
+              "logo_img": "shopify:\/\/shop_images\/Gear-Hungry-logo-Grey.png"
+            }
+          },
+          "1592504508429": {
+            "type": "logo",
+            "settings": {
+              "logo_img": "shopify:\/\/shop_images\/BuzzFeed-logo-Grey.png"
+            }
+          },
+          "1592504513317": {
+            "type": "logo",
+            "settings": {
+              "logo_img": "shopify:\/\/shop_images\/Tm_horizontal-logo-Grey.png"
+            }
+          },
+          "1594222188014": {
+            "type": "logo",
+            "settings": {
+              "logo_img": "shopify:\/\/shop_images\/heavy-logo-Grey.png"
+            }
+          }
+        },
+        "block_order": [
+          "1592504492113",
+          "1592504508429",
+          "1592504513317",
+          "1594222188014"
+        ],
+        "settings": {
+          "title": "Featured On",
+          "trust_title": "Trusted By:",
+          "trust_img": "shopify:\/\/shop_images\/whole_foods.png"
+        }
+      },
+      "boss-bucks-hero": {
+        "type": "boss-bucks-hero",
+        "settings": {
+          "hero_bg": "shopify:\/\/shop_images\/boss-bucks-hero.jpg",
+          "hero_title": "You're a boss.\n<br>It's about time you get rewarded for it.",
+          "hero_sub_title": "Earn Boss Bucks for every purchase, referring friends &amp; more.",
+          "hero_btn_link": "\/account",
+          "hero_btn_title": "Get Rewarded"
+        }
+      },
+      "boss-bucks-earn": {
+        "type": "boss-bucks-earn",
+        "blocks": {
+          "1594749300588": {
+            "type": "item",
+            "settings": {
+              "item_img": "shopify:\/\/shop_images\/bucks-signup.png",
+              "item_title": "Sign Up",
+              "item_des": "100 Boss Bucks For Signing Up"
+            }
+          },
+          "1594749313520": {
+            "type": "item",
+            "settings": {
+              "item_img": "shopify:\/\/shop_images\/bucks-shop.png",
+              "item_title": "Shop",
+              "item_des": "4 Boss Bucks For \nEvery Dollar Spent"
+            }
+          },
+          "1594749326963": {
+            "type": "item",
+            "settings": {
+              "item_img": "shopify:\/\/shop_images\/bucks-share.png",
+              "item_title": "Share",
+              "item_des": "50 Boss Bucks For \nSharing on Facebook"
+            }
+          },
+          "1594749342126": {
+            "type": "item",
+            "settings": {
+              "item_img": "shopify:\/\/shop_images\/bucks-silver-star.png",
+              "item_title": "Silver VIP",
+              "item_des": "500 points = 50% discount and a free Jelly Beard Oil"
+            }
+          },
+          "1594749354259": {
+            "type": "item",
+            "settings": {
+              "item_img": "shopify:\/\/shop_images\/bucks-reviews.png",
+              "item_title": "Reviews",
+              "item_des": "100 Boss Bucks for writing a Review"
+            }
+          },
+          "1594749368192": {
+            "type": "item",
+            "settings": {
+              "item_img": "shopify:\/\/shop_images\/bucks-facebook.png",
+              "item_title": "Following on FB",
+              "item_des": "50 Boss Bucks For \nFollowing"
+            }
+          },
+          "1594749379675": {
+            "type": "item",
+            "settings": {
+              "item_img": "shopify:\/\/shop_images\/bucks-instagram.png",
+              "item_title": "Following on Instagram",
+              "item_des": "50 Boss Bucks For\nFollowing"
+            }
+          },
+          "1594749392226": {
+            "type": "item",
+            "settings": {
+              "item_img": "shopify:\/\/shop_images\/bucks-gift.png",
+              "item_title": "Birthday",
+              "item_des": "300 Boss Bucks For Your Birthday"
+            }
+          },
+          "1594749404527": {
+            "type": "item",
+            "settings": {
+              "item_img": "shopify:\/\/shop_images\/bucks-medal.png",
+              "item_title": "Gold VIP",
+              "item_des": "1000 points = $30 store credit and Free Naked Beard Pomade"
+            }
+          }
+        },
+        "block_order": [
+          "1594749300588",
+          "1594749313520",
+          "1594749326963",
+          "1594749342126",
+          "1594749354259",
+          "1594749368192",
+          "1594749379675",
+          "1594749392226",
+          "1594749404527"
+        ],
+        "settings": {
+          "earn_title": "How To Earn"
+        }
+      },
+      "boss-bucks-refer": {
+        "type": "boss-bucks-refer",
+        "settings": {
+          "refer_bg": "shopify:\/\/shop_images\/bucks-refer-bg.jpg",
+          "refer_title": "Refer A Friend",
+          "refer_sub_title": "500 Boss Bucks ($5) for every friend you refer who purchases.",
+          "btn_link": "\/account",
+          "btn_text": "Get Rewarded, BOSS"
+        }
+      },
+      "boss-bucks-cashing": {
+        "type": "boss-bucks-cashing",
+        "blocks": {
+          "1594749466662": {
+            "type": "item",
+            "settings": {
+              "item_title": "$5 OFF",
+              "item_sub_title": "= 500 Boss Bucks",
+              "item_des": "(minimum purchase of $20)"
+            }
+          },
+          "1594749476413": {
+            "type": "item",
+            "settings": {
+              "item_title": "$10 OFF",
+              "item_sub_title": "= 1000 Boss Bucks",
+              "item_des": "(minimum purchase of $20)"
+            }
+          },
+          "1594749495412": {
+            "type": "item",
+            "settings": {
+              "item_title": "$20 OFF",
+              "item_sub_title": "= 2000 Boss Bucks",
+              "item_des": "(minimum purchase of $20)"
+            }
+          }
+        },
+        "block_order": [
+          "1594749466662",
+          "1594749476413",
+          "1594749495412"
+        ],
+        "settings": {
+          "cashing_title": "Cashing Out",
+          "btn_link": "\/account",
+          "btn_title": "START EARNING REWARDS NOW"
+        }
+      }
+    },
+    "content_for_index": []
+  },
+  "presets": {
+    "Default": {
+      "ajax_cart_method": "page",
+      "cart_notes_enable": true,
+      "color_body_bg": "#fff",
+      "color_body_text": "#333333",
+      "color_borders": "#e5e5e5",
+      "color_footer_bg": "#f2f2f2",
+      "color_footer_social_link": "#bbbbbb",
+      "color_footer_text": "#636363",
+      "color_primary": "#747474",
+      "color_secondary": "#bbb",
+      "favicon_enable": false,
+      "footer_newsletter_enable": true,
+      "footer_social_enable": true,
+      "logo_use_image": false,
+      "social_facebook_link": "",
+      "social_twitter_link": ""
+    }
+  }
+}

@@ -1,0 +1,57 @@
+<div class="title-head row">
+<h1>From The Brotherhood</h1>
+<a href="/pages/reviews"><span>Read All</span></a>
+<span class="pagingInfo"></span>
+
+</div>
+
+<div class="frombrotherhood-wrapper">
+<div class="frombrotherhood-slider">
+
+        {% for block in section.blocks %}
+
+                <div class="brother-testimonial">
+                    <p>{{block.settings.testimonial}}</p>
+                    <h4>{{block.settings.name}}</h4>
+                    <span>Member Since {{block.settings.member_since}}</span>
+                </div>
+        {% endfor %}
+</div>
+</div>
+
+
+
+
+
+
+{% schema %}
+{
+    "name": "From The Brotherhood",
+    "settings": [
+        
+    ],
+    "blocks": [
+        {
+            "type": "richtext",
+            "name": "Reviews",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "testimonial",
+                    "label": "Review"
+                },
+                {
+                    "type": "text",
+                    "id": "name",
+                    "label": "Member Name"
+                },
+                {
+                    "type": "text",
+                    "id": "member_since",
+                    "label": "Member Since"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

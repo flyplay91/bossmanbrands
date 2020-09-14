@@ -1,0 +1,35 @@
+
+    <div class="kit-hero-content">
+      	<h2>{{section.settings.hero_title}}</h2>
+      	<label>{{section.settings.hero_sub_title}}</label>
+    </div>
+
+<style>
+	.kit-hero {
+		background-image: url({{section.settings.hero_img | img_url: '1920x'}});
+	}
+</style>
+
+{% schema %}
+{
+	"name": "Hero",
+	"class": "kit-hero",
+	"settings": [
+		{
+			"type": "image_picker",
+			"id": "hero_img",
+			"label": "Hero Image"
+		},
+		{
+			"type": "text",
+			"id": "hero_title",
+			"label": "Hero Title"
+		},
+		{
+			"type": "text",
+			"id": "hero_sub_title",
+			"label": "Hero Sub Title"
+		}
+	]
+}
+{% endschema %}

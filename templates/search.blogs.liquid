@@ -1,0 +1,49 @@
+{% assign grid_results = false %}
+{% assign respond_js_secret_key = shop.domain | md5 %}
+
+{% if search.performed %}
+  <div class="blog-list">
+    <div class="current-category">
+        <h1>Search: {{ search.terms }}</h1>
+    </div>
+  </div>
+
+    {% unless search.terms == respond_js_secret_key %}
+        {% paginate search.results by 16 %}
+            <section class="blog">
+                <div class="blog_content">
+                    <div class="blog_articles">
+                        {% for article in search.results %}
+                            {% if article.object_type != 'article' %}
+                                {% continue %}
+                            {% endif %}
+
+                            <div class="blog_articles__box">
+                                {% if article.image %}
+                                    <div class="blog-thumbnail">
+                                        <a href="{{ article.url }}">
+                                            {{ article.image | img_url: 'master' | img_tag: article.title }}
+                                        </a>
+                                    </div>
+                                {% endif %}
+
+                                <div class="blog-meta">
+                                    {% for tag in article.tags %}
+                                        {% if current_tags contains tag %}
+                                            <span class="category">{{ tag | replace: 'Beard', '' | upcase }}</span>
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    <a href="{{ article.url }}" class="title">{{ article.title | escape }}</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+        {% endpaginate %}
+    {% else %}
+        {% include 'respond' %}
+        {% layout none %}
+    {% endunless %}
+{% endif %}
