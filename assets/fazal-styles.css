@@ -169,7 +169,18 @@ body {
 .product-faq-content {
   padding: 50px 0;
   background-color: #f8f8f8;
-
+}
+.product-faq-content > h1 {
+  font-size: 32px;
+  line-height: 35px;
+  margin: 0 0 25px;
+  font-family: "Bely";
+  text-align: center;
+}
+.product-faq-content-inner {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 10px;
 }
 .product-faq-content .tabset {
   max-width: 1366px;
@@ -178,21 +189,44 @@ body {
 }
 .product-faq-block,
 .product-content-block {
-  border: 1px solid #bf993f;
-  padding: 20px 10px;
-  margin: 15px 0;
+  /*border: 1px solid #bf993f;*/
+  /*padding: 20px 10px;*/
+  margin: 40px 0;
 }
 .product-faq-block > h3 {
   cursor: pointer;
+  position: relative;
+  padding-left: 30px;
 }
+.product-faq-block > h3:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: 0;
+  background: url(https://cdn.shopify.com/s/files/1/2283/7011/files/arr-on_2x_f361dd38-c3c3-462d-adcd-601e37e697c6.png?v=1589362833) left center no-repeat;
+  background-size: contain;
+  color: #000;
+  width: 19px;
+  height: 11px;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.product-faq-block > h3.arrow-down:before {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
 .product-faq-block p,
 .product-faq-block ul {
   display: none;
 }
-.product-faq-block.active p,
+/*.product-faq-block.active p,
 .product-faq-block.active ul {
   display: block;
-}
+}*/
 /* ================================= */
 
 /* .nav-active #header .container {

@@ -181,7 +181,8 @@
 
 {% section 'product-related' %}
 
-{% if product.handle == 'beard-balm' %}
+
+{% comment %}
 <div class="product-faq-content">
 	<div class="tabset">
 	    <!-- Tab 1 -->
@@ -226,7 +227,7 @@
 					<p>Natural oils, such as sweet almond, grape seed, and fruit oils, moisturize the hair and boost hair growth. These oils will give you the most bang for your buck when it comes to preventing and treating beardruff. These oils can be abundantly found in many skin care products currently on the market, including natural shampoos, aftershave balms, and even shaving creams. Some of the most popular carrier oils are jojoba, argan, and sweet almond oil. More often than not, these guys will be doing most of the heavy lifting to lubricate your skin and hair follicles.</p>
 				</div>
 			</section>
-			
+
 	        <section id="rauchbier" class="tab-panel">
 	        	<div class="product-faq-block active">
 		            <h3>Why Do I Need Beard Balm?</h3>
@@ -274,8 +275,37 @@
 	    </div>
 	</div>
 </div>
-{% else %}
-	{% section 'product-okendo-review' %}
+{% endcomment %}
+
+
+{% section 'product-okendo-review' %}
+
+{% if product.handle == 'beard-balm' %}
+
+<div class="product-faq-content">
+	<h1>FAQ's</h1>
+	<div class="product-faq-content-inner">
+		<div class="product-faq-block">
+			<h3>What Should I Look for in a Beard Balm?</h3>
+			<p class="inner">There are a few key components of beard balm that will make or break its effectiveness. First and foremost, keep an eye out for alcohol-based scents, which can damage the skin instead of leaving it hydrated and healthy. Some balms also use synthetic ingredients, such as petroleum jelly, but we don't recommend those as they can cause skin irritation and mess with your facial hair. Balms with synthetic ingredients won't properly seal in moisture, which eventually leads to dry facial hair and breakage.</p>
+		</div>
+		<div class="product-faq-block">
+			<h3>How Does Beard Balm Differ From Other Beard Products?</h3>
+			<p class="inner">Even though both terms may often be used interchangeably, it’s important that you can distinguish between beard oil and beard balm. Each product is formulated with different ingredients specifically selected for a purpose. A complete beard routine should ideally include both oil and balm, along with other products like conditioners and waxes; however, it all depends on your individual needs and beard goals.</p>
+		</div>
+		<div class="product-faq-block">
+			<h3>Beard Oil vs. Beard Balm?</h3>
+			<p class="inner">Beard oil is similar to beard balm, but it's not as thick. While balm keeps your beard moisturized, beard oil is mainly for moisturizing the skin on your face.<br>
+
+			The skin on our faces is thinner and more prone to irritation and dryness than the rest of our bodies. Good-quality beard oil can keep facial skin healthy and soft. Healthy skin can promote healthy beard growth.
+			</p>
+		</div>
+		<div class="product-faq-block">
+			<h3>When to Use Beard Oil or Beard Balm</h3>
+			<p class="inner">Not sure when to use oil or balm? You can generally apply beard balm when you need to style your beard or tame it for certain occasions, such as a formal event or a job interview. If your beard is thin or patchy and you want it to appear thicker, try using a balm with shea butter. The shea butter can help make your beard look fuller.</p>
+		</div>
+	</div>
+</div>
 {% endif %}
 
 {% comment %}

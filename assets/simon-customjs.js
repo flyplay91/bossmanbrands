@@ -316,11 +316,24 @@ theme.LibraryLoader = (function() {
 })();
 
 $(document).ready(function() {
+
 	$('body').on('click', '.product-faq-block > h3', function() {
-		$('.product-faq-block').removeClass('active');
-		$(this).closest('.product-faq-block').addClass('active');
-		$(this).closest('.product-faq-block').siblings().find('p').slideUp(350);
-		$(this).next().slideDown(350);
+		var $this = $(this);
+		$this.closest('.product-faq-block').siblings().find('h3').removeClass('arrow-down');
+		if ($this.next().hasClass('show')) {
+			$this.next().removeClass('show');
+          	$this.next().slideUp(350);
+          	
+          	$this.parent().find('h3').removeClass('arrow-down');
+		} else {
+			$this.parent().parent().find('.product-faq-block .inner').removeClass('show');
+          	$this.parent().parent().find('.product-faq-block .inner').slideUp(350);
+          	$this.next().toggleClass('show');
+          	$this.next().slideToggle(350);
+          	
+          	$this.parent().find('h3').addClass('arrow-down');
+		}
+		
 	});
 
 
