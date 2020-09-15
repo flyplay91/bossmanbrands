@@ -50,7 +50,7 @@
 }
 .blog-list ul li {
   color: #fff;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova Regular";
   font-size: 19px;
   font-weight: bold;
   letter-spacing: 1px;
@@ -76,7 +76,7 @@
 .blog-list ul li a {
   text-decoration: none;
   color: #fff;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova Regular";
   font-size: 19px;
   transition: all ease 0.4s;
 }
@@ -132,7 +132,7 @@
 }
 .hero--blog .blog-category {
   color: #c6a348;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova Regular";
   font-size: 33px;
   font-weight: bold;
   letter-spacing: 1px;
@@ -169,7 +169,7 @@
 }
 .hero--blog .btn {
   color: #fff;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova Regular";
   font-size: 15px;
   font-weight: 800;
   letter-spacing: 1.25px;
@@ -630,7 +630,7 @@
   color: #bd934a;
 }
 .blog .nav-title a {
-    font-family: "Proxima Nova";
+    font-family: "Proxima Nova Regular";
     font-size: 19px;
     letter-spacing: 1px;
 }
@@ -651,7 +651,7 @@
 }
 .blog .nav .search-form form input {
   color: #fff;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova Regular";
   font-size: 12px;
   font-style: italic;
   font-weight: 600;
@@ -726,7 +726,7 @@
 .blog .blog_content .blog_articles__box .blog-meta .title {
   text-decoration: none;
   color: #0b0d0d;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova Regular";
   font-size: 26px;
   font-weight: 800;
   letter-spacing: 0.5px;
@@ -744,7 +744,7 @@
 }
 .blog .blog_content .blog_articles__box .blog-meta .date {
   color: #a0a0a0;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova Regular";
   font-size: 16px;
   letter-spacing: 0.2;
   display: block;
@@ -812,7 +812,7 @@
   list-style: none;
   padding: 0 5px;
   color: #0b0d0d;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova Regular";
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.2;
@@ -861,7 +861,7 @@
 }
 .blog-category-hero .hero-content .title {
   color: #0b0d0d;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova Regular";
   font-size: 26px;
   font-weight: 800;
   letter-spacing: 0.5px;
@@ -870,7 +870,7 @@
 }
 .blog-category-hero .hero-content p {
   color: #000000;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova Regular";
   font-size: 19px;
   font-weight: 600;
   letter-spacing: 0;
@@ -947,7 +947,7 @@
 }
 .full-width-cta .btn {
   color: #fff;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova Regular";
   font-size: 15px;
   font-weight: 800;
   letter-spacing: 1.25px;
@@ -978,7 +978,7 @@
 }
 .blog-search-form form input {
   color: #fff;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova Regular";
   font-size: 12px;
   font-style: italic;
   font-weight: 600;
@@ -1292,6 +1292,11 @@
   max-width: 600px;
   margin-left: 130px;
 }
+.article__content--copy li,
+.article__content--copy a {
+  font-family: "Proxima Nova Regular";
+}
+
 @media (max-width: 1199px) {
   .article__content--copy {
     margin-left: 60px;
@@ -1304,7 +1309,7 @@
 }
 .article__content--copy p {
   color: #0b0d0d;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova Regular";
   font-size: 15px;
   font-weight: 500;
   line-height: 32px;
